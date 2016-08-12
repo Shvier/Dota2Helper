@@ -10,6 +10,11 @@
 		C0D4CFDE1D5DBEF1008F824A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4CFDD1D5DBEF1008F824A /* AppDelegate.swift */; };
 		C0D4CFE01D5DBEF1008F824A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0D4CFDF1D5DBEF1008F824A /* Assets.xcassets */; };
 		C0D4CFE31D5DBEF1008F824A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D4CFE11D5DBEF1008F824A /* LaunchScreen.storyboard */; };
+		C0D4D00A1D5DC2E6008F824A /* DHJournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D0091D5DC2E6008F824A /* DHJournalViewController.swift */; };
+		C0D4D00C1D5DC2F1008F824A /* DHNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D00B1D5DC2F1008F824A /* DHNewsViewController.swift */; };
+		C0D4D00E1D5DC2FD008F824A /* DHSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D00D1D5DC2FD008F824A /* DHSettingsViewController.swift */; };
+		C0D4D0101D5DC30D008F824A /* DHTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D00F1D5DC30D008F824A /* DHTutorialViewController.swift */; };
+		C0D4D0121D5DC319008F824A /* DHVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D0111D5DC319008F824A /* DHVideoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +23,11 @@
 		C0D4CFDF1D5DBEF1008F824A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0D4CFE21D5DBEF1008F824A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0D4CFE41D5DBEF1008F824A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0D4D0091D5DC2E6008F824A /* DHJournalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalViewController.swift; sourceTree = "<group>"; };
+		C0D4D00B1D5DC2F1008F824A /* DHNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsViewController.swift; sourceTree = "<group>"; };
+		C0D4D00D1D5DC2FD008F824A /* DHSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHSettingsViewController.swift; sourceTree = "<group>"; };
+		C0D4D00F1D5DC30D008F824A /* DHTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialViewController.swift; sourceTree = "<group>"; };
+		C0D4D0111D5DC319008F824A /* DHVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +85,7 @@
 		C0D4CFEB1D5DC168008F824A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C0D4D0091D5DC2E6008F824A /* DHJournalViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -114,6 +125,7 @@
 		C0D4CFF01D5DC168008F824A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C0D4D00B1D5DC2F1008F824A /* DHNewsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -153,6 +165,7 @@
 		C0D4CFF51D5DC168008F824A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C0D4D00D1D5DC2FD008F824A /* DHSettingsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -199,6 +212,7 @@
 		C0D4CFFB1D5DC168008F824A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C0D4D00F1D5DC30D008F824A /* DHTutorialViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -238,6 +252,7 @@
 		C0D4D0001D5DC168008F824A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C0D4D0111D5DC319008F824A /* DHVideoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -300,6 +315,7 @@
 		C0D4CFD21D5DBEF1008F824A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = DH;
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Shvier;
@@ -344,6 +360,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0D4D00A1D5DC2E6008F824A /* DHJournalViewController.swift in Sources */,
+				C0D4D00E1D5DC2FD008F824A /* DHSettingsViewController.swift in Sources */,
+				C0D4D0101D5DC30D008F824A /* DHTutorialViewController.swift in Sources */,
+				C0D4D00C1D5DC2F1008F824A /* DHNewsViewController.swift in Sources */,
+				C0D4D0121D5DC319008F824A /* DHVideoViewController.swift in Sources */,
 				C0D4CFDE1D5DBEF1008F824A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,6 +471,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Dota2Helper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shvier.Dota2Helper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -461,6 +483,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Dota2Helper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shvier.Dota2Helper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -486,6 +509,7 @@
 				C0D4CFE91D5DBEF1008F824A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

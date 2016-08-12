@@ -16,12 +16,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.backgroundColor = UIColor.whiteColor()
-        self.window?.rootViewController = UIViewController()
         
-        let tabBarVC: UITabBarController = UITabBarController();
+        let tabBarVC: UITabBarController = UITabBarController()
+                
+        let newsVC: DHNewsViewController = DHNewsViewController()
+        let newsNaVC: UINavigationController = UINavigationController(rootViewController: newsVC)
+        newsVC.tabBarItem = UITabBarItem(title: "新闻", image: UIImage(named: "tabbar_icon_news")?.imageWithRenderingMode(.AlwaysOriginal), tag: 1001)
         
+        let videoVC: DHVideoViewController = DHVideoViewController()
+        let videoNaVC: UINavigationController = UINavigationController(rootViewController: videoVC)
+        videoVC.tabBarItem = UITabBarItem(title: "视频", image: UIImage(named: "tabbar_icon_video")?.imageWithRenderingMode(.AlwaysOriginal), tag: 1002)
         
+        let tutorialVC: DHTutorialViewController = DHTutorialViewController()
+        let tutorialNaVC: UINavigationController = UINavigationController(rootViewController: tutorialVC)
+        tutorialVC.tabBarItem = UITabBarItem(title: "攻略", image: UIImage(named: "tabbar_icon_tutorial")?.imageWithRenderingMode(.AlwaysOriginal), tag: 1003)
         
+        let journalVC: DHJournalViewController = DHJournalViewController()
+        let journalNaVC: UINavigationController = UINavigationController(rootViewController: journalVC)
+        journalVC.tabBarItem = UITabBarItem(title: "更新", image: UIImage(named: "tabbar_icon_journal")?.imageWithRenderingMode(.AlwaysOriginal), tag: 1004)
+        
+        let settingsVC: DHSettingsViewController = DHSettingsViewController()
+        let settingsNaVC: UINavigationController = UINavigationController(rootViewController: settingsVC)
+        settingsNaVC.tabBarItem = UITabBarItem(title: "其它", image: UIImage(named: "tabbar_icon_settings")?.imageWithRenderingMode(.AlwaysOriginal), tag: 1005)
+
+        tabBarVC.viewControllers = [newsNaVC, videoNaVC, tutorialNaVC, journalNaVC, settingsNaVC]
+        
+        tabBarVC.tabBar.tintColor = UIColor.redColor()
+        tabBarVC.tabBar.translucent = false
+        tabBarVC.tabBar.barStyle = .Black
+        self.window?.rootViewController = tabBarVC
+                
         self.window?.makeKeyAndVisible()
         return true
     }
