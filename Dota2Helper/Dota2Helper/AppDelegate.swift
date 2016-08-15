@@ -16,12 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.backgroundColor = UIColor.whiteColor()
-        
         let tabBarVC: UITabBarController = UITabBarController()
-                
         let newsVC: DHNewsViewController = DHNewsViewController()
         let newsNaVC: UINavigationController = UINavigationController(rootViewController: newsVC)
-        newsVC.tabBarItem = UITabBarItem(title: "新闻", image: UIImage(named: "tabbar_icon_news")?.imageWithRenderingMode(.AlwaysOriginal), tag: 1001)
+        newsVC.tabBarItem = UITabBarItem(title: "资讯", image: UIImage(named: "tabbar_icon_news")?.imageWithRenderingMode(.AlwaysOriginal), tag: 1001)
         
         let videoVC: DHVideoViewController = DHVideoViewController()
         let videoNaVC: UINavigationController = UINavigationController(rootViewController: videoVC)
@@ -47,6 +45,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = tabBarVC
                 
         self.window?.makeKeyAndVisible()
+        
+        DHLog("Application Launching")
+        
         return true
     }
 
