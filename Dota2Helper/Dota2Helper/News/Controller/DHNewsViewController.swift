@@ -10,6 +10,10 @@ import UIKit
 
 class DHNewsViewController: UITableViewController {
 
+    func HandleData() {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white

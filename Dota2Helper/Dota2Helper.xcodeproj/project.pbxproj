@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8043436EA925D34A3C63946D /* libPods-Dota2Helper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC716F930FC89E577BEFFEBA /* libPods-Dota2Helper.a */; };
 		C0A1AC401D616188005B92A5 /* Constrants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A1AC3F1D616188005B92A5 /* Constrants.swift */; };
+		C0B7A4C11D8ECC4E008D10A0 /* DHNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B7A4C01D8ECC4E008D10A0 /* DHNewsModel.swift */; };
 		C0D4CFDE1D5DBEF1008F824A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4CFDD1D5DBEF1008F824A /* AppDelegate.swift */; };
 		C0D4CFE01D5DBEF1008F824A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0D4CFDF1D5DBEF1008F824A /* Assets.xcassets */; };
 		C0D4CFE31D5DBEF1008F824A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D4CFE11D5DBEF1008F824A /* LaunchScreen.storyboard */; };
@@ -25,6 +26,7 @@
 		AC716F930FC89E577BEFFEBA /* libPods-Dota2Helper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Dota2Helper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C019ABCE1D5DDF72009AD451 /* AppNetWorkUrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppNetWorkUrl.h; sourceTree = "<group>"; };
 		C0A1AC3F1D616188005B92A5 /* Constrants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constrants.swift; sourceTree = "<group>"; };
+		C0B7A4C01D8ECC4E008D10A0 /* DHNewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsModel.swift; sourceTree = "<group>"; };
 		C0D4CFDA1D5DBEF1008F824A /* Dota2Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dota2Helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D4CFDD1D5DBEF1008F824A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0D4CFDF1D5DBEF1008F824A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +57,112 @@
 				AC716F930FC89E577BEFFEBA /* libPods-Dota2Helper.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C0B7A4B11D8ECC18008D10A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C0B7A4B21D8ECC18008D10A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C0B7A4B31D8ECC18008D10A0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C0B7A4B41D8ECC23008D10A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C0B7A4C01D8ECC4E008D10A0 /* DHNewsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C0B7A4B51D8ECC23008D10A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C0B7A4B61D8ECC23008D10A0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C0B7A4B71D8ECC2C008D10A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C0B7A4B81D8ECC2C008D10A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C0B7A4B91D8ECC2C008D10A0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C0B7A4BA1D8ECC37008D10A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C0B7A4BB1D8ECC37008D10A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C0B7A4BC1D8ECC37008D10A0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C0B7A4BD1D8ECC41008D10A0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C0B7A4BE1D8ECC41008D10A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C0B7A4BF1D8ECC41008D10A0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C0D4CFD11D5DBEF1008F824A = {
@@ -92,10 +200,10 @@
 		C0D4CFEA1D5DC168008F824A /* Journal */ = {
 			isa = PBXGroup;
 			children = (
+				C0B7A4B11D8ECC18008D10A0 /* Model */,
+				C0B7A4B21D8ECC18008D10A0 /* View */,
+				C0B7A4B31D8ECC18008D10A0 /* ViewModel */,
 				C0D4CFEB1D5DC168008F824A /* Controller */,
-				C0D4CFEC1D5DC168008F824A /* Model */,
-				C0D4CFED1D5DC168008F824A /* View */,
-				C0D4CFEE1D5DC168008F824A /* ViewModel */,
 			);
 			path = Journal;
 			sourceTree = "<group>";
@@ -108,34 +216,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		C0D4CFEC1D5DC168008F824A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		C0D4CFED1D5DC168008F824A /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C0D4CFEE1D5DC168008F824A /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		C0D4CFEF1D5DC168008F824A /* News */ = {
 			isa = PBXGroup;
 			children = (
+				C0B7A4B41D8ECC23008D10A0 /* Model */,
+				C0B7A4B51D8ECC23008D10A0 /* View */,
+				C0B7A4B61D8ECC23008D10A0 /* ViewModel */,
 				C0D4CFF01D5DC168008F824A /* Controller */,
-				C0D4CFF11D5DC168008F824A /* Model */,
-				C0D4CFF21D5DC168008F824A /* View */,
-				C0D4CFF31D5DC168008F824A /* ViewModel */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -148,34 +235,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		C0D4CFF11D5DC168008F824A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		C0D4CFF21D5DC168008F824A /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C0D4CFF31D5DC168008F824A /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		C0D4CFF41D5DC168008F824A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				C0B7A4B71D8ECC2C008D10A0 /* Model */,
+				C0B7A4B81D8ECC2C008D10A0 /* View */,
+				C0B7A4B91D8ECC2C008D10A0 /* ViewModel */,
 				C0D4CFF51D5DC168008F824A /* Controller */,
-				C0D4CFF61D5DC168008F824A /* Model */,
-				C0D4CFF71D5DC168008F824A /* View */,
-				C0D4CFF81D5DC168008F824A /* ViewModel */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -186,27 +252,6 @@
 				C0D4D00D1D5DC2FD008F824A /* DHSettingsViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		C0D4CFF61D5DC168008F824A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		C0D4CFF71D5DC168008F824A /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C0D4CFF81D5DC168008F824A /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C0D4CFF91D5DC168008F824A /* Tools */ = {
@@ -221,10 +266,10 @@
 		C0D4CFFA1D5DC168008F824A /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
+				C0B7A4BA1D8ECC37008D10A0 /* Model */,
+				C0B7A4BB1D8ECC37008D10A0 /* View */,
+				C0B7A4BC1D8ECC37008D10A0 /* ViewModel */,
 				C0D4CFFB1D5DC168008F824A /* Controller */,
-				C0D4CFFC1D5DC168008F824A /* Model */,
-				C0D4CFFD1D5DC168008F824A /* View */,
-				C0D4CFFE1D5DC168008F824A /* ViewModel */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -237,34 +282,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		C0D4CFFC1D5DC168008F824A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		C0D4CFFD1D5DC168008F824A /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C0D4CFFE1D5DC168008F824A /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		C0D4CFFF1D5DC168008F824A /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				C0B7A4BD1D8ECC41008D10A0 /* Model */,
+				C0B7A4BE1D8ECC41008D10A0 /* View */,
+				C0B7A4BF1D8ECC41008D10A0 /* ViewModel */,
 				C0D4D0001D5DC168008F824A /* Controller */,
-				C0D4D0011D5DC168008F824A /* Model */,
-				C0D4D0021D5DC168008F824A /* View */,
-				C0D4D0031D5DC168008F824A /* ViewModel */,
 			);
 			path = Video;
 			sourceTree = "<group>";
@@ -275,27 +299,6 @@
 				C0D4D0111D5DC319008F824A /* DHVideoViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		C0D4D0011D5DC168008F824A /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		C0D4D0021D5DC168008F824A /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		C0D4D0031D5DC168008F824A /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C0D4D0041D5DC16E008F824A /* Others */ = {
@@ -349,11 +352,12 @@
 			attributes = {
 				CLASSPREFIX = DH;
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Shvier;
 				TargetAttributes = {
 					C0D4CFD91D5DBEF1008F824A = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = PGNG7584J8;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -447,6 +451,7 @@
 				C0A1AC401D616188005B92A5 /* Constrants.swift in Sources */,
 				C0D4D00C1D5DC2F1008F824A /* DHNewsViewController.swift in Sources */,
 				C0D4D0121D5DC319008F824A /* DHVideoViewController.swift in Sources */,
+				C0B7A4C11D8ECC4E008D10A0 /* DHNewsModel.swift in Sources */,
 				C0D4CFDE1D5DBEF1008F824A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,8 +484,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -524,8 +531,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -544,6 +553,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -553,6 +563,7 @@
 			baseConfigurationReference = 5AE8FF62A93E6F949F8DB6AF /* Pods-Dota2Helper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PGNG7584J8;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -572,6 +583,7 @@
 			baseConfigurationReference = 46FADE68FCE278AF742B319D /* Pods-Dota2Helper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = PGNG7584J8;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
