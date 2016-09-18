@@ -43,7 +43,7 @@ let kGetVideoDetailInfoUrl: String = "http://openapi.youku.com/v2/videos/show.js
 // get relatedVideoList
 let kGetRelatedVideoListUrl: String = "http://openapi.youku.com/v2/videos/by_related/json"
 
-func DHLog<T>(message: T,
+func DHLog<T>(_ message: T,
                  file: String = #file,
                method: String = #function,
                  line: Int = #line) {

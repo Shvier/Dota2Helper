@@ -12,9 +12,9 @@ class DHSettingsViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.whiteColor()
-        navigationController?.navigationBar.barTintColor = UIColor.blackColor()
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        view.backgroundColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         navigationItem.title = "掌刀"
     }
     
