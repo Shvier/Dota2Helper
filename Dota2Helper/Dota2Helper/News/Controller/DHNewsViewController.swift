@@ -12,16 +12,29 @@ class DHNewsViewController: UITableViewController {
 
     var dataController: DHNewsDataController?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func handleNewsData() {
+        dataController = DHNewsDataController()
+        dataController?.requestNewsDataWithCallback(callback: {
+            self.renderTableViewCell()
+        }())
+    }
+    
+    func renderTableViewCell() {
+        
+    }
+    
+    func initLifeCycle() {
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.black
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         navigationItem.title = "掌刀"
-
-        dataController = DHNewsDataController()
-        dataController?.requestNewsDataWithCallback(callback: {
-        }())
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        initLifeCycle()
+        handleNewsData()
     }
     
 }

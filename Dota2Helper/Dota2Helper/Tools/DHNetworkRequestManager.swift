@@ -12,7 +12,7 @@ class DHNetworkRequestManager: NSObject {
 
     static let sharedInstance = DHNetworkRequestManager()
     
-    func RequestWithUrl(urlHeader: URL?, parameters: NSDictionary?, completion: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
+    func requestWithUrl(urlHeader: URL?, parameters: NSDictionary?, completion: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
         var request = URLRequest(url: urlHeader!)
         if (parameters != nil) && (parameters?.count)! > 0 {
             request.httpMethod = "POST"
