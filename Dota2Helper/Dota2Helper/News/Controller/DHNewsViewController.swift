@@ -10,13 +10,7 @@ import UIKit
 
 class DHNewsViewController: UITableViewController {
 
-    func HandleData() {
-        let url = URL(string: kRefreshNewsUrl)
-        let dataTask: URLSessionDataTask = URLSession.shared.dataTask(with: url!) { (Data, URLResponse, Error) in
-            print(Data)
-        }
-        dataTask.resume()
-    }
+    var dataController: DHNewsDataController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +18,10 @@ class DHNewsViewController: UITableViewController {
         navigationController?.navigationBar.barTintColor = UIColor.black
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         navigationItem.title = "掌刀"
-        
-        HandleData()
+
+        dataController = DHNewsDataController()
+        dataController?.requestNewsDataWithCallback(callback: {
+        }())
     }
     
 }

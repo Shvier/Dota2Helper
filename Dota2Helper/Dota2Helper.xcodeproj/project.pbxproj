@@ -18,6 +18,8 @@
 		C0D4D00E1D5DC2FD008F824A /* DHSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D00D1D5DC2FD008F824A /* DHSettingsViewController.swift */; };
 		C0D4D0101D5DC30D008F824A /* DHTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D00F1D5DC30D008F824A /* DHTutorialViewController.swift */; };
 		C0D4D0121D5DC319008F824A /* DHVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D0111D5DC319008F824A /* DHVideoViewController.swift */; };
+		C0EC174B1D9010930002AAF4 /* DHNetworkRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EC174A1D9010930002AAF4 /* DHNetworkRequestManager.swift */; };
+		C0EC174D1D901D4D0002AAF4 /* DHNewsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EC174C1D901D4D0002AAF4 /* DHNewsDataController.swift */; };
 		C0EC967F1D8FCA8100E1557E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EC967D1D8FCA8100E1557E /* Fabric.framework */; };
 		C0EC96801D8FCA8100E1557E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EC967E1D8FCA8100E1557E /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
@@ -39,6 +41,8 @@
 		C0D4D00D1D5DC2FD008F824A /* DHSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHSettingsViewController.swift; sourceTree = "<group>"; };
 		C0D4D00F1D5DC30D008F824A /* DHTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialViewController.swift; sourceTree = "<group>"; };
 		C0D4D0111D5DC319008F824A /* DHVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoViewController.swift; sourceTree = "<group>"; };
+		C0EC174A1D9010930002AAF4 /* DHNetworkRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNetworkRequestManager.swift; sourceTree = "<group>"; };
+		C0EC174C1D901D4D0002AAF4 /* DHNewsDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsDataController.swift; sourceTree = "<group>"; };
 		C0EC967D1D8FCA8100E1557E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		C0EC967E1D8FCA8100E1557E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				C0D4D00B1D5DC2F1008F824A /* DHNewsViewController.swift */,
+				C0EC174C1D901D4D0002AAF4 /* DHNewsDataController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			children = (
 				C019ABCE1D5DDF72009AD451 /* AppNetWorkUrl.h */,
 				C0A1AC3F1D616188005B92A5 /* Constrants.swift */,
+				C0EC174A1D9010930002AAF4 /* DHNetworkRequestManager.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -468,10 +474,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0D4D00A1D5DC2E6008F824A /* DHJournalViewController.swift in Sources */,
+				C0EC174B1D9010930002AAF4 /* DHNetworkRequestManager.swift in Sources */,
 				C0D4D00E1D5DC2FD008F824A /* DHSettingsViewController.swift in Sources */,
 				C0D4D0101D5DC30D008F824A /* DHTutorialViewController.swift in Sources */,
 				C0A1AC401D616188005B92A5 /* Constrants.swift in Sources */,
 				C0D4D00C1D5DC2F1008F824A /* DHNewsViewController.swift in Sources */,
+				C0EC174D1D901D4D0002AAF4 /* DHNewsDataController.swift in Sources */,
 				C0D4D0121D5DC319008F824A /* DHVideoViewController.swift in Sources */,
 				C0B7A4C11D8ECC4E008D10A0 /* DHNewsModel.swift in Sources */,
 				C0D4CFDE1D5DBEF1008F824A /* AppDelegate.swift in Sources */,
