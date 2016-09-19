@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AFNetworking.xcscheme</key>
+		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>595FC0F646B0761D24A4A5C0E4923291</key>
+		<key>ACFF440C53C280E253935EF6954BB20A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>928353533005A4198EBDA5B700D37B64</key>
+		<key>BDAF27BE15DBEE3F66D84079233BDDFA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
