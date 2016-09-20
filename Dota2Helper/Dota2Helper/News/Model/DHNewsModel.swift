@@ -19,7 +19,7 @@ class DHNewsModel: NSObject {
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         if key == "description" {
-            setValue(value, forUndefinedKey: "newsDescription")
+            setValue(value, forKey: "newsDescription")
         }
     }
     

@@ -7,9 +7,31 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DHNewsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var newsDescriptionLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
+    func bindDataWithViewModel(_ viewModel: DHNewsCellViewModel) {
+        let url = URL(string: viewModel.background!)
+        backgroundImageView.kf_setImage(with: url)
+        titleLabel.text = viewModel.title
+        newsDescriptionLabel.text = viewModel.newsDescription
+        dateLabel.text = viewModel.date
+    }
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

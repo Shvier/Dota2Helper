@@ -7,14 +7,25 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DHNewsCellViewModel: NSObject {
 
-    var newsCell: DHNewsTableViewCell?
+    var backgroundImageView: UIImageView?
+    var background: String?
+    var title: String?
+    var newsDescription: String?
+    var date: String?
     
     init(_ newsModel: DHNewsModel?) {
         super.init()
-        newsCell = DHNewsTableViewCell()
+        
+        let url = URL(string: (newsModel?.background)!)
+        backgroundImageView?.kf_setImage(with: url)
+        background = newsModel?.background
+        title = newsModel?.title
+        newsDescription = newsModel?.newsDescription
+        date = newsModel?.date
     }
     
     func viewModel(_ newsModel: DHNewsModel?) -> DHNewsCellViewModel {

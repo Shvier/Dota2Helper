@@ -8,6 +8,8 @@
 
 import Foundation
 
+let kNewsCellReuseIdentifier: String = "NewsTableViewCell"
+
 // refresh news
 let kRefreshNewsUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/news/refresh"
 // load more news
