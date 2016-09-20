@@ -38,6 +38,10 @@ class DHNewsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         bannerView = DHBannerView()
+        if (dataController?.bannerDataSource?.count)! > 0 {
+            let headerViewModel: DHNewsBannerViewModel = DHNewsBannerViewModel();
+            bannerView?.bindDataWithViewModel(headerViewModel)
+        }
         return bannerView
     }
     
