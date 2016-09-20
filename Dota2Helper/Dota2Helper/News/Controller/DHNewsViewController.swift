@@ -11,6 +11,7 @@ import UIKit
 class DHNewsViewController: UITableViewController {
 
     var dataController: DHNewsDataController?
+    var bannerView: DHBannerView?
     
     func handleNewsData() {
         dataController = DHNewsDataController()
@@ -29,6 +30,15 @@ class DHNewsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 200
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        bannerView = DHBannerView()
+        return bannerView
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
