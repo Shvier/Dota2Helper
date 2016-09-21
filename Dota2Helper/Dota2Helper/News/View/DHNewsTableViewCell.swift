@@ -16,7 +16,10 @@ class DHNewsTableViewCell: UITableViewCell {
     @IBOutlet weak var newsDescriptionLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    var nid: String?
+    
     func bindDataWithViewModel(_ viewModel: DHNewsCellViewModel) {
+        nid = viewModel.nid
         let url = URL(string: viewModel.background!)
         backgroundImageView.kf_setImage(with: url)
         titleLabel.text = viewModel.title
