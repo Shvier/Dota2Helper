@@ -34,20 +34,8 @@ class DHNewsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+        return kNewsTableViewCellHeight
     }
-    
-    /*
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        bannerView = DHBannerView()
-        if (dataController?.bannerDataSource?.count)! > 0 {
-            let banners = NSArray(array: (dataController?.bannerDataSource)!)
-            let headerViewModel: DHNewsBannerViewModel = DHNewsBannerViewModel(banners as! [DHNewsModel]);
-            bannerView = DHBannerView(frame: CGRect(x: 0, y: 0, width: kBannerWidth, height: kBannerHeight))
-            bannerView?.bindDataWithViewModel(headerViewModel)
-        }
-        return bannerView
-    }*/
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: DHNewsTableViewCell  = tableView.dequeueReusableCell(withIdentifier: kNewsCellReuseIdentifier, for: indexPath) as! DHNewsTableViewCell

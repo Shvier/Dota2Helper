@@ -9,6 +9,8 @@
 import UIKit
 import Kingfisher
 
+let kNewsTableViewCellHeight: CGFloat = 80
+
 class DHNewsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var backgroundImageView: UIImageView!
