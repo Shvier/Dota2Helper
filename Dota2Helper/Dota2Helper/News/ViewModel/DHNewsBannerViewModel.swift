@@ -17,7 +17,7 @@ class DHNewsBannerViewModel: NSObject {
     var scrollView: UIScrollView?
     var bannerCount: Int?
     
-    init(_ banners: [DHNewsModel]) {
+    init(banners: [DHNewsModel]) {
         super.init()
         
         bannerCount = banners.count
@@ -40,8 +40,8 @@ class DHNewsBannerViewModel: NSObject {
         scrollView?.addSubview(lastImageView)
     }
     
-    func viewModel(_ banners: [DHNewsModel]) -> DHNewsBannerViewModel {
-        return DHNewsBannerViewModel.init(banners)
+    func viewModel(banners: [DHNewsModel]) -> DHNewsBannerViewModel {
+        return DHNewsBannerViewModel.init(banners: banners)
     }
     
 }

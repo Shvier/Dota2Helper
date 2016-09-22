@@ -7,21 +7,24 @@
 //
 
 import UIKit
-import WebKit
 
 class DHNewsDetailViewController: UIViewController {
 
     var newsCell: DHNewsTableViewCell?
     var dataController: DHNewsDetailDataController?
-    var webView: WKWebView?
+    var newsDetailView: DHNewsDetailView?
     
     func handleData() {
-        let request: URLRequest = (dataController?.requestNewsDetailDataUrlWithNewsCell(newsCell!))!
-        webView?.load(request)
+        dataController = DHNewsDetailDataController()
+        let request: URLRequest = (dataController?.requestNewsDetailDataUrlWithNewsCell(newsCell: newsCell!))!
+        let viewModel: DHNewsDetailViewModel = DHNewsDetailViewModel(request: request)
+        newsDetailView = DHNewsDetailView(frame: CGRect(x: 0, y: 0, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight))
+        newsDetailView?.bindDataWithViewModel(viewModel: viewModel)
+        renderNewsDetailView()
     }
     
-    func renderWebView() {
-        
+    func renderNewsDetailView() {
+        view.addSubview(newsDetailView!)
     }
     
     func setContentView() {
@@ -38,6 +41,7 @@ class DHNewsDetailViewController: UIViewController {
         super.viewDidLoad()
         
         initLifeCycle()
+        handleData()
     }
 
     override func didReceiveMemoryWarning() {

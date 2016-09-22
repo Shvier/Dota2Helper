@@ -19,7 +19,7 @@ class DHNewsCellViewModel: NSObject {
     var newsDescription: String?
     var time: String?
     
-    init(_ newsModel: DHNewsModel?) {
+    init(newsModel: DHNewsModel?) {
         super.init()
         
         let url = URL(string: (newsModel?.background)!)
@@ -32,8 +32,8 @@ class DHNewsCellViewModel: NSObject {
         time = newsModel?.time
     }
     
-    func viewModel(_ newsModel: DHNewsModel?) -> DHNewsCellViewModel {
-        return DHNewsCellViewModel.init(newsModel)
+    func viewModel(newsModel: DHNewsModel?) -> DHNewsCellViewModel {
+        return DHNewsCellViewModel.init(newsModel: newsModel)
     }
     
 }

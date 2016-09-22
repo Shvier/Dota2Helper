@@ -37,7 +37,6 @@
 		46FADE68FCE278AF742B319D /* Pods-Dota2Helper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dota2Helper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dota2Helper/Pods-Dota2Helper.release.xcconfig"; sourceTree = "<group>"; };
 		558B5B80FEC5A194BAC83F8D /* Pods_Dota2Helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dota2Helper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE8FF62A93E6F949F8DB6AF /* Pods-Dota2Helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dota2Helper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dota2Helper/Pods-Dota2Helper.debug.xcconfig"; sourceTree = "<group>"; };
-		C019ABCE1D5DDF72009AD451 /* AppNetWorkUrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppNetWorkUrl.h; sourceTree = "<group>"; };
 		C06E66411D917640007B1210 /* DHBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBannerView.swift; sourceTree = "<group>"; };
 		C06E66431D917781007B1210 /* DHNewsBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsBannerViewModel.swift; sourceTree = "<group>"; };
 		C0A1AC3F1D616188005B92A5 /* Constrants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constrants.swift; sourceTree = "<group>"; };
@@ -297,7 +296,6 @@
 		C0D4CFF91D5DC168008F824A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				C019ABCE1D5DDF72009AD451 /* AppNetWorkUrl.h */,
 				C0A1AC3F1D616188005B92A5 /* Constrants.swift */,
 				C0EC174A1D9010930002AAF4 /* DHNetworkRequestManager.swift */,
 			);

@@ -20,10 +20,11 @@ class DHNewsDetailView: UIView {
         webViewConfig = WKWebViewConfiguration()
         webView = WKWebView(frame: frame, configuration: webViewConfig!)
         self.addSubview(webView!)
+        self.backgroundColor = UIColor.blue
     }
     
     func bindDataWithViewModel(viewModel: DHNewsDetailViewModel) {
-        
+        let _ = webView?.load(viewModel.request!)
     }
     
     required init?(coder aDecoder: NSCoder) {

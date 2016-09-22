@@ -8,6 +8,7 @@
 
 import Foundation
 
+let kNavigationHeight = 44
 let kNewsCellReuseIdentifier: String = "NewsTableViewCell"
 
 // refresh news

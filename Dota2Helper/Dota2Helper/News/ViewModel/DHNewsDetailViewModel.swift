@@ -8,6 +8,18 @@
 
 import UIKit
 
+let kNewsDetailViewWidth: CGFloat = UIScreen.main.bounds.size.width
+let kNewsDetailViewHeight: CGFloat = UIScreen.main.bounds.size.height - CGFloat(kNavigationHeight)
+
 class DHNewsDetailViewModel: NSObject {
 
+    var request: URLRequest?
+    
+    init(request: URLRequest) {
+        self.request = request
+    }
+    
+    func viewModelWithURLRequest(request: URLRequest) -> DHNewsDetailViewModel {
+        return DHNewsDetailViewModel.init(request: request)
+    }
 }

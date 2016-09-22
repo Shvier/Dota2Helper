@@ -22,7 +22,7 @@ class DHNewsViewController: UITableViewController {
     
     func renderTableViewCell() {
         let banners = NSArray(array: (dataController?.bannerDataSource)!)
-        let headerViewModel: DHNewsBannerViewModel = DHNewsBannerViewModel(banners as! [DHNewsModel]);
+        let headerViewModel: DHNewsBannerViewModel = DHNewsBannerViewModel(banners: banners as! [DHNewsModel]);
         bannerView = DHBannerView(frame: CGRect(x: 0, y: 0, width: kBannerWidth, height: kBannerHeight))
         bannerView?.bindDataWithViewModel(headerViewModel)
         tableView.tableHeaderView = bannerView
@@ -41,7 +41,7 @@ class DHNewsViewController: UITableViewController {
         let cell: DHNewsTableViewCell = tableView.dequeueReusableCell(withIdentifier: kNewsCellReuseIdentifier, for: indexPath) as! DHNewsTableViewCell
         if (dataController?.newsDataSource?.count)! > 0 {
             let newsModel = dataController?.newsDataSource?[indexPath.row] as! DHNewsModel
-            let cellViewModel: DHNewsCellViewModel = DHNewsCellViewModel.init(newsModel)
+            let cellViewModel: DHNewsCellViewModel = DHNewsCellViewModel.init(newsModel: newsModel)
             cell.bindDataWithViewModel(cellViewModel)
         }
         return cell
