@@ -16,7 +16,7 @@ class DHNewsTableViewCell: UITableViewCell {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var newsDescriptionLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     var nid: String?
     
@@ -26,7 +26,7 @@ class DHNewsTableViewCell: UITableViewCell {
         backgroundImageView.kf_setImage(with: url)
         titleLabel.text = viewModel.title
         newsDescriptionLabel.text = viewModel.newsDescription
-        dateLabel.text = viewModel.date
+        timeLabel.text = viewModel.time
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {

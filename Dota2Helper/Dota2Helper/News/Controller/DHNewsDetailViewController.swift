@@ -15,16 +15,25 @@ class DHNewsDetailViewController: UIViewController {
     
     func handleData() {
         dataController?.requestNewsDetailDataWithCallback(callback: {
-            self.renderTableViewCell()
+            self.renderWebView()
         }(), newsCell!)
     }
     
-    func renderTableViewCell() {
+    func renderWebView() {
         
+    }
+    
+    func initLifeCycle() {
+        view.backgroundColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        navigationItem.title = "详情"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initLifeCycle()
     }
 
     override func didReceiveMemoryWarning() {

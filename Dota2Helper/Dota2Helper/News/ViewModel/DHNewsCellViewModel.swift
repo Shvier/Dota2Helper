@@ -16,7 +16,7 @@ class DHNewsCellViewModel: NSObject {
     var background: String?
     var title: String?
     var newsDescription: String?
-    var date: String?
+    var time: String?
     
     init(_ newsModel: DHNewsModel?) {
         super.init()
@@ -27,7 +27,7 @@ class DHNewsCellViewModel: NSObject {
         background = newsModel?.background
         title = newsModel?.title
         newsDescription = newsModel?.newsDescription
-        date = newsModel?.date
+        time = newsModel?.time
     }
     
     func viewModel(_ newsModel: DHNewsModel?) -> DHNewsCellViewModel {

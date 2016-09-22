@@ -61,8 +61,8 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="backgroundImageView" destination="VJ2-xz-6Wv" id="lk2-gI-vrz"/>
-                <outlet property="dateLabel" destination="LZ7-Ee-674" id="kL9-8k-B8E"/>
                 <outlet property="newsDescriptionLabel" destination="Kyw-3Y-4fi" id="YQc-S7-dMX"/>
+                <outlet property="timeLabel" destination="LZ7-Ee-674" id="Nhf-UU-RZc"/>
                 <outlet property="titleLabel" destination="GLY-Tc-e8k" id="FD0-A9-1N2"/>
             </connections>
             <point key="canvasLocation" x="73" y="84.5"/>
