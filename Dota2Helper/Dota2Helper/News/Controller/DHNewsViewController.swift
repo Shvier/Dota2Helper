@@ -38,13 +38,21 @@ class DHNewsViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: DHNewsTableViewCell  = tableView.dequeueReusableCell(withIdentifier: kNewsCellReuseIdentifier, for: indexPath) as! DHNewsTableViewCell
+        let cell: DHNewsTableViewCell = tableView.dequeueReusableCell(withIdentifier: kNewsCellReuseIdentifier, for: indexPath) as! DHNewsTableViewCell
         if (dataController?.newsDataSource?.count)! > 0 {
             let newsModel = dataController?.newsDataSource?[indexPath.row] as! DHNewsModel
             let cellViewModel: DHNewsCellViewModel = DHNewsCellViewModel.init(newsModel)
             cell.bindDataWithViewModel(cellViewModel)
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let cell: DHNewsTableViewCell = tableView.cellForRow(at: indexPath) as! DHNewsTableViewCell
+        let newsDetailVC: DHNewsDetailViewController = DHNewsDetailViewController()
+        newsDetailVC.newsCell = cell
+        navigationController?.pushViewController(newsDetailVC, animated: true)
     }
     
     func setContentView() {
