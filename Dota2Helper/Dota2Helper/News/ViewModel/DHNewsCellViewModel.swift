@@ -13,6 +13,7 @@ class DHNewsCellViewModel: NSObject {
 
     var backgroundImageView: UIImageView?
     var nid: String?
+    var date: String?
     var background: String?
     var title: String?
     var newsDescription: String?
@@ -24,6 +25,7 @@ class DHNewsCellViewModel: NSObject {
         let url = URL(string: (newsModel?.background)!)
         backgroundImageView?.kf_setImage(with: url)
         nid = newsModel?.nid
+        date = newsModel?.date
         background = newsModel?.background
         title = newsModel?.title
         newsDescription = newsModel?.newsDescription

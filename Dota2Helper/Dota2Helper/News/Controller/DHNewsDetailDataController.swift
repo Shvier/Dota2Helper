@@ -10,8 +10,11 @@ import UIKit
 
 class DHNewsDetailDataController: NSObject {
 
-    func requestNewsDetailDataWithCallback( callback: @autoclosure @escaping () -> Swift.Void, _ newsCell: DHNewsTableViewCell) {
-        
+    func requestNewsDetailDataUrlWithNewsCell( _ newsCell: DHNewsTableViewCell) -> URLRequest {
+        let parameter: NSDictionary = NSDictionary(objects: [newsCell.viewModel?.date, newsCell.viewModel?.nid], forKeys: ["date" as NSCopying, "nid" as NSCopying])
+        let url: URL = URL(string: kGetNewsDetailUrl)!
+        let request: URLRequest = DHNetworkRequestManager().convertUrlToRequest(urlHeader: url, parameters: parameter)
+        return request
     }
     
 }

@@ -7,20 +7,24 @@
 //
 
 import UIKit
+import WebKit
 
 class DHNewsDetailViewController: UIViewController {
 
     var newsCell: DHNewsTableViewCell?
     var dataController: DHNewsDetailDataController?
+    var webView: WKWebView?
     
     func handleData() {
-        dataController?.requestNewsDetailDataWithCallback(callback: {
-            self.renderWebView()
-        }(), newsCell!)
+        let request: URLRequest = (dataController?.requestNewsDetailDataUrlWithNewsCell(newsCell!))!
+        webView?.load(request)
     }
     
     func renderWebView() {
         
+    }
+    
+    func setContentView() {
     }
     
     func initLifeCycle() {

@@ -20,6 +20,8 @@
 		C0D4D00E1D5DC2FD008F824A /* DHSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D00D1D5DC2FD008F824A /* DHSettingsViewController.swift */; };
 		C0D4D0101D5DC30D008F824A /* DHTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D00F1D5DC30D008F824A /* DHTutorialViewController.swift */; };
 		C0D4D0121D5DC319008F824A /* DHVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D0111D5DC319008F824A /* DHVideoViewController.swift */; };
+		C0E6BF911D94342900872006 /* DHNewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6BF901D94342900872006 /* DHNewsDetailView.swift */; };
+		C0E6BF931D9434D400872006 /* DHNewsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6BF921D9434D400872006 /* DHNewsDetailViewModel.swift */; };
 		C0EB19ED1D94138D0053970A /* DHNewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EB19EC1D94138D0053970A /* DHNewsDetailViewController.swift */; };
 		C0EB19EF1D94165D0053970A /* DHNewsDetailDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EB19EE1D94165D0053970A /* DHNewsDetailDataController.swift */; };
 		C0EC174B1D9010930002AAF4 /* DHNetworkRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EC174A1D9010930002AAF4 /* DHNetworkRequestManager.swift */; };
@@ -50,6 +52,8 @@
 		C0D4D00D1D5DC2FD008F824A /* DHSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHSettingsViewController.swift; sourceTree = "<group>"; };
 		C0D4D00F1D5DC30D008F824A /* DHTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialViewController.swift; sourceTree = "<group>"; };
 		C0D4D0111D5DC319008F824A /* DHVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoViewController.swift; sourceTree = "<group>"; };
+		C0E6BF901D94342900872006 /* DHNewsDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsDetailView.swift; sourceTree = "<group>"; };
+		C0E6BF921D9434D400872006 /* DHNewsDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsDetailViewModel.swift; sourceTree = "<group>"; };
 		C0EB19EC1D94138D0053970A /* DHNewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsDetailViewController.swift; sourceTree = "<group>"; };
 		C0EB19EE1D94165D0053970A /* DHNewsDetailDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsDetailDataController.swift; sourceTree = "<group>"; };
 		C0EC174A1D9010930002AAF4 /* DHNetworkRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNetworkRequestManager.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 				C0EC17501D9026C80002AAF4 /* DHNewsTableViewCell.swift */,
 				C0EC17511D9026C80002AAF4 /* DHNewsTableViewCell.xib */,
 				C06E66411D917640007B1210 /* DHBannerView.swift */,
+				C0E6BF901D94342900872006 /* DHNewsDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -127,6 +132,7 @@
 			children = (
 				C0EC174E1D9025720002AAF4 /* DHNewsCellViewModel.swift */,
 				C06E66431D917781007B1210 /* DHNewsBannerViewModel.swift */,
+				C0E6BF921D9434D400872006 /* DHNewsDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -495,12 +501,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0E6BF931D9434D400872006 /* DHNewsDetailViewModel.swift in Sources */,
 				C0EC17521D9026C80002AAF4 /* DHNewsTableViewCell.swift in Sources */,
 				C0D4D00A1D5DC2E6008F824A /* DHJournalViewController.swift in Sources */,
 				C0EC174B1D9010930002AAF4 /* DHNetworkRequestManager.swift in Sources */,
 				C06E66441D917781007B1210 /* DHNewsBannerViewModel.swift in Sources */,
 				C0D4D00E1D5DC2FD008F824A /* DHSettingsViewController.swift in Sources */,
 				C0EB19ED1D94138D0053970A /* DHNewsDetailViewController.swift in Sources */,
+				C0E6BF911D94342900872006 /* DHNewsDetailView.swift in Sources */,
 				C0D4D0101D5DC30D008F824A /* DHTutorialViewController.swift in Sources */,
 				C0A1AC401D616188005B92A5 /* Constrants.swift in Sources */,
 				C06E66421D917640007B1210 /* DHBannerView.swift in Sources */,

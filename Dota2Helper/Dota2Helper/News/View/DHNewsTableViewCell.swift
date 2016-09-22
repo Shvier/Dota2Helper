@@ -18,15 +18,15 @@ class DHNewsTableViewCell: UITableViewCell {
     @IBOutlet weak var newsDescriptionLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
-    var nid: String?
+    var viewModel: DHNewsCellViewModel?
     
     func bindDataWithViewModel(_ viewModel: DHNewsCellViewModel) {
-        nid = viewModel.nid
-        let url = URL(string: viewModel.background!)
+        self.viewModel = viewModel
+        let url = URL(string: (self.viewModel?.background!)!)
         backgroundImageView.kf_setImage(with: url)
-        titleLabel.text = viewModel.title
-        newsDescriptionLabel.text = viewModel.newsDescription
-        timeLabel.text = viewModel.time
+        titleLabel.text = self.viewModel?.title
+        newsDescriptionLabel.text = self.viewModel?.newsDescription
+        timeLabel.text = self.viewModel?.time
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
