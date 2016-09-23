@@ -10,6 +10,8 @@
 		480894C4116343B8DB2B7B0F /* Pods_Dota2Helper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558B5B80FEC5A194BAC83F8D /* Pods_Dota2Helper.framework */; };
 		C06E66421D917640007B1210 /* DHBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E66411D917640007B1210 /* DHBannerView.swift */; };
 		C06E66441D917781007B1210 /* DHNewsBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E66431D917781007B1210 /* DHNewsBannerViewModel.swift */; };
+		C088DA4D1D9564D400F1329D /* DHBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C088DA4C1D9564D400F1329D /* DHBanner.swift */; };
+		C088DA4F1D95652700F1329D /* DHBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C088DA4E1D95652700F1329D /* DHBannerViewModel.swift */; };
 		C0A1AC401D616188005B92A5 /* Constrants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A1AC3F1D616188005B92A5 /* Constrants.swift */; };
 		C0B7A4C11D8ECC4E008D10A0 /* DHNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B7A4C01D8ECC4E008D10A0 /* DHNewsModel.swift */; };
 		C0D4CFDE1D5DBEF1008F824A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4CFDD1D5DBEF1008F824A /* AppDelegate.swift */; };
@@ -39,6 +41,8 @@
 		5AE8FF62A93E6F949F8DB6AF /* Pods-Dota2Helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dota2Helper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dota2Helper/Pods-Dota2Helper.debug.xcconfig"; sourceTree = "<group>"; };
 		C06E66411D917640007B1210 /* DHBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBannerView.swift; sourceTree = "<group>"; };
 		C06E66431D917781007B1210 /* DHNewsBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsBannerViewModel.swift; sourceTree = "<group>"; };
+		C088DA4C1D9564D400F1329D /* DHBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBanner.swift; sourceTree = "<group>"; };
+		C088DA4E1D95652700F1329D /* DHBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBannerViewModel.swift; sourceTree = "<group>"; };
 		C0A1AC3F1D616188005B92A5 /* Constrants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constrants.swift; sourceTree = "<group>"; };
 		C0B7A4C01D8ECC4E008D10A0 /* DHNewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsModel.swift; sourceTree = "<group>"; };
 		C0D4CFDA1D5DBEF1008F824A /* Dota2Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dota2Helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +126,7 @@
 				C0EC17511D9026C80002AAF4 /* DHNewsTableViewCell.xib */,
 				C06E66411D917640007B1210 /* DHBannerView.swift */,
 				C0E6BF901D94342900872006 /* DHNewsDetailView.swift */,
+				C088DA4C1D9564D400F1329D /* DHBanner.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 				C0EC174E1D9025720002AAF4 /* DHNewsCellViewModel.swift */,
 				C06E66431D917781007B1210 /* DHNewsBannerViewModel.swift */,
 				C0E6BF921D9434D400872006 /* DHNewsDetailViewModel.swift */,
+				C088DA4E1D95652700F1329D /* DHBannerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -508,12 +514,14 @@
 				C0EB19ED1D94138D0053970A /* DHNewsDetailViewController.swift in Sources */,
 				C0E6BF911D94342900872006 /* DHNewsDetailView.swift in Sources */,
 				C0D4D0101D5DC30D008F824A /* DHTutorialViewController.swift in Sources */,
+				C088DA4D1D9564D400F1329D /* DHBanner.swift in Sources */,
 				C0A1AC401D616188005B92A5 /* Constrants.swift in Sources */,
 				C06E66421D917640007B1210 /* DHBannerView.swift in Sources */,
 				C0D4D00C1D5DC2F1008F824A /* DHNewsViewController.swift in Sources */,
 				C0EB19EF1D94165D0053970A /* DHNewsDetailDataController.swift in Sources */,
 				C0EC174F1D9025720002AAF4 /* DHNewsCellViewModel.swift in Sources */,
 				C0EC174D1D901D4D0002AAF4 /* DHNewsDataController.swift in Sources */,
+				C088DA4F1D95652700F1329D /* DHBannerViewModel.swift in Sources */,
 				C0D4D0121D5DC319008F824A /* DHVideoViewController.swift in Sources */,
 				C0B7A4C11D8ECC4E008D10A0 /* DHNewsModel.swift in Sources */,
 				C0D4CFDE1D5DBEF1008F824A /* AppDelegate.swift in Sources */,

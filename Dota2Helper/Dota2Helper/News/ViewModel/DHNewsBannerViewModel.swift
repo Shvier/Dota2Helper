@@ -16,6 +16,7 @@ class DHNewsBannerViewModel: NSObject {
 
     var scrollView: UIScrollView?
     var bannerCount: Int?
+    lazy var banners: NSMutableArray? = {[]} ()
     
     init(banners: [DHNewsModel]) {
         super.init()
@@ -28,10 +29,11 @@ class DHNewsBannerViewModel: NSObject {
         
         var index = 0;
         for banner in banners {
-            let imageView = UIImageView(frame: CGRect(x: kBannerWidth*CGFloat(index), y: 0, width: kBannerWidth, height: kBannerHeight))
-            let url = URL(string: banner.background!)
-            imageView.kf_setImage(with: url)
-            scrollView?.addSubview(imageView)
+            let bannerViewModel: DHBannerViewModel = DHBannerViewModel(banner: banner)
+            let bannerView: DHBanner = DHBanner.init(frame: CGRect(x: kBannerWidth*CGFloat(index), y: 0, width: kBannerWidth, height: kBannerHeight))
+            bannerView.bindDataWithViewModel(viewModel: bannerViewModel)
+            scrollView?.addSubview(bannerView)
+            self.banners?.add(bannerView)
             index += 1
         }
         let lastImageView = UIImageView(frame: CGRect(x: kBannerWidth*CGFloat(index), y: 0, width: kBannerWidth, height: kBannerHeight))

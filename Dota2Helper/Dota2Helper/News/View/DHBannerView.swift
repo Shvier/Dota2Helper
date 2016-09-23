@@ -33,7 +33,7 @@ class DHBannerView: UIView, UIScrollViewDelegate {
         }
     }
     
-    func bindDataWithViewModel(_ viewModel: DHNewsBannerViewModel) {
+    func bindDataWithViewModel(viewModel: DHNewsBannerViewModel) {
         bannerCount = viewModel.bannerCount
         scrollView = viewModel.scrollView
         scrollView?.delegate = self

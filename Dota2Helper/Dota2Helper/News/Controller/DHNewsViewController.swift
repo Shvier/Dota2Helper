@@ -24,7 +24,7 @@ class DHNewsViewController: UITableViewController {
         let banners = NSArray(array: (dataController?.bannerDataSource)!)
         let headerViewModel: DHNewsBannerViewModel = DHNewsBannerViewModel(banners: banners as! [DHNewsModel]);
         bannerView = DHBannerView(frame: CGRect(x: 0, y: 0, width: kBannerWidth, height: kBannerHeight))
-        bannerView?.bindDataWithViewModel(headerViewModel)
+        bannerView?.bindDataWithViewModel(viewModel: headerViewModel)
         tableView.tableHeaderView = bannerView
         tableView.reloadData()
     }
