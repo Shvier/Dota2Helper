@@ -11,6 +11,7 @@ import Kingfisher
 
 class DHNewsCellViewModel: NSObject {
 
+    var newsModel: DHNewsModel?
     var backgroundImageView: UIImageView?
     var nid: String?
     var date: String?
@@ -22,6 +23,7 @@ class DHNewsCellViewModel: NSObject {
     init(newsModel: DHNewsModel?) {
         super.init()
         
+        self.newsModel = newsModel
         let url = URL(string: (newsModel?.background)!)
         backgroundImageView?.kf_setImage(with: url)
         nid = newsModel?.nid

@@ -10,13 +10,13 @@ import UIKit
 
 class DHNewsDetailViewController: UIViewController {
 
-    var newsCell: DHNewsTableViewCell?
+    var newsModel: DHNewsModel?
     var dataController: DHNewsDetailDataController?
     var newsDetailView: DHNewsDetailView?
     
     func handleData() {
         dataController = DHNewsDetailDataController()
-        let request: URLRequest = (dataController?.requestNewsDetailDataUrlWithNewsCell(newsCell: newsCell!))!
+        let request: URLRequest = (dataController?.requestNewsDetailDataUrlWithNewsModel(newsModel: newsModel!))!
         let viewModel: DHNewsDetailViewModel = DHNewsDetailViewModel(request: request)
         newsDetailView = DHNewsDetailView(frame: CGRect(x: 0, y: 0, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight))
         newsDetailView?.bindDataWithViewModel(viewModel: viewModel)

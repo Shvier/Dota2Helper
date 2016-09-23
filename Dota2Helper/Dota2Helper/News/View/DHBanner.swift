@@ -14,6 +14,8 @@ class DHBanner: UIView {
     var nid: String?
     var date: String?
     var backgroundImage: UIImageView?
+    var newsModel: DHNewsModel?
+    var callback: (() -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,10 +28,21 @@ class DHBanner: UIView {
     }
     
     func bindDataWithViewModel(viewModel: DHBannerViewModel) {
+        self.newsModel = viewModel.newsModel
         self.nid = viewModel.nid
         self.date = viewModel.date
         let url: URL = URL(string: viewModel.background!)!
         self.backgroundImage?.kf_setImage(with: url)
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DHBanner.loadRequest))
+        self.addGestureRecognizer(tap)
+    }
+    
+    func loadRequest() {
+        callback!()
     }
 
+    func setTapCallback(callback: (() -> Void)) {
+        callback()
+    }
 }

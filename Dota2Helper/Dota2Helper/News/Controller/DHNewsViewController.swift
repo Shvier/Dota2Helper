@@ -25,8 +25,20 @@ class DHNewsViewController: UITableViewController {
         let headerViewModel: DHNewsBannerViewModel = DHNewsBannerViewModel(banners: banners as! [DHNewsModel]);
         bannerView = DHBannerView(frame: CGRect(x: 0, y: 0, width: kBannerWidth, height: kBannerHeight))
         bannerView?.bindDataWithViewModel(viewModel: headerViewModel)
+        let array = NSArray(array: (bannerView?.banners)!)
+        for banner in array as! [DHBanner] {
+            banner.callback = ({
+                self.loadToDetailVCWithNewsModel(newsModel: banner.newsModel!)
+            })
+        }
         tableView.tableHeaderView = bannerView
         tableView.reloadData()
+    }
+    
+    func loadToDetailVCWithNewsModel(newsModel: DHNewsModel) {
+        let newsDetailVC: DHNewsDetailViewController = DHNewsDetailViewController()
+        newsDetailVC.newsModel = newsModel;
+        navigationController?.pushViewController(newsDetailVC, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,7 +54,7 @@ class DHNewsViewController: UITableViewController {
         if (dataController?.newsDataSource?.count)! > 0 {
             let newsModel = dataController?.newsDataSource?[indexPath.row] as! DHNewsModel
             let cellViewModel: DHNewsCellViewModel = DHNewsCellViewModel.init(newsModel: newsModel)
-            cell.bindDataWithViewModel(cellViewModel)
+            cell.bindDataWithViewModel(viewModel: cellViewModel)
         }
         return cell
     }
@@ -50,9 +62,7 @@ class DHNewsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let cell: DHNewsTableViewCell = tableView.cellForRow(at: indexPath) as! DHNewsTableViewCell
-        let newsDetailVC: DHNewsDetailViewController = DHNewsDetailViewController()
-        newsDetailVC.newsCell = cell
-        navigationController?.pushViewController(newsDetailVC, animated: true)
+        loadToDetailVCWithNewsModel(newsModel: cell.newsModel!)
     }
     
     func setContentView() {

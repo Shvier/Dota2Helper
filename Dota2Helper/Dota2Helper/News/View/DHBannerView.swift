@@ -14,6 +14,7 @@ class DHBannerView: UIView, UIScrollViewDelegate {
     var layout: CGRect?
     var scrollView: UIScrollView?
     var bannerCount: Int?
+    var banners: NSMutableArray?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,6 +35,7 @@ class DHBannerView: UIView, UIScrollViewDelegate {
     }
     
     func bindDataWithViewModel(viewModel: DHNewsBannerViewModel) {
+        self.banners = viewModel.banners
         bannerCount = viewModel.bannerCount
         scrollView = viewModel.scrollView
         scrollView?.delegate = self
