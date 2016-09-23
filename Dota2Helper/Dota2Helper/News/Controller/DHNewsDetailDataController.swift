@@ -11,9 +11,9 @@ import UIKit
 class DHNewsDetailDataController: NSObject {
 
     func requestNewsDetailDataUrlWithNewsCell(newsCell: DHNewsTableViewCell) -> URLRequest {
-        let parameter: NSDictionary = NSDictionary(objects: [newsCell.viewModel?.date!, newsCell.viewModel?.nid!], forKeys: ["date" as NSCopying, "nid" as NSCopying])
+        let parameter: NSArray = NSArray(array: [newsCell.viewModel?.date, newsCell.viewModel?.nid])
         let url: URL = URL(string: kGetNewsDetailUrl)!
-        let request: URLRequest = DHNetworkRequestManager().convertUrlToRequest(urlHeader: url, parameters: parameter)
+        let request: URLRequest = DHNetworkRequestManager().convertUrlToGETRequset(urlHeader: url, parameters: parameter)
         return request
     }
     

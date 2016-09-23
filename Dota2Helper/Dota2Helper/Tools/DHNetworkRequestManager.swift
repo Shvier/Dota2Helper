@@ -8,16 +8,24 @@
 
 import UIKit
 
+enum RequestType {
+    case POST
+    case GET
+}
+
 class DHNetworkRequestManager: NSObject {
 
     static let sharedInstance = DHNetworkRequestManager()
     
-    func requestWithUrl(type: String?, urlHeader: URL?, parameters: NSDictionary?, completion: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
+    func requestWithUrl(type: RequestType, urlHeader: URL?, parameters: Any?, completion: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
         let request: URLRequest?
-        if type == "POST" {
-            request = convertUrlToPOSTRequest(urlHeader: urlHeader, parameters: parameters)
-        } else if type == "GET" {
-            
+        switch type {
+        case .POST:
+            request = convertUrlToPOSTRequest(urlHeader: urlHeader, parameters: parameters as! NSDictionary?)
+            break;
+        case .GET:
+            request = convertUrlToGETRequset(urlHeader: urlHeader, parameters: parameters as! NSArray?)
+            break;
         }
         let sessionConfig: URLSessionConfiguration = URLSessionConfiguration.default
         let session: URLSession = URLSession(configuration: sessionConfig)
@@ -38,7 +46,7 @@ class DHNetworkRequestManager: NSObject {
     func convertUrlParametersToGETUrl(parameters: NSArray?) -> String {
         let parameList = NSMutableArray()
         for subString in parameters! {
-            parameList.add(subString)
+            parameList.add(subString as! String)
         }
         let paramString = parameList.componentsJoined(by: "/")
         return paramString
@@ -57,8 +65,11 @@ class DHNetworkRequestManager: NSObject {
         return request
     }
     
-    func convertUrlToGETRequset(url: URL?) -> URLRequest {
-        var request = URLRequest(url: url!)
+    func convertUrlToGETRequset(urlHeader: URL?, parameters: NSArray?) -> URLRequest {
+        let paramString = convertUrlParametersToGETUrl(parameters: parameters)
+        let urlString: String = urlHeader!.absoluteString + paramString
+        let url: URL = URL(string: urlString)!
+        var request: URLRequest = URLRequest(url: url)
         request.httpMethod = "GET"
         return request;
     }
