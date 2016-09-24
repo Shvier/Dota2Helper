@@ -11,7 +11,8 @@ import UIKit
 class DHNewsViewController: UITableViewController {
 
     var dataController: DHNewsDataController?
-    var bannerView: DHBannerView?
+    var headerView: DHHeaderView?
+    var footerView: DHFooterView?
     
     func handleNewsData() {
         dataController = DHNewsDataController()
@@ -21,17 +22,20 @@ class DHNewsViewController: UITableViewController {
     }
     
     func renderTableViewCell() {
+        headerView = DHHeaderView(frame: CGRect(x: 0, y: 0, width: kBannerWidth, height: kBannerHeight))
+        footerView = UINib(nibName: "DHFooterView", bundle: nil) .instantiate(withOwner: nil, options: nil).first as! DHFooterView?
+        tableView.tableHeaderView = headerView
+        tableView.tableFooterView = footerView
+
         let banners = NSArray(array: (dataController?.bannerDataSource)!)
         let headerViewModel: DHNewsBannerViewModel = DHNewsBannerViewModel(banners: banners as! [DHNewsModel]);
-        bannerView = DHBannerView(frame: CGRect(x: 0, y: 0, width: kBannerWidth, height: kBannerHeight))
-        bannerView?.bindDataWithViewModel(viewModel: headerViewModel)
-        let array = NSArray(array: (bannerView?.banners)!)
+        headerView?.bindDataWithViewModel(viewModel: headerViewModel)
+        let array = NSArray(array: (headerView?.banners)!)
         for banner in array as! [DHBanner] {
             banner.callback = ({
                 self.loadToDetailVCWithNewsModel(newsModel: banner.newsModel!)
             })
         }
-        tableView.tableHeaderView = bannerView
         tableView.reloadData()
     }
     

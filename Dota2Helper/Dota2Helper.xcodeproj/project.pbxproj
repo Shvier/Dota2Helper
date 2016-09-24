@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		480894C4116343B8DB2B7B0F /* Pods_Dota2Helper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558B5B80FEC5A194BAC83F8D /* Pods_Dota2Helper.framework */; };
-		C06E66421D917640007B1210 /* DHBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E66411D917640007B1210 /* DHBannerView.swift */; };
+		C06E66421D917640007B1210 /* DHHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E66411D917640007B1210 /* DHHeaderView.swift */; };
 		C06E66441D917781007B1210 /* DHNewsBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E66431D917781007B1210 /* DHNewsBannerViewModel.swift */; };
 		C088DA4D1D9564D400F1329D /* DHBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C088DA4C1D9564D400F1329D /* DHBanner.swift */; };
 		C088DA4F1D95652700F1329D /* DHBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C088DA4E1D95652700F1329D /* DHBannerViewModel.swift */; };
@@ -33,13 +33,15 @@
 		C0EC17531D9026C80002AAF4 /* DHNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0EC17511D9026C80002AAF4 /* DHNewsTableViewCell.xib */; };
 		C0EC967F1D8FCA8100E1557E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EC967D1D8FCA8100E1557E /* Fabric.framework */; };
 		C0EC96801D8FCA8100E1557E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EC967E1D8FCA8100E1557E /* Crashlytics.framework */; };
+		C0FF582E1D96053A0064B698 /* DHFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FF582D1D96053A0064B698 /* DHFooterView.swift */; };
+		C0FF58301D96054B0064B698 /* DHFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0FF582F1D96054B0064B698 /* DHFooterView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		46FADE68FCE278AF742B319D /* Pods-Dota2Helper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dota2Helper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dota2Helper/Pods-Dota2Helper.release.xcconfig"; sourceTree = "<group>"; };
 		558B5B80FEC5A194BAC83F8D /* Pods_Dota2Helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dota2Helper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE8FF62A93E6F949F8DB6AF /* Pods-Dota2Helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dota2Helper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dota2Helper/Pods-Dota2Helper.debug.xcconfig"; sourceTree = "<group>"; };
-		C06E66411D917640007B1210 /* DHBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBannerView.swift; sourceTree = "<group>"; };
+		C06E66411D917640007B1210 /* DHHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHHeaderView.swift; sourceTree = "<group>"; };
 		C06E66431D917781007B1210 /* DHNewsBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsBannerViewModel.swift; sourceTree = "<group>"; };
 		C088DA4C1D9564D400F1329D /* DHBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBanner.swift; sourceTree = "<group>"; };
 		C088DA4E1D95652700F1329D /* DHBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBannerViewModel.swift; sourceTree = "<group>"; };
@@ -66,6 +68,8 @@
 		C0EC17511D9026C80002AAF4 /* DHNewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHNewsTableViewCell.xib; sourceTree = "<group>"; };
 		C0EC967D1D8FCA8100E1557E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		C0EC967E1D8FCA8100E1557E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		C0FF582D1D96053A0064B698 /* DHFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHFooterView.swift; sourceTree = "<group>"; };
+		C0FF582F1D96054B0064B698 /* DHFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHFooterView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,9 +128,11 @@
 			children = (
 				C0EC17501D9026C80002AAF4 /* DHNewsTableViewCell.swift */,
 				C0EC17511D9026C80002AAF4 /* DHNewsTableViewCell.xib */,
-				C06E66411D917640007B1210 /* DHBannerView.swift */,
+				C06E66411D917640007B1210 /* DHHeaderView.swift */,
 				C0E6BF901D94342900872006 /* DHNewsDetailView.swift */,
 				C088DA4C1D9564D400F1329D /* DHBanner.swift */,
+				C0FF582D1D96053A0064B698 /* DHFooterView.swift */,
+				C0FF582F1D96054B0064B698 /* DHFooterView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -434,6 +440,7 @@
 				C0EC17531D9026C80002AAF4 /* DHNewsTableViewCell.xib in Resources */,
 				C0D4CFE01D5DBEF1008F824A /* Assets.xcassets in Resources */,
 				C0D4CFE31D5DBEF1008F824A /* LaunchScreen.storyboard in Resources */,
+				C0FF58301D96054B0064B698 /* DHFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,7 +523,8 @@
 				C0D4D0101D5DC30D008F824A /* DHTutorialViewController.swift in Sources */,
 				C088DA4D1D9564D400F1329D /* DHBanner.swift in Sources */,
 				C0A1AC401D616188005B92A5 /* Constrants.swift in Sources */,
-				C06E66421D917640007B1210 /* DHBannerView.swift in Sources */,
+				C06E66421D917640007B1210 /* DHHeaderView.swift in Sources */,
+				C0FF582E1D96053A0064B698 /* DHFooterView.swift in Sources */,
 				C0D4D00C1D5DC2F1008F824A /* DHNewsViewController.swift in Sources */,
 				C0EB19EF1D94165D0053970A /* DHNewsDetailDataController.swift in Sources */,
 				C0EC174F1D9025720002AAF4 /* DHNewsCellViewModel.swift in Sources */,
@@ -634,6 +642,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AE8FF62A93E6F949F8DB6AF /* Pods-Dota2Helper.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = PGNG7584J8;
@@ -659,6 +668,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 46FADE68FCE278AF742B319D /* Pods-Dota2Helper.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PGNG7584J8;
 				FRAMEWORK_SEARCH_PATHS = (

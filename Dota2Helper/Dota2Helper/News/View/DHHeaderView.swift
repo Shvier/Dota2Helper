@@ -1,5 +1,5 @@
 //
-//  DHBannerView.swift
+//  DHHeaderView.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 9/20/16.
@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class DHBannerView: UIView, UIScrollViewDelegate {
+class DHHeaderView: UIView, UIScrollViewDelegate {
     
     var layout: CGRect?
     var scrollView: UIScrollView?

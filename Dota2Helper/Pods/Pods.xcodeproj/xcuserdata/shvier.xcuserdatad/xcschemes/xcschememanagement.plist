@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Dota2Helper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>ACFF440C53C280E253935EF6954BB20A</key>
+		<key>29DD99664D189A7CA206368F493B1E0B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>BDAF27BE15DBEE3F66D84079233BDDFA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F5BA5C2C38A9D724C1402DE9B7234A6E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
