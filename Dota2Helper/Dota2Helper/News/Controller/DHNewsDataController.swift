@@ -42,8 +42,21 @@ class DHNewsDataController: NSObject {
         }
     }
     
-    func requestMoreNews( callback: @autoclosure @escaping () -> Void) {
-        
+    func requestMoreNews( callback: @autoclosure @escaping () -> Void, lastNid: String) {
+        let url = URL(string: kLoadMoreNewsUrl)
+        let parameter: [String] = [lastNid]
+        DHNetworkRequestManager.sharedInstance.requestWithUrl(type: .GET, urlHeader: url, parameters: parameter) { (Data, URLResponse, Error) in
+            if Error == nil {
+                do {
+                    let result = try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                    
+                } catch {
+                    DHLog("catch:\(URLResponse!)")
+                }
+            } else {
+                DHLog("error:\(Error!)")
+            }
+        }
     }
     
 }

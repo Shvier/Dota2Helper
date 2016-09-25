@@ -10,12 +10,17 @@ import UIKit
 
 class DHJournalViewController: UITableViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func initLifeCycle() {
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.black
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         navigationItem.title = "掌刀"
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+     
+        initLifeCycle()
     }
     
 }
