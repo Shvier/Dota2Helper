@@ -7,12 +7,12 @@
 //
 
 import UIKit
+import MJRefresh
 
 class DHNewsViewController: UITableViewController {
 
     var dataController: DHNewsDataController?
     var headerView: DHHeaderView?
-    var footerView: DHFooterView?
     
     func handleNewsData() {
         dataController = DHNewsDataController()
@@ -23,9 +23,10 @@ class DHNewsViewController: UITableViewController {
     
     func renderTableViewCell() {
         headerView = DHHeaderView(frame: CGRect(x: 0, y: 0, width: kBannerWidth, height: kBannerHeight))
-        footerView = UINib(nibName: "DHFooterView", bundle: nil) .instantiate(withOwner: nil, options: nil).first as! DHFooterView?
         tableView.tableHeaderView = headerView
-        tableView.tableFooterView = footerView
+        tableView.tableFooterView = MJRefreshFooter(refreshingBlock: { 
+            
+        })
 
         let banners = NSArray(array: (dataController?.bannerDataSource)!)
         let headerViewModel: DHNewsBannerViewModel = DHNewsBannerViewModel(banners: banners as! [DHNewsModel]);

@@ -33,8 +33,6 @@
 		C0EC17531D9026C80002AAF4 /* DHNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0EC17511D9026C80002AAF4 /* DHNewsTableViewCell.xib */; };
 		C0EC967F1D8FCA8100E1557E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EC967D1D8FCA8100E1557E /* Fabric.framework */; };
 		C0EC96801D8FCA8100E1557E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EC967E1D8FCA8100E1557E /* Crashlytics.framework */; };
-		C0FF582E1D96053A0064B698 /* DHFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FF582D1D96053A0064B698 /* DHFooterView.swift */; };
-		C0FF58301D96054B0064B698 /* DHFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0FF582F1D96054B0064B698 /* DHFooterView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,8 +66,6 @@
 		C0EC17511D9026C80002AAF4 /* DHNewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHNewsTableViewCell.xib; sourceTree = "<group>"; };
 		C0EC967D1D8FCA8100E1557E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		C0EC967E1D8FCA8100E1557E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		C0FF582D1D96053A0064B698 /* DHFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHFooterView.swift; sourceTree = "<group>"; };
-		C0FF582F1D96054B0064B698 /* DHFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHFooterView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +127,6 @@
 				C06E66411D917640007B1210 /* DHHeaderView.swift */,
 				C0E6BF901D94342900872006 /* DHNewsDetailView.swift */,
 				C088DA4C1D9564D400F1329D /* DHBanner.swift */,
-				C0FF582D1D96053A0064B698 /* DHFooterView.swift */,
-				C0FF582F1D96054B0064B698 /* DHFooterView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -440,7 +434,6 @@
 				C0EC17531D9026C80002AAF4 /* DHNewsTableViewCell.xib in Resources */,
 				C0D4CFE01D5DBEF1008F824A /* Assets.xcassets in Resources */,
 				C0D4CFE31D5DBEF1008F824A /* LaunchScreen.storyboard in Resources */,
-				C0FF58301D96054B0064B698 /* DHFooterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,7 +517,6 @@
 				C088DA4D1D9564D400F1329D /* DHBanner.swift in Sources */,
 				C0A1AC401D616188005B92A5 /* Constrants.swift in Sources */,
 				C06E66421D917640007B1210 /* DHHeaderView.swift in Sources */,
-				C0FF582E1D96053A0064B698 /* DHFooterView.swift in Sources */,
 				C0D4D00C1D5DC2F1008F824A /* DHNewsViewController.swift in Sources */,
 				C0EB19EF1D94165D0053970A /* DHNewsDetailDataController.swift in Sources */,
 				C0EC174F1D9025720002AAF4 /* DHNewsCellViewModel.swift in Sources */,

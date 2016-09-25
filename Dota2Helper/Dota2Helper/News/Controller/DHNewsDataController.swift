@@ -32,6 +32,7 @@ class DHNewsDataController: NSObject {
                         self.newsDataSource?.add(news)
                     }
                     callback()
+                    print((self.newsDataSource?[(self.newsDataSource?.count)!-1] as! DHNewsModel).nid)
                 } catch {
                     DHLog("catch:\(URLResponse!)")
                 }
@@ -39,6 +40,10 @@ class DHNewsDataController: NSObject {
                 DHLog("error:\(Error!)")
             }
         }
+    }
+    
+    func requestMoreNews( callback: @autoclosure @escaping () -> Void) {
+        
     }
     
 }
