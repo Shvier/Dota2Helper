@@ -8,7 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		480894C4116343B8DB2B7B0F /* Pods_Dota2Helper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558B5B80FEC5A194BAC83F8D /* Pods_Dota2Helper.framework */; };
+		C0004BA01D992804007EF3EE /* DHJournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0004B9F1D992804007EF3EE /* DHJournalModel.swift */; };
 		C0122E3F1D97FD880000D249 /* DHJournalDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0122E3E1D97FD880000D249 /* DHJournalDataController.swift */; };
+		C0287D351D994D2C009D878E /* DHJournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D331D994D2C009D878E /* DHJournalTableViewCell.swift */; };
+		C0287D361D994D2C009D878E /* DHJournalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0287D341D994D2C009D878E /* DHJournalTableViewCell.xib */; };
+		C0287D3A1D994D66009D878E /* DHJournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D391D994D66009D878E /* DHJournalViewModel.swift */; };
 		C06E66421D917640007B1210 /* DHHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E66411D917640007B1210 /* DHHeaderView.swift */; };
 		C06E66441D917781007B1210 /* DHNewsBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E66431D917781007B1210 /* DHNewsBannerViewModel.swift */; };
 		C088DA4D1D9564D400F1329D /* DHBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C088DA4C1D9564D400F1329D /* DHBanner.swift */; };
@@ -40,7 +44,11 @@
 		46FADE68FCE278AF742B319D /* Pods-Dota2Helper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dota2Helper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dota2Helper/Pods-Dota2Helper.release.xcconfig"; sourceTree = "<group>"; };
 		558B5B80FEC5A194BAC83F8D /* Pods_Dota2Helper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dota2Helper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AE8FF62A93E6F949F8DB6AF /* Pods-Dota2Helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dota2Helper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dota2Helper/Pods-Dota2Helper.debug.xcconfig"; sourceTree = "<group>"; };
+		C0004B9F1D992804007EF3EE /* DHJournalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalModel.swift; sourceTree = "<group>"; };
 		C0122E3E1D97FD880000D249 /* DHJournalDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDataController.swift; sourceTree = "<group>"; };
+		C0287D331D994D2C009D878E /* DHJournalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalTableViewCell.swift; sourceTree = "<group>"; };
+		C0287D341D994D2C009D878E /* DHJournalTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHJournalTableViewCell.xib; sourceTree = "<group>"; };
+		C0287D391D994D66009D878E /* DHJournalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalViewModel.swift; sourceTree = "<group>"; };
 		C06E66411D917640007B1210 /* DHHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHHeaderView.swift; sourceTree = "<group>"; };
 		C06E66431D917781007B1210 /* DHNewsBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsBannerViewModel.swift; sourceTree = "<group>"; };
 		C088DA4C1D9564D400F1329D /* DHBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBanner.swift; sourceTree = "<group>"; };
@@ -95,6 +103,7 @@
 		C0B7A4B11D8ECC18008D10A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C0004B9F1D992804007EF3EE /* DHJournalModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -102,6 +111,8 @@
 		C0B7A4B21D8ECC18008D10A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C0287D331D994D2C009D878E /* DHJournalTableViewCell.swift */,
+				C0287D341D994D2C009D878E /* DHJournalTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -109,6 +120,7 @@
 		C0B7A4B31D8ECC18008D10A0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C0287D391D994D66009D878E /* DHJournalViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -435,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0EC17531D9026C80002AAF4 /* DHNewsTableViewCell.xib in Resources */,
+				C0287D361D994D2C009D878E /* DHJournalTableViewCell.xib in Resources */,
 				C0D4CFE01D5DBEF1008F824A /* Assets.xcassets in Resources */,
 				C0D4CFE31D5DBEF1008F824A /* LaunchScreen.storyboard in Resources */,
 			);
@@ -514,13 +527,16 @@
 				C0D4D00A1D5DC2E6008F824A /* DHJournalViewController.swift in Sources */,
 				C0EC174B1D9010930002AAF4 /* DHNetworkRequestManager.swift in Sources */,
 				C06E66441D917781007B1210 /* DHNewsBannerViewModel.swift in Sources */,
+				C0287D3A1D994D66009D878E /* DHJournalViewModel.swift in Sources */,
 				C0D4D00E1D5DC2FD008F824A /* DHSettingsViewController.swift in Sources */,
 				C0EB19ED1D94138D0053970A /* DHNewsDetailViewController.swift in Sources */,
 				C0E6BF911D94342900872006 /* DHNewsDetailView.swift in Sources */,
 				C0D4D0101D5DC30D008F824A /* DHTutorialViewController.swift in Sources */,
+				C0287D351D994D2C009D878E /* DHJournalTableViewCell.swift in Sources */,
 				C088DA4D1D9564D400F1329D /* DHBanner.swift in Sources */,
 				C0A1AC401D616188005B92A5 /* Constrants.swift in Sources */,
 				C06E66421D917640007B1210 /* DHHeaderView.swift in Sources */,
+				C0004BA01D992804007EF3EE /* DHJournalModel.swift in Sources */,
 				C0D4D00C1D5DC2F1008F824A /* DHNewsViewController.swift in Sources */,
 				C0EB19EF1D94165D0053970A /* DHNewsDetailDataController.swift in Sources */,
 				C0EC174F1D9025720002AAF4 /* DHNewsCellViewModel.swift in Sources */,

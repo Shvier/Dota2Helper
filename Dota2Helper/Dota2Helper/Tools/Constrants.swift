@@ -10,6 +10,7 @@ import Foundation
 
 let kNavigationHeight = 44
 let kNewsCellReuseIdentifier: String = "NewsTableViewCell"
+let kJournalCellReuseIdentifier: String = "JournalTableViewCell"
 
 // refresh news
 let kRefreshNewsUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/news/refresh"

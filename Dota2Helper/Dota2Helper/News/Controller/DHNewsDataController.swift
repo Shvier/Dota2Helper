@@ -15,7 +15,7 @@ class DHNewsDataController: NSObject {
     
     func requestNewsDataWithCallback( callback: @autoclosure @escaping () -> Swift.Void) {
         let url = URL(string: kRefreshNewsUrl)
-        DHNetworkRequestManager.sharedInstance.requestWithUrl(type: .POST, urlHeader: url, parameters: nil) { (Data, URLResponse, Error) in
+        DHNetworkRequestManager.sharedInstance.requestWithUrl(type: .GET, urlHeader: url, parameters: nil) { (Data, URLResponse, Error) in
             if Error == nil {
                 do {
                     let result = try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
@@ -32,7 +32,6 @@ class DHNewsDataController: NSObject {
                         self.newsDataSource?.add(news)
                     }
                     callback()
-                    print((self.newsDataSource?[(self.newsDataSource?.count)!-1] as! DHNewsModel).nid)
                 } catch {
                     DHLog("catch:\(URLResponse!)")
                 }
@@ -49,7 +48,7 @@ class DHNewsDataController: NSObject {
             if Error == nil {
                 do {
                     let result = try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                    
+                    print("result:\(result)")
                 } catch {
                     DHLog("catch:\(URLResponse!)")
                 }

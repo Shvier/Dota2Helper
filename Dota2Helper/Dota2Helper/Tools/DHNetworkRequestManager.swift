@@ -34,22 +34,31 @@ class DHNetworkRequestManager: NSObject {
     }
     
     func convertUrlParametersToPOSTUrl(parameters: NSDictionary?) -> String {
-        let paramList = NSMutableArray()
-        for subDict in parameters! {
-            let tmpString = "\(subDict.0)=\(subDict.1)"
-            paramList.add(tmpString)
+        if parameters != nil {
+            let paramList = NSMutableArray()
+            for subDict in parameters! {
+                let tmpString = "\(subDict.0)=\(subDict.1)"
+                paramList.add(tmpString)
+            }
+            let paramString = paramList.componentsJoined(by: "&")
+            return paramString
+        } else {
+            return ""
         }
-        let paramString = paramList.componentsJoined(by: "&")
-        return paramString
     }
     
     func convertUrlParametersToGETUrl(parameters: NSArray?) -> String {
-        let parameList = NSMutableArray()
-        for subString in parameters! {
-            parameList.add(subString as! String)
+        if parameters != nil {
+            let parameList = NSMutableArray()
+            for subString in parameters! {
+                parameList.add(subString as! String)
+            }
+            let paramString = parameList.componentsJoined(by: "/")
+            return paramString
+
+        } else {
+            return ""
         }
-        let paramString = parameList.componentsJoined(by: "/")
-        return paramString
     }
     
     func convertUrlToPOSTRequest(urlHeader: URL?, parameters: NSDictionary?) -> URLRequest {
