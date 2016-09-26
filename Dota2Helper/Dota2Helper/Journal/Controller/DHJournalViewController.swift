@@ -36,7 +36,7 @@ class DHJournalViewController: UITableViewController {
         if (dataController?.newsDataSource?.count)! > 0 {
             let journalModel = dataController?.newsDataSource?[indexPath.row] as! DHJournalModel
             let cellViewModel: DHJournalViewModel = DHJournalViewModel(journal: journalModel)
-            cell.bindDateWithViewModel(viewModel: cellViewModel)
+            cell.bindDataWithViewModel(viewModel: cellViewModel)
         }
         return cell
     }

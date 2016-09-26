@@ -13,6 +13,10 @@
 		C0287D351D994D2C009D878E /* DHJournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D331D994D2C009D878E /* DHJournalTableViewCell.swift */; };
 		C0287D361D994D2C009D878E /* DHJournalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0287D341D994D2C009D878E /* DHJournalTableViewCell.xib */; };
 		C0287D3A1D994D66009D878E /* DHJournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D391D994D66009D878E /* DHJournalViewModel.swift */; };
+		C0287D3E1D99578F009D878E /* DHJournalDetailDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D3D1D99578F009D878E /* DHJournalDetailDataController.swift */; };
+		C0287D411D9957D9009D878E /* DHJournalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D3F1D9957D9009D878E /* DHJournalDetailViewController.swift */; };
+		C0287D441D9958D6009D878E /* DHJournalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D431D9958D6009D878E /* DHJournalDetailView.swift */; };
+		C0287D461D995AFE009D878E /* DHJournalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D451D995AFE009D878E /* DHJournalDetailViewModel.swift */; };
 		C06E66421D917640007B1210 /* DHHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E66411D917640007B1210 /* DHHeaderView.swift */; };
 		C06E66441D917781007B1210 /* DHNewsBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E66431D917781007B1210 /* DHNewsBannerViewModel.swift */; };
 		C088DA4D1D9564D400F1329D /* DHBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C088DA4C1D9564D400F1329D /* DHBanner.swift */; };
@@ -49,6 +53,10 @@
 		C0287D331D994D2C009D878E /* DHJournalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalTableViewCell.swift; sourceTree = "<group>"; };
 		C0287D341D994D2C009D878E /* DHJournalTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHJournalTableViewCell.xib; sourceTree = "<group>"; };
 		C0287D391D994D66009D878E /* DHJournalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalViewModel.swift; sourceTree = "<group>"; };
+		C0287D3D1D99578F009D878E /* DHJournalDetailDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDetailDataController.swift; sourceTree = "<group>"; };
+		C0287D3F1D9957D9009D878E /* DHJournalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDetailViewController.swift; sourceTree = "<group>"; };
+		C0287D431D9958D6009D878E /* DHJournalDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDetailView.swift; sourceTree = "<group>"; };
+		C0287D451D995AFE009D878E /* DHJournalDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDetailViewModel.swift; sourceTree = "<group>"; };
 		C06E66411D917640007B1210 /* DHHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHHeaderView.swift; sourceTree = "<group>"; };
 		C06E66431D917781007B1210 /* DHNewsBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsBannerViewModel.swift; sourceTree = "<group>"; };
 		C088DA4C1D9564D400F1329D /* DHBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBanner.swift; sourceTree = "<group>"; };
@@ -113,6 +121,7 @@
 			children = (
 				C0287D331D994D2C009D878E /* DHJournalTableViewCell.swift */,
 				C0287D341D994D2C009D878E /* DHJournalTableViewCell.xib */,
+				C0287D431D9958D6009D878E /* DHJournalDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -121,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				C0287D391D994D66009D878E /* DHJournalViewModel.swift */,
+				C0287D451D995AFE009D878E /* DHJournalDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -269,6 +279,8 @@
 			children = (
 				C0D4D0091D5DC2E6008F824A /* DHJournalViewController.swift */,
 				C0122E3E1D97FD880000D249 /* DHJournalDataController.swift */,
+				C0287D3D1D99578F009D878E /* DHJournalDetailDataController.swift */,
+				C0287D3F1D9957D9009D878E /* DHJournalDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -522,11 +534,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0122E3F1D97FD880000D249 /* DHJournalDataController.swift in Sources */,
+				C0287D411D9957D9009D878E /* DHJournalDetailViewController.swift in Sources */,
 				C0E6BF931D9434D400872006 /* DHNewsDetailViewModel.swift in Sources */,
 				C0EC17521D9026C80002AAF4 /* DHNewsTableViewCell.swift in Sources */,
 				C0D4D00A1D5DC2E6008F824A /* DHJournalViewController.swift in Sources */,
 				C0EC174B1D9010930002AAF4 /* DHNetworkRequestManager.swift in Sources */,
 				C06E66441D917781007B1210 /* DHNewsBannerViewModel.swift in Sources */,
+				C0287D461D995AFE009D878E /* DHJournalDetailViewModel.swift in Sources */,
 				C0287D3A1D994D66009D878E /* DHJournalViewModel.swift in Sources */,
 				C0D4D00E1D5DC2FD008F824A /* DHSettingsViewController.swift in Sources */,
 				C0EB19ED1D94138D0053970A /* DHNewsDetailViewController.swift in Sources */,
@@ -540,11 +554,13 @@
 				C0D4D00C1D5DC2F1008F824A /* DHNewsViewController.swift in Sources */,
 				C0EB19EF1D94165D0053970A /* DHNewsDetailDataController.swift in Sources */,
 				C0EC174F1D9025720002AAF4 /* DHNewsCellViewModel.swift in Sources */,
+				C0287D3E1D99578F009D878E /* DHJournalDetailDataController.swift in Sources */,
 				C0EC174D1D901D4D0002AAF4 /* DHNewsDataController.swift in Sources */,
 				C088DA4F1D95652700F1329D /* DHBannerViewModel.swift in Sources */,
 				C0D4D0121D5DC319008F824A /* DHVideoViewController.swift in Sources */,
 				C0B7A4C11D8ECC4E008D10A0 /* DHNewsModel.swift in Sources */,
 				C0D4CFDE1D5DBEF1008F824A /* AppDelegate.swift in Sources */,
+				C0287D441D9958D6009D878E /* DHJournalDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

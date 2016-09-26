@@ -18,7 +18,7 @@ class DHJournalTableViewCell: UITableViewCell {
     
     var journalModel: DHJournalModel?
     
-    func bindDateWithViewModel(viewModel: DHJournalViewModel) {
+    func bindDataWithViewModel(viewModel: DHJournalViewModel) {
         self.journalModel = viewModel.journalModel
         let url = URL(string: (viewModel.background)!)
         backgroundImageView.kf_setImage(with: url)

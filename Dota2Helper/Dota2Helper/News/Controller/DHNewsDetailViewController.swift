@@ -20,7 +20,6 @@ class DHNewsDetailViewController: UIViewController {
         let viewModel: DHNewsDetailViewModel = DHNewsDetailViewModel(request: request)
         newsDetailView = DHNewsDetailView(frame: CGRect(x: 0, y: 0, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight))
         newsDetailView?.bindDataWithViewModel(viewModel: viewModel)
-        renderNewsDetailView()
     }
     
     func renderNewsDetailView() {
@@ -42,6 +41,7 @@ class DHNewsDetailViewController: UIViewController {
         
         initLifeCycle()
         handleData()
+        renderNewsDetailView()
     }
 
     override func didReceiveMemoryWarning() {
