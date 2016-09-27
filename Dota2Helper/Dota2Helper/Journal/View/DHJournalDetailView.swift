@@ -21,8 +21,17 @@ class DHJournalDetailView: UIView {
     }
     
     func setLayout() {
-        let titleHeight = 
-        titleLabel?.frame = CGRect(x: 0, y: 0, width: kJournalDetailViewWidth, height: <#T##CGFloat#>)
+        var titleLabelHeight: CGFloat = 0
+        let options: NSStringDrawingOptions = .usesLineFragmentOrigin
+        if let content: String = titleLabel?.text {
+            let boundingRect = content.boundingRect(with: CGSize(width: 200, height: 0), options: options, attributes: [NSFontAttributeName: titleLabel?.font], context: nil)
+            titleLabelHeight = boundingRect.height
+        } else {
+           let content = ""
+            let boundingRect = content.boundingRect(with: CGSize(width: 200, height: 0), options: options, attributes: [NSFontAttributeName: titleLabel?.font], context: nil)
+            titleLabelHeight = boundingRect.height
+        }
+        titleLabel?.frame = CGRect(x: 0, y: 0, width: kJournalDetailViewWidth, height: titleLabelHeight)
     }
     
     override init(frame: CGRect) {
