@@ -21,7 +21,8 @@ class DHJournalDetailView: UIView {
     }
     
     func setLayout() {
-        
+        let titleHeight = 
+        titleLabel?.frame = CGRect(x: 0, y: 0, width: kJournalDetailViewWidth, height: <#T##CGFloat#>)
     }
     
     override init(frame: CGRect) {

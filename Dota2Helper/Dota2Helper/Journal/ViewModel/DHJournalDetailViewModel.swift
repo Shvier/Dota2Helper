@@ -8,6 +8,8 @@
 
 import UIKit
 
+let kJournalDetailViewWidth: CGFloat = UIScreen.main.bounds.size.width
+
 class DHJournalDetailViewModel: NSObject {
 
     var journal: DHJournalModel?
