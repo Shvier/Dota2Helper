@@ -38,7 +38,8 @@ class DHJournalDetailView: UIView {
     func setLayout() {
         let kTitleMaxWidth: CGFloat = UIScreen.main.bounds.size.width - kTitleOffsetX*2
         var titleLabelHeight: CGFloat = 0
-        var dateLabelheight: CGFloat = 0
+        var dateLabelHeight: CGFloat = 0
+        var descriptionLabelHeight: CGFloat = 0
         if let content: String = titleLabel?.text {
             let boundingRect = labelSize(content: content, attributes: [NSFontAttributeName: (titleLabel?.font)!])
             titleLabelHeight = boundingRect.height
@@ -49,15 +50,23 @@ class DHJournalDetailView: UIView {
         }
         if let content: String = dateLabel?.text {
             let boundingRect = labelSize(content: content, attributes: [NSFontAttributeName: (dateLabel?.font)!])
-            dateLabelheight = boundingRect.height
+            dateLabelHeight = boundingRect.height
         } else {
             let content = "Unknown Time"
             let boundingRect = labelSize(content: content, attributes: [NSFontAttributeName: (dateLabel?.font)!])
-            dateLabelheight = boundingRect.height
+            dateLabelHeight = boundingRect.height
+        }
+        if let content: String = descriptionLabel?.text {
+            let boundingRect = labelSize(content: content, attributes: [NSFontAttributeName: (descriptionLabel?.font)!])
+            descriptionLabelHeight = boundingRect.height
+        } else {
+            let content = "Unknown Content"
+            let boundingRect = labelSize(content: content, attributes: [NSFontAttributeName: (descriptionLabel?.font)!])
+            descriptionLabelHeight = boundingRect.height
         }
         titleLabel?.frame = CGRect(x: kTitleOffsetX, y: kNavigationHeight, width: kTitleMaxWidth, height: titleLabelHeight)
-        dateLabel?.frame = CGRect(x: kTitleOffsetX, y: kNavigationHeight+(titleLabel?.bounds.size.height)!+10, width: kTitleMaxWidth, height: dateLabelheight)
-        descriptionLabel?.frame = CGRect(x: kTitleOffsetX, y: kNavigationHeight+(titleLabel?.bounds.size.height)!+dateLabel!.frame.size.height+10, width: kTitleMaxWidth, height: kJournalDetailViewHeight-dateLabel!.frame.size.height-dateLabelheight)
+        dateLabel?.frame = CGRect(x: kTitleOffsetX, y: kNavigationHeight+(titleLabel?.bounds.size.height)!+10, width: kTitleMaxWidth, height: dateLabelHeight)
+        descriptionLabel?.frame = CGRect(x: kTitleOffsetX, y: kNavigationHeight+(titleLabel?.bounds.size.height)!+dateLabel!.frame.size.height+10, width: kTitleMaxWidth, height: descriptionLabelHeight)
     }
     
     override init(frame: CGRect) {
@@ -66,6 +75,11 @@ class DHJournalDetailView: UIView {
         titleLabel = UILabel()
         dateLabel = UILabel()
         descriptionLabel = UILabel()
+        titleLabel?.numberOfLines = 0
+        titleLabel?.textAlignment = .center
+        dateLabel?.textAlignment = .center
+        descriptionLabel?.numberOfLines = 0
+        descriptionLabel?.textAlignment = .left
         
         self.addSubview(titleLabel!)
         self.addSubview(dateLabel!)
