@@ -22,16 +22,26 @@ class DHJournalDetailView: UIView {
     
     func setLayout() {
         var titleLabelHeight: CGFloat = 0
+        var dateLabelheight: CGFloat = 0
         let options: NSStringDrawingOptions = .usesLineFragmentOrigin
         if let content: String = titleLabel?.text {
             let boundingRect = content.boundingRect(with: CGSize(width: 200, height: 0), options: options, attributes: [NSFontAttributeName: titleLabel?.font], context: nil)
             titleLabelHeight = boundingRect.height
         } else {
-           let content = ""
+            let content = "Unknown Title"
             let boundingRect = content.boundingRect(with: CGSize(width: 200, height: 0), options: options, attributes: [NSFontAttributeName: titleLabel?.font], context: nil)
             titleLabelHeight = boundingRect.height
         }
+        if let content: String = dateLabel?.text {
+            let boundingRect = content.boundingRect(with: CGSize(width: 200, height: 0), options: options, attributes: [NSFontAttributeName: dateLabel?.font], context: nil)
+            dateLabelheight = boundingRect.height
+        } else {
+            let content = "Unknown Time"
+            let boundingRect = content.boundingRect(with: CGSize(width: 200, height: 0), options: options, attributes: [NSFontAttributeName: dateLabel?.font], context: nil)
+            dateLabelheight = boundingRect.height
+        }
         titleLabel?.frame = CGRect(x: 0, y: 0, width: kJournalDetailViewWidth, height: titleLabelHeight)
+        dateLabel?.frame = CGRect(x: 0, y: titleLabelHeight+10, width: kJournalDetailViewWidth, height: dateLabelheight)
     }
     
     override init(frame: CGRect) {
