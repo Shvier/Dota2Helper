@@ -42,6 +42,7 @@ class DHJournalDetailView: UIView {
         }
         titleLabel?.frame = CGRect(x: 0, y: 0, width: kJournalDetailViewWidth, height: titleLabelHeight)
         dateLabel?.frame = CGRect(x: 0, y: titleLabelHeight+10, width: kJournalDetailViewWidth, height: dateLabelheight)
+        descriptionLabel?.frame = CGRect(x: 0, y: dateLabel!.frame.size.height+dateLabelheight, width: kJournalDetailViewWidth, height: kJournalDetailViewHeight-dateLabel!.frame.size.height-dateLabelheight)
     }
     
     override init(frame: CGRect) {

@@ -23,6 +23,12 @@ class DHJournalViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    func loadToDetailVCWithJournalModel(journalModel: DHJournalModel) {
+        let journalDetailVC: DHJournalDetailViewController = DHJournalDetailViewController()
+        journalDetailVC.journalModel = journalModel
+        navigationController?.pushViewController(journalDetailVC, animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (dataController?.newsDataSource?.count)! > 0 ? (dataController?.newsDataSource?.count)! : 0
     }
@@ -43,6 +49,10 @@ class DHJournalViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if (dataController?.newsDataSource?.count)! > 0 {
+            let cell: DHJournalTableViewCell = tableView.cellForRow(at: indexPath) as! DHJournalTableViewCell
+            loadToDetailVCWithJournalModel(journalModel: cell.journalModel!)
+        }
     }
     
     func setContentView() {
