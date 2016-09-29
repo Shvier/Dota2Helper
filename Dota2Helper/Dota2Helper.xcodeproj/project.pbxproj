@@ -42,6 +42,9 @@
 		C0EC17531D9026C80002AAF4 /* DHNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0EC17511D9026C80002AAF4 /* DHNewsTableViewCell.xib */; };
 		C0EC967F1D8FCA8100E1557E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EC967D1D8FCA8100E1557E /* Fabric.framework */; };
 		C0EC96801D8FCA8100E1557E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EC967E1D8FCA8100E1557E /* Crashlytics.framework */; };
+		C0F630791D9D5B7800AF039F /* DHTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F630781D9D5B7800AF039F /* DHTutorialView.swift */; };
+		C0F6307B1D9D5B8F00AF039F /* DHTutorialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F6307A1D9D5B8F00AF039F /* DHTutorialViewModel.swift */; };
+		C0F6307D1D9D5CB700AF039F /* DHTutorialDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F6307C1D9D5CB700AF039F /* DHTutorialDataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +87,9 @@
 		C0EC17511D9026C80002AAF4 /* DHNewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHNewsTableViewCell.xib; sourceTree = "<group>"; };
 		C0EC967D1D8FCA8100E1557E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		C0EC967E1D8FCA8100E1557E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		C0F630781D9D5B7800AF039F /* DHTutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialView.swift; sourceTree = "<group>"; };
+		C0F6307A1D9D5B8F00AF039F /* DHTutorialViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialViewModel.swift; sourceTree = "<group>"; };
+		C0F6307C1D9D5CB700AF039F /* DHTutorialDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialDataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +203,7 @@
 		C0B7A4BB1D8ECC37008D10A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C0F630781D9D5B7800AF039F /* DHTutorialView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -204,6 +211,7 @@
 		C0B7A4BC1D8ECC37008D10A0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C0F6307A1D9D5B8F00AF039F /* DHTutorialViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -350,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				C0D4D00F1D5DC30D008F824A /* DHTutorialViewController.swift */,
+				C0F6307C1D9D5CB700AF039F /* DHTutorialDataController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -533,6 +542,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0F6307B1D9D5B8F00AF039F /* DHTutorialViewModel.swift in Sources */,
 				C0122E3F1D97FD880000D249 /* DHJournalDataController.swift in Sources */,
 				C0287D411D9957D9009D878E /* DHJournalDetailViewController.swift in Sources */,
 				C0E6BF931D9434D400872006 /* DHNewsDetailViewModel.swift in Sources */,
@@ -547,6 +557,7 @@
 				C0E6BF911D94342900872006 /* DHNewsDetailView.swift in Sources */,
 				C0D4D0101D5DC30D008F824A /* DHTutorialViewController.swift in Sources */,
 				C0287D351D994D2C009D878E /* DHJournalTableViewCell.swift in Sources */,
+				C0F630791D9D5B7800AF039F /* DHTutorialView.swift in Sources */,
 				C088DA4D1D9564D400F1329D /* DHBanner.swift in Sources */,
 				C0A1AC401D616188005B92A5 /* Constrants.swift in Sources */,
 				C06E66421D917640007B1210 /* DHHeaderView.swift in Sources */,
@@ -561,6 +572,7 @@
 				C0B7A4C11D8ECC4E008D10A0 /* DHNewsModel.swift in Sources */,
 				C0D4CFDE1D5DBEF1008F824A /* AppDelegate.swift in Sources */,
 				C0287D441D9958D6009D878E /* DHJournalDetailView.swift in Sources */,
+				C0F6307D1D9D5CB700AF039F /* DHTutorialDataController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
