@@ -1,31 +1,26 @@
 //
-//  DHJournalTableViewCell.swift
+//  DHTutorialTableViewCell.swift
 //  Dota2Helper
 //
-//  Created by Shvier on 9/26/16.
+//  Created by Shvier on 9/30/16.
 //  Copyright © 2016 Shvier. All rights reserved.
 //
 
 import UIKit
 import Kingfisher
 
-class DHJournalTableViewCell: UITableViewCell {
+class DHTutorialTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var backgroudImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var journalDescriptionLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
-    var journalModel: DHJournalModel?
-    
-    func bindDataWithViewModel(viewModel: DHJournalViewModel) {
-        self.journalModel = viewModel.journalModel
+    func bindDataWithViewModel(viewModel: DHTutorialModel) {
         if let urlString = viewModel.background {
-            backgroundImageView.kf_setImage(with: URL(string: urlString))
+            backgroudImageView.kf_setImage(with: URL(string: urlString))
         }
         titleLabel.text = viewModel.title
-        journalDescriptionLabel.text = viewModel.journalDescription
-        timeLabel.text = viewModel.time
+        descriptionLabel.text = viewModel.tutorialDescription
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {

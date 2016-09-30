@@ -15,9 +15,5 @@ class DHJournalDetailViewModel: NSObject {
     init(journalModel: DHJournalModel) {
         self.journal = journalModel
     }
-    
-    func viewModel(journalModel: DHJournalModel?) -> DHJournalDetailViewModel {
-        return DHJournalDetailViewModel.init(journalModel: journalModel!)
-    }
-    
+
 }

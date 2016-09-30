@@ -42,8 +42,4 @@ class DHNewsBannerViewModel: NSObject {
         scrollView?.addSubview(lastImageView)
     }
     
-    func viewModel(banners: [DHNewsModel]) -> DHNewsBannerViewModel {
-        return DHNewsBannerViewModel.init(banners: banners)
-    }
-    
 }

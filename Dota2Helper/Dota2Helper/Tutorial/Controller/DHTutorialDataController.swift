@@ -15,7 +15,7 @@ class DHTutorialDataController: NSObject {
         DHNetworkRequestManager.sharedInstance.requestWithUrl(type: .GET, urlHeader: url, parameters: nil) { (Data, URLResponse, Error) in
             if Error == nil {
                 do {
-                    let result = try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                    _ = try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                     
                     callback()
                 } catch {

@@ -13,14 +13,14 @@ class DHBanner: UIView {
 
     var nid: String?
     var date: String?
-    var backgroundImage: UIImageView?
+    var backgroundImageView: UIImageView?
     var newsModel: DHNewsModel?
     var callback: (() -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundImage = UIImageView(frame: frame)
-        self.addSubview(backgroundImage!)
+        backgroundImageView = UIImageView(frame: frame)
+        self.addSubview(backgroundImageView!)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,8 +31,9 @@ class DHBanner: UIView {
         self.newsModel = viewModel.newsModel
         self.nid = viewModel.nid
         self.date = viewModel.date
-        let url: URL = URL(string: viewModel.background!)!
-        self.backgroundImage?.kf_setImage(with: url)
+        if let urlString = viewModel.background {
+            backgroundImageView?.kf_setImage(with: URL(string: urlString))
+        }
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(DHBanner.loadRequest))
         self.addGestureRecognizer(tap)

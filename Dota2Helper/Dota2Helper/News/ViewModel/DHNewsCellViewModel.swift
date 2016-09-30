@@ -34,8 +34,4 @@ class DHNewsCellViewModel: NSObject {
         time = newsModel?.time
     }
     
-    func viewModel(newsModel: DHNewsModel?) -> DHNewsCellViewModel {
-        return DHNewsCellViewModel.init(newsModel: newsModel)
-    }
-    
 }

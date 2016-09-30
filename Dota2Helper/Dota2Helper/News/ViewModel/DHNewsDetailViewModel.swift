@@ -18,8 +18,5 @@ class DHNewsDetailViewModel: NSObject {
     init(request: URLRequest) {
         self.request = request
     }
-    
-    func viewModelWithURLRequest(request: URLRequest) -> DHNewsDetailViewModel {
-        return DHNewsDetailViewModel.init(request: request)
-    }
+
 }

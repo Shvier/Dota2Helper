@@ -29,9 +29,5 @@ class DHJournalViewModel: NSObject {
         self.date = journal.date
         self.journalModel = journal
     }
-    
-    func viewModel(journal: DHJournalModel) -> DHJournalViewModel {
-        return DHJournalViewModel.init(journal: journal)
-    }
-    
+
 }

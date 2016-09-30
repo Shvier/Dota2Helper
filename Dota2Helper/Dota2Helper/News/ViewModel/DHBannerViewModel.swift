@@ -22,8 +22,4 @@ class DHBannerViewModel: NSObject {
         self.background = banner.background
     }
     
-    func viewModel(banner: DHNewsModel) -> DHBannerViewModel {
-        return DHBannerViewModel.init(banner: banner)
-    }
-    
 }

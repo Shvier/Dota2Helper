@@ -22,8 +22,9 @@ class DHNewsTableViewCell: UITableViewCell {
     
     func bindDataWithViewModel(viewModel: DHNewsCellViewModel) {
         self.newsModel = viewModel.newsModel!
-        let url = URL(string: (viewModel.background!))
-        backgroundImageView.kf_setImage(with: url)
+        if let urlString = viewModel.background {
+            backgroundImageView.kf_setImage(with: URL(string: urlString))
+        }
         titleLabel.text = viewModel.title
         newsDescriptionLabel.text = viewModel.newsDescription
         timeLabel.text = viewModel.time

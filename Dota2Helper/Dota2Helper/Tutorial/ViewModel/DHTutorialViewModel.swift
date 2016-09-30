@@ -10,5 +10,12 @@ import UIKit
 
 class DHTutorialViewModel: NSObject {
 
+    lazy var tutorials: NSArray? = {[]} ()
+
+    init(tutorials: NSArray?) {
+        super.init()
+        
+        self.tutorials = tutorials
+    }
     
 }

@@ -8,14 +8,16 @@
 
 import UIKit
 
-class DHTutorialView: UITableView {
+class DHTutorialView: UIView {
     
-    func bindWithViewModel(viewModel: DHTutorialViewModel) {
-        
+    lazy var tutorials: NSArray? = {[]} ()
+    
+    func bindDataWithViewModel(viewModel: DHTutorialViewModel) {
+        self.tutorials = viewModel.tutorials
     }
     
-    override init(frame: CGRect, style: UITableViewStyle) {
-        super.init(frame: frame, style: style)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
     }
     
     required init?(coder aDecoder: NSCoder) {

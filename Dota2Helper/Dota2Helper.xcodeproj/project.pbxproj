@@ -10,6 +10,10 @@
 		480894C4116343B8DB2B7B0F /* Pods_Dota2Helper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558B5B80FEC5A194BAC83F8D /* Pods_Dota2Helper.framework */; };
 		C0004BA01D992804007EF3EE /* DHJournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0004B9F1D992804007EF3EE /* DHJournalModel.swift */; };
 		C0122E3F1D97FD880000D249 /* DHJournalDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0122E3E1D97FD880000D249 /* DHJournalDataController.swift */; };
+		C01E405D1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E405B1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift */; };
+		C01E405E1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C01E405C1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib */; };
+		C01E40601D9E3C42006C6CD3 /* DHTutorialCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E405F1D9E3C42006C6CD3 /* DHTutorialCellViewModel.swift */; };
+		C01E40621D9E3C9B006C6CD3 /* DHTutorialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E40611D9E3C9B006C6CD3 /* DHTutorialModel.swift */; };
 		C0287D351D994D2C009D878E /* DHJournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D331D994D2C009D878E /* DHJournalTableViewCell.swift */; };
 		C0287D361D994D2C009D878E /* DHJournalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0287D341D994D2C009D878E /* DHJournalTableViewCell.xib */; };
 		C0287D3A1D994D66009D878E /* DHJournalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D391D994D66009D878E /* DHJournalViewModel.swift */; };
@@ -53,6 +57,10 @@
 		5AE8FF62A93E6F949F8DB6AF /* Pods-Dota2Helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dota2Helper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dota2Helper/Pods-Dota2Helper.debug.xcconfig"; sourceTree = "<group>"; };
 		C0004B9F1D992804007EF3EE /* DHJournalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalModel.swift; sourceTree = "<group>"; };
 		C0122E3E1D97FD880000D249 /* DHJournalDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDataController.swift; sourceTree = "<group>"; };
+		C01E405B1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialTableViewCell.swift; sourceTree = "<group>"; };
+		C01E405C1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHTutorialTableViewCell.xib; sourceTree = "<group>"; };
+		C01E405F1D9E3C42006C6CD3 /* DHTutorialCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialCellViewModel.swift; sourceTree = "<group>"; };
+		C01E40611D9E3C9B006C6CD3 /* DHTutorialModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialModel.swift; sourceTree = "<group>"; };
 		C0287D331D994D2C009D878E /* DHJournalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalTableViewCell.swift; sourceTree = "<group>"; };
 		C0287D341D994D2C009D878E /* DHJournalTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHJournalTableViewCell.xib; sourceTree = "<group>"; };
 		C0287D391D994D66009D878E /* DHJournalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalViewModel.swift; sourceTree = "<group>"; };
@@ -196,6 +204,7 @@
 		C0B7A4BA1D8ECC37008D10A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C01E40611D9E3C9B006C6CD3 /* DHTutorialModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -204,6 +213,8 @@
 			isa = PBXGroup;
 			children = (
 				C0F630781D9D5B7800AF039F /* DHTutorialView.swift */,
+				C01E405B1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift */,
+				C01E405C1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -212,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				C0F6307A1D9D5B8F00AF039F /* DHTutorialViewModel.swift */,
+				C01E405F1D9E3C42006C6CD3 /* DHTutorialCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -471,6 +483,7 @@
 				C0287D361D994D2C009D878E /* DHJournalTableViewCell.xib in Resources */,
 				C0D4CFE01D5DBEF1008F824A /* Assets.xcassets in Resources */,
 				C0D4CFE31D5DBEF1008F824A /* LaunchScreen.storyboard in Resources */,
+				C01E405E1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,6 +563,7 @@
 				C0D4D00A1D5DC2E6008F824A /* DHJournalViewController.swift in Sources */,
 				C0EC174B1D9010930002AAF4 /* DHNetworkRequestManager.swift in Sources */,
 				C06E66441D917781007B1210 /* DHNewsBannerViewModel.swift in Sources */,
+				C01E40601D9E3C42006C6CD3 /* DHTutorialCellViewModel.swift in Sources */,
 				C0287D461D995AFE009D878E /* DHJournalDetailViewModel.swift in Sources */,
 				C0287D3A1D994D66009D878E /* DHJournalViewModel.swift in Sources */,
 				C0D4D00E1D5DC2FD008F824A /* DHSettingsViewController.swift in Sources */,
@@ -569,6 +583,8 @@
 				C0EC174D1D901D4D0002AAF4 /* DHNewsDataController.swift in Sources */,
 				C088DA4F1D95652700F1329D /* DHBannerViewModel.swift in Sources */,
 				C0D4D0121D5DC319008F824A /* DHVideoViewController.swift in Sources */,
+				C01E405D1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift in Sources */,
+				C01E40621D9E3C9B006C6CD3 /* DHTutorialModel.swift in Sources */,
 				C0B7A4C11D8ECC4E008D10A0 /* DHNewsModel.swift in Sources */,
 				C0D4CFDE1D5DBEF1008F824A /* AppDelegate.swift in Sources */,
 				C0287D441D9958D6009D878E /* DHJournalDetailView.swift in Sources */,
