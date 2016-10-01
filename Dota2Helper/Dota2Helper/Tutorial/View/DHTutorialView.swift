@@ -11,6 +11,8 @@ import UIKit
 class DHTutorialView: UIView {
     
     lazy var tutorials: NSArray? = {[]} ()
+    var toolMenuView: UIScrollView?
+    var tableView: UITableView?
     
     func bindDataWithViewModel(viewModel: DHTutorialViewModel) {
         self.tutorials = viewModel.tutorials
@@ -18,6 +20,9 @@ class DHTutorialView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        tableView = UITableView(frame: frame, style: .grouped)
+        self.addSubview(tableView!)
     }
     
     required init?(coder aDecoder: NSCoder) {
