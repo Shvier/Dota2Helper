@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let settingsVC: DHSettingsViewController = DHSettingsViewController()
         let settingsNaVC: UINavigationController = UINavigationController(rootViewController: settingsVC)
         settingsNaVC.tabBarItem = UITabBarItem(title: "其它", image: UIImage(named: "tabbar_icon_settings")?.withRenderingMode(.alwaysOriginal), tag: 1005)
-
+        
         tabBarVC.viewControllers = [newsNaVC, videoNaVC, tutorialNaVC, journalNaVC, settingsNaVC]
         
         tabBarVC.tabBar.tintColor = UIColor.red
