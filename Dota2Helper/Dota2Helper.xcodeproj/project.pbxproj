@@ -34,6 +34,8 @@
 		C0D4D00E1D5DC2FD008F824A /* DHSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D00D1D5DC2FD008F824A /* DHSettingsViewController.swift */; };
 		C0D4D0101D5DC30D008F824A /* DHTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D00F1D5DC30D008F824A /* DHTutorialViewController.swift */; };
 		C0D4D0121D5DC319008F824A /* DHVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D0111D5DC319008F824A /* DHVideoViewController.swift */; };
+		C0DD86441DA0EF7B00D048CF /* SimplerSegmentMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0DD86431DA0EF7B00D048CF /* SimplerSegmentMenu.framework */; };
+		C0DD86451DA0EF7B00D048CF /* SimplerSegmentMenu.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C0DD86431DA0EF7B00D048CF /* SimplerSegmentMenu.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C0E6BF911D94342900872006 /* DHNewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6BF901D94342900872006 /* DHNewsDetailView.swift */; };
 		C0E6BF931D9434D400872006 /* DHNewsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6BF921D9434D400872006 /* DHNewsDetailViewModel.swift */; };
 		C0EB19ED1D94138D0053970A /* DHNewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EB19EC1D94138D0053970A /* DHNewsDetailViewController.swift */; };
@@ -49,6 +51,20 @@
 		C0F6307B1D9D5B8F00AF039F /* DHTutorialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F6307A1D9D5B8F00AF039F /* DHTutorialViewModel.swift */; };
 		C0F6307D1D9D5CB700AF039F /* DHTutorialDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F6307C1D9D5CB700AF039F /* DHTutorialDataController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C0DD863F1DA0ED2D00D048CF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C0DD86451DA0EF7B00D048CF /* SimplerSegmentMenu.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		46FADE68FCE278AF742B319D /* Pods-Dota2Helper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dota2Helper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dota2Helper/Pods-Dota2Helper.release.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +99,7 @@
 		C0D4D00D1D5DC2FD008F824A /* DHSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHSettingsViewController.swift; sourceTree = "<group>"; };
 		C0D4D00F1D5DC30D008F824A /* DHTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialViewController.swift; sourceTree = "<group>"; };
 		C0D4D0111D5DC319008F824A /* DHVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoViewController.swift; sourceTree = "<group>"; };
+		C0DD86431DA0EF7B00D048CF /* SimplerSegmentMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SimplerSegmentMenu.framework; sourceTree = "<group>"; };
 		C0E6BF901D94342900872006 /* DHNewsDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsDetailView.swift; sourceTree = "<group>"; };
 		C0E6BF921D9434D400872006 /* DHNewsDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsDetailViewModel.swift; sourceTree = "<group>"; };
 		C0EB19EC1D94138D0053970A /* DHNewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsDetailViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +111,9 @@
 		C0EC17511D9026C80002AAF4 /* DHNewsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHNewsTableViewCell.xib; sourceTree = "<group>"; };
 		C0EC967D1D8FCA8100E1557E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		C0EC967E1D8FCA8100E1557E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		C0EF8C111DA0E84A00E7C27E /* SimplerSegmentMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimplerSegmentMenu.framework; path = "../../../../Library/Developer/Xcode/DerivedData/SimplerSegmentMenu-dwukdjcieaqhlmgjnknwnbzewekh/Build/Products/Debug-iphonesimulator/SimplerSegmentMenu.framework"; sourceTree = "<group>"; };
+		C0EF8C131DA0E8AB00E7C27E /* SimplerSegmentMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimplerSegmentMenu.framework; path = ../../SubModules/framework/SimplerSegmentMenu.framework; sourceTree = "<group>"; };
+		C0EF8C1B1DA0EBC400E7C27E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		C0F630781D9D5B7800AF039F /* DHTutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialView.swift; sourceTree = "<group>"; };
 		C0F6307A1D9D5B8F00AF039F /* DHTutorialViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialViewModel.swift; sourceTree = "<group>"; };
 		C0F6307C1D9D5CB700AF039F /* DHTutorialDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialDataController.swift; sourceTree = "<group>"; };
@@ -105,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0EC96801D8FCA8100E1557E /* Crashlytics.framework in Frameworks */,
+				C0DD86441DA0EF7B00D048CF /* SimplerSegmentMenu.framework in Frameworks */,
 				C0EC967F1D8FCA8100E1557E /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,6 +136,9 @@
 		9A4136B0649CF3C062810112 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C0EF8C1B1DA0EBC400E7C27E /* AddressBook.framework */,
+				C0EF8C131DA0E8AB00E7C27E /* SimplerSegmentMenu.framework */,
+				C0EF8C111DA0E84A00E7C27E /* SimplerSegmentMenu.framework */,
 				558B5B80FEC5A194BAC83F8D /* Pods_Dota2Helper.framework */,
 			);
 			name = Frameworks;
@@ -250,6 +274,7 @@
 		C0D4CFD11D5DBEF1008F824A = {
 			isa = PBXGroup;
 			children = (
+				C0DD86431DA0EF7B00D048CF /* SimplerSegmentMenu.framework */,
 				C0EC967D1D8FCA8100E1557E /* Fabric.framework */,
 				C0EC967E1D8FCA8100E1557E /* Crashlytics.framework */,
 				C0D4CFDC1D5DBEF1008F824A /* Dota2Helper */,
@@ -426,6 +451,7 @@
 				130E923DD6764182FB868D43 /* [CP] Embed Pods Frameworks */,
 				D605622341732080B0CF3F3E /* [CP] Copy Pods Resources */,
 				C0EC967C1D8FCA5A00E1557E /* ShellScript */,
+				C0DD863F1DA0ED2D00D048CF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -696,7 +722,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AE8FF62A93E6F949F8DB6AF /* Pods-Dota2Helper.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = PGNG7584J8;
@@ -722,7 +747,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 46FADE68FCE278AF742B319D /* Pods-Dota2Helper.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PGNG7584J8;
 				FRAMEWORK_SEARCH_PATHS = (
