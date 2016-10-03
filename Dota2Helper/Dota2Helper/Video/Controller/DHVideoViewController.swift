@@ -14,7 +14,7 @@ class DHVideoViewController: UITableViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
         navigationItem.title = "掌刀"
     }
     

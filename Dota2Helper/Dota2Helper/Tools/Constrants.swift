@@ -6,7 +6,9 @@
 //  Copyright © 2016年 Shvier. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+let kThemeColor = UIColor(red:0.71, green:0.51, blue:0.39, alpha:1.00)
 
 let kNavigationHeight = 44
 let kNewsCellReuseIdentifier: String = "NewsTableViewCell"

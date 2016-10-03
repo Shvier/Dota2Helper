@@ -21,29 +21,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabBarVC: UITabBarController = UITabBarController()
         let newsVC: DHNewsViewController = DHNewsViewController()
         let newsNaVC: UINavigationController = UINavigationController(rootViewController: newsVC)
-        newsVC.tabBarItem = UITabBarItem(title: "资讯", image: UIImage(named: "tabbar_icon_news")?.withRenderingMode(.alwaysOriginal), tag: 1001)
+        newsVC.tabBarItem = UITabBarItem(title: "资讯", image: UIImage(named: "tabbar_icon_news")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "tabbar_icon_news_h")?.withRenderingMode(.alwaysOriginal))
         
         let videoVC: DHVideoViewController = DHVideoViewController()
         let videoNaVC: UINavigationController = UINavigationController(rootViewController: videoVC)
-        videoVC.tabBarItem = UITabBarItem(title: "视频", image: UIImage(named: "tabbar_icon_video")?.withRenderingMode(.alwaysOriginal), tag: 1002)
+        videoVC.tabBarItem = UITabBarItem(title: "视频", image: UIImage(named: "tabbar_icon_video")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "tabbar_icon_video_h")?.withRenderingMode(.alwaysOriginal))
         
         let tutorialVC: DHTutorialViewController = DHTutorialViewController()
         let tutorialNaVC: UINavigationController = UINavigationController(rootViewController: tutorialVC)
-        tutorialVC.tabBarItem = UITabBarItem(title: "攻略", image: UIImage(named: "tabbar_icon_tutorial")?.withRenderingMode(.alwaysOriginal), tag: 1003)
+        tutorialVC.tabBarItem = UITabBarItem(title: "攻略", image: UIImage(named: "tabbar_icon_tutorial")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "tabbar_icon_tutorial_h")?.withRenderingMode(.alwaysOriginal))
         
         let journalVC: DHJournalViewController = DHJournalViewController()
         let journalNaVC: UINavigationController = UINavigationController(rootViewController: journalVC)
-        journalVC.tabBarItem = UITabBarItem(title: "更新", image: UIImage(named: "tabbar_icon_journal")?.withRenderingMode(.alwaysOriginal), tag: 1004)
+        journalVC.tabBarItem = UITabBarItem(title: "更新", image: UIImage(named: "tabbar_icon_journal")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "tabbar_icon_journal_h")?.withRenderingMode(.alwaysOriginal))
         
         let settingsVC: DHSettingsViewController = DHSettingsViewController()
         let settingsNaVC: UINavigationController = UINavigationController(rootViewController: settingsVC)
-        settingsNaVC.tabBarItem = UITabBarItem(title: "其它", image: UIImage(named: "tabbar_icon_settings")?.withRenderingMode(.alwaysOriginal), tag: 1005)
+        settingsNaVC.tabBarItem = UITabBarItem(title: "其它", image: UIImage(named: "tabbar_icon_settings")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "tabbar_icon_settings_h")?.withRenderingMode(.alwaysOriginal))
         
         tabBarVC.viewControllers = [newsNaVC, videoNaVC, tutorialNaVC, journalNaVC, settingsNaVC]
         
         tabBarVC.tabBar.tintColor = UIColor.red
         tabBarVC.tabBar.isTranslucent = false
         tabBarVC.tabBar.barStyle = .black
+        
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: kThemeColor], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red:0.80, green:0.00, blue:0.00, alpha:1.00)], for: .selected)
+        
         self.window?.rootViewController = tabBarVC
                 
         self.window?.makeKeyAndVisible()

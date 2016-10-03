@@ -7,14 +7,13 @@
 //
 
 import UIKit
-import SimplerSegmentMenu
 
 class DHTutorialViewController: UIViewController {
     
     func initLifeCycle() {
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
         navigationItem.title = "掌刀"
     }
     
@@ -22,7 +21,6 @@ class DHTutorialViewController: UIViewController {
         super.viewDidLoad()
         
         initLifeCycle()
-        let menu: UISegmentedMenu
     }
     
 }
