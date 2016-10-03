@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,18 +15,38 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_background" translatesAutoresizingMaskIntoConstraints="NO" id="cIX-MB-UpR">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_background" translatesAutoresizingMaskIntoConstraints="NO" id="cIX-MB-UpR"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by Shvier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwi-h7-1G6">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="8lM-ef-tZY"/>
+                                    <constraint firstAttribute="height" constant="15" id="HlE-5a-2a4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.61176470588235299" green="0.4392156862745098" blue="0.32156862745098042" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright®2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDb-ue-0j3">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="FxE-gi-guv"/>
+                                    <constraint firstAttribute="width" constant="150" id="eBc-dP-1ld"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.61176470589999998" green="0.43921568630000002" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="VDb-ue-0j3" secondAttribute="bottom" constant="20" id="1Au-8H-Sfz"/>
+                            <constraint firstItem="VDb-ue-0j3" firstAttribute="top" secondItem="Nwi-h7-1G6" secondAttribute="bottom" id="1jJ-AB-mq0"/>
                             <constraint firstItem="cIX-MB-UpR" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="30c-X1-AyM"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="cIX-MB-UpR" secondAttribute="bottom" id="Imm-rx-jsi"/>
+                            <constraint firstItem="VDb-ue-0j3" firstAttribute="centerX" secondItem="Nwi-h7-1G6" secondAttribute="centerX" id="eo6-Jg-Blx"/>
                             <constraint firstItem="cIX-MB-UpR" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="fNn-8Q-B6c"/>
+                            <constraint firstItem="VDb-ue-0j3" firstAttribute="centerX" secondItem="cIX-MB-UpR" secondAttribute="centerX" id="fVS-mc-Naf"/>
                             <constraint firstAttribute="trailing" secondItem="cIX-MB-UpR" secondAttribute="trailing" id="ycN-dT-d0y"/>
                         </constraints>
                     </view>
@@ -33,10 +54,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
     <resources>
-        <image name="launch_background" width="290" height="457"/>
+        <image name="launch_background" width="375" height="667"/>
     </resources>
 </document>

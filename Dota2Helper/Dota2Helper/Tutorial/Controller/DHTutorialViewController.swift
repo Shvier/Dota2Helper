@@ -22,8 +22,7 @@ class DHTutorialViewController: UIViewController {
         super.viewDidLoad()
         
         initLifeCycle()
-        let segmentedMenu = UISegmentedMenu(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height), contentDataSource: ["1"], titleDataSource: ["1", "2", "3"])
-        self.view.addSubview(segmentedMenu)
+        let menu: UISegmentedMenu
     }
     
 }
