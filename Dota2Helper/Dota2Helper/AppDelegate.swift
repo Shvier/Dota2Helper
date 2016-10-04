@@ -52,6 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
         self.window?.makeKeyAndVisible()
         
+        application.setStatusBarHidden(false, with: .fade)
+        
         DHLog("Application Launching")
         
         Fabric.with([Crashlytics.self])
