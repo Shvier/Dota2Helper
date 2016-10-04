@@ -10,13 +10,21 @@ import UIKit
 
 class DHTutorialDataController: NSObject {
 
+    lazy var tutorialDataSource: NSMutableArray? = {[]} ()
+    
     func requestTutorialDataWithCallback( callback: @autoclosure @escaping () -> Swift.Void) {
         let url = URL(string: kRefreshStrategiesUrl)
-        DHNetworkRequestManager.sharedInstance.requestWithUrl(type: .GET, urlHeader: url, parameters: nil) { (Data, URLResponse, Error) in
+        let parameters: NSArray = ["all"]
+        DHNetworkRequestManager.sharedInstance.requestWithUrl(type: .GET, urlHeader: url, parameters: parameters) { (Data, URLResponse, Error) in
             if Error == nil {
                 do {
-                    _ = try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                    
+                    let result = try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                    let tutorialArray = result["strategies"]
+                    for tutorialDict in tutorialArray as! [NSDictionary] {
+                        let tutorial: DHTutorialModel = DHTutorialModel()
+                        tutorial.setValuesForKeys(tutorialDict as! [String : Any])
+                        self.tutorialDataSource?.add(tutorial)
+                    }
                     callback()
                 } catch {
                     DHLog("catch:\(URLResponse!)")
