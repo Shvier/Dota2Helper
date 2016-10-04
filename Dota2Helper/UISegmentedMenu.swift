@@ -14,6 +14,13 @@ public protocol UISegmentedMenuDelegate {
     
 }
 
+public enum UISegmentedMenuType: Int {
+    // button width by text
+    case plain
+    // button width by avarage
+    case fill
+}
+
 public class UISegmentedMenu: UIView {
     
     public var titleDataSource: NSArray?
@@ -36,6 +43,7 @@ public class UISegmentedMenu: UIView {
     var selectIndex: NSInteger?
     var widthArray: NSArray?
     var totalWidth: CGFloat?
+    var type: UISegmentedMenuType?
     
     public func updateContentDateSource(contentDataSource: NSArray?) {
         self.contentDataSource = contentDataSource
@@ -47,7 +55,15 @@ public class UISegmentedMenu: UIView {
         var totalWidth: CGFloat = 0
         var index: NSInteger = 0
         for title in self.titleDataSource as! [String] {
-            let buttonWidth: CGFloat = title.sizeOfContent(font: font!).width + 20
+            var buttonWidth: CGFloat
+            switch self.type! {
+            case .plain:
+                buttonWidth = title.sizeOfContent(font: font!).width + 20
+                break;
+            case .fill:
+                buttonWidth = self.bounds.size.width/CGFloat((self.titleDataSource?.count)!)
+                break;
+            }
             widthArray.add(NSNumber(value: Float(buttonWidth)))
             let button: UIButton = UIButton(frame: CGRect(x: totalWidth, y: 0, width: buttonWidth, height: bounds.size.height))
             button.tag = kTag + index
@@ -113,10 +129,11 @@ public class UISegmentedMenu: UIView {
         clickSegmentedButton(button: selectButton)
     }
     
-    public init(frame: CGRect, contentDataSource: NSArray, titleDataSource: NSArray) {
+    public init(frame: CGRect, contentDataSource: NSArray, titleDataSource: NSArray, type: UISegmentedMenuType) {
         super.init(frame: frame)
         
         font = UIFont(name: "Helvetica", size: 16)
+        self.type = type
         
         contentView = UIScrollView(frame: CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height - 0.5))
         contentView?.clipsToBounds = true
