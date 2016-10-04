@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DHTutorialViewController: UIViewController {
+class DHTutorialViewController: UITableViewController {
     
     func initLifeCycle() {
         view.backgroundColor = UIColor.white
@@ -21,6 +21,9 @@ class DHTutorialViewController: UIViewController {
         super.viewDidLoad()
         
         initLifeCycle()
+        
+        let menu: UISegmentedMenu = UISegmentedMenu(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: 50), contentDataSource: [""], titleDataSource: ["首页", "文章", "好东西", "早点与宵夜", "电子小物", "苹果", "收纳集合", "JBL", "装b利器", "测试机啦啦", "乱七八糟的"])
+        view.addSubview(menu)
     }
     
 }

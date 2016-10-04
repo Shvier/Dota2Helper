@@ -53,6 +53,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         
         application.setStatusBarHidden(false, with: .fade)
+        let launchImage: UIImageView = UIImageView(frame: (window?.bounds)!)
+        launchImage.image = UIImage(named: "launch_image")
+        window?.addSubview(launchImage)
+        UIView.animate(withDuration: 1) {
+            launchImage.alpha = 0.5
+            UIView.animate(withDuration: 0.7, animations: {
+                launchImage.bounds = CGRect(x: 0, y: 0, width: 1.5*launchImage.bounds.size.width, height: 1.5*launchImage.bounds.size.height)
+                launchImage.alpha = 0
+            })
+        }
         
         DHLog("Application Launching")
         
