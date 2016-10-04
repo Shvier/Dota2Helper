@@ -14,7 +14,7 @@ class DHVideoTableViewCell: UITableViewCell {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var videoLengthLabel: UILabel!
-    @IBOutlet weak var pulishinLabel: UILabel!
+    @IBOutlet weak var publishinLabel: UILabel!
     
     func bindDataWithViewModel(viewModel: DHVideoCellViewModel) {
         if let urlString = viewModel.background {
@@ -22,7 +22,7 @@ class DHVideoTableViewCell: UITableViewCell {
         }
         titleLabel.text = viewModel.title
         videoLengthLabel.text = viewModel.videolength
-        pulishinLabel.text = viewModel.pulishin
+        publishinLabel.text = viewModel.publishin
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {

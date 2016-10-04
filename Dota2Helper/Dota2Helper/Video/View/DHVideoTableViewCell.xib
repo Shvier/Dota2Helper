@@ -38,19 +38,10 @@
                         <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJ5-DY-10h">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJ5-DY-10h">
                         <constraints>
-                            <constraint firstAttribute="width" constant="40" id="j6t-Nu-zem"/>
+                            <constraint firstAttribute="width" constant="100" id="j6t-Nu-zem"/>
                             <constraint firstAttribute="height" constant="12" id="vkR-QB-FQ6"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发布时间：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oL0-i5-Tow">
-                        <constraints>
-                            <constraint firstAttribute="width" constant="70" id="d5E-b2-m66"/>
-                            <constraint firstAttribute="height" constant="12" id="ndn-LX-ha6"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,7 +49,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NlA-DX-3Dc">
                         <constraints>
-                            <constraint firstAttribute="width" constant="40" id="aiX-PB-s81"/>
+                            <constraint firstAttribute="width" constant="50" id="aiX-PB-s81"/>
                             <constraint firstAttribute="height" constant="12" id="mkC-M9-Rha"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -78,14 +69,12 @@
                     <constraint firstItem="NlA-DX-3Dc" firstAttribute="leading" secondItem="p4S-qI-urh" secondAttribute="trailing" id="nRi-rC-HQ2"/>
                     <constraint firstItem="cNs-o2-2uv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="p77-Uh-aEx"/>
                     <constraint firstAttribute="bottom" secondItem="p4S-qI-urh" secondAttribute="bottom" constant="5" id="pMQ-MY-YGo"/>
-                    <constraint firstAttribute="bottom" secondItem="oL0-i5-Tow" secondAttribute="bottom" constant="5" id="q6i-dc-SOq"/>
-                    <constraint firstItem="xJ5-DY-10h" firstAttribute="leading" secondItem="oL0-i5-Tow" secondAttribute="trailing" id="rNn-vh-3cS"/>
                     <constraint firstAttribute="bottom" secondItem="xJ5-DY-10h" secondAttribute="bottom" constant="5" id="vRh-8n-w8U"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="backgroundImageView" destination="cNs-o2-2uv" id="Sxs-QQ-ZLw"/>
-                <outlet property="pulishinLabel" destination="xJ5-DY-10h" id="WgR-vD-hzR"/>
+                <outlet property="publishinLabel" destination="xJ5-DY-10h" id="CAv-WC-zSp"/>
                 <outlet property="titleLabel" destination="NP5-hs-xiz" id="m8l-qp-K2K"/>
                 <outlet property="videoLengthLabel" destination="NlA-DX-3Dc" id="wu8-eH-2b6"/>
             </connections>

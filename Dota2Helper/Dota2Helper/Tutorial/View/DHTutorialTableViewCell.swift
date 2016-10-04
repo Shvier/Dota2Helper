@@ -13,13 +13,13 @@ let kTutorialTableViewCellHeight: CGFloat = 80
 
 class DHTutorialTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var backgroudImageView: UIImageView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
     func bindDataWithViewModel(viewModel: DHTutorialCellViewModel) {
         if let urlString = viewModel.background {
-            backgroudImageView.kf_setImage(with: URL(string: urlString))
+            backgroundImageView.kf_setImage(with: URL(string: urlString))
         }
         titleLabel.text = viewModel.title
         descriptionLabel.text = viewModel.tutorialDescription

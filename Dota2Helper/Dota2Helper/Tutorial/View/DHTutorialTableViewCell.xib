@@ -49,7 +49,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="backgroudImageView" destination="Fs8-P9-a6b" id="KgU-AW-tSS"/>
+                <outlet property="backgroundImageView" destination="Fs8-P9-a6b" id="x4c-2d-SrL"/>
                 <outlet property="descriptionLabel" destination="Yww-8G-QtQ" id="SEn-CR-0vB"/>
                 <outlet property="titleLabel" destination="azW-VX-HXb" id="98C-Nh-t2W"/>
             </connections>

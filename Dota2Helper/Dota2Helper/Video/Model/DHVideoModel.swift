@@ -14,7 +14,7 @@ class DHVideoModel: NSObject {
     var videolength: String?
     var vid: String?
     var title: String?
-    var pulishin: String?
+    var publishin: String?
     var background: String?
     var date: String?
     

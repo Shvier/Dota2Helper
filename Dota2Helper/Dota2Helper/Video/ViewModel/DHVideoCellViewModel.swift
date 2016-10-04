@@ -16,7 +16,7 @@ class DHVideoCellViewModel: NSObject {
     var videolength: String?
     var vid: String?
     var title: String?
-    var pulishin: String?
+    var publishin: String?
     var background: String?
     var date: String?
     
@@ -27,7 +27,7 @@ class DHVideoCellViewModel: NSObject {
         self.videolength = videoModel?.videolength
         self.vid = videoModel?.vid
         self.title = videoModel?.title
-        self.pulishin = videoModel?.pulishin
+        self.publishin = videoModel?.publishin
         self.background = videoModel?.background
         self.date = videoModel?.date
     }
