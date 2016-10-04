@@ -27,6 +27,11 @@
 		C088DA4F1D95652700F1329D /* DHBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C088DA4E1D95652700F1329D /* DHBannerViewModel.swift */; };
 		C0A1AC401D616188005B92A5 /* Constrants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A1AC3F1D616188005B92A5 /* Constrants.swift */; };
 		C0B7A4C11D8ECC4E008D10A0 /* DHNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B7A4C01D8ECC4E008D10A0 /* DHNewsModel.swift */; };
+		C0D3E0771DA449AE009AFDB0 /* DHVideoDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D3E0761DA449AE009AFDB0 /* DHVideoDataController.swift */; };
+		C0D3E0791DA44A06009AFDB0 /* DHVideoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D3E0781DA44A06009AFDB0 /* DHVideoCellViewModel.swift */; };
+		C0D3E07B1DA44A13009AFDB0 /* DHVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D3E07A1DA44A13009AFDB0 /* DHVideoModel.swift */; };
+		C0D3E07E1DA44A2D009AFDB0 /* DHVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D3E07C1DA44A2D009AFDB0 /* DHVideoTableViewCell.swift */; };
+		C0D3E07F1DA44A2D009AFDB0 /* DHVideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0D3E07D1DA44A2D009AFDB0 /* DHVideoTableViewCell.xib */; };
 		C0D4CFDE1D5DBEF1008F824A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4CFDD1D5DBEF1008F824A /* AppDelegate.swift */; };
 		C0D4CFE01D5DBEF1008F824A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0D4CFDF1D5DBEF1008F824A /* Assets.xcassets */; };
 		C0D4CFE31D5DBEF1008F824A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D4CFE11D5DBEF1008F824A /* LaunchScreen.storyboard */; };
@@ -91,6 +96,11 @@
 		C088DA4E1D95652700F1329D /* DHBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBannerViewModel.swift; sourceTree = "<group>"; };
 		C0A1AC3F1D616188005B92A5 /* Constrants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constrants.swift; sourceTree = "<group>"; };
 		C0B7A4C01D8ECC4E008D10A0 /* DHNewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsModel.swift; sourceTree = "<group>"; };
+		C0D3E0761DA449AE009AFDB0 /* DHVideoDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoDataController.swift; sourceTree = "<group>"; };
+		C0D3E0781DA44A06009AFDB0 /* DHVideoCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoCellViewModel.swift; sourceTree = "<group>"; };
+		C0D3E07A1DA44A13009AFDB0 /* DHVideoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoModel.swift; sourceTree = "<group>"; };
+		C0D3E07C1DA44A2D009AFDB0 /* DHVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoTableViewCell.swift; sourceTree = "<group>"; };
+		C0D3E07D1DA44A2D009AFDB0 /* DHVideoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHVideoTableViewCell.xib; sourceTree = "<group>"; };
 		C0D4CFDA1D5DBEF1008F824A /* Dota2Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dota2Helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D4CFDD1D5DBEF1008F824A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0D4CFDF1D5DBEF1008F824A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -256,6 +266,7 @@
 		C0B7A4BD1D8ECC41008D10A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C0D3E07A1DA44A13009AFDB0 /* DHVideoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -263,6 +274,8 @@
 		C0B7A4BE1D8ECC41008D10A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C0D3E07C1DA44A2D009AFDB0 /* DHVideoTableViewCell.swift */,
+				C0D3E07D1DA44A2D009AFDB0 /* DHVideoTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -270,6 +283,7 @@
 		C0B7A4BF1D8ECC41008D10A0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				C0D3E0781DA44A06009AFDB0 /* DHVideoCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -419,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				C0D4D0111D5DC319008F824A /* DHVideoViewController.swift */,
+				C0D3E0761DA449AE009AFDB0 /* DHVideoDataController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -516,6 +531,7 @@
 				C0D4CFE01D5DBEF1008F824A /* Assets.xcassets in Resources */,
 				C0D4CFE31D5DBEF1008F824A /* LaunchScreen.storyboard in Resources */,
 				C01E405E1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib in Resources */,
+				C0D3E07F1DA44A2D009AFDB0 /* DHVideoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +603,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0D3E0771DA449AE009AFDB0 /* DHVideoDataController.swift in Sources */,
 				C0F6307B1D9D5B8F00AF039F /* DHTutorialViewModel.swift in Sources */,
 				C0122E3F1D97FD880000D249 /* DHJournalDataController.swift in Sources */,
 				C0287D411D9957D9009D878E /* DHJournalDetailViewController.swift in Sources */,
@@ -597,6 +614,7 @@
 				C0F29F1E1DA410A6001A0594 /* UISegmentedMenu.swift in Sources */,
 				C06E66441D917781007B1210 /* DHNewsBannerViewModel.swift in Sources */,
 				C01E40601D9E3C42006C6CD3 /* DHTutorialCellViewModel.swift in Sources */,
+				C0D3E07E1DA44A2D009AFDB0 /* DHVideoTableViewCell.swift in Sources */,
 				C0287D461D995AFE009D878E /* DHJournalDetailViewModel.swift in Sources */,
 				C0287D3A1D994D66009D878E /* DHJournalViewModel.swift in Sources */,
 				C0D4D00E1D5DC2FD008F824A /* DHSettingsViewController.swift in Sources */,
@@ -617,7 +635,9 @@
 				C088DA4F1D95652700F1329D /* DHBannerViewModel.swift in Sources */,
 				C0D4D0121D5DC319008F824A /* DHVideoViewController.swift in Sources */,
 				C01E405D1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift in Sources */,
+				C0D3E07B1DA44A13009AFDB0 /* DHVideoModel.swift in Sources */,
 				C01E40621D9E3C9B006C6CD3 /* DHTutorialModel.swift in Sources */,
+				C0D3E0791DA44A06009AFDB0 /* DHVideoCellViewModel.swift in Sources */,
 				C0B7A4C11D8ECC4E008D10A0 /* DHNewsModel.swift in Sources */,
 				C0D4CFDE1D5DBEF1008F824A /* AppDelegate.swift in Sources */,
 				C0F29F1D1DA410A6001A0594 /* String+Category.swift in Sources */,
