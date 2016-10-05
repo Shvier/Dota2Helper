@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 class DHVideoViewController: UITableViewController {
 
@@ -16,11 +17,22 @@ class DHVideoViewController: UITableViewController {
         dataController = DHVideoDataController()
         dataController?.requestVideoDataWithCallback(callback: {
             self.renderTableViewCell()
+            tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                self.dataController?.requestMoreVideo(callback: {
+                    self.tableView.mj_footer.endRefreshing()
+                    DispatchQueue.main.async(execute: {
+                        self.tableView.reloadData()
+                    })
+                }())
+            })
+            self.tableView.mj_header.endRefreshing()
         }())
     }
     
     func renderTableViewCell() {
-        tableView.reloadData()
+        DispatchQueue.main.async(execute: {
+            self.tableView.reloadData()
+        })
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,6 +68,9 @@ class DHVideoViewController: UITableViewController {
         tableView.register(UINib(nibName: "DHVideoTableViewCell", bundle: nil), forCellReuseIdentifier: kVideoCellReuseIdentifier)
         let menu: UISegmentedMenu = UISegmentedMenu(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: 50), contentDataSource: [""], titleDataSource: ["全部", "解说", "比赛", "明星", "趣味", "新手"], type: .fill)
         view.addSubview(menu)
+        tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            self.handleVideoData()
+        })
     }
     
     override func viewDidLoad() {

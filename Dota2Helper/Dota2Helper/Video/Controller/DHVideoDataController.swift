@@ -35,4 +35,28 @@ class DHVideoDataController: NSObject {
         }
     }
     
+    func requestMoreVideo( callback: @autoclosure @escaping () -> Void) {
+        let url = URL(string: kLoadMoreVideos)
+        let lastModel = videoDataSource![(videoDataSource?.count)! - 1] as! DHVideoModel
+        let parameter: [String] = ["all", lastModel.vid!]
+        DHNetworkRequestManager.sharedInstance.requestWithUrl(type: .GET, urlHeader: url, parameters: parameter) { (Data, URLResponse, Error) in
+            if Error == nil {
+                do {
+                    let result = try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                    let videoArray = result["videos"]
+                    for videoDict in videoArray as! [NSDictionary] {
+                        let video: DHVideoModel = DHVideoModel()
+                        video.setValuesForKeys(videoDict as! [String : Any])
+                        self.videoDataSource?.add(video)
+                    }
+                    callback()
+                } catch {
+                    DHLog("catch:\(URLResponse!)")
+                }
+            } else {
+                DHLog("error:\(Error!)")
+            }
+        }
+    }
+    
 }
