@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 class DHTutorialViewController: UITableViewController {
     
@@ -16,11 +17,22 @@ class DHTutorialViewController: UITableViewController {
         dataController = DHTutorialDataController()
         dataController?.requestTutorialDataWithCallback(callback: {
             self.renderTableViewCell()
+            tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                self.dataController?.requestMoreTutorial(callback: {
+                    self.tableView.mj_footer.endRefreshing()
+                    DispatchQueue.main.async(execute: {
+                        self.tableView.reloadData()
+                    })
+                }())
+            })
+            self.tableView.mj_header.endRefreshing()
         }())
     }
     
     func renderTableViewCell() {
-        tableView.reloadData()
+        DispatchQueue.main.async(execute: {
+            self.tableView.reloadData()
+        })
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,6 +68,9 @@ class DHTutorialViewController: UITableViewController {
         tableView.register(UINib(nibName: "DHTutorialTableViewCell", bundle: nil), forCellReuseIdentifier: kTutorialCellReuseIdentifier)
         let menu: UISegmentedMenu = UISegmentedMenu(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: 50), contentDataSource: [""], titleDataSource: ["全部", "新手", "进阶", "技巧"], type: .fill)
         view.addSubview(menu)
+        tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            self.handleTutorialData()
+        })
     }
     
     override func viewDidLoad() {
