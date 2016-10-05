@@ -14,10 +14,16 @@ class DHTutorialViewController: UITableViewController {
     var dataController: DHTutorialDataController?
     
     func handleTutorialData() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.tableView.mj_header.endRefreshing()
+        }
         dataController = DHTutorialDataController()
         dataController?.requestTutorialDataWithCallback(callback: {
             self.renderTableViewCell()
             tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    self.tableView.mj_footer.endRefreshing()
+                }
                 self.dataController?.requestMoreTutorial(callback: {
                     self.tableView.mj_footer.endRefreshing()
                     DispatchQueue.main.async(execute: {

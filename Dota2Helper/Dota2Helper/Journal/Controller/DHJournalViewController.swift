@@ -14,10 +14,16 @@ class DHJournalViewController: UITableViewController {
     var dataController: DHJournalDataController?
     
     func handleJournalData() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.tableView.mj_header.endRefreshing()
+        }
         dataController = DHJournalDataController()
         dataController?.requestJournalDataWithCallback(callback: {
             self.renderTableViewCell()
             tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    self.tableView.mj_footer.endRefreshing()
+                }
                 self.dataController?.requestMoreJournal(callback: {
                     self.tableView.mj_footer.endRefreshing()
                     DispatchQueue.main.async(execute: {

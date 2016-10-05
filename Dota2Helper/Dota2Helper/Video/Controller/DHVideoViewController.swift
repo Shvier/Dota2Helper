@@ -14,10 +14,16 @@ class DHVideoViewController: UITableViewController {
     var dataController: DHVideoDataController?
     
     func handleVideoData() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.tableView.mj_header.endRefreshing()
+        }
         dataController = DHVideoDataController()
         dataController?.requestVideoDataWithCallback(callback: {
             self.renderTableViewCell()
             tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    self.tableView.mj_footer.endRefreshing()
+                }
                 self.dataController?.requestMoreVideo(callback: {
                     self.tableView.mj_footer.endRefreshing()
                     DispatchQueue.main.async(execute: {

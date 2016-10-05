@@ -15,10 +15,16 @@ class DHNewsViewController: UITableViewController {
     var headerView: DHHeaderView?
     
     func handleNewsData() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.tableView.mj_header.endRefreshing()
+        }
         dataController = DHNewsDataController()
         dataController?.requestNewsDataWithCallback(callback: {
             self.renderTableViewCell()
             tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    self.tableView.mj_footer.endRefreshing()
+                }
                 self.dataController?.requestMoreNews(callback: {
                     self.tableView.mj_footer.endRefreshing()
                     DispatchQueue.main.async(execute: {
