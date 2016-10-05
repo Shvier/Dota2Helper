@@ -18,16 +18,21 @@ class DHNewsViewController: UITableViewController {
         dataController = DHNewsDataController()
         dataController?.requestNewsDataWithCallback(callback: {
             self.renderTableViewCell()
+            tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                self.dataController?.requestMoreNews(callback: {
+                    self.tableView.mj_footer.endRefreshing()
+                    DispatchQueue.main.async(execute: {
+                        self.tableView.reloadData()
+                    })
+                    }())
+            })
+            self.tableView.mj_header.endRefreshing()
         }())
     }
     
     func renderTableViewCell() {
         headerView = DHHeaderView(frame: CGRect(x: 0, y: 0, width: kBannerWidth, height: kBannerHeight))
         tableView.tableHeaderView = headerView
-        tableView.tableFooterView = MJRefreshFooter(refreshingBlock: { 
-            
-        })
-
         let banners = NSArray(array: (dataController?.bannerDataSource)!)
         let headerViewModel: DHNewsBannerViewModel = DHNewsBannerViewModel(banners: banners as! [DHNewsModel]);
         headerView?.bindDataWithViewModel(viewModel: headerViewModel)
@@ -37,7 +42,9 @@ class DHNewsViewController: UITableViewController {
                 self.loadToDetailVCWithNewsModel(newsModel: banner.newsModel!)
             })
         }
-        tableView.reloadData()
+        DispatchQueue.main.async(execute: {
+            self.tableView.reloadData()
+        })
     }
     
     func loadToDetailVCWithNewsModel(newsModel: DHNewsModel) {
@@ -70,8 +77,16 @@ class DHNewsViewController: UITableViewController {
         loadToDetailVCWithNewsModel(newsModel: cell.newsModel!)
     }
     
+    func refreshStateChange(control: UIRefreshControl) {
+        control.endRefreshing()
+    }
+    
     func setContentView() {
         tableView.register(UINib(nibName: "DHNewsTableViewCell", bundle: nil), forCellReuseIdentifier: kNewsCellReuseIdentifier)
+        
+        tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            self.handleNewsData()
+        })
     }
     
     func initLifeCycle() {
