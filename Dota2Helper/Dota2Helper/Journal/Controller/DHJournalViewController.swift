@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 class DHJournalViewController: UITableViewController {
 
@@ -14,13 +15,24 @@ class DHJournalViewController: UITableViewController {
     
     func handleJournalData() {
         dataController = DHJournalDataController()
-        dataController?.requestNewsDataWithCallback(callback: {
+        dataController?.requestJournalDataWithCallback(callback: {
             self.renderTableViewCell()
+            tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                self.dataController?.requestMoreJournal(callback: {
+                    self.tableView.mj_footer.endRefreshing()
+                    DispatchQueue.main.async(execute: {
+                        self.tableView.reloadData()
+                    })
+                }())
+            })
+            self.tableView.mj_header.endRefreshing()
         }())
     }
     
     func renderTableViewCell() {
-        tableView.reloadData()
+        DispatchQueue.main.async(execute: {
+            self.tableView.reloadData()
+        })
     }
     
     func loadToDetailVCWithJournalModel(journalModel: DHJournalModel) {
@@ -30,7 +42,7 @@ class DHJournalViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (dataController?.newsDataSource?.count)! > 0 ? (dataController?.newsDataSource?.count)! : 0
+        return (dataController?.journalDataSource?.count)! > 0 ? (dataController?.journalDataSource?.count)! : 0
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -39,8 +51,8 @@ class DHJournalViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: DHJournalTableViewCell = tableView.dequeueReusableCell(withIdentifier: kJournalCellReuseIdentifier, for: indexPath) as! DHJournalTableViewCell
-        if (dataController?.newsDataSource?.count)! > 0 {
-            let journalModel = dataController?.newsDataSource?[indexPath.row] as! DHJournalModel
+        if (dataController?.journalDataSource?.count)! > 0 {
+            let journalModel = dataController?.journalDataSource?[indexPath.row] as! DHJournalModel
             let cellViewModel: DHJournalViewModel = DHJournalViewModel(journal: journalModel)
             cell.bindDataWithViewModel(viewModel: cellViewModel)
         }
@@ -49,7 +61,7 @@ class DHJournalViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if (dataController?.newsDataSource?.count)! > 0 {
+        if (dataController?.journalDataSource?.count)! > 0 {
             let cell: DHJournalTableViewCell = tableView.cellForRow(at: indexPath) as! DHJournalTableViewCell
             loadToDetailVCWithJournalModel(journalModel: cell.journalModel!)
         }
@@ -57,6 +69,9 @@ class DHJournalViewController: UITableViewController {
     
     func setContentView() {
         tableView.register(UINib(nibName: "DHJournalTableViewCell", bundle: nil), forCellReuseIdentifier: kJournalCellReuseIdentifier)
+        tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+            self.handleJournalData()
+        })
     }
     
     func initLifeCycle() {

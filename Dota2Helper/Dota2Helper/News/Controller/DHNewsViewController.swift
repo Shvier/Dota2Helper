@@ -24,7 +24,7 @@ class DHNewsViewController: UITableViewController {
                     DispatchQueue.main.async(execute: {
                         self.tableView.reloadData()
                     })
-                    }())
+                }())
             })
             self.tableView.mj_header.endRefreshing()
         }())
@@ -83,7 +83,6 @@ class DHNewsViewController: UITableViewController {
     
     func setContentView() {
         tableView.register(UINib(nibName: "DHNewsTableViewCell", bundle: nil), forCellReuseIdentifier: kNewsCellReuseIdentifier)
-        
         tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             self.handleNewsData()
         })
