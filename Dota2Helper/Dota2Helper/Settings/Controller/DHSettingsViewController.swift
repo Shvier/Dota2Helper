@@ -25,7 +25,7 @@ class DHSettingsViewController: UITableViewController {
         if indexPath.row == 0 {
             return kBackgroundViewHeight
         } else {
-            return 30
+            return 40
         }
     }
     
@@ -41,6 +41,7 @@ class DHSettingsViewController: UITableViewController {
             cell.backgroundView = imageView
         } else {
             cell.textLabel?.text = dataSource?[indexPath.row]
+            cell.accessoryType = .disclosureIndicator
         }
         return cell
     }
