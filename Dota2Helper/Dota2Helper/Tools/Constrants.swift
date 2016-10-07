@@ -15,6 +15,7 @@ let kNewsCellReuseIdentifier: String = "NewsTableViewCell"
 let kJournalCellReuseIdentifier: String = "JournalTableViewCell"
 let kTutorialCellReuseIdentifier: String = "TutorialTableViewCell"
 let kVideoCellReuseIdentifier: String = "VideoTableViewCell"
+let kSettingCellReuseIdentifier: String = "SettingTableViewCell"
 
 // refresh news
 let kRefreshNewsUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/news/refresh"
