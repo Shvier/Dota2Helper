@@ -11,6 +11,7 @@ import UIKit
 class DHSettingsViewController: UITableViewController {
 
     lazy var dataSource: [String]? = {[]} ()
+    let kBackgroundViewHeight: CGFloat = 200
     
     func handleData() {
         dataSource = ["", "观看记录", "缓存视频", "清空缓存"]
@@ -22,7 +23,7 @@ class DHSettingsViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
-            return 100
+            return kBackgroundViewHeight
         } else {
             return 30
         }
@@ -35,7 +36,9 @@ class DHSettingsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kSettingCellReuseIdentifier, for: indexPath)
         if indexPath.row == 0 {
-            cell.imageView?.image = UIImage(named: "setting_background")
+            let imageView: UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kBackgroundViewHeight))
+            imageView.image = UIImage(named: "setting_background")
+            cell.backgroundView = imageView
         } else {
             cell.textLabel?.text = dataSource?[indexPath.row]
         }
