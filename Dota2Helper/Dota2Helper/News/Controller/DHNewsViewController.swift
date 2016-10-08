@@ -9,36 +9,37 @@
 import UIKit
 import MJRefresh
 
-class DHNewsViewController: UITableViewController {
+class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var dataController: DHNewsDataController?
     var headerView: DHHeaderView?
+    var tableView: UITableView?
     
     func handleNewsData() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.tableView.mj_header.endRefreshing()
+            self.tableView?.mj_header.endRefreshing()
         }
         dataController = DHNewsDataController()
         dataController?.requestNewsDataWithCallback(callback: {
             self.renderTableViewCell()
-            tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+            tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    self.tableView.mj_footer.endRefreshing()
+                    self.tableView?.mj_footer.endRefreshing()
                 }
                 self.dataController?.requestMoreNews(callback: {
-                    self.tableView.mj_footer.endRefreshing()
+                    self.tableView?.mj_footer.endRefreshing()
                     DispatchQueue.main.async(execute: {
-                        self.tableView.reloadData()
+                        self.tableView?.reloadData()
                     })
                 }())
             })
-            self.tableView.mj_header.endRefreshing()
+            self.tableView?.mj_header.endRefreshing()
         }())
     }
     
     func renderTableViewCell() {
         headerView = DHHeaderView(frame: CGRect(x: 0, y: 0, width: kBannerWidth, height: kBannerHeight))
-        tableView.tableHeaderView = headerView
+        tableView?.tableHeaderView = headerView
         let banners = NSArray(array: (dataController?.bannerDataSource)!)
         let headerViewModel: DHNewsBannerViewModel = DHNewsBannerViewModel(banners: banners as! [DHNewsModel]);
         headerView?.bindDataWithViewModel(viewModel: headerViewModel)
@@ -49,7 +50,7 @@ class DHNewsViewController: UITableViewController {
             })
         }
         DispatchQueue.main.async(execute: {
-            self.tableView.reloadData()
+            self.tableView?.reloadData()
         })
     }
     
@@ -59,15 +60,15 @@ class DHNewsViewController: UITableViewController {
         navigationController?.pushViewController(newsDetailVC, animated: true)
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (dataController?.newsDataSource?.count)! > 0 ? (dataController?.newsDataSource?.count)! : 0
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return kNewsTableViewCellHeight
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: DHNewsTableViewCell = tableView.dequeueReusableCell(withIdentifier: kNewsCellReuseIdentifier, for: indexPath) as! DHNewsTableViewCell
         if (dataController?.newsDataSource?.count)! > 0 {
             let newsModel = dataController?.newsDataSource?[indexPath.row] as! DHNewsModel
@@ -77,7 +78,7 @@ class DHNewsViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let cell: DHNewsTableViewCell = tableView.cellForRow(at: indexPath) as! DHNewsTableViewCell
         loadToDetailVCWithNewsModel(newsModel: cell.newsModel!)
@@ -88,8 +89,11 @@ class DHNewsViewController: UITableViewController {
     }
     
     func setContentView() {
-        tableView.register(UINib(nibName: "DHNewsTableViewCell", bundle: nil), forCellReuseIdentifier: kNewsCellReuseIdentifier)
-        tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {
+        tableView = UITableView.init(frame: view.bounds, style: .grouped)
+        tableView?.delegate = self
+        tableView?.dataSource = self
+        tableView?.register(UINib(nibName: "DHNewsTableViewCell", bundle: nil), forCellReuseIdentifier: kNewsCellReuseIdentifier)
+        tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             self.handleNewsData()
         })
     }
