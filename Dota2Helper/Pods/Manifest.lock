@@ -1,5 +1,5 @@
 PODS:
-  - Bugtags (1.3.0)
+  - Bugtags (1.3.1)
   - Kingfisher (3.0.1)
   - MJRefresh (3.1.12)
 
@@ -9,7 +9,7 @@ DEPENDENCIES:
   - MJRefresh (~> 3.1.12)
 
 SPEC CHECKSUMS:
-  Bugtags: e3cb5b6622d4a8c51267af8a29c4d370ddcd7db8
+  Bugtags: a2f1671df9dacfdfd53fa59d3e6ffe7575bb2212
   Kingfisher: d5a491b45ea453d90a31bd2c0831d5243e73a73f
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
 
