@@ -84,7 +84,7 @@
 		C01E405C1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHTutorialTableViewCell.xib; sourceTree = "<group>"; };
 		C01E405F1D9E3C42006C6CD3 /* DHTutorialCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialCellViewModel.swift; sourceTree = "<group>"; };
 		C01E40611D9E3C9B006C6CD3 /* DHTutorialModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialModel.swift; sourceTree = "<group>"; };
-		C02359F21DA2958E008BEC24 /* AaGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AaGothic.ttf; sourceTree = "<group>"; };
+		C02359F21DA2958E008BEC24 /* AaGothic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AaGothic.ttf; path = ../AaGothic.ttf; sourceTree = "<group>"; };
 		C0287D331D994D2C009D878E /* DHJournalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalTableViewCell.swift; sourceTree = "<group>"; };
 		C0287D341D994D2C009D878E /* DHJournalTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHJournalTableViewCell.xib; sourceTree = "<group>"; };
 		C0287D391D994D66009D878E /* DHJournalViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalViewModel.swift; sourceTree = "<group>"; };
@@ -127,9 +127,9 @@
 		C0EF8C111DA0E84A00E7C27E /* SimplerSegmentMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimplerSegmentMenu.framework; path = "../../../../Library/Developer/Xcode/DerivedData/SimplerSegmentMenu-dwukdjcieaqhlmgjnknwnbzewekh/Build/Products/Debug-iphonesimulator/SimplerSegmentMenu.framework"; sourceTree = "<group>"; };
 		C0EF8C131DA0E8AB00E7C27E /* SimplerSegmentMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimplerSegmentMenu.framework; path = ../../SubModules/framework/SimplerSegmentMenu.framework; sourceTree = "<group>"; };
 		C0EF8C1B1DA0EBC400E7C27E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		C0F29F1B1DA410A6001A0594 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
-		C0F29F1C1DA410A6001A0594 /* UISegmentedMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISegmentedMenu.swift; sourceTree = "<group>"; };
-		C0F29F1F1DA410AE001A0594 /* divider_line_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = divider_line_image.png; sourceTree = "<group>"; };
+		C0F29F1B1DA410A6001A0594 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Category.swift"; path = "../../String+Category.swift"; sourceTree = "<group>"; };
+		C0F29F1C1DA410A6001A0594 /* UISegmentedMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UISegmentedMenu.swift; path = ../../UISegmentedMenu.swift; sourceTree = "<group>"; };
+		C0F29F1F1DA410AE001A0594 /* divider_line_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = divider_line_image.png; path = ../divider_line_image.png; sourceTree = "<group>"; };
 		C0F630781D9D5B7800AF039F /* DHTutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialView.swift; sourceTree = "<group>"; };
 		C0F6307A1D9D5B8F00AF039F /* DHTutorialViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialViewModel.swift; sourceTree = "<group>"; };
 		C0F6307C1D9D5CB700AF039F /* DHTutorialDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialDataController.swift; sourceTree = "<group>"; };
@@ -295,10 +295,6 @@
 		C0D4CFD11D5DBEF1008F824A = {
 			isa = PBXGroup;
 			children = (
-				C0F29F1F1DA410AE001A0594 /* divider_line_image.png */,
-				C0F29F1B1DA410A6001A0594 /* String+Category.swift */,
-				C0F29F1C1DA410A6001A0594 /* UISegmentedMenu.swift */,
-				C02359F21DA2958E008BEC24 /* AaGothic.ttf */,
 				C0EC967D1D8FCA8100E1557E /* Fabric.framework */,
 				C0EC967E1D8FCA8100E1557E /* Crashlytics.framework */,
 				C0D4CFDC1D5DBEF1008F824A /* Dota2Helper */,
@@ -396,6 +392,8 @@
 		C0D4CFF91D5DC168008F824A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				C0F29F1B1DA410A6001A0594 /* String+Category.swift */,
+				C0F29F1C1DA410A6001A0594 /* UISegmentedMenu.swift */,
 				C0A1AC3F1D616188005B92A5 /* Constrants.swift */,
 				C0EC174A1D9010930002AAF4 /* DHNetworkRequestManager.swift */,
 				E75E4B5B1DA8D7AC00612599 /* DHLoadingView.swift */,
@@ -446,6 +444,8 @@
 		C0D4D0041D5DC16E008F824A /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				C02359F21DA2958E008BEC24 /* AaGothic.ttf */,
+				C0F29F1F1DA410AE001A0594 /* divider_line_image.png */,
 				C0D4CFDD1D5DBEF1008F824A /* AppDelegate.swift */,
 				C0D4CFDF1D5DBEF1008F824A /* Assets.xcassets */,
 				C0D4CFE11D5DBEF1008F824A /* LaunchScreen.storyboard */,

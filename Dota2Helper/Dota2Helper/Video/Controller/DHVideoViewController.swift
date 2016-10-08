@@ -9,11 +9,12 @@
 import UIKit
 import MJRefresh
 
-class DHVideoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DHVideoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISegmentedMenuDelegate {
 
     var dataController: DHVideoDataController?
     var tableView: UITableView?
     var loadingView: DHLoadingView?
+    var menu: UISegmentedMenu?
     
     func handleVideoData() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -42,6 +43,13 @@ class DHVideoViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.loadingView?.isHidden = true
             self.tableView?.reloadData()
         })
+    }
+    
+    func segmentedMenu(didSelectIndex index: NSInteger) {
+        if index != 0 {
+            // TODO
+            menu?.currentSelectedButton().isSelected = false
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,9 +83,10 @@ class DHVideoViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func setContentView() {
-        let menu: UISegmentedMenu = UISegmentedMenu(frame: CGRect(x: 0, y: 60, width: view.bounds.size.width, height: 50), contentDataSource: [""], titleDataSource: ["全部", "解说", "比赛", "明星", "趣味", "新手"], type: .fill)
-        view.addSubview(menu)
-        tableView = UITableView(frame: CGRect(x: 0, y: 60 + menu.bounds.size.height, width: view.bounds.size.width, height: view.bounds.size.height - 60 - menu.bounds.size.height), style: .plain)
+        menu = UISegmentedMenu(frame: CGRect(x: 0, y: 60, width: view.bounds.size.width, height: 50), contentDataSource: [""], titleDataSource: ["全部", "解说", "比赛", "明星", "趣味", "新手"], type: .fill)
+        menu?.delegate = self
+        view.addSubview(menu!)
+        tableView = UITableView(frame: CGRect(x: 0, y: 60 + (menu?.bounds.size.height)!, width: view.bounds.size.width, height: view.bounds.size.height - 60 - (menu?.bounds.size.height)!), style: .plain)
         tableView?.register(UINib(nibName: "DHVideoTableViewCell", bundle: nil), forCellReuseIdentifier: kVideoCellReuseIdentifier)
         tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             self.handleVideoData()

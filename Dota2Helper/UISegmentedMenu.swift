@@ -92,12 +92,21 @@ public class UISegmentedMenu: UIView {
         return selectedIndex ?? 0
     }
     
+    public func currentSelectedButton() -> UIButton {
+        return self.contentView?.viewWithTag(selectedIndex! + kTag) as! UIButton
+    }
+    
     func clickSegmentedButton(button: UIButton) {
-        let lastSelectedButton: UIButton = self.contentView?.viewWithTag(selectedIndex! + kTag) as! UIButton
-        lastSelectedButton.isSelected = false
+        selectedIndex = button.tag - kTag
+        delegate?.segmentedMenu(didSelectIndex: selectedIndex!)
+        if selectedIndex != 0 {
+            return
+        }
         
         button.isSelected = true
-        selectedIndex = button.tag - kTag
+        
+        let lastSelectedButton: UIButton = self.contentView?.viewWithTag(selectedIndex! + kTag) as! UIButton
+        lastSelectedButton.isSelected = false
         
         var totalWidth: CGFloat = 0
         if selectedIndex! == 0 {
@@ -118,7 +127,6 @@ public class UISegmentedMenu: UIView {
         offsetX = min(self.totalWidth! - self.bounds.size.width, max(0, offsetX))
         
         contentView?.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
-        delegate?.segmentedMenu(didSelectIndex: selectedIndex!)
         UIView.animate(withDuration: 0.1) {
             self.divideView?.frame = CGRect(x: totalWidth - offsetX, y: (self.divideView?.frame.origin.y)!, width: selectedWidth, height: (self.divideView?.frame.size.height)!)
         }
