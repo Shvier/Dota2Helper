@@ -9,11 +9,12 @@
 import UIKit
 import MJRefresh
 
-class DHTutorialViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DHTutorialViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISegmentedMenuDelegate {
     
     var dataController: DHTutorialDataController?
     var tableView: UITableView?
     var loadingView: DHLoadingView?
+    var menu: UISegmentedMenu?
     
     func handleTutorialData() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -42,6 +43,13 @@ class DHTutorialViewController: UIViewController, UITableViewDelegate, UITableVi
             self.loadingView?.isHidden = true
             self.tableView?.reloadData()
         })
+    }
+    
+    func segmentedMenu(didSelectIndex index: NSInteger) {
+        if index != 0 {
+            // TODO
+            menu?.currentSelectedButton().isSelected = false
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -75,9 +83,10 @@ class DHTutorialViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func setContentView() {
-        let menu: UISegmentedMenu = UISegmentedMenu(frame: CGRect(x: 0, y: 60, width: view.bounds.size.width, height: 50), contentDataSource: [""], titleDataSource: ["全部", "新手", "进阶", "技巧"], type: .fill)
-        view.addSubview(menu)
-        tableView = UITableView(frame: CGRect(x: 0, y: 60 + menu.bounds.size.height, width: view.bounds.size.width, height: view.bounds.size.height - 60 - menu.bounds.size.height), style: .plain)
+        menu = UISegmentedMenu(frame: CGRect(x: 0, y: 60, width: view.bounds.size.width, height: 50), contentDataSource: [""], titleDataSource: ["全部", "新手", "进阶", "技巧"], type: .fill)
+        menu?.delegate = self
+        view.addSubview(menu!)
+        tableView = UITableView(frame: CGRect(x: 0, y: 60 + (menu?.bounds.size.height)!, width: view.bounds.size.width, height: view.bounds.size.height - 60 - (menu?.bounds.size.height)!), style: .plain)
         tableView?.register(UINib(nibName: "DHTutorialTableViewCell", bundle: nil), forCellReuseIdentifier: kTutorialCellReuseIdentifier)
         tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             self.handleTutorialData()
