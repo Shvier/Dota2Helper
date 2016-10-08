@@ -13,6 +13,7 @@ class DHVideoViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     var dataController: DHVideoDataController?
     var tableView: UITableView?
+    var loadingView: DHLoadingView?
     
     func handleVideoData() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -38,6 +39,7 @@ class DHVideoViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func renderTableViewCell() {
         DispatchQueue.main.async(execute: {
+            self.loadingView?.isHidden = true
             self.tableView?.reloadData()
         })
     }
@@ -83,6 +85,8 @@ class DHVideoViewController: UIViewController, UITableViewDelegate, UITableViewD
         view.addSubview(tableView!)
         tableView?.delegate = self
         tableView?.dataSource = self
+        loadingView = DHLoadingView(frame: tableView!.frame)
+        view.addSubview(loadingView!)
     }
     
     override func viewDidLoad() {
