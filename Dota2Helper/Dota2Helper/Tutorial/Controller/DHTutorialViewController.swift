@@ -13,6 +13,7 @@ class DHTutorialViewController: UIViewController, UITableViewDelegate, UITableVi
     
     var dataController: DHTutorialDataController?
     var tableView: UITableView?
+    var loadingView: DHLoadingView?
     
     func handleTutorialData() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -38,6 +39,7 @@ class DHTutorialViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func renderTableViewCell() {
         DispatchQueue.main.async(execute: {
+            self.loadingView?.isHidden = true
             self.tableView?.reloadData()
         })
     }
@@ -83,6 +85,8 @@ class DHTutorialViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView?.delegate = self
         tableView?.dataSource = self
         view.addSubview(tableView!)
+        loadingView = DHLoadingView(frame: tableView!.frame)
+        view.addSubview(loadingView!)
     }
     
     override func viewDidLoad() {
