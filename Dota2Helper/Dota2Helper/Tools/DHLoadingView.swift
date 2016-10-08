@@ -14,8 +14,10 @@ class DHLoadingView: UIView {
         super.init(frame: frame)
         
         let hint: String = "正在加载"
-        let hintLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: hint.sizeOfContent(font: UIFont(name: "Helvetica", size: 16)!).width, height: 18))
+        let hintLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: hint.sizeOfContent(font: UIFont(name: "Helvetica", size: 20)!).width, height: 18))
         hintLabel.center = CGPoint(x: frame.size.width/2, y: frame.size.height/2)
+        hintLabel.text = hint
+        hintLabel.textAlignment = .center
         
         self.addSubview(hintLabel)
     }
