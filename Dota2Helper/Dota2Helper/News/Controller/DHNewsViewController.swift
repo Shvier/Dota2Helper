@@ -14,6 +14,7 @@ class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var dataController: DHNewsDataController?
     var headerView: DHHeaderView?
     var tableView: UITableView?
+    var loadingView: DHLoadingView?
     
     func handleNewsData() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -50,6 +51,7 @@ class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             })
         }
         DispatchQueue.main.async(execute: {
+            self.loadingView?.isHidden = true
             self.tableView?.reloadData()
         })
     }
@@ -96,6 +98,9 @@ class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             self.handleNewsData()
         })
+        view.addSubview(tableView!)
+        loadingView = DHLoadingView(frame: view.bounds)
+        view.addSubview(loadingView!)
     }
     
     func initLifeCycle() {
