@@ -116,6 +116,22 @@
 		C0D4D00D1D5DC2FD008F824A /* DHSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHSettingsViewController.swift; sourceTree = "<group>"; };
 		C0D4D00F1D5DC30D008F824A /* DHTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialViewController.swift; sourceTree = "<group>"; };
 		C0D4D0111D5DC319008F824A /* DHVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoViewController.swift; sourceTree = "<group>"; };
+		C0E38C501DADB6DA00E1D27A /* Youku-Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Youku-Bridge-Header.h"; sourceTree = "<group>"; };
+		C0E38C531DADB73500E1D27A /* YoukuMediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoukuMediaPlayer.h; sourceTree = "<group>"; };
+		C0E38C541DADB73500E1D27A /* YTDownloadDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTDownloadDefine.h; sourceTree = "<group>"; };
+		C0E38C551DADB73500E1D27A /* YTDownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTDownloadManager.h; sourceTree = "<group>"; };
+		C0E38C561DADB73500E1D27A /* YTDownloadTaskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTDownloadTaskModel.h; sourceTree = "<group>"; };
+		C0E38C571DADB73500E1D27A /* YTEngineOpenViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTEngineOpenViewManager.h; sourceTree = "<group>"; };
+		C0E38C581DADB73500E1D27A /* YTLocalMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTLocalMedia.h; sourceTree = "<group>"; };
+		C0E38C591DADB73500E1D27A /* YTSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTSequence.h; sourceTree = "<group>"; };
+		C0E38C5A1DADB73500E1D27A /* YYMediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYMediaPlayer.h; sourceTree = "<group>"; };
+		C0E38C5B1DADB73500E1D27A /* YYMediaPlayerBackgroundModeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYMediaPlayerBackgroundModeManager.h; sourceTree = "<group>"; };
+		C0E38C5C1DADB73500E1D27A /* YYMediaPlayerDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYMediaPlayerDefines.h; sourceTree = "<group>"; };
+		C0E38C5D1DADB73500E1D27A /* YYMediaPlayerEncrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYMediaPlayerEncrypt.h; sourceTree = "<group>"; };
+		C0E38C5E1DADB73500E1D27A /* YYMediaPlayerEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYMediaPlayerEvents.h; sourceTree = "<group>"; };
+		C0E38C5F1DADB73500E1D27A /* YYMediaPlayerException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYMediaPlayerException.h; sourceTree = "<group>"; };
+		C0E38C601DADB73500E1D27A /* YYMediaPlayerHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYMediaPlayerHistory.h; sourceTree = "<group>"; };
+		C0E38C611DADB73500E1D27A /* YYMediaPlayerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYMediaPlayerItem.h; sourceTree = "<group>"; };
 		C0E6BF901D94342900872006 /* DHNewsDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsDetailView.swift; sourceTree = "<group>"; };
 		C0E6BF921D9434D400872006 /* DHNewsDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsDetailViewModel.swift; sourceTree = "<group>"; };
 		C0EB19EC1D94138D0053970A /* DHNewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsDetailViewController.swift; sourceTree = "<group>"; };
@@ -301,6 +317,7 @@
 		C0D4CFD11D5DBEF1008F824A = {
 			isa = PBXGroup;
 			children = (
+				C0E38C511DADB71B00E1D27A /* YouTuEngineMediaPlayer */,
 				C0EC967D1D8FCA8100E1557E /* Fabric.framework */,
 				C0EC967E1D8FCA8100E1557E /* Crashlytics.framework */,
 				C0D4CFDC1D5DBEF1008F824A /* Dota2Helper */,
@@ -403,6 +420,7 @@
 				C0A1AC3F1D616188005B92A5 /* Constrants.swift */,
 				C0EC174A1D9010930002AAF4 /* DHNetworkRequestManager.swift */,
 				E75E4B5B1DA8D7AC00612599 /* DHLoadingView.swift */,
+				C0E38C501DADB6DA00E1D27A /* Youku-Bridge-Header.h */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -461,6 +479,36 @@
 				C0D4CFE41D5DBEF1008F824A /* Info.plist */,
 			);
 			name = Others;
+			sourceTree = "<group>";
+		};
+		C0E38C511DADB71B00E1D27A /* YouTuEngineMediaPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				C0E38C521DADB73500E1D27A /* YouTuMediaPlayerEngineYoukuHeaders */,
+			);
+			path = YouTuEngineMediaPlayer;
+			sourceTree = "<group>";
+		};
+		C0E38C521DADB73500E1D27A /* YouTuMediaPlayerEngineYoukuHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				C0E38C531DADB73500E1D27A /* YoukuMediaPlayer.h */,
+				C0E38C541DADB73500E1D27A /* YTDownloadDefine.h */,
+				C0E38C551DADB73500E1D27A /* YTDownloadManager.h */,
+				C0E38C561DADB73500E1D27A /* YTDownloadTaskModel.h */,
+				C0E38C571DADB73500E1D27A /* YTEngineOpenViewManager.h */,
+				C0E38C581DADB73500E1D27A /* YTLocalMedia.h */,
+				C0E38C591DADB73500E1D27A /* YTSequence.h */,
+				C0E38C5A1DADB73500E1D27A /* YYMediaPlayer.h */,
+				C0E38C5B1DADB73500E1D27A /* YYMediaPlayerBackgroundModeManager.h */,
+				C0E38C5C1DADB73500E1D27A /* YYMediaPlayerDefines.h */,
+				C0E38C5D1DADB73500E1D27A /* YYMediaPlayerEncrypt.h */,
+				C0E38C5E1DADB73500E1D27A /* YYMediaPlayerEvents.h */,
+				C0E38C5F1DADB73500E1D27A /* YYMediaPlayerException.h */,
+				C0E38C601DADB73500E1D27A /* YYMediaPlayerHistory.h */,
+				C0E38C611DADB73500E1D27A /* YYMediaPlayerItem.h */,
+			);
+			path = YouTuMediaPlayerEngineYoukuHeaders;
 			sourceTree = "<group>";
 		};
 		F3F3173041BA8E225C08FF43 /* Pods */ = {
@@ -785,7 +833,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shvier.Dota2Helper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Dota2Helper/Tools/Youku-Bridge-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
 			};
@@ -809,7 +857,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shvier.Dota2Helper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Dota2Helper/Tools/Youku-Bridge-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
 			};
