@@ -72,6 +72,8 @@ class DHVideoViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let playerVC = DHVideoPlayViewController()
+        navigationController?.pushViewController(playerVC, animated: true)
     }
     
     func initLifeCycle() {

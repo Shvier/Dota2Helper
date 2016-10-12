@@ -10,5 +10,6 @@
 #define Youku_Bridge_Header_h
 
 #import "YYMediaPlayer.h"
+#import "YTEngineOpenViewManager.h"
 
 #endif /* Youku_Bridge_Header_h */

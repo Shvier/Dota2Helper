@@ -22,10 +22,19 @@
 		C0287D411D9957D9009D878E /* DHJournalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D3F1D9957D9009D878E /* DHJournalDetailViewController.swift */; };
 		C0287D441D9958D6009D878E /* DHJournalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D431D9958D6009D878E /* DHJournalDetailView.swift */; };
 		C0287D461D995AFE009D878E /* DHJournalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D451D995AFE009D878E /* DHJournalDetailViewModel.swift */; };
+		C05468471DAEB43E00A4AC13 /* sdk.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C05468451DAEB43E00A4AC13 /* sdk.bundle */; };
+		C05468481DAEB43E00A4AC13 /* YTEngine.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C05468461DAEB43E00A4AC13 /* YTEngine.bundle */; };
+		C054684A1DAEB44D00A4AC13 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C05468491DAEB44D00A4AC13 /* libYouTuMediaPlayerEngineYouku.a */; };
 		C06E66421D917640007B1210 /* DHHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E66411D917640007B1210 /* DHHeaderView.swift */; };
 		C06E66441D917781007B1210 /* DHNewsBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E66431D917781007B1210 /* DHNewsBannerViewModel.swift */; };
 		C088DA4D1D9564D400F1329D /* DHBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C088DA4C1D9564D400F1329D /* DHBanner.swift */; };
 		C088DA4F1D95652700F1329D /* DHBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C088DA4E1D95652700F1329D /* DHBannerViewModel.swift */; };
+		C09648BB1DAEB92900D75D21 /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648BA1DAEB92900D75D21 /* libz.1.tbd */; };
+		C09648BD1DAEB93300D75D21 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648BC1DAEB93300D75D21 /* libxml2.2.tbd */; };
+		C09648BF1DAEB94600D75D21 /* libiconv.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648BE1DAEB94600D75D21 /* libiconv.2.tbd */; };
+		C09648C11DAEB94B00D75D21 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648C01DAEB94B00D75D21 /* VideoToolbox.framework */; };
+		C09648C31DAEB95B00D75D21 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648C21DAEB95B00D75D21 /* libresolv.9.tbd */; };
+		C09648C51DAEB9E600D75D21 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648C41DAEB9E600D75D21 /* libbz2.tbd */; };
 		C0A1AC401D616188005B92A5 /* Constrants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A1AC3F1D616188005B92A5 /* Constrants.swift */; };
 		C0B7A4C11D8ECC4E008D10A0 /* DHNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B7A4C01D8ECC4E008D10A0 /* DHNewsModel.swift */; };
 		C0D3E0771DA449AE009AFDB0 /* DHVideoDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D3E0761DA449AE009AFDB0 /* DHVideoDataController.swift */; };
@@ -95,10 +104,19 @@
 		C0287D3F1D9957D9009D878E /* DHJournalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDetailViewController.swift; sourceTree = "<group>"; };
 		C0287D431D9958D6009D878E /* DHJournalDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDetailView.swift; sourceTree = "<group>"; };
 		C0287D451D995AFE009D878E /* DHJournalDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDetailViewModel.swift; sourceTree = "<group>"; };
+		C05468451DAEB43E00A4AC13 /* sdk.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = sdk.bundle; sourceTree = "<group>"; };
+		C05468461DAEB43E00A4AC13 /* YTEngine.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YTEngine.bundle; sourceTree = "<group>"; };
+		C05468491DAEB44D00A4AC13 /* libYouTuMediaPlayerEngineYouku.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouTuMediaPlayerEngineYouku.a; sourceTree = "<group>"; };
 		C06E66411D917640007B1210 /* DHHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHHeaderView.swift; sourceTree = "<group>"; };
 		C06E66431D917781007B1210 /* DHNewsBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsBannerViewModel.swift; sourceTree = "<group>"; };
 		C088DA4C1D9564D400F1329D /* DHBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBanner.swift; sourceTree = "<group>"; };
 		C088DA4E1D95652700F1329D /* DHBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBannerViewModel.swift; sourceTree = "<group>"; };
+		C09648BA1DAEB92900D75D21 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
+		C09648BC1DAEB93300D75D21 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		C09648BE1DAEB94600D75D21 /* libiconv.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.tbd; path = usr/lib/libiconv.2.tbd; sourceTree = SDKROOT; };
+		C09648C01DAEB94B00D75D21 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		C09648C21DAEB95B00D75D21 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		C09648C41DAEB9E600D75D21 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
 		C0A1AC3F1D616188005B92A5 /* Constrants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constrants.swift; sourceTree = "<group>"; };
 		C0B7A4C01D8ECC4E008D10A0 /* DHNewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsModel.swift; sourceTree = "<group>"; };
 		C0D3E0761DA449AE009AFDB0 /* DHVideoDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoDataController.swift; sourceTree = "<group>"; };
@@ -163,6 +181,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C09648C51DAEB9E600D75D21 /* libbz2.tbd in Frameworks */,
+				C09648C31DAEB95B00D75D21 /* libresolv.9.tbd in Frameworks */,
+				C09648C11DAEB94B00D75D21 /* VideoToolbox.framework in Frameworks */,
+				C09648BF1DAEB94600D75D21 /* libiconv.2.tbd in Frameworks */,
+				C09648BD1DAEB93300D75D21 /* libxml2.2.tbd in Frameworks */,
+				C09648BB1DAEB92900D75D21 /* libz.1.tbd in Frameworks */,
+				C054684A1DAEB44D00A4AC13 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */,
 				C0EC96801D8FCA8100E1557E /* Crashlytics.framework in Frameworks */,
 				C0EC967F1D8FCA8100E1557E /* Fabric.framework in Frameworks */,
 				5E921422300F58B90D59EC8E /* Pods_Dota2Helper.framework in Frameworks */,
@@ -175,6 +200,12 @@
 		9A4136B0649CF3C062810112 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C09648C41DAEB9E600D75D21 /* libbz2.tbd */,
+				C09648C21DAEB95B00D75D21 /* libresolv.9.tbd */,
+				C09648C01DAEB94B00D75D21 /* VideoToolbox.framework */,
+				C09648BE1DAEB94600D75D21 /* libiconv.2.tbd */,
+				C09648BC1DAEB93300D75D21 /* libxml2.2.tbd */,
+				C09648BA1DAEB92900D75D21 /* libz.1.tbd */,
 				C0EF8C1B1DA0EBC400E7C27E /* AddressBook.framework */,
 				C0EF8C131DA0E8AB00E7C27E /* SimplerSegmentMenu.framework */,
 				C0EF8C111DA0E84A00E7C27E /* SimplerSegmentMenu.framework */,
@@ -484,6 +515,9 @@
 		C0E38C511DADB71B00E1D27A /* YouTuEngineMediaPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				C05468491DAEB44D00A4AC13 /* libYouTuMediaPlayerEngineYouku.a */,
+				C05468451DAEB43E00A4AC13 /* sdk.bundle */,
+				C05468461DAEB43E00A4AC13 /* YTEngine.bundle */,
 				C0E38C521DADB73500E1D27A /* YouTuMediaPlayerEngineYoukuHeaders */,
 			);
 			path = YouTuEngineMediaPlayer;
@@ -586,12 +620,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C05468471DAEB43E00A4AC13 /* sdk.bundle in Resources */,
 				C02359F31DA2958E008BEC24 /* AaGothic.ttf in Resources */,
 				C0F29F201DA410AE001A0594 /* divider_line_image.png in Resources */,
 				C0EC17531D9026C80002AAF4 /* DHNewsTableViewCell.xib in Resources */,
 				C0287D361D994D2C009D878E /* DHJournalTableViewCell.xib in Resources */,
 				C0EBB08A1DAB021600D5C179 /* DHVideoPlayViewController.xib in Resources */,
 				C0D4CFE01D5DBEF1008F824A /* Assets.xcassets in Resources */,
+				C05468481DAEB43E00A4AC13 /* YTEngine.bundle in Resources */,
 				C0D4CFE31D5DBEF1008F824A /* LaunchScreen.storyboard in Resources */,
 				C01E405E1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib in Resources */,
 				C0D3E07F1DA44A2D009AFDB0 /* DHVideoTableViewCell.xib in Resources */,
@@ -831,6 +867,10 @@
 				INFOPLIST_FILE = Dota2Helper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YouTuEngineMediaPlayer",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shvier.Dota2Helper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dota2Helper/Tools/Youku-Bridge-Header.h";
@@ -855,6 +895,10 @@
 				INFOPLIST_FILE = Dota2Helper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YouTuEngineMediaPlayer",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Shvier.Dota2Helper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dota2Helper/Tools/Youku-Bridge-Header.h";
