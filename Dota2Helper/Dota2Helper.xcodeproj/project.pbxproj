@@ -35,6 +35,27 @@
 		C09648C11DAEB94B00D75D21 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648C01DAEB94B00D75D21 /* VideoToolbox.framework */; };
 		C09648C31DAEB95B00D75D21 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648C21DAEB95B00D75D21 /* libresolv.9.tbd */; };
 		C09648C51DAEB9E600D75D21 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648C41DAEB9E600D75D21 /* libbz2.tbd */; };
+		C09648C71DAEECD900D75D21 /* ModelIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648C61DAEECD900D75D21 /* ModelIO.framework */; };
+		C09648C91DAEECDF00D75D21 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648C81DAEECDF00D75D21 /* libsqlite3.tbd */; };
+		C09648CB1DAEECE400D75D21 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648CA1DAEECE400D75D21 /* CoreMotion.framework */; };
+		C09648CD1DAEECE900D75D21 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648CC1DAEECE900D75D21 /* libc++.1.tbd */; };
+		C09648CF1DAEECF600D75D21 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648CE1DAEECF600D75D21 /* MobileCoreServices.framework */; };
+		C09648D11DAEECFB00D75D21 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648D01DAEECFB00D75D21 /* Social.framework */; };
+		C09648D31DAEED0000D75D21 /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648D21DAEED0000D75D21 /* libbz2.1.0.tbd */; };
+		C09648D51DAEED0600D75D21 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648D41DAEED0600D75D21 /* PassKit.framework */; };
+		C09648D71DAEED1200D75D21 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648D61DAEED1200D75D21 /* MessageUI.framework */; };
+		C09648D91DAEED3100D75D21 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648D81DAEED3100D75D21 /* EventKit.framework */; };
+		C09648DB1DAEED3700D75D21 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648DA1DAEED3700D75D21 /* MediaPlayer.framework */; };
+		C09648DD1DAEED3C00D75D21 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648DC1DAEED3C00D75D21 /* SystemConfiguration.framework */; };
+		C09648DF1DAEED4100D75D21 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648DE1DAEED4100D75D21 /* AdSupport.framework */; };
+		C09648E11DAEED4600D75D21 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648E01DAEED4500D75D21 /* CoreText.framework */; };
+		C09648E31DAEED4C00D75D21 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648E21DAEED4C00D75D21 /* OpenGLES.framework */; };
+		C09648E51DAEED5200D75D21 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648E41DAEED5200D75D21 /* QuartzCore.framework */; };
+		C09648E71DAEED5900D75D21 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648E61DAEED5900D75D21 /* CoreMedia.framework */; };
+		C09648E91DAEED5E00D75D21 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648E81DAEED5E00D75D21 /* AudioToolbox.framework */; };
+		C09648EB1DAEED8A00D75D21 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648EA1DAEED8A00D75D21 /* CoreGraphics.framework */; };
+		C09648ED1DAEED8E00D75D21 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648EC1DAEED8E00D75D21 /* UIKit.framework */; };
+		C09648EF1DAEED9300D75D21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648EE1DAEED9300D75D21 /* Foundation.framework */; };
 		C0A1AC401D616188005B92A5 /* Constrants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A1AC3F1D616188005B92A5 /* Constrants.swift */; };
 		C0B7A4C11D8ECC4E008D10A0 /* DHNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B7A4C01D8ECC4E008D10A0 /* DHNewsModel.swift */; };
 		C0D3E0771DA449AE009AFDB0 /* DHVideoDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D3E0761DA449AE009AFDB0 /* DHVideoDataController.swift */; };
@@ -117,6 +138,27 @@
 		C09648C01DAEB94B00D75D21 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		C09648C21DAEB95B00D75D21 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 		C09648C41DAEB9E600D75D21 /* libbz2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.tbd; path = usr/lib/libbz2.tbd; sourceTree = SDKROOT; };
+		C09648C61DAEECD900D75D21 /* ModelIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ModelIO.framework; path = System/Library/Frameworks/ModelIO.framework; sourceTree = SDKROOT; };
+		C09648C81DAEECDF00D75D21 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		C09648CA1DAEECE400D75D21 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		C09648CC1DAEECE900D75D21 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		C09648CE1DAEECF600D75D21 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		C09648D01DAEECFB00D75D21 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		C09648D21DAEED0000D75D21 /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
+		C09648D41DAEED0600D75D21 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		C09648D61DAEED1200D75D21 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		C09648D81DAEED3100D75D21 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		C09648DA1DAEED3700D75D21 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		C09648DC1DAEED3C00D75D21 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C09648DE1DAEED4100D75D21 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		C09648E01DAEED4500D75D21 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		C09648E21DAEED4C00D75D21 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		C09648E41DAEED5200D75D21 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C09648E61DAEED5900D75D21 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		C09648E81DAEED5E00D75D21 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C09648EA1DAEED8A00D75D21 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C09648EC1DAEED8E00D75D21 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C09648EE1DAEED9300D75D21 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C0A1AC3F1D616188005B92A5 /* Constrants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constrants.swift; sourceTree = "<group>"; };
 		C0B7A4C01D8ECC4E008D10A0 /* DHNewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsModel.swift; sourceTree = "<group>"; };
 		C0D3E0761DA449AE009AFDB0 /* DHVideoDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoDataController.swift; sourceTree = "<group>"; };
@@ -181,13 +223,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C09648EF1DAEED9300D75D21 /* Foundation.framework in Frameworks */,
+				C09648ED1DAEED8E00D75D21 /* UIKit.framework in Frameworks */,
+				C09648EB1DAEED8A00D75D21 /* CoreGraphics.framework in Frameworks */,
+				C09648E91DAEED5E00D75D21 /* AudioToolbox.framework in Frameworks */,
+				C09648E71DAEED5900D75D21 /* CoreMedia.framework in Frameworks */,
+				C09648E51DAEED5200D75D21 /* QuartzCore.framework in Frameworks */,
+				C09648E31DAEED4C00D75D21 /* OpenGLES.framework in Frameworks */,
+				C09648E11DAEED4600D75D21 /* CoreText.framework in Frameworks */,
+				C09648DF1DAEED4100D75D21 /* AdSupport.framework in Frameworks */,
+				C09648DD1DAEED3C00D75D21 /* SystemConfiguration.framework in Frameworks */,
+				C09648DB1DAEED3700D75D21 /* MediaPlayer.framework in Frameworks */,
+				C09648D91DAEED3100D75D21 /* EventKit.framework in Frameworks */,
+				C054684A1DAEB44D00A4AC13 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */,
+				C09648D71DAEED1200D75D21 /* MessageUI.framework in Frameworks */,
+				C09648BD1DAEB93300D75D21 /* libxml2.2.tbd in Frameworks */,
+				C09648D51DAEED0600D75D21 /* PassKit.framework in Frameworks */,
+				C09648D31DAEED0000D75D21 /* libbz2.1.0.tbd in Frameworks */,
+				C09648D11DAEECFB00D75D21 /* Social.framework in Frameworks */,
+				C09648CF1DAEECF600D75D21 /* MobileCoreServices.framework in Frameworks */,
+				C09648C11DAEB94B00D75D21 /* VideoToolbox.framework in Frameworks */,
+				C09648CD1DAEECE900D75D21 /* libc++.1.tbd in Frameworks */,
+				C09648CB1DAEECE400D75D21 /* CoreMotion.framework in Frameworks */,
+				C09648C91DAEECDF00D75D21 /* libsqlite3.tbd in Frameworks */,
+				C09648C71DAEECD900D75D21 /* ModelIO.framework in Frameworks */,
 				C09648C51DAEB9E600D75D21 /* libbz2.tbd in Frameworks */,
 				C09648C31DAEB95B00D75D21 /* libresolv.9.tbd in Frameworks */,
-				C09648C11DAEB94B00D75D21 /* VideoToolbox.framework in Frameworks */,
 				C09648BF1DAEB94600D75D21 /* libiconv.2.tbd in Frameworks */,
-				C09648BD1DAEB93300D75D21 /* libxml2.2.tbd in Frameworks */,
 				C09648BB1DAEB92900D75D21 /* libz.1.tbd in Frameworks */,
-				C054684A1DAEB44D00A4AC13 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */,
 				C0EC96801D8FCA8100E1557E /* Crashlytics.framework in Frameworks */,
 				C0EC967F1D8FCA8100E1557E /* Fabric.framework in Frameworks */,
 				5E921422300F58B90D59EC8E /* Pods_Dota2Helper.framework in Frameworks */,
@@ -200,6 +263,27 @@
 		9A4136B0649CF3C062810112 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C09648EE1DAEED9300D75D21 /* Foundation.framework */,
+				C09648EC1DAEED8E00D75D21 /* UIKit.framework */,
+				C09648EA1DAEED8A00D75D21 /* CoreGraphics.framework */,
+				C09648E81DAEED5E00D75D21 /* AudioToolbox.framework */,
+				C09648E61DAEED5900D75D21 /* CoreMedia.framework */,
+				C09648E41DAEED5200D75D21 /* QuartzCore.framework */,
+				C09648E21DAEED4C00D75D21 /* OpenGLES.framework */,
+				C09648E01DAEED4500D75D21 /* CoreText.framework */,
+				C09648DE1DAEED4100D75D21 /* AdSupport.framework */,
+				C09648DC1DAEED3C00D75D21 /* SystemConfiguration.framework */,
+				C09648DA1DAEED3700D75D21 /* MediaPlayer.framework */,
+				C09648D81DAEED3100D75D21 /* EventKit.framework */,
+				C09648D61DAEED1200D75D21 /* MessageUI.framework */,
+				C09648D41DAEED0600D75D21 /* PassKit.framework */,
+				C09648D21DAEED0000D75D21 /* libbz2.1.0.tbd */,
+				C09648D01DAEECFB00D75D21 /* Social.framework */,
+				C09648CE1DAEECF600D75D21 /* MobileCoreServices.framework */,
+				C09648CC1DAEECE900D75D21 /* libc++.1.tbd */,
+				C09648CA1DAEECE400D75D21 /* CoreMotion.framework */,
+				C09648C81DAEECDF00D75D21 /* libsqlite3.tbd */,
+				C09648C61DAEECD900D75D21 /* ModelIO.framework */,
 				C09648C41DAEB9E600D75D21 /* libbz2.tbd */,
 				C09648C21DAEB95B00D75D21 /* libresolv.9.tbd */,
 				C09648C01DAEB94B00D75D21 /* VideoToolbox.framework */,

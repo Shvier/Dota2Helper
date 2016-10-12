@@ -41,7 +41,7 @@ let kLoadMoreStrategiesUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/s
 let kRefreshVideos: String = "http://dota2xufserver.duapp.com/api/v1.0/video/refresh/"
 // load more refresh videos
 // loadmore/{video_type}/{vid}
-let kLoadMoreVideos: String = "http://dota2xufserver.duapp.com/api/v1.0/video/loadmore"
+let kLoadMoreVideos: String = "http://dota2xufserver.duapp.com/api/v1.0/video/loadmore/"
 // load more videos
 // videoset/{date}/{vid}
 let kGetVideoSetInfo: String = "http://dota2xuserver.duapp.com/api/v1.0/video/videoset/"

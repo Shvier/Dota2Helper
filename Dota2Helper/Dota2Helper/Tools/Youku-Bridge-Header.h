@@ -11,5 +11,9 @@
 
 #import "YYMediaPlayer.h"
 #import "YTEngineOpenViewManager.h"
+#import "YYMediaPlayerEvents.h"
+#import "YoukuMediaPlayer.h"
+#import "YYMediaPlayerItem.h"
+#import "YTSequence.h"
 
 #endif /* Youku_Bridge_Header_h */
