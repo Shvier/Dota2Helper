@@ -57,8 +57,18 @@ class DHVideoPlayViewController: UIViewController, YYMediaPlayerEvents {
         }
     }
     
+    func backToForeVC() {
+        let _ = self.navigationController?.popViewController(animated: true)
+    }
+    
     func initLifeCycle() {
-        
+        view.backgroundColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
+        navigationItem.title = "详情"
+        let leftBarItem: UIBarButtonItem = UIBarButtonItem(title: "返回", style: .done, target: self, action: #selector(self.backToForeVC))
+        leftBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: kThemeColor], for: .normal)
+        navigationItem.leftBarButtonItem = leftBarItem
     }
     
     override func viewDidLoad() {

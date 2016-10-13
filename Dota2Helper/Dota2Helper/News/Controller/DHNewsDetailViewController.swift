@@ -18,7 +18,7 @@ class DHNewsDetailViewController: UIViewController {
         dataController = DHNewsDetailDataController()
         let request: URLRequest = (dataController?.requestNewsDetailDataUrlWithNewsModel(newsModel: newsModel!))!
         let viewModel: DHNewsDetailViewModel = DHNewsDetailViewModel(request: request)
-        newsDetailView = DHNewsDetailView(frame: CGRect(x: 0, y: 0, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight))
+        newsDetailView = DHNewsDetailView(frame: CGRect(x: 0, y: 20, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight))
         newsDetailView?.bindDataWithViewModel(viewModel: viewModel)
     }
     

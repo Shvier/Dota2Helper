@@ -22,7 +22,7 @@ class DHVideoPlayView: UIView {
         super.init(frame: frame)
         
         webViewConfig = WKWebViewConfiguration()
-        webView = WKWebView(frame: frame, configuration: webViewConfig!)
+        webView = WKWebView(frame: CGRect(x: 0, y: 24, width: frame.size.width, height: frame.size.height - 24), configuration: webViewConfig!)
         self.addSubview(webView!)
     }
     
