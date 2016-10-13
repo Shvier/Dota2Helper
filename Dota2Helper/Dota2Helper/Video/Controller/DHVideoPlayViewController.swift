@@ -10,8 +10,11 @@ import UIKit
 
 class DHVideoPlayViewController: UIViewController, YYMediaPlayerEvents {
 
+    var ykvid: String?
     var player: YYMediaPlayer?
     var playerManager: YTEngineOpenViewManager?
+    
+    var dataController: DHVideoPlayDataController?
     
     func initPlayer() {
         player = YYMediaPlayer()
@@ -22,45 +25,39 @@ class DHVideoPlayViewController: UIViewController, YYMediaPlayerEvents {
         player?.platform = "youku"
         view.addSubview((player?.view())!)
         player?.addEventsObserver(self)
-        player?.clientId = "2f9d050663c87f13"
-        player?.clientSecret = "bc01abf455c8c702f11eb7217344ce78"
-
-        playerManager = YTEngineOpenViewManager(player: player)
-//        playerManager?.controllerFrame = view.bounds
-        player?.addEventsObserver(playerManager)
-        player?.playVid("269646652930", quality: kYYVideoQualityHD2, password: nil, from: 0)
-    
-    }
-    
-    func initViews() {
-        
+        player?.clientId = kYoukuClientId
+        player?.clientSecret = kYoukuClientId
     }
     
     func initPlayerManager() {
-        
+        playerManager = YTEngineOpenViewManager(player: player)
+        playerManager?.controllerFrame = view.bounds
+        player?.addEventsObserver(playerManager)
     }
     
     func playVideo(vid: String) {
+        player?.playVid(vid, quality: kYYVideoQualityHD2, password: nil, from: 0)
     }
     
-    func startPlay() {
+    func handleVideoData() {
+        dataController = DHVideoPlayDataController()
+        dataController?.requestVideoDetailWithCallback(ykvid: ykvid!, callback: {
+            self.renderPlayView()
+        }())
+    }
+    
+    func renderPlayView() {
         
     }
     
-    func startVideo() {
-        
-    }
-    
-    func willPlay() {
-        
+    func initLifeCycle() {
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initPlayer()
-        initPlayerManager()
-        playVideo(vid: "269646652930")
+        initLifeCycle()
+        handleVideoData()
     }
 
     override func didReceiveMemoryWarning() {

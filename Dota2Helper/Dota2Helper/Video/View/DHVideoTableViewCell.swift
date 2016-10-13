@@ -16,6 +16,8 @@ class DHVideoTableViewCell: UITableViewCell {
     @IBOutlet weak var videoLengthLabel: UILabel!
     @IBOutlet weak var publishinLabel: UILabel!
     
+    var ykvid: String?
+    
     func bindDataWithViewModel(viewModel: DHVideoCellViewModel) {
         if let urlString = viewModel.background {
             backgroundImageView.kf_setImage(with: URL(string: urlString))
@@ -23,6 +25,7 @@ class DHVideoTableViewCell: UITableViewCell {
         titleLabel.text = viewModel.title
         videoLengthLabel.text = viewModel.videolength
         publishinLabel.text = viewModel.publishin
+        ykvid = viewModel.ykvid
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {

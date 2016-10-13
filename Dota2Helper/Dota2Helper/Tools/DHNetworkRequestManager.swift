@@ -11,6 +11,7 @@ import UIKit
 enum RequestType {
     case POST
     case GET
+    case DEFAULT
 }
 
 class DHNetworkRequestManager: NSObject {
@@ -24,7 +25,10 @@ class DHNetworkRequestManager: NSObject {
             request = convertUrlToPOSTRequest(urlHeader: urlHeader, parameters: parameters as! NSDictionary?)
             break;
         case .GET:
-            request = convertUrlToGETRequset(urlHeader: urlHeader, parameters: parameters as! NSArray?)
+            request = convertUrlToGETRequset(urlHeader: urlHeader, parameters: parameters as! NSDictionary?)
+            break;
+        default:
+            request = convertUrlToDEFAULTRequset(urlHeader: urlHeader, parameters: parameters as! NSArray?)
             break;
         }
         let sessionConfig: URLSessionConfiguration = URLSessionConfiguration.default
@@ -47,15 +51,28 @@ class DHNetworkRequestManager: NSObject {
         }
     }
     
-    func convertUrlParametersToGETUrl(parameters: NSArray?) -> String {
+    func convertUrlParametersToGETUrl(parameters: NSDictionary?) -> String {
         if parameters != nil {
-            let parameList = NSMutableArray()
-            for subString in parameters! {
-                parameList.add(subString as! String)
+            let paramList = NSMutableArray()
+            for subDict in parameters! {
+                let tmpString = "\(subDict.0)=\(subDict.1)"
+                paramList.add(tmpString)
             }
-            let paramString = parameList.componentsJoined(by: "/")
+            let paramString = paramList.componentsJoined(by: "&")
             return paramString
-
+        } else {
+            return ""
+        }
+    }
+    
+    func convertUrlParametersToDEFAULTUrl(parameters: NSArray?) -> String {
+        if parameters != nil {
+            let paramList = NSMutableArray()
+            for subString in parameters! {
+                paramList.add(subString as! String)
+            }
+            let paramString = paramList.componentsJoined(by: "/")
+            return paramString
         } else {
             return ""
         }
@@ -74,8 +91,17 @@ class DHNetworkRequestManager: NSObject {
         return request
     }
     
-    func convertUrlToGETRequset(urlHeader: URL?, parameters: NSArray?) -> URLRequest {
+    func convertUrlToGETRequset(urlHeader: URL?, parameters: NSDictionary?) -> URLRequest {
         let paramString = convertUrlParametersToGETUrl(parameters: parameters)
+        let urlString: String = urlHeader!.absoluteString + "?" + paramString
+        let url: URL = URL(string: urlString)!
+        var request: URLRequest = URLRequest(url: url)
+        request.httpMethod = "GET"
+        return request;
+    }
+    
+    func convertUrlToDEFAULTRequset(urlHeader: URL?, parameters: NSArray?) -> URLRequest {
+        let paramString = convertUrlParametersToDEFAULTUrl(parameters: parameters)
         let urlString: String = urlHeader!.absoluteString + paramString
         let url: URL = URL(string: urlString)!
         var request: URLRequest = URLRequest(url: url)

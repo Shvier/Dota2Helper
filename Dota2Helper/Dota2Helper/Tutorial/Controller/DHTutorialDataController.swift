@@ -15,7 +15,7 @@ class DHTutorialDataController: NSObject {
     func requestTutorialDataWithCallback( callback: @autoclosure @escaping () -> Swift.Void) {
         let url = URL(string: kRefreshStrategiesUrl)
         let parameters: NSArray = ["all"]
-        DHNetworkRequestManager.sharedInstance.requestWithUrl(type: .GET, urlHeader: url, parameters: parameters) { (Data, URLResponse, Error) in
+        DHNetworkRequestManager.sharedInstance.requestWithUrl(type: .DEFAULT, urlHeader: url, parameters: parameters) { (Data, URLResponse, Error) in
             if Error == nil {
                 do {
                     let result = try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
@@ -39,7 +39,7 @@ class DHTutorialDataController: NSObject {
         let url = URL(string: kLoadMoreStrategiesUrl)
         let lastModel = tutorialDataSource![(tutorialDataSource?.count)! - 1] as! DHTutorialModel
         let parameter: [String] = ["all", lastModel.nid!]
-        DHNetworkRequestManager.sharedInstance.requestWithUrl(type: .GET, urlHeader: url, parameters: parameter) { (Data, URLResponse, Error) in
+        DHNetworkRequestManager.sharedInstance.requestWithUrl(type: .DEFAULT, urlHeader: url, parameters: parameter) { (Data, URLResponse, Error) in
             if Error == nil {
                 do {
                     let result = try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
