@@ -14,7 +14,7 @@ class DHVideoPlayView: UIView {
     var webView: WKWebView?
     var webViewConfig: WKWebViewConfiguration?
     
-    func bindDataWithViewModel(viewModel: DHNewsDetailViewModel) {
+    func bindDataWithViewModel(viewModel: DHVideoPlayViewModel) {
         let _ = webView?.load(viewModel.request!)
     }
     

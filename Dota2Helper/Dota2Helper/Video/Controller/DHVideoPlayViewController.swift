@@ -15,6 +15,7 @@ class DHVideoPlayViewController: UIViewController, YYMediaPlayerEvents {
     var playerManager: YTEngineOpenViewManager?
     
     var dataController: DHVideoPlayDataController?
+    var videoPlayeView: DHVideoPlayView?
     
     func initPlayer() {
         player = YYMediaPlayer()
@@ -47,10 +48,17 @@ class DHVideoPlayViewController: UIViewController, YYMediaPlayerEvents {
     }
     
     func renderPlayView() {
-        
+        let request = dataController?.requestVideoDetailDataUrl()
+        let viewModel: DHVideoPlayViewModel = DHVideoPlayViewModel(request: request!)
+        DispatchQueue.main.async {
+            self.videoPlayeView = DHVideoPlayView(frame: CGRect(x: 0, y: 0, width: kVideoPlayViewWidth, height: kVideoPlayViewHeight))
+            self.videoPlayeView?.bindDataWithViewModel(viewModel: viewModel)
+            self.view.addSubview(self.videoPlayeView!)
+        }
     }
     
     func initLifeCycle() {
+        
     }
     
     override func viewDidLoad() {

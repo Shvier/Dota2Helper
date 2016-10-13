@@ -10,6 +10,8 @@ import UIKit
 
 class DHVideoPlayDataController: NSObject {
 
+    var urlString: String?
+    
     func requestVideoDetailWithCallback( ykvid: String, callback: @autoclosure @escaping () -> Swift.Void) {
         let url = URL(string: kGetVideoDetailInfoUrl)
         let parameters: NSDictionary = ["client_id": kYoukuClientId, "video_id": ykvid]
@@ -17,7 +19,7 @@ class DHVideoPlayDataController: NSObject {
             if Error == nil {
                 do {
                     let result = try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                    print(result)
+                    self.urlString = result["link"] as? String
                     callback()
                 } catch {
                     DHLog("catch:\(URLResponse!)")
@@ -26,6 +28,11 @@ class DHVideoPlayDataController: NSObject {
                 DHLog("error:\(Error!)")
             }
         }
+    }
+    
+    func requestVideoDetailDataUrl() -> URLRequest {
+        let request: URLRequest = URLRequest(url: URL(string: urlString!)!)
+        return request
     }
     
 }
