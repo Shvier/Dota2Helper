@@ -49,6 +49,7 @@ class DHVideoViewController: UIViewController, UITableViewDelegate, UITableViewD
         if index != 0 {
             // TODO
             menu?.currentSelectedButton().isSelected = false
+            ToastShow("error")
         }
     }
     
