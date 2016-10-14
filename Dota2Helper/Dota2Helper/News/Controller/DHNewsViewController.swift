@@ -91,7 +91,7 @@ class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func setContentView() {
-        tableView = UITableView.init(frame: view.bounds, style: .grouped)
+        tableView = UITableView.init(frame: view.bounds, style: .plain)
         tableView?.delegate = self
         tableView?.dataSource = self
         tableView?.register(UINib(nibName: "DHNewsTableViewCell", bundle: nil), forCellReuseIdentifier: kNewsCellReuseIdentifier)
