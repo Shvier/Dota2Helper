@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DHJournalDetailViewController: UIViewController {
+class DHJournalDetailViewController: DHBaseViewController {
 
     var journalModel: DHJournalModel?
     var dataController: DHJournalDetailDataController?
@@ -24,24 +24,9 @@ class DHJournalDetailViewController: UIViewController {
         view.addSubview(journalDetailView!)
     }
     
-    func backToForeVC() {
-        let _ = self.navigationController?.popViewController(animated: true)
-    }
-    
-    func initLifeCycle() {
-        view.backgroundColor = UIColor.white
-        navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
-        let leftBarItem: UIBarButtonItem = UIBarButtonItem(title: "返回", style: .done, target: self, action: #selector(self.backToForeVC))
-        leftBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: kThemeColor], for: .normal)
-        navigationItem.leftBarButtonItem = leftBarItem
-        navigationItem.title = "详情"
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initLifeCycle()
         handleData()
         renderJournalDetailView()
     }

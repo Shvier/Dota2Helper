@@ -22,6 +22,7 @@
 		C0287D411D9957D9009D878E /* DHJournalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D3F1D9957D9009D878E /* DHJournalDetailViewController.swift */; };
 		C0287D441D9958D6009D878E /* DHJournalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D431D9958D6009D878E /* DHJournalDetailView.swift */; };
 		C0287D461D995AFE009D878E /* DHJournalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D451D995AFE009D878E /* DHJournalDetailViewModel.swift */; };
+		C05179A11DB10D8800C5ECAC /* DHBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05179A01DB10D8800C5ECAC /* DHBaseViewController.swift */; };
 		C051BE341DB022E600A2479C /* DHVideoPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051BE331DB022E600A2479C /* DHVideoPlayView.swift */; };
 		C051BE361DB0232000A2479C /* DHVideoPlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051BE351DB0232000A2479C /* DHVideoPlayViewModel.swift */; };
 		C05468471DAEB43E00A4AC13 /* sdk.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C05468451DAEB43E00A4AC13 /* sdk.bundle */; };
@@ -127,6 +128,7 @@
 		C0287D3F1D9957D9009D878E /* DHJournalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDetailViewController.swift; sourceTree = "<group>"; };
 		C0287D431D9958D6009D878E /* DHJournalDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDetailView.swift; sourceTree = "<group>"; };
 		C0287D451D995AFE009D878E /* DHJournalDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDetailViewModel.swift; sourceTree = "<group>"; };
+		C05179A01DB10D8800C5ECAC /* DHBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseViewController.swift; sourceTree = "<group>"; };
 		C051BE331DB022E600A2479C /* DHVideoPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoPlayView.swift; sourceTree = "<group>"; };
 		C051BE351DB0232000A2479C /* DHVideoPlayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoPlayViewModel.swift; sourceTree = "<group>"; };
 		C05468451DAEB43E00A4AC13 /* sdk.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = sdk.bundle; sourceTree = "<group>"; };
@@ -302,6 +304,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C051799E1DB10D7600C5ECAC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				C051799F1DB10D7600C5ECAC /* Controller */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		C051799F1DB10D7600C5ECAC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C05179A01DB10D8800C5ECAC /* DHBaseViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		C0B7A4B11D8ECC18008D10A0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +477,7 @@
 		C0D4CFDC1D5DBEF1008F824A /* Dota2Helper */ = {
 			isa = PBXGroup;
 			children = (
+				C051799E1DB10D7600C5ECAC /* Base */,
 				C0D4CFEA1D5DC168008F824A /* Journal */,
 				C0D4CFEF1D5DC168008F824A /* News */,
 				C0D4CFF41D5DC168008F824A /* Settings */,
@@ -827,6 +846,7 @@
 				C088DA4F1D95652700F1329D /* DHBannerViewModel.swift in Sources */,
 				C0D4D0121D5DC319008F824A /* DHVideoViewController.swift in Sources */,
 				C01E405D1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift in Sources */,
+				C05179A11DB10D8800C5ECAC /* DHBaseViewController.swift in Sources */,
 				C0D3E07B1DA44A13009AFDB0 /* DHVideoModel.swift in Sources */,
 				E75E4B5C1DA8D7AC00612599 /* DHLoadingView.swift in Sources */,
 				C051BE341DB022E600A2479C /* DHVideoPlayView.swift in Sources */,
