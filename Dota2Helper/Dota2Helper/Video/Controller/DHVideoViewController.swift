@@ -16,14 +16,24 @@ class DHVideoViewController: UIViewController, UITableViewDelegate, UITableViewD
     var loadingView: DHLoadingView?
     var menu: UISegmentedMenu?
     
+    enum VideoType: NSInteger {
+        case ALL = 0,
+        JIESHUO,
+        BISAI,
+        CELEBRITY,
+        QUWEI,
+        BEGINNER,
+        ADVANCED
+    }
+    
     func handleVideoData() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.tableView?.mj_header.endRefreshing()
         }
         dataController = DHVideoDataController()
-        dataController?.requestVideoDataWithCallback(callback: {
+        dataController?.requestVideoAllWithCallback(callback: {
             self.renderTableViewCell()
-            tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+            self.tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                     self.tableView?.mj_footer.endRefreshing()
                 }
@@ -46,10 +56,128 @@ class DHVideoViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func segmentedMenu(didSelectIndex index: NSInteger) {
-        if index != 0 {
-            // TODO
-            menu?.currentSelectedButton().isSelected = false
-            ToastShow("error")
+        if let videoType = VideoType(rawValue: index) {
+            switch videoType {
+            case .ALL:
+                dataController?.requestVideoAllWithCallback(callback: {
+                    self.renderTableViewCell()
+                    self.tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            self.tableView?.mj_footer.endRefreshing()
+                        }
+                        self.dataController?.requestMoreVideo(callback: {
+                            self.tableView?.mj_footer.endRefreshing()
+                            DispatchQueue.main.async(execute: {
+                                self.tableView?.reloadData()
+                            })
+                        }())
+                    })
+                    self.tableView?.mj_header.endRefreshing()
+                }())
+                break
+            case .JIESHUO:
+                dataController?.requestVideoJieshuoWithCallback(callback: {
+                    self.renderTableViewCell()
+                    self.tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            self.tableView?.mj_footer.endRefreshing()
+                        }
+                        self.dataController?.requestMoreVideo(callback: {
+                            self.tableView?.mj_footer.endRefreshing()
+                            DispatchQueue.main.async(execute: {
+                                self.tableView?.reloadData()
+                            })
+                        }())
+                    })
+                    self.tableView?.mj_header.endRefreshing()
+                }())
+                break
+            case .BISAI:
+                dataController?.requestVideoBisaiWithCallback(callback: {
+                    self.renderTableViewCell()
+                    self.tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            self.tableView?.mj_footer.endRefreshing()
+                        }
+                        self.dataController?.requestMoreVideo(callback: {
+                            self.tableView?.mj_footer.endRefreshing()
+                            DispatchQueue.main.async(execute: {
+                                self.tableView?.reloadData()
+                            })
+                        }())
+                    })
+                    self.tableView?.mj_header.endRefreshing()
+                }())
+                break
+            case .CELEBRITY:
+                dataController?.requestVideoCelebrityWithCallback(callback: {
+                    self.renderTableViewCell()
+                    self.tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            self.tableView?.mj_footer.endRefreshing()
+                        }
+                        self.dataController?.requestMoreVideo(callback: {
+                            self.tableView?.mj_footer.endRefreshing()
+                            DispatchQueue.main.async(execute: {
+                                self.tableView?.reloadData()
+                            })
+                        }())
+                    })
+                    self.tableView?.mj_header.endRefreshing()
+                }())
+                break
+            case .QUWEI:
+                dataController?.requestVideoQuweiWithCallback(callback: {
+                    self.renderTableViewCell()
+                    self.tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            self.tableView?.mj_footer.endRefreshing()
+                        }
+                        self.dataController?.requestMoreVideo(callback: {
+                            self.tableView?.mj_footer.endRefreshing()
+                            DispatchQueue.main.async(execute: {
+                                self.tableView?.reloadData()
+                            })
+                        }())
+                    })
+                    self.tableView?.mj_header.endRefreshing()
+                }())
+                break
+            case .BEGINNER:
+                dataController?.requestVideoBeginnerWithCallback(callback: {
+                    self.renderTableViewCell()
+                    self.tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            self.tableView?.mj_footer.endRefreshing()
+                        }
+                        self.dataController?.requestMoreVideo(callback: {
+                            self.tableView?.mj_footer.endRefreshing()
+                            DispatchQueue.main.async(execute: {
+                                self.tableView?.reloadData()
+                            })
+                        }())
+                    })
+                    self.tableView?.mj_header.endRefreshing()
+                }())
+                break
+            case .ADVANCED:
+                dataController?.requestVideoAdvancedWithCallback(callback: {
+                    self.renderTableViewCell()
+                    self.tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            self.tableView?.mj_footer.endRefreshing()
+                        }
+                        self.dataController?.requestMoreVideo(callback: {
+                            self.tableView?.mj_footer.endRefreshing()
+                            DispatchQueue.main.async(execute: {
+                                self.tableView?.reloadData()
+                            })
+                        }())
+                    })
+                    self.tableView?.mj_header.endRefreshing()
+                }())
+                break
+            }
         }
     }
     

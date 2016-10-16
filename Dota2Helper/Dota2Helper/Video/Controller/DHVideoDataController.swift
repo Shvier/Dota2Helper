@@ -12,14 +12,43 @@ class DHVideoDataController: NSObject {
     
     lazy var videoDataSource: NSMutableArray? = {[]} ()
     
-    func requestVideoDataWithCallback( callback: @autoclosure @escaping () -> Swift.Void) {
+    func requestVideoAllWithCallback(callback: @autoclosure @escaping () -> Void) {
+        requestVideoDataWithCallback(callback: callback, videoType: "all")
+    }
+    
+    func requestVideoJieshuoWithCallback(callback: @autoclosure @escaping () -> Void) {
+        requestVideoDataWithCallback(callback: callback, videoType: "jieshuo")
+    }
+    
+    func requestVideoBisaiWithCallback(callback: @autoclosure @escaping () -> Void) {
+        requestVideoDataWithCallback(callback: callback, videoType: "bisai")
+    }
+    
+    func requestVideoCelebrityWithCallback(callback: @autoclosure @escaping () -> Void) {
+        requestVideoDataWithCallback(callback: callback, videoType: "celebrity")
+    }
+    
+    func requestVideoQuweiWithCallback(callback: @autoclosure @escaping () -> Void) {
+        requestVideoDataWithCallback(callback: callback, videoType: "quwei")
+    }
+    
+    func requestVideoBeginnerWithCallback(callback: @autoclosure @escaping () -> Void) {
+        requestVideoDataWithCallback(callback: callback, videoType: "beginner")
+    }
+    
+    func requestVideoAdvancedWithCallback(callback: @autoclosure @escaping () -> Void) {
+        requestVideoDataWithCallback(callback: callback, videoType: "advanced")
+    }
+    
+    func requestVideoDataWithCallback(callback: @autoclosure @escaping () -> Void, videoType: String) {
         let url = URL(string: kRefreshVideos)
-        let parameters: NSArray = ["all"]
+        let parameters: NSArray = [videoType]
         DHNetworkRequestManager.sharedInstance.requestWithUrl(type: .DEFAULT, urlHeader: url, parameters: parameters) { (Data, URLResponse, Error) in
             if Error == nil {
                 do {
                     let result = try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                     let videoArray = result["videos"]
+                    self.videoDataSource?.removeAllObjects()
                     for videoDict in videoArray as! [NSDictionary] {
                         let video: DHVideoModel = DHVideoModel()
                         video.setValuesForKeys(videoDict as! [String : Any])
