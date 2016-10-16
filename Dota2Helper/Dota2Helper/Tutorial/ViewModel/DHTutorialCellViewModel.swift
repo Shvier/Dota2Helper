@@ -10,6 +10,7 @@ import UIKit
 
 class DHTutorialCellViewModel: NSObject {
 
+    var tutorialModel: DHTutorialModel?
     var date: String?
     var title: String?
     var background: String?
@@ -19,6 +20,7 @@ class DHTutorialCellViewModel: NSObject {
     init(tutorialModel: DHTutorialModel?) {
         super.init()
         
+        self.tutorialModel = tutorialModel
         self.date = tutorialModel?.date
         self.title = tutorialModel?.title
         self.background = tutorialModel?.background

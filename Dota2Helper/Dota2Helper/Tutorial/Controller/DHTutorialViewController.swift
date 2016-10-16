@@ -11,6 +11,13 @@ import MJRefresh
 
 class DHTutorialViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISegmentedMenuDelegate {
     
+    enum TutorialCategory: NSInteger {
+        case ALL = 0,
+        NEWER,
+        STEP,
+        SKILL
+    }
+    
     var dataController: DHTutorialDataController?
     var tableView: UITableView?
     var loadingView: DHLoadingView?
@@ -21,7 +28,7 @@ class DHTutorialViewController: UIViewController, UITableViewDelegate, UITableVi
             self.tableView?.mj_header.endRefreshing()
         }
         dataController = DHTutorialDataController()
-        dataController?.requestTutorialDataWithCallback(callback: {
+        dataController?.requestTutorialAllWithCallback(callback: {
             self.renderTableViewCell()
             tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
@@ -46,10 +53,84 @@ class DHTutorialViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func segmentedMenu(didSelectIndex index: NSInteger) {
-        if index != 0 {
-            // TODO
-            menu?.currentSelectedButton().isSelected = false
+        if let dataType = TutorialCategory(rawValue: index) {
+            switch dataType {
+            case .ALL:
+                dataController?.requestTutorialAllWithCallback(callback: {
+                    self.renderTableViewCell()
+                    tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            self.tableView?.mj_footer.endRefreshing()
+                        }
+                        self.dataController?.requestMoreTutorial(callback: {
+                            self.tableView?.mj_footer.endRefreshing()
+                            DispatchQueue.main.async(execute: {
+                                self.tableView?.reloadData()
+                            })
+                        }())
+                    })
+                    self.tableView?.mj_header.endRefreshing()
+                }())
+                break
+            case .NEWER:
+                dataController?.requestTutorialNewerWithCallback(callback: {
+                    self.renderTableViewCell()
+                    tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            self.tableView?.mj_footer.endRefreshing()
+                        }
+                        self.dataController?.requestMoreTutorial(callback: {
+                            self.tableView?.mj_footer.endRefreshing()
+                            DispatchQueue.main.async(execute: {
+                                self.tableView?.reloadData()
+                            })
+                        }())
+                    })
+                    self.tableView?.mj_header.endRefreshing()
+                }())
+                break
+            case .STEP:
+                dataController?.requestTutorialStepWithCallback(callback: {
+                    self.renderTableViewCell()
+                    tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            self.tableView?.mj_footer.endRefreshing()
+                        }
+                        self.dataController?.requestMoreTutorial(callback: {
+                            self.tableView?.mj_footer.endRefreshing()
+                            DispatchQueue.main.async(execute: {
+                                self.tableView?.reloadData()
+                            })
+                        }())
+                    })
+                    self.tableView?.mj_header.endRefreshing()
+                }())
+                break
+            case .SKILL:
+                dataController?.requestTutorialSkillWithCallback(callback: {
+                    self.renderTableViewCell()
+                    tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            self.tableView?.mj_footer.endRefreshing()
+                        }
+                        self.dataController?.requestMoreTutorial(callback: {
+                            self.tableView?.mj_footer.endRefreshing()
+                            DispatchQueue.main.async(execute: {
+                                self.tableView?.reloadData()
+                            })
+                        }())
+                    })
+                    self.tableView?.mj_header.endRefreshing()
+                }())
+                break
+            }
         }
+    }
+    
+    func loadToDetailVCWithTutorialModel(tutorialModel: DHTutorialModel) {
+        let tutorialDetailVC: DHTutorialDetailViewController = DHTutorialDetailViewController()
+        tutorialDetailVC.tutorialModel = tutorialModel;
+        navigationController?.pushViewController(tutorialDetailVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,6 +153,8 @@ class DHTutorialViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let cell: DHTutorialTableViewCell = tableView.cellForRow(at: indexPath) as! DHTutorialTableViewCell
+        loadToDetailVCWithTutorialModel(tutorialModel: cell.tutorialModel!)
     }
     
     func initLifeCycle() {

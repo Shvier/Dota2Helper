@@ -17,7 +17,10 @@ class DHTutorialTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
+    var tutorialModel: DHTutorialModel?
+    
     func bindDataWithViewModel(viewModel: DHTutorialCellViewModel) {
+        self.tutorialModel = viewModel.tutorialModel
         if let urlString = viewModel.background {
             backgroundImageView.kf_setImage(with: URL(string: urlString))
         }

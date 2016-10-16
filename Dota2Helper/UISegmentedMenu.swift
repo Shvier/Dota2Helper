@@ -98,11 +98,7 @@ public class UISegmentedMenu: UIView {
     
     func clickSegmentedButton(button: UIButton) {
         selectedIndex = button.tag - kTag
-        delegate?.segmentedMenu(didSelectIndex: selectedIndex!)
-        if selectedIndex != 0 {
-            return
-        }
-        
+        delegate?.segmentedMenu(didSelectIndex: selectedIndex!)        
         button.isSelected = true
         
         let lastSelectedButton: UIButton = self.contentView?.viewWithTag(selectedIndex! + kTag) as! UIButton
