@@ -15,9 +15,11 @@ class DHJournalDetailViewController: DHBaseViewController {
     var journalDetailView: DHJournalDetailView?
     
     func handleData() {
-        let journalViewModel: DHJournalDetailViewModel = DHJournalDetailViewModel(journalModel: journalModel!)
-        journalDetailView = DHJournalDetailView(frame: view.bounds)
-        journalDetailView?.bindDataWithViewModel(viewModel: journalViewModel)
+        dataController = DHJournalDetailDataController()
+        let request: URLRequest = (dataController?.requestJournalDetailDataWithJournalModel(journalModel: journalModel!))!
+        let viewModel: DHNewsDetailViewModel = DHNewsDetailViewModel(request: request)
+        journalDetailView = DHJournalDetailView(frame: CGRect(x: 0, y: 20, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight))
+        journalDetailView?.bindDataWithViewModel(viewModel: viewModel)
     }
     
     func renderJournalDetailView() {

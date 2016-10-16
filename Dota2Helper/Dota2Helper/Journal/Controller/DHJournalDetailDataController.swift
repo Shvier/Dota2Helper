@@ -10,8 +10,11 @@ import UIKit
 
 class DHJournalDetailDataController: NSObject {
 
-    func requestJournalDetailDataWithJournalModel(journalModel: DHJournalModel) {
-        
+    func requestJournalDetailDataWithJournalModel(journalModel: DHJournalModel) -> URLRequest {
+        let parameter: NSArray = NSArray(array: [journalModel.date, journalModel.nid])
+        let url: URL = URL(string: kGetNewsDetailUrl)!
+        let request: URLRequest = DHNetworkRequestManager().convertUrlToDEFAULTRequset(urlHeader: url, parameters: parameter)
+        return request
     }
     
 }
