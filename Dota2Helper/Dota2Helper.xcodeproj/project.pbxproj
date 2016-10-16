@@ -10,6 +10,7 @@
 		5E921422300F58B90D59EC8E /* Pods_Dota2Helper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558B5B80FEC5A194BAC83F8D /* Pods_Dota2Helper.framework */; };
 		C0004BA01D992804007EF3EE /* DHJournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0004B9F1D992804007EF3EE /* DHJournalModel.swift */; };
 		C0122E3F1D97FD880000D249 /* DHJournalDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0122E3E1D97FD880000D249 /* DHJournalDataController.swift */; };
+		C018F7871DB385CE006DC0B6 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C018F7861DB385CE006DC0B6 /* libYouTuMediaPlayerEngineYouku.a */; };
 		C01E405D1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E405B1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift */; };
 		C01E405E1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C01E405C1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib */; };
 		C01E40601D9E3C42006C6CD3 /* DHTutorialCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E405F1D9E3C42006C6CD3 /* DHTutorialCellViewModel.swift */; };
@@ -28,7 +29,6 @@
 		C051BE361DB0232000A2479C /* DHVideoPlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051BE351DB0232000A2479C /* DHVideoPlayViewModel.swift */; };
 		C05468471DAEB43E00A4AC13 /* sdk.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C05468451DAEB43E00A4AC13 /* sdk.bundle */; };
 		C05468481DAEB43E00A4AC13 /* YTEngine.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C05468461DAEB43E00A4AC13 /* YTEngine.bundle */; };
-		C054684A1DAEB44D00A4AC13 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C05468491DAEB44D00A4AC13 /* libYouTuMediaPlayerEngineYouku.a */; };
 		C06E66421D917640007B1210 /* DHHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E66411D917640007B1210 /* DHHeaderView.swift */; };
 		C06E66441D917781007B1210 /* DHNewsBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E66431D917781007B1210 /* DHNewsBannerViewModel.swift */; };
 		C088DA4D1D9564D400F1329D /* DHBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C088DA4C1D9564D400F1329D /* DHBanner.swift */; };
@@ -117,6 +117,7 @@
 		5AE8FF62A93E6F949F8DB6AF /* Pods-Dota2Helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dota2Helper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dota2Helper/Pods-Dota2Helper.debug.xcconfig"; sourceTree = "<group>"; };
 		C0004B9F1D992804007EF3EE /* DHJournalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalModel.swift; sourceTree = "<group>"; };
 		C0122E3E1D97FD880000D249 /* DHJournalDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDataController.swift; sourceTree = "<group>"; };
+		C018F7861DB385CE006DC0B6 /* libYouTuMediaPlayerEngineYouku.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouTuMediaPlayerEngineYouku.a; sourceTree = "<group>"; };
 		C01E405B1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialTableViewCell.swift; sourceTree = "<group>"; };
 		C01E405C1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHTutorialTableViewCell.xib; sourceTree = "<group>"; };
 		C01E405F1D9E3C42006C6CD3 /* DHTutorialCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialCellViewModel.swift; sourceTree = "<group>"; };
@@ -135,7 +136,6 @@
 		C051BE351DB0232000A2479C /* DHVideoPlayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoPlayViewModel.swift; sourceTree = "<group>"; };
 		C05468451DAEB43E00A4AC13 /* sdk.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = sdk.bundle; sourceTree = "<group>"; };
 		C05468461DAEB43E00A4AC13 /* YTEngine.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YTEngine.bundle; sourceTree = "<group>"; };
-		C05468491DAEB44D00A4AC13 /* libYouTuMediaPlayerEngineYouku.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouTuMediaPlayerEngineYouku.a; sourceTree = "<group>"; };
 		C06E66411D917640007B1210 /* DHHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHHeaderView.swift; sourceTree = "<group>"; };
 		C06E66431D917781007B1210 /* DHNewsBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsBannerViewModel.swift; sourceTree = "<group>"; };
 		C088DA4C1D9564D400F1329D /* DHBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBanner.swift; sourceTree = "<group>"; };
@@ -243,7 +243,6 @@
 				C09648DD1DAEED3C00D75D21 /* SystemConfiguration.framework in Frameworks */,
 				C09648DB1DAEED3700D75D21 /* MediaPlayer.framework in Frameworks */,
 				C09648D91DAEED3100D75D21 /* EventKit.framework in Frameworks */,
-				C054684A1DAEB44D00A4AC13 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */,
 				C09648D71DAEED1200D75D21 /* MessageUI.framework in Frameworks */,
 				C09648BD1DAEB93300D75D21 /* libxml2.2.tbd in Frameworks */,
 				C09648D51DAEED0600D75D21 /* PassKit.framework in Frameworks */,
@@ -255,6 +254,7 @@
 				C09648CB1DAEECE400D75D21 /* CoreMotion.framework in Frameworks */,
 				C09648C91DAEECDF00D75D21 /* libsqlite3.tbd in Frameworks */,
 				C09648C71DAEECD900D75D21 /* ModelIO.framework in Frameworks */,
+				C018F7871DB385CE006DC0B6 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */,
 				C09648C51DAEB9E600D75D21 /* libbz2.tbd in Frameworks */,
 				C09648C31DAEB95B00D75D21 /* libresolv.9.tbd in Frameworks */,
 				C09648BF1DAEB94600D75D21 /* libiconv.2.tbd in Frameworks */,
@@ -627,7 +627,7 @@
 		C0E38C511DADB71B00E1D27A /* YouTuEngineMediaPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				C05468491DAEB44D00A4AC13 /* libYouTuMediaPlayerEngineYouku.a */,
+				C018F7861DB385CE006DC0B6 /* libYouTuMediaPlayerEngineYouku.a */,
 				C05468451DAEB43E00A4AC13 /* sdk.bundle */,
 				C05468461DAEB43E00A4AC13 /* YTEngine.bundle */,
 				C0E38C521DADB73500E1D27A /* YouTuMediaPlayerEngineYoukuHeaders */,
