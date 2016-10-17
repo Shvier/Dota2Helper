@@ -29,8 +29,8 @@ class DHBaseDetailViewController: UIViewController, UIGestureRecognizerDelegate 
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.black
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
-        let leftBarItem: UIBarButtonItem = UIBarButtonItem(title: "返回", style: .done, target: self, action: #selector(self.handleNavigationBack))
-        leftBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: kThemeColor], for: .normal)
+        let leftBarItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "left_bar_item")?.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(self.handleNavigationBack))
+        leftBarItem.tintColor = kThemeColor
         navigationItem.leftBarButtonItem = leftBarItem
         navigationItem.title = "详情"
     }
