@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DHNewsDetailViewController: DHBaseViewController {
+class DHNewsDetailViewController: DHBaseDetailViewController {
 
     var newsModel: DHNewsModel?
     var dataController: DHNewsDetailDataController?

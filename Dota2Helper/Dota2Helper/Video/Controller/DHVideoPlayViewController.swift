@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DHVideoPlayViewController: DHBaseViewController, YYMediaPlayerEvents {
+class DHVideoPlayViewController: DHBaseDetailViewController, YYMediaPlayerEvents {
 
     var ykvid: String?
     var player: YYMediaPlayer?

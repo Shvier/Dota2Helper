@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DHTutorialDetailViewController: DHBaseViewController {
+class DHTutorialDetailViewController: DHBaseDetailViewController {
 
     var tutorialModel: DHTutorialModel?
     var dataController: DHTutorialDetailDataController?

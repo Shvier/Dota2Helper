@@ -1,5 +1,5 @@
 //
-//  DHBaseViewController.swift
+//  DHBaseDetailViewController.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 10/14/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DHBaseViewController: UIViewController, UIGestureRecognizerDelegate {
+class DHBaseDetailViewController: UIViewController, UIGestureRecognizerDelegate {
 
     func handleNavigationBack() {
         let _ = navigationController?.popViewController(animated: true)
@@ -19,7 +19,7 @@ class DHBaseViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func addPanGesture() {
-        let pan: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(DHBaseViewController.handleNavigationBack))
+        let pan: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(DHBaseDetailViewController.handleNavigationBack))
         pan.delegate = self
         view.addGestureRecognizer(pan)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false

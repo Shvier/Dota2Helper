@@ -23,7 +23,7 @@
 		C0287D411D9957D9009D878E /* DHJournalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D3F1D9957D9009D878E /* DHJournalDetailViewController.swift */; };
 		C0287D441D9958D6009D878E /* DHJournalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D431D9958D6009D878E /* DHJournalDetailView.swift */; };
 		C0287D461D995AFE009D878E /* DHJournalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D451D995AFE009D878E /* DHJournalDetailViewModel.swift */; };
-		C05179A11DB10D8800C5ECAC /* DHBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05179A01DB10D8800C5ECAC /* DHBaseViewController.swift */; };
+		C05179A11DB10D8800C5ECAC /* DHBaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05179A01DB10D8800C5ECAC /* DHBaseDetailViewController.swift */; };
 		C05179A31DB111BA00C5ECAC /* DHToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05179A21DB111BA00C5ECAC /* DHToastMessage.swift */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		C051BE341DB022E600A2479C /* DHVideoPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051BE331DB022E600A2479C /* DHVideoPlayView.swift */; };
 		C051BE361DB0232000A2479C /* DHVideoPlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051BE351DB0232000A2479C /* DHVideoPlayViewModel.swift */; };
@@ -135,7 +135,7 @@
 		C0287D3F1D9957D9009D878E /* DHJournalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDetailViewController.swift; sourceTree = "<group>"; };
 		C0287D431D9958D6009D878E /* DHJournalDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDetailView.swift; sourceTree = "<group>"; };
 		C0287D451D995AFE009D878E /* DHJournalDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDetailViewModel.swift; sourceTree = "<group>"; };
-		C05179A01DB10D8800C5ECAC /* DHBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseViewController.swift; sourceTree = "<group>"; };
+		C05179A01DB10D8800C5ECAC /* DHBaseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseDetailViewController.swift; sourceTree = "<group>"; };
 		C05179A21DB111BA00C5ECAC /* DHToastMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHToastMessage.swift; sourceTree = "<group>"; };
 		C051BE331DB022E600A2479C /* DHVideoPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoPlayView.swift; sourceTree = "<group>"; };
 		C051BE351DB0232000A2479C /* DHVideoPlayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoPlayViewModel.swift; sourceTree = "<group>"; };
@@ -172,6 +172,7 @@
 		C09648EA1DAEED8A00D75D21 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C09648EC1DAEED8E00D75D21 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C09648EE1DAEED9300D75D21 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C09AF37F1DB505ED00604D89 /* Dota2Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dota2Helper.entitlements; sourceTree = "<group>"; };
 		C0A1AC3F1D616188005B92A5 /* Constrants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constrants.swift; sourceTree = "<group>"; };
 		C0A6906D1DB3B5C500DC0FA0 /* DHTutorialDetailDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialDetailDataController.swift; sourceTree = "<group>"; };
 		C0A690721DB3B96600DC0FA0 /* DHBaseDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseDetailView.swift; sourceTree = "<group>"; };
@@ -328,7 +329,7 @@
 		C051799F1DB10D7600C5ECAC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C05179A01DB10D8800C5ECAC /* DHBaseViewController.swift */,
+				C05179A01DB10D8800C5ECAC /* DHBaseDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -396,8 +397,9 @@
 				C0E6BF921D9434D400872006 /* DHNewsDetailViewModel.swift */,
 				C088DA4E1D95652700F1329D /* DHBannerViewModel.swift */,
 			);
-			path = ViewModel;
-			sourceTree = "<group>";
+			name = ViewModel;
+			path = Dota2Helper/News/ViewModel;
+			sourceTree = SOURCE_ROOT;
 		};
 		C0B7A4B71D8ECC2C008D10A0 /* Model */ = {
 			isa = PBXGroup;
@@ -500,6 +502,7 @@
 		C0D4CFDC1D5DBEF1008F824A /* Dota2Helper */ = {
 			isa = PBXGroup;
 			children = (
+				C09AF37F1DB505ED00604D89 /* Dota2Helper.entitlements */,
 				C051799E1DB10D7600C5ECAC /* Base */,
 				C0D4CFEA1D5DC168008F824A /* Journal */,
 				C0D4CFEF1D5DC168008F824A /* News */,
@@ -537,9 +540,9 @@
 		C0D4CFEF1D5DC168008F824A /* News */ = {
 			isa = PBXGroup;
 			children = (
+				C0B7A4B61D8ECC23008D10A0 /* ViewModel */,
 				C0B7A4B41D8ECC23008D10A0 /* Model */,
 				C0B7A4B51D8ECC23008D10A0 /* View */,
-				C0B7A4B61D8ECC23008D10A0 /* ViewModel */,
 				C0D4CFF01D5DC168008F824A /* Controller */,
 			);
 			path = News;
@@ -878,7 +881,7 @@
 				C088DA4F1D95652700F1329D /* DHBannerViewModel.swift in Sources */,
 				C0D4D0121D5DC319008F824A /* DHVideoViewController.swift in Sources */,
 				C01E405D1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift in Sources */,
-				C05179A11DB10D8800C5ECAC /* DHBaseViewController.swift in Sources */,
+				C05179A11DB10D8800C5ECAC /* DHBaseDetailViewController.swift in Sources */,
 				C0D3E07B1DA44A13009AFDB0 /* DHVideoModel.swift in Sources */,
 				E75E4B5C1DA8D7AC00612599 /* DHLoadingView.swift in Sources */,
 				C051BE341DB022E600A2479C /* DHVideoPlayView.swift in Sources */,
@@ -945,7 +948,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -986,7 +989,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -999,6 +1002,7 @@
 			baseConfigurationReference = 5AE8FF62A93E6F949F8DB6AF /* Pods-Dota2Helper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Dota2Helper/Dota2Helper.entitlements;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = PGNG7584J8;
 				ENABLE_BITCODE = NO;
@@ -1029,6 +1033,7 @@
 			baseConfigurationReference = 46FADE68FCE278AF742B319D /* Pods-Dota2Helper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Dota2Helper/Dota2Helper.entitlements;
 				DEVELOPMENT_TEAM = PGNG7584J8;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
