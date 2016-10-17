@@ -30,18 +30,6 @@ class DHTutorialViewController: UIViewController, UITableViewDelegate, UITableVi
         dataController = DHTutorialDataController()
         dataController?.requestTutorialAllWithCallback(callback: {
             self.renderTableViewCell()
-            tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    self.tableView?.mj_footer.endRefreshing()
-                }
-                self.dataController?.requestMoreTutorial(callback: {
-                    self.tableView?.mj_footer.endRefreshing()
-                    DispatchQueue.main.async(execute: {
-                        self.tableView?.reloadData()
-                    })
-                }())
-            })
-            self.tableView?.mj_header.endRefreshing()
         }())
     }
     
@@ -50,6 +38,18 @@ class DHTutorialViewController: UIViewController, UITableViewDelegate, UITableVi
             self.loadingView?.isHidden = true
             self.tableView?.reloadData()
         })
+        tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.tableView?.mj_footer.endRefreshing()
+            }
+            self.dataController?.requestMoreTutorial(callback: {
+                self.tableView?.mj_footer.endRefreshing()
+                DispatchQueue.main.async(execute: {
+                    self.tableView?.reloadData()
+                })
+            }())
+        })
+        self.tableView?.mj_header.endRefreshing()
     }
     
     func segmentedMenu(didSelectIndex index: NSInteger) {
@@ -57,70 +57,34 @@ class DHTutorialViewController: UIViewController, UITableViewDelegate, UITableVi
             switch dataType {
             case .ALL:
                 dataController?.requestTutorialAllWithCallback(callback: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        self.tableView?.mj_header.endRefreshing()
+                    }
                     self.renderTableViewCell()
-                    tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                            self.tableView?.mj_footer.endRefreshing()
-                        }
-                        self.dataController?.requestMoreTutorial(callback: {
-                            self.tableView?.mj_footer.endRefreshing()
-                            DispatchQueue.main.async(execute: {
-                                self.tableView?.reloadData()
-                            })
-                        }())
-                    })
-                    self.tableView?.mj_header.endRefreshing()
                 }())
                 break
             case .NEWER:
                 dataController?.requestTutorialNewerWithCallback(callback: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        self.tableView?.mj_header.endRefreshing()
+                    }
                     self.renderTableViewCell()
-                    tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                            self.tableView?.mj_footer.endRefreshing()
-                        }
-                        self.dataController?.requestMoreTutorial(callback: {
-                            self.tableView?.mj_footer.endRefreshing()
-                            DispatchQueue.main.async(execute: {
-                                self.tableView?.reloadData()
-                            })
-                        }())
-                    })
-                    self.tableView?.mj_header.endRefreshing()
                 }())
                 break
             case .STEP:
                 dataController?.requestTutorialStepWithCallback(callback: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        self.tableView?.mj_header.endRefreshing()
+                    }
                     self.renderTableViewCell()
-                    tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                            self.tableView?.mj_footer.endRefreshing()
-                        }
-                        self.dataController?.requestMoreTutorial(callback: {
-                            self.tableView?.mj_footer.endRefreshing()
-                            DispatchQueue.main.async(execute: {
-                                self.tableView?.reloadData()
-                            })
-                        }())
-                    })
-                    self.tableView?.mj_header.endRefreshing()
                 }())
                 break
             case .SKILL:
                 dataController?.requestTutorialSkillWithCallback(callback: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        self.tableView?.mj_header.endRefreshing()
+                    }
                     self.renderTableViewCell()
-                    tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                            self.tableView?.mj_footer.endRefreshing()
-                        }
-                        self.dataController?.requestMoreTutorial(callback: {
-                            self.tableView?.mj_footer.endRefreshing()
-                            DispatchQueue.main.async(execute: {
-                                self.tableView?.reloadData()
-                            })
-                        }())
-                    })
-                    self.tableView?.mj_header.endRefreshing()
                 }())
                 break
             }
@@ -172,7 +136,31 @@ class DHTutorialViewController: UIViewController, UITableViewDelegate, UITableVi
         tableView = UITableView(frame: CGRect(x: 0, y: 60 + (menu?.bounds.size.height)!, width: view.bounds.size.width, height: view.bounds.size.height - 60 - (menu?.bounds.size.height)!), style: .plain)
         tableView?.register(UINib(nibName: "DHTutorialTableViewCell", bundle: nil), forCellReuseIdentifier: kTutorialCellReuseIdentifier)
         tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: {
-            self.handleTutorialData()
+            let currentIndex = self.menu?.currentSelectedIndex()
+            if let tutorialType = TutorialCategory(rawValue: currentIndex!) {
+                switch tutorialType {
+                    case .ALL:
+                        self.dataController?.requestTutorialAllWithCallback(callback: {
+                           self.renderTableViewCell()
+                        }())
+                    break
+                    case .NEWER:
+                        self.dataController?.requestTutorialNewerWithCallback(callback: {
+                           self.renderTableViewCell()
+                        }())
+                    break
+                    case .STEP:
+                        self.dataController?.requestTutorialStepWithCallback(callback: {
+                            self.renderTableViewCell()
+                        }())
+                    break
+                    case .SKILL:
+                        self.dataController?.requestTutorialSkillWithCallback(callback: {
+                            self.renderTableViewCell()
+                        }())
+                    break
+                }
+            }
         })
         tableView?.delegate = self
         tableView?.dataSource = self
