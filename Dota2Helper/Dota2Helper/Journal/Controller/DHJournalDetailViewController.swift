@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import WebKit
 
-class DHJournalDetailViewController: DHBaseDetailViewController {
+class DHJournalDetailViewController: DHBaseDetailViewController, WKNavigationDelegate {
 
     var journalModel: DHJournalModel?
     var dataController: DHJournalDetailDataController?
     var journalDetailView: DHJournalDetailView?
+    var loadingView: DHLoadingView?
     
     func handleData() {
         dataController = DHJournalDetailDataController()
@@ -22,15 +24,21 @@ class DHJournalDetailViewController: DHBaseDetailViewController {
         journalDetailView?.bindDataWithViewModel(viewModel: viewModel)
     }
     
-    func renderJournalDetailView() {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        loadingView?.isHidden = true
+    }
+    
+    func setContentView() {
+        journalDetailView?.webView?.navigationDelegate = self
         view.addSubview(journalDetailView!)
+        loadingView = addLoadingViewForViewController(self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         handleData()
-        renderJournalDetailView()
+        setContentView()
     }
 
     override func didReceiveMemoryWarning() {
