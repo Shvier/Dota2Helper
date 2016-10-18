@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import WebKit
 
-class DHBaseDetailViewController: UIViewController, UIGestureRecognizerDelegate {
+class DHBaseDetailViewController: UIViewController, UIGestureRecognizerDelegate, WKNavigationDelegate {
 
+    var webView: WKWebView?
+    
     func handleNavigationBack() {
         let _ = navigationController?.popViewController(animated: true)
     }
@@ -25,6 +28,22 @@ class DHBaseDetailViewController: UIViewController, UIGestureRecognizerDelegate 
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        
+    }
+    
+    convenience init() {
+        self.init()
+    }
+    
+    init(webView: WKWebView) {
+        DHBaseDetailViewController.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     func initLifeCycle() {
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.black
@@ -33,6 +52,8 @@ class DHBaseDetailViewController: UIViewController, UIGestureRecognizerDelegate 
         leftBarItem.tintColor = kThemeColor
         navigationItem.leftBarButtonItem = leftBarItem
         navigationItem.title = "详情"
+        
+        webView?.navigationDelegate = self
     }
     
     override func viewDidLoad() {
