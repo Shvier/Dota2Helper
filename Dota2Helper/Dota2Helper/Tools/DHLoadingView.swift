@@ -8,6 +8,12 @@
 
 import UIKit
 
+let addLoadingViewForViewController = { (viewController: UIViewController) -> DHLoadingView in
+    let loadingView = DHLoadingView(frame: viewController.view.bounds)
+    viewController.view.addSubview(loadingView)
+    return loadingView
+}
+
 class DHLoadingView: UIView {
     
     override init(frame: CGRect) {

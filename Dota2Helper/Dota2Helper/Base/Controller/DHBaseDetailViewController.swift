@@ -10,6 +10,10 @@ import UIKit
 
 class DHBaseDetailViewController: UIViewController, UIGestureRecognizerDelegate {
 
+    lazy var baseDetailView: DHBaseDetailView = {
+        return DHBaseDetailView(frame: CGRect(x: 0, y: 20, width: kBaseDetailViewWidth, height: kBaseDetailViewHeight))
+    }()
+    
     func handleNavigationBack() {
         let _ = navigationController?.popViewController(animated: true)
     }
