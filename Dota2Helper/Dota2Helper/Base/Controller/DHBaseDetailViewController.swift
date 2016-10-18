@@ -35,6 +35,11 @@ class DHBaseDetailViewController: UIViewController, UIGestureRecognizerDelegate 
         navigationItem.title = "详情"
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        handleNavigationBack()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
