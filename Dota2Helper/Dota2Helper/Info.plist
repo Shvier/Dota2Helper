@@ -2,6 +2,51 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>OpenNews</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>资讯</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>最新资讯一手掌握</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>OpenVideo</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>视频</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>精彩视频不容错过</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>OpenTutorial</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>攻略</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>最全的技巧助你奋战天梯</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>OpenJournal</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>更新</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>实时更新最新游戏内容</string>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string></string>
+		</dict>
+	</array>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

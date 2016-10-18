@@ -8,8 +8,9 @@
 
 import UIKit
 import MJRefresh
+import SafariServices
 
-class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
 
     var dataController: DHNewsDataController?
     var headerView: DHHeaderView?
@@ -21,20 +22,22 @@ class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.tableView?.mj_header.endRefreshing()
         }
         dataController = DHNewsDataController()
+        weak var weakSelf = self
         dataController?.requestNewsDataWithCallback(callback: {
-            self.renderTableViewCell()
+            let strongSelf = weakSelf
+            strongSelf?.renderTableViewCell()
             tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    self.tableView?.mj_footer.endRefreshing()
+                    strongSelf?.tableView?.mj_footer.endRefreshing()
                 }
                 self.dataController?.requestMoreNews(callback: {
-                    self.tableView?.mj_footer.endRefreshing()
+                    strongSelf?.tableView?.mj_footer.endRefreshing()
                     DispatchQueue.main.async(execute: {
-                        self.tableView?.reloadData()
+                        strongSelf?.tableView?.reloadData()
                     })
                 }())
             })
-            self.tableView?.mj_header.endRefreshing()
+            strongSelf?.tableView?.mj_header.endRefreshing()
         }())
     }
     
@@ -45,9 +48,11 @@ class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let headerViewModel: DHNewsBannerViewModel = DHNewsBannerViewModel(banners: banners as! [DHNewsModel]);
         headerView?.bindDataWithViewModel(viewModel: headerViewModel)
         let array = NSArray(array: (headerView?.banners)!)
+        weak var weakSelf = self
         for banner in array as! [DHBanner] {
             banner.callback = ({
-                self.loadToDetailVCWithNewsModel(newsModel: banner.newsModel!)
+                let strongSelf = weakSelf
+                strongSelf?.loadToDetailVCWithNewsModel(newsModel: banner.newsModel!)
             })
         }
         DispatchQueue.main.async(execute: {
@@ -60,6 +65,16 @@ class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let newsDetailVC: DHNewsDetailViewController = DHNewsDetailViewController()
         newsDetailVC.newsModel = newsModel;
         navigationController?.pushViewController(newsDetailVC, animated: true)
+    }
+    
+    @available(iOS 9.0, *)
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        return  SFSafariViewController(url: NSURL(string:"http://www.baidu.com")! as URL)
+    }
+    
+    @available(iOS 9.0, *)
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,6 +91,13 @@ class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let newsModel = dataController?.newsDataSource?[indexPath.row] as! DHNewsModel
             let cellViewModel: DHNewsCellViewModel = DHNewsCellViewModel.init(newsModel: newsModel)
             cell.bindDataWithViewModel(viewModel: cellViewModel)
+//            if #available(iOS 9.0, *) {
+//                if traitCollection.forceTouchCapability == .available {
+//                    registerForPreviewingWithDelegate(cell, sourceView: cell.contentView)
+//                }
+//            } else {
+//                // Fallback on earlier versions
+//            }
         }
         return cell
     }
@@ -95,12 +117,13 @@ class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView?.delegate = self
         tableView?.dataSource = self
         tableView?.register(UINib(nibName: "DHNewsTableViewCell", bundle: nil), forCellReuseIdentifier: kNewsCellReuseIdentifier)
+        weak var weakSelf = self
         tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: {
-            self.handleNewsData()
+            let strongSelf = weakSelf
+            strongSelf?.handleNewsData()
         })
         view.addSubview(tableView!)
-        loadingView = DHLoadingView(frame: view.bounds)
-        view.addSubview(loadingView!)
+        loadingView = addLoadingViewForViewController(self)
     }
     
     func initLifeCycle() {
@@ -108,6 +131,14 @@ class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         navigationController?.navigationBar.barTintColor = UIColor.black
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
         navigationItem.title = "掌刀"
+        
+        if #available(iOS 9.0, *) {
+            if self.traitCollection.forceTouchCapability == .available {
+                self.registerForPreviewing(with: self, sourceView: view)
+            }
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     override func viewDidLoad() {

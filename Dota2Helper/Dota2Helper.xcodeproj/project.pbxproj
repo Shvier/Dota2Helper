@@ -94,6 +94,8 @@
 		C0EC17531D9026C80002AAF4 /* DHNewsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0EC17511D9026C80002AAF4 /* DHNewsTableViewCell.xib */; };
 		C0EC967F1D8FCA8100E1557E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EC967D1D8FCA8100E1557E /* Fabric.framework */; };
 		C0EC96801D8FCA8100E1557E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EC967E1D8FCA8100E1557E /* Crashlytics.framework */; };
+		C0EFB0EB1DB613C7009001C1 /* DHBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EFB0EA1DB613C7009001C1 /* DHBaseViewModel.swift */; };
+		C0EFB0ED1DB61E5C009001C1 /* DHBaseDetailDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EFB0EC1DB61E5C009001C1 /* DHBaseDetailDataController.swift */; };
 		C0F29F1D1DA410A6001A0594 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F29F1B1DA410A6001A0594 /* String+Category.swift */; };
 		C0F29F1E1DA410A6001A0594 /* UISegmentedMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F29F1C1DA410A6001A0594 /* UISegmentedMenu.swift */; };
 		C0F29F201DA410AE001A0594 /* divider_line_image.png in Resources */ = {isa = PBXBuildFile; fileRef = C0F29F1F1DA410AE001A0594 /* divider_line_image.png */; };
@@ -228,6 +230,8 @@
 		C0EF8C111DA0E84A00E7C27E /* SimplerSegmentMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimplerSegmentMenu.framework; path = "../../../../Library/Developer/Xcode/DerivedData/SimplerSegmentMenu-dwukdjcieaqhlmgjnknwnbzewekh/Build/Products/Debug-iphonesimulator/SimplerSegmentMenu.framework"; sourceTree = "<group>"; };
 		C0EF8C131DA0E8AB00E7C27E /* SimplerSegmentMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimplerSegmentMenu.framework; path = ../../SubModules/framework/SimplerSegmentMenu.framework; sourceTree = "<group>"; };
 		C0EF8C1B1DA0EBC400E7C27E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		C0EFB0EA1DB613C7009001C1 /* DHBaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseViewModel.swift; sourceTree = "<group>"; };
+		C0EFB0EC1DB61E5C009001C1 /* DHBaseDetailDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseDetailDataController.swift; sourceTree = "<group>"; };
 		C0F29F1B1DA410A6001A0594 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Category.swift"; path = "../../String+Category.swift"; sourceTree = "<group>"; };
 		C0F29F1C1DA410A6001A0594 /* UISegmentedMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UISegmentedMenu.swift; path = ../../UISegmentedMenu.swift; sourceTree = "<group>"; };
 		C0F29F1F1DA410AE001A0594 /* divider_line_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = divider_line_image.png; path = ../divider_line_image.png; sourceTree = "<group>"; };
@@ -320,6 +324,7 @@
 		C051799E1DB10D7600C5ECAC /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				C0EFB0E91DB613B5009001C1 /* VidewModel */,
 				C0A6906F1DB3B7E400DC0FA0 /* View */,
 				C051799F1DB10D7600C5ECAC /* Controller */,
 			);
@@ -330,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				C05179A01DB10D8800C5ECAC /* DHBaseDetailViewController.swift */,
+				C0EFB0EC1DB61E5C009001C1 /* DHBaseDetailDataController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -683,6 +689,14 @@
 			path = YouTuMediaPlayerEngineYoukuHeaders;
 			sourceTree = "<group>";
 		};
+		C0EFB0E91DB613B5009001C1 /* VidewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C0EFB0EA1DB613C7009001C1 /* DHBaseViewModel.swift */,
+			);
+			path = VidewModel;
+			sourceTree = "<group>";
+		};
 		F3F3173041BA8E225C08FF43 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -866,11 +880,13 @@
 				C0A690751DB3C0FD00DC0FA0 /* DHTutorialDetailViewController.swift in Sources */,
 				C0287D351D994D2C009D878E /* DHJournalTableViewCell.swift in Sources */,
 				C0F630791D9D5B7800AF039F /* DHTutorialView.swift in Sources */,
+				C0EFB0EB1DB613C7009001C1 /* DHBaseViewModel.swift in Sources */,
 				C088DA4D1D9564D400F1329D /* DHBanner.swift in Sources */,
 				C0A1AC401D616188005B92A5 /* Constrants.swift in Sources */,
 				C0EBB0891DAB021600D5C179 /* DHVideoPlayViewController.swift in Sources */,
 				C06E66421D917640007B1210 /* DHHeaderView.swift in Sources */,
 				C05179A31DB111BA00C5ECAC /* DHToastMessage.swift in Sources */,
+				C0EFB0ED1DB61E5C009001C1 /* DHBaseDetailDataController.swift in Sources */,
 				C0004BA01D992804007EF3EE /* DHJournalModel.swift in Sources */,
 				C0A690731DB3B96600DC0FA0 /* DHBaseDetailView.swift in Sources */,
 				C0D4D00C1D5DC2F1008F824A /* DHNewsViewController.swift in Sources */,

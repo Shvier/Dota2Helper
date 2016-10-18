@@ -9,9 +9,7 @@
 import UIKit
 import WebKit
 
-class DHBaseDetailViewController: UIViewController, UIGestureRecognizerDelegate, WKNavigationDelegate {
-
-    var webView: WKWebView?
+class DHBaseDetailViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func handleNavigationBack() {
         let _ = navigationController?.popViewController(animated: true)
@@ -54,6 +52,11 @@ class DHBaseDetailViewController: UIViewController, UIGestureRecognizerDelegate,
         navigationItem.title = "详情"
         
         webView?.navigationDelegate = self
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        handleNavigationBack()
     }
     
     override func viewDidLoad() {

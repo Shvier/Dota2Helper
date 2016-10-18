@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import WebKit
 
-class DHNewsDetailViewController: DHBaseDetailViewController {
+class DHNewsDetailViewController: DHBaseDetailViewController, WKNavigationDelegate {
 
     var newsModel: DHNewsModel?
     var dataController: DHNewsDetailDataController?
     var newsDetailView: DHNewsDetailView?
+    var loadingView: DHLoadingView?
+
     
     func handleData() {
         dataController = DHNewsDetailDataController()
@@ -22,15 +25,21 @@ class DHNewsDetailViewController: DHBaseDetailViewController {
         newsDetailView?.bindDataWithViewModel(viewModel: viewModel)
     }
     
-    func renderNewsDetailView() {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        loadingView?.isHidden = true
+    }
+    
+    func setContentView() {
+        newsDetailView?.webView?.navigationDelegate = self
         view.addSubview(newsDetailView!)
+        loadingView = addLoadingViewForViewController(self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         handleData()
-        renderNewsDetailView()
+        setContentView()
     }
 
     override func didReceiveMemoryWarning() {
