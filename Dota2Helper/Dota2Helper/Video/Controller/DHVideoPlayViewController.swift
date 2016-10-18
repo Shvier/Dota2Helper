@@ -7,15 +7,17 @@
 //
 
 import UIKit
+import WebKit
 
-class DHVideoPlayViewController: DHBaseDetailViewController, YYMediaPlayerEvents {
+class DHVideoPlayViewController: DHBaseDetailViewController, YYMediaPlayerEvents, WKNavigationDelegate {
 
     var ykvid: String?
     var player: YYMediaPlayer?
     var playerManager: YTEngineOpenViewManager?
     
     var dataController: DHVideoPlayDataController?
-    var videoPlayeView: DHVideoPlayView?
+    var videoPlayView: DHVideoPlayView?
+    var loadingView: DHLoadingView?
     
     func initPlayer() {
         player = YYMediaPlayer()
@@ -40,6 +42,10 @@ class DHVideoPlayViewController: DHBaseDetailViewController, YYMediaPlayerEvents
         player?.playVid(vid, quality: kYYVideoQualityHD2, password: nil, from: 0)
     }
     
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        loadingView?.isHidden = true
+    }
+    
     func handleVideoData() {
         dataController = DHVideoPlayDataController()
         dataController?.requestVideoDetailWithCallback(ykvid: ykvid!, callback: {
@@ -49,12 +55,20 @@ class DHVideoPlayViewController: DHBaseDetailViewController, YYMediaPlayerEvents
     
     func renderPlayView() {
         let request = dataController?.requestVideoDetailDataUrl()
+        weak var weakSelf = self
         let viewModel: DHVideoPlayViewModel = DHVideoPlayViewModel(request: request!)
         DispatchQueue.main.async {
-            self.videoPlayeView = DHVideoPlayView(frame: CGRect(x: 0, y: 0, width: kVideoPlayViewWidth, height: kVideoPlayViewHeight))
-            self.videoPlayeView?.bindDataWithViewModel(viewModel: viewModel)
-            self.view.addSubview(self.videoPlayeView!)
+            let strongSelf = weakSelf
+            strongSelf?.videoPlayView = DHVideoPlayView(frame: CGRect(x: 0, y: 0, width: kVideoPlayViewWidth, height: kVideoPlayViewHeight))
+            strongSelf?.videoPlayView?.bindDataWithViewModel(viewModel: viewModel)
+            strongSelf?.view.addSubview(self.videoPlayView!)
+            strongSelf?.setContentView()
         }
+    }
+    
+    func setContentView() {
+        videoPlayView?.webView?.navigationDelegate = self
+        loadingView = addLoadingViewForViewController(self)
     }
     
     override func viewDidLoad() {
