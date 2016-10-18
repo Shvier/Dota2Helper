@@ -54,6 +54,11 @@ class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let strongSelf = weakSelf
                 strongSelf?.loadToDetailVCWithNewsModel(newsModel: banner.newsModel!)
             })
+            if #available(iOS 9.0, *) {
+                self.registerForPreviewing(with: self, sourceView: banner)
+            } else {
+                // Fallback on earlier versions
+            }
         }
         DispatchQueue.main.async(execute: {
             self.loadingView?.isHidden = true
@@ -69,12 +74,20 @@ class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @available(iOS 9.0, *)
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        return  SFSafariViewController(url: NSURL(string:"http://www.baidu.com")! as URL)
+        let newsDetailVC: DHNewsDetailViewController = DHNewsDetailViewController()
+        if previewingContext.sourceRect.size.height == 80 {
+            let cell = previewingContext.sourceView as! DHNewsTableViewCell
+            newsDetailVC.newsModel = cell.newsModel
+        } else {
+            let banner = previewingContext.sourceView as! DHBanner
+            newsDetailVC.newsModel = banner.newsModel
+        }
+        return newsDetailVC
     }
     
     @available(iOS 9.0, *)
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        
+        navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,13 +104,13 @@ class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let newsModel = dataController?.newsDataSource?[indexPath.row] as! DHNewsModel
             let cellViewModel: DHNewsCellViewModel = DHNewsCellViewModel.init(newsModel: newsModel)
             cell.bindDataWithViewModel(viewModel: cellViewModel)
-//            if #available(iOS 9.0, *) {
-//                if traitCollection.forceTouchCapability == .available {
-//                    registerForPreviewingWithDelegate(cell, sourceView: cell.contentView)
-//                }
-//            } else {
-//                // Fallback on earlier versions
-//            }
+            if #available(iOS 9.0, *) {
+                if traitCollection.forceTouchCapability == .available {
+                    registerForPreviewing(with: self, sourceView: cell)
+                }
+            } else {
+                // Fallback on earlier versions
+            }
         }
         return cell
     }
@@ -131,14 +144,6 @@ class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         navigationController?.navigationBar.barTintColor = UIColor.black
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
         navigationItem.title = "掌刀"
-        
-        if #available(iOS 9.0, *) {
-            if self.traitCollection.forceTouchCapability == .available {
-                self.registerForPreviewing(with: self, sourceView: view)
-            }
-        } else {
-            // Fallback on earlier versions
-        }
     }
     
     override func viewDidLoad() {

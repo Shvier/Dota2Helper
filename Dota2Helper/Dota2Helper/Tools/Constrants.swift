@@ -15,7 +15,7 @@ let kScreenWidth = UIScreen.main.bounds.size.width
 let kYoukuClientId: String = "2f9d050663c87f13"
 let kYoukuClientSecret: String = "bc01abf455c8c702f11eb7217344ce78"
 
-let kNavigationHeight = 44
+let kNavigationHeight: CGFloat = 44
 let kNewsCellReuseIdentifier: String = "NewsTableViewCell"
 let kJournalCellReuseIdentifier: String = "JournalTableViewCell"
 let kTutorialCellReuseIdentifier: String = "TutorialTableViewCell"

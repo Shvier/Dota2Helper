@@ -16,10 +16,28 @@ class DHNewsDetailViewController: DHBaseDetailViewController, WKNavigationDelega
     var newsDetailView: DHNewsDetailView?
     var loadingView: DHLoadingView?
 
+    @available(iOS 9.0, *)
+    override var previewActionItems: [UIPreviewActionItem] {
+        get {
+            weak var weakSelf = self
+            let openWithSafariAction: UIPreviewAction = UIPreviewAction(title: "使用Safari打开", style: .default, handler: { (UIPreviewAction, UIViewController) in
+                let strongSelf = weakSelf
+                let request = strongSelf?.dataController?.requestNewsDetailDataRequestWithNewsModel(newsModel: (strongSelf?.newsModel)!)
+                UIApplication.shared.openURL((request?.url)!)
+            })
+            let cancelAction: UIPreviewAction = UIPreviewAction(title: "取消", style: .destructive, handler: { (UIPreviewAction, UIViewController) in
+                
+            })
+            return [openWithSafariAction, cancelAction]
+        }
+        set {
+            
+        }
+    }
     
     func handleData() {
         dataController = DHNewsDetailDataController()
-        let request: URLRequest = (dataController?.requestNewsDetailDataUrlWithNewsModel(newsModel: newsModel!))!
+        let request: URLRequest = (dataController?.requestNewsDetailDataRequestWithNewsModel(newsModel: newsModel!))!
         let viewModel: DHNewsDetailViewModel = DHNewsDetailViewModel(request: request)
         newsDetailView = DHNewsDetailView(frame: CGRect(x: 0, y: 20, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight))
         newsDetailView?.bindDataWithViewModel(viewModel: viewModel)

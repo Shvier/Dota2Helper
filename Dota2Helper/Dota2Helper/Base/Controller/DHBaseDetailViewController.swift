@@ -25,22 +25,6 @@ class DHBaseDetailViewController: UIViewController, UIGestureRecognizerDelegate 
         view.addGestureRecognizer(pan)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
-    
-    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        
-    }
-    
-    convenience init() {
-        self.init()
-    }
-    
-    init(webView: WKWebView) {
-        DHBaseDetailViewController.init()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 
     func initLifeCycle() {
         view.backgroundColor = UIColor.white
@@ -50,8 +34,6 @@ class DHBaseDetailViewController: UIViewController, UIGestureRecognizerDelegate 
         leftBarItem.tintColor = kThemeColor
         navigationItem.leftBarButtonItem = leftBarItem
         navigationItem.title = "详情"
-        
-        webView?.navigationDelegate = self
     }
     
     override func viewWillDisappear(_ animated: Bool) {
