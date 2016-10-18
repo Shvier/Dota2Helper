@@ -8,8 +8,9 @@
 
 import UIKit
 import MJRefresh
+import SafariServices
 
-class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
 
     var dataController: DHNewsDataController?
     var headerView: DHHeaderView?
@@ -66,6 +67,16 @@ class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         navigationController?.pushViewController(newsDetailVC, animated: true)
     }
     
+    @available(iOS 9.0, *)
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        return  SFSafariViewController(url: NSURL(string:"http://www.baidu.com")! as URL)
+    }
+    
+    @available(iOS 9.0, *)
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (dataController?.newsDataSource?.count)! > 0 ? (dataController?.newsDataSource?.count)! : 0
     }
@@ -80,6 +91,13 @@ class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             let newsModel = dataController?.newsDataSource?[indexPath.row] as! DHNewsModel
             let cellViewModel: DHNewsCellViewModel = DHNewsCellViewModel.init(newsModel: newsModel)
             cell.bindDataWithViewModel(viewModel: cellViewModel)
+//            if #available(iOS 9.0, *) {
+//                if traitCollection.forceTouchCapability == .available {
+//                    registerForPreviewingWithDelegate(cell, sourceView: cell.contentView)
+//                }
+//            } else {
+//                // Fallback on earlier versions
+//            }
         }
         return cell
     }
@@ -113,6 +131,14 @@ class DHNewsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         navigationController?.navigationBar.barTintColor = UIColor.black
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
         navigationItem.title = "掌刀"
+        
+        if #available(iOS 9.0, *) {
+            if self.traitCollection.forceTouchCapability == .available {
+                self.registerForPreviewing(with: self, sourceView: view)
+            }
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     override func viewDidLoad() {
