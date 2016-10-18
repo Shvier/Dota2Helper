@@ -9,12 +9,22 @@
 import UIKit
 import WebKit
 
-class DHNewsDetailViewController: DHBaseDetailViewController, WKNavigationDelegate {
+class DHNewsDetailViewController: DHBaseDetailViewController, WKNavigationDelegate, UIViewControllerPreviewingDelegate {
 
     var newsModel: DHNewsModel?
     var dataController: DHNewsDetailDataController?
     var newsDetailView: DHNewsDetailView?
     var loadingView: DHLoadingView?
+    
+    @available(iOS 9.0, *)
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        
+    }
+    
+    @available(iOS 9.0, *)
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+    }
     
     func handleData() {
         dataController = DHNewsDetailDataController()
