@@ -16,6 +16,28 @@ class DHTutorialDetailViewController: DHBaseDetailViewController, WKNavigationDe
     var tutorialDetailView: DHNewsDetailView?
     var loadingView: DHLoadingView?
     
+// MARK: - 3D Touch Peek Menu
+    @available(iOS 9.0, *)
+    override var previewActionItems: [UIPreviewActionItem] {
+        get {
+            weak var weakSelf = self
+            let openWithSafariAction: UIPreviewAction = UIPreviewAction(title: "使用Safari打开", style: .default, handler: { (UIPreviewAction, UIViewController) in
+                if let strongSelf = weakSelf {
+                    let request = strongSelf.dataController?.requestTutorialDetailDataUrlWithTutorialModel(tutorialModel: strongSelf.tutorialModel!)
+                    UIApplication.shared.openURL((request?.url)!)
+                }
+            })
+            let cancelAction: UIPreviewAction = UIPreviewAction(title: "取消", style: .destructive, handler: { (UIPreviewAction, UIViewController) in
+                
+            })
+            return [openWithSafariAction, cancelAction]
+        }
+        set {
+            
+        }
+    }
+    
+// MARK: - Life Cycle
     func handleData() {
         dataController = DHTutorialDetailDataController()
         let request: URLRequest = (dataController?.requestTutorialDetailDataUrlWithTutorialModel(tutorialModel: tutorialModel!))!

@@ -9,7 +9,7 @@
 import UIKit
 import MJRefresh
 
-class DHTutorialViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISegmentedMenuDelegate {
+class DHTutorialViewController: UIViewController, UISegmentedMenuDelegate {
     
     enum TutorialCategory: NSInteger {
         case ALL = 0,
@@ -97,30 +97,6 @@ class DHTutorialViewController: UIViewController, UITableViewDelegate, UITableVi
         navigationController?.pushViewController(tutorialDetailVC, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (dataController?.tutorialDataSource?.count)! > 0 ? (dataController?.tutorialDataSource?.count)! : 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kTutorialCellReuseIdentifier, for: indexPath) as! DHTutorialTableViewCell
-        if (dataController?.tutorialDataSource?.count)! > 0 {
-            let tutorialModel = dataController?.tutorialDataSource?[indexPath.row] as! DHTutorialModel
-            let cellViewModel: DHTutorialCellViewModel = DHTutorialCellViewModel.init(tutorialModel: tutorialModel)
-            cell.bindDataWithViewModel(viewModel: cellViewModel)
-        }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return kTutorialTableViewCellHeight
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        let cell: DHTutorialTableViewCell = tableView.cellForRow(at: indexPath) as! DHTutorialTableViewCell
-        loadToDetailVCWithTutorialModel(tutorialModel: cell.tutorialModel!)
-    }
-    
     func initLifeCycle() {
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.black
@@ -177,4 +153,53 @@ class DHTutorialViewController: UIViewController, UITableViewDelegate, UITableVi
         handleTutorialData()
     }
     
+}
+
+// MARK: - UITableViewDelegate
+extension DHTutorialViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (dataController?.tutorialDataSource?.count)! > 0 ? (dataController?.tutorialDataSource?.count)! : 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: kTutorialCellReuseIdentifier, for: indexPath) as! DHTutorialTableViewCell
+        if (dataController?.tutorialDataSource?.count)! > 0 {
+            let tutorialModel = dataController?.tutorialDataSource?[indexPath.row] as! DHTutorialModel
+            let cellViewModel: DHTutorialCellViewModel = DHTutorialCellViewModel.init(tutorialModel: tutorialModel)
+            cell.bindDataWithViewModel(viewModel: cellViewModel)
+            if #available(iOS 9.0, *) {
+                if traitCollection.forceTouchCapability == .available {
+                    registerForPreviewing(with: self, sourceView: cell)
+                }
+            } else {
+                // Fallback on earlier versions
+            }
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return kTutorialTableViewCellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let cell: DHTutorialTableViewCell = tableView.cellForRow(at: indexPath) as! DHTutorialTableViewCell
+        loadToDetailVCWithTutorialModel(tutorialModel: cell.tutorialModel!)
+    }
+}
+
+// MARK: - UIViewControllerPreviewingDelegate
+@available(iOS 9.0, *)
+extension DHTutorialViewController: UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        let tutorialDetailVC: DHTutorialDetailViewController = DHTutorialDetailViewController()
+        let cell: DHTutorialTableViewCell = previewingContext.sourceView as! DHTutorialTableViewCell
+        tutorialDetailVC.tutorialModel = cell.tutorialModel
+        return tutorialDetailVC
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        navigationController?.pushViewController(viewControllerToCommit, animated: true)
+    }
 }
