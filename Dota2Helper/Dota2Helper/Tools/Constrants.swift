@@ -8,6 +8,8 @@
 
 import UIKit
 
+let kTimeOut: UInt64 = 10
+
 let kThemeColor = UIColor(red:0.71, green:0.51, blue:0.39, alpha:1.00)
 
 let kScreenWidth = UIScreen.main.bounds.size.width

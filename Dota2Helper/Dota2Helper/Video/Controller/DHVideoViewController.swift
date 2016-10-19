@@ -9,9 +9,13 @@
 import UIKit
 import MJRefresh
 
-class DHVideoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISegmentedMenuDelegate {
-
-    var dataController: DHVideoDataController?
+class DHVideoViewController: UIViewController {
+    
+    let kTopOffset: CGFloat = 60
+    
+    lazy var dataController: DHVideoDataController = {
+        return DHVideoDataController()
+    }()
     var tableView: UITableView?
     var loadingView: DHLoadingView?
     var menu: UISegmentedMenu?
@@ -26,74 +30,59 @@ class DHVideoViewController: UIViewController, UITableViewDelegate, UITableViewD
         ADVANCED
     }
     
-    func handleVideoData() {
-        endHeaderRefreshing()
-        dataController = DHVideoDataController()
-        dataController?.requestVideoAllWithCallback(callback: {
-            self.renderTableViewCell()
-        }())
-    }
-    
+// MARK: - Data Handler and View Renderer
     func endHeaderRefreshing() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.tableView?.mj_header.endRefreshing()
+        if (tableView?.mj_header.isRefreshing())! {
+            tableView?.mj_header.endRefreshing()
         }
     }
     
-    func renderTableViewCell() {
-        DispatchQueue.main.async(execute: {
-            self.loadingView?.isHidden = true
-            self.tableView?.reloadData()
+    func beginHeaderRefreshing() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+            self.endHeaderRefreshing()
         })
-        self.tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.tableView?.mj_footer.endRefreshing()
-            }
-            self.dataController?.requestMoreVideo(callback: {
-                self.tableView?.mj_footer.endRefreshing()
-                DispatchQueue.main.async(execute: {
-                    self.tableView?.reloadData()
-                })
-                }())
-        })
-        self.tableView?.mj_header.endRefreshing()
-    }
-    
-    func segmentedMenu(didSelectIndex index: NSInteger) {
-        if let videoType = VideoType(rawValue: index) {
+        let currentIndex = self.menu?.currentSelectedIndex()
+        if let videoType = VideoType(rawValue: currentIndex!) {
             switch videoType {
             case .ALL:
-                dataController?.requestVideoAllWithCallback(callback: {
+                self.dataController.requestVideoAllWithCallback(callback: {
+                    self.endHeaderRefreshing()
                     self.renderTableViewCell()
                 }())
                 break
             case .JIESHUO:
-                dataController?.requestVideoJieshuoWithCallback(callback: {
+                self.dataController.requestVideoJieshuoWithCallback(callback: {
+                    self.endHeaderRefreshing()
                     self.renderTableViewCell()
                 }())
                 break
             case .BISAI:
-                dataController?.requestVideoBisaiWithCallback(callback: {
+                self.dataController.requestVideoBisaiWithCallback(callback: {
+                    self.endHeaderRefreshing()
                     self.renderTableViewCell()
                 }())
                 break
             case .CELEBRITY:
-                dataController?.requestVideoCelebrityWithCallback(callback: {
+                self.dataController.requestVideoCelebrityWithCallback(callback: {
+                    self.endHeaderRefreshing()
                     self.renderTableViewCell()
                 }())
                 break
             case .QUWEI:
-                dataController?.requestVideoQuweiWithCallback(callback: {
+                self.dataController.requestVideoQuweiWithCallback(callback: {
+                    self.endHeaderRefreshing()
                     self.renderTableViewCell()
                 }())
                 break
             case .BEGINNER:
-                dataController?.requestVideoBeginnerWithCallback(callback: {
+                self.dataController.requestVideoBeginnerWithCallback(callback: {
+                    self.endHeaderRefreshing()
                     self.renderTableViewCell()
                 }())
                 break
             case .ADVANCED:
-                dataController?.requestVideoAdvancedWithCallback(callback: {
+                self.dataController.requestVideoAdvancedWithCallback(callback: {
+                    self.endHeaderRefreshing()
                     self.renderTableViewCell()
                 }())
                 break
@@ -101,14 +90,77 @@ class DHVideoViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    func beginFooterRefreshing() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            self.tableView?.mj_footer.endRefreshing()
+        }
+        self.dataController.requestMoreVideo(callback: {
+            self.tableView?.mj_footer.endRefreshing()
+            DispatchQueue.main.async(execute: {
+                self.tableView?.reloadData()
+            })
+        }())
+    }
+    
+    func renderTableViewCell() {
+        DispatchQueue.main.async(execute: { [unowned self] in
+            self.loadingView?.isHidden = true
+            self.tableView?.reloadData()
+        })
+    }
+    
+// MARK: - Lift Cycle
+    func handleVideoData() {
+        tableView?.mj_header.beginRefreshing()
+    }
+    
+    func setContentView() {
+        menu = UISegmentedMenu(frame: CGRect(x: 0, y: kTopOffset, width: view.bounds.size.width, height: 50), contentDataSource: [""], titleDataSource: ["全部", "解说", "比赛", "明星", "趣味", "新手", "进阶"], type: .fill)
+        menu?.delegate = self
+        tableView = UITableView(frame: CGRect(x: 0, y: kTopOffset + (menu?.bounds.size.height)!, width: view.bounds.size.width, height: view.bounds.size.height - kTopOffset - (menu?.bounds.size.height)!), style: .plain)
+        tableView?.register(UINib(nibName: "DHVideoTableViewCell", bundle: nil), forCellReuseIdentifier: kVideoCellReuseIdentifier)
+        tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: { [unowned self] in
+            self.beginHeaderRefreshing()
+            })
+        tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { [unowned self] in
+            self.beginFooterRefreshing()
+            })
+        tableView?.delegate = self
+        tableView?.dataSource = self
+        loadingView = DHLoadingView(frame: tableView!.frame)
+        view.addSubview(menu!)
+        view.addSubview(tableView!)
+        view.addSubview(loadingView!)
+    }
+    
+    func initLifeCycle() {
+        view.backgroundColor = UIColor.white
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
+        navigationItem.title = "掌刀"
+        self.automaticallyAdjustsScrollViewInsets = false
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        initLifeCycle()
+        setContentView()
+        handleVideoData()
+    }
+    
+}
+
+// MARK: - UITableViewDelegate
+extension DHVideoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (dataController?.videoDataSource?.count)! > 0 ? (dataController?.videoDataSource?.count)! : 0
+        return (dataController.videoDataSource?.count)! > 0 ? (dataController.videoDataSource?.count)! : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kVideoCellReuseIdentifier, for: indexPath) as! DHVideoTableViewCell
-        if (dataController?.videoDataSource?.count)! > 0 {
-            let videoModel = dataController?.videoDataSource?[indexPath.row] as! DHVideoModel
+        if (dataController.videoDataSource?.count)! > 0 {
+            let videoModel = dataController.videoDataSource?[indexPath.row] as! DHVideoModel
             let cellViewModel: DHVideoCellViewModel = DHVideoCellViewModel.init(videoModel: videoModel)
             cell.bindDataWithViewModel(viewModel: cellViewModel)
         }
@@ -126,83 +178,12 @@ class DHVideoViewController: UIViewController, UITableViewDelegate, UITableViewD
         playerVC.ykvid = cell.ykvid
         navigationController?.pushViewController(playerVC, animated: true)
     }
-    
-    func initLifeCycle() {
-        view.backgroundColor = UIColor.white
-        navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
-        navigationItem.title = "掌刀"
-        self.automaticallyAdjustsScrollViewInsets = false
+}
+
+// MARK: - UISegmentedMenuDelegate
+extension DHVideoViewController: UISegmentedMenuDelegate {
+    func segmentedMenu(didSelectIndex index: NSInteger) {
+        endHeaderRefreshing()
+        tableView?.mj_header.beginRefreshing()
     }
-    
-    func setContentView() {
-        menu = UISegmentedMenu(frame: CGRect(x: 0, y: 60, width: view.bounds.size.width, height: 50), contentDataSource: [""], titleDataSource: ["全部", "解说", "比赛", "明星", "趣味", "新手", "进阶"], type: .fill)
-        menu?.delegate = self
-        view.addSubview(menu!)
-        tableView = UITableView(frame: CGRect(x: 0, y: 60 + (menu?.bounds.size.height)!, width: view.bounds.size.width, height: view.bounds.size.height - 60 - (menu?.bounds.size.height)!), style: .plain)
-        tableView?.register(UINib(nibName: "DHVideoTableViewCell", bundle: nil), forCellReuseIdentifier: kVideoCellReuseIdentifier)
-        tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: {
-            let currentIndex = self.menu?.currentSelectedIndex()
-            if let videoType = VideoType(rawValue: currentIndex!) {
-                switch videoType {
-                    case .ALL:
-                        self.dataController?.requestVideoAllWithCallback(callback: {
-                            self.endHeaderRefreshing()
-                            self.renderTableViewCell()
-                        }())
-                    break
-                    case .JIESHUO:
-                        self.dataController?.requestVideoJieshuoWithCallback(callback: {
-                            self.endHeaderRefreshing()
-                            self.renderTableViewCell()
-                        }())
-                    break
-                    case .BISAI:
-                        self.dataController?.requestVideoBisaiWithCallback(callback: {
-                            self.endHeaderRefreshing()
-                            self.renderTableViewCell()
-                        }())
-                    break
-                    case .CELEBRITY:
-                        self.dataController?.requestVideoCelebrityWithCallback(callback: {
-                            self.endHeaderRefreshing()
-                            self.renderTableViewCell()
-                        }())
-                    break
-                    case .QUWEI:
-                        self.dataController?.requestVideoQuweiWithCallback(callback: {
-                            self.endHeaderRefreshing()
-                            self.renderTableViewCell()
-                        }())
-                    break
-                    case .BEGINNER:
-                        self.dataController?.requestVideoBeginnerWithCallback(callback: {
-                            self.endHeaderRefreshing()
-                            self.renderTableViewCell()
-                        }())
-                    break
-                    case .ADVANCED:
-                        self.dataController?.requestVideoAdvancedWithCallback(callback: {
-                            self.endHeaderRefreshing()
-                            self.renderTableViewCell()
-                        }())
-                    break
-                }
-            }
-        })
-        view.addSubview(tableView!)
-        tableView?.delegate = self
-        tableView?.dataSource = self
-        loadingView = DHLoadingView(frame: tableView!.frame)
-        view.addSubview(loadingView!)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        initLifeCycle()
-        setContentView()
-        handleVideoData()
-    }
-    
 }
