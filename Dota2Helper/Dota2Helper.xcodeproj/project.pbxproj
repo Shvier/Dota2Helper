@@ -612,8 +612,8 @@
 		C0D4CFFB1D5DC168008F824A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C0D4D00F1D5DC30D008F824A /* DHTutorialViewController.swift */,
 				C0F6307C1D9D5CB700AF039F /* DHTutorialDataController.swift */,
+				C0D4D00F1D5DC30D008F824A /* DHTutorialViewController.swift */,
 				C0A6906D1DB3B5C500DC0FA0 /* DHTutorialDetailDataController.swift */,
 				C0A690741DB3C0FD00DC0FA0 /* DHTutorialDetailViewController.swift */,
 			);

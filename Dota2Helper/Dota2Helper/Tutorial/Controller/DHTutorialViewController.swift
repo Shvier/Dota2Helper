@@ -9,7 +9,7 @@
 import UIKit
 import MJRefresh
 
-class DHTutorialViewController: UIViewController, UISegmentedMenuDelegate {
+class DHTutorialViewController: UIViewController {
     
     enum TutorialCategory: NSInteger {
         case ALL = 0,
@@ -18,77 +18,76 @@ class DHTutorialViewController: UIViewController, UISegmentedMenuDelegate {
         SKILL
     }
     
-    var dataController: DHTutorialDataController?
+    lazy var dataController: DHTutorialDataController = {
+        return DHTutorialDataController()
+    }()
     var tableView: UITableView?
     var loadingView: DHLoadingView?
     var menu: UISegmentedMenu?
     
+// MARK: - Data Handler and View Renderer
     func handleTutorialData() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.tableView?.mj_header.endRefreshing()
+        tableView?.mj_header.beginRefreshing()
+    }
+    
+    func beginHeaderRefreshing() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [unowned self] in
+            self.endHeaderRefreshing()
         }
-        dataController = DHTutorialDataController()
-        dataController?.requestTutorialAllWithCallback(callback: {
-            self.renderTableViewCell()
-        }())
-    }
-    
-    func renderTableViewCell() {
-        DispatchQueue.main.async(execute: {
-            self.loadingView?.isHidden = true
-            self.tableView?.reloadData()
-        })
-        tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                self.tableView?.mj_footer.endRefreshing()
-            }
-            self.dataController?.requestMoreTutorial(callback: {
-                self.tableView?.mj_footer.endRefreshing()
-                DispatchQueue.main.async(execute: {
-                    self.tableView?.reloadData()
-                })
-            }())
-        })
-        self.tableView?.mj_header.endRefreshing()
-    }
-    
-    func segmentedMenu(didSelectIndex index: NSInteger) {
-        if let dataType = TutorialCategory(rawValue: index) {
-            switch dataType {
+        let currentIndex = self.menu?.currentSelectedIndex()
+        if let tutorialType = TutorialCategory(rawValue: currentIndex!) {
+            switch tutorialType {
             case .ALL:
-                dataController?.requestTutorialAllWithCallback(callback: {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                        self.tableView?.mj_header.endRefreshing()
-                    }
+                self.dataController.requestTutorialAllWithCallback(callback: { [unowned self] in
+                    self.endHeaderRefreshing()
                     self.renderTableViewCell()
                 }())
                 break
             case .NEWER:
-                dataController?.requestTutorialNewerWithCallback(callback: {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                        self.tableView?.mj_header.endRefreshing()
-                    }
+                self.dataController.requestTutorialNewerWithCallback(callback: { [unowned self] in
+                    self.endHeaderRefreshing()
                     self.renderTableViewCell()
                 }())
                 break
             case .STEP:
-                dataController?.requestTutorialStepWithCallback(callback: {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                        self.tableView?.mj_header.endRefreshing()
-                    }
+                self.dataController.requestTutorialStepWithCallback(callback: { [unowned self] in
+                    self.endHeaderRefreshing()
                     self.renderTableViewCell()
                 }())
                 break
             case .SKILL:
-                dataController?.requestTutorialSkillWithCallback(callback: {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                        self.tableView?.mj_header.endRefreshing()
-                    }
+                self.dataController.requestTutorialSkillWithCallback(callback: { [unowned self] in
+                    self.endHeaderRefreshing()
                     self.renderTableViewCell()
                 }())
                 break
             }
         }
+    }
+    
+    func beginFooterRefreshing() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [unowned self] in
+            self.tableView?.mj_footer.endRefreshing()
+        }
+        self.dataController.requestMoreTutorial(callback: { [unowned self] in
+            self.tableView?.mj_footer.endRefreshing()
+            DispatchQueue.main.async(execute: { [unowned self] in
+                self.tableView?.reloadData()
+            })
+        }())
+    }
+    
+    func endHeaderRefreshing() {
+        if (tableView?.mj_header.isRefreshing())! {
+            tableView?.mj_header.endRefreshing()
+        }
+    }
+    
+    func renderTableViewCell() {
+        DispatchQueue.main.async(execute: { [unowned self] in
+            self.loadingView?.isHidden = true
+            self.tableView?.reloadData()
+        })
     }
     
     func loadToDetailVCWithTutorialModel(tutorialModel: DHTutorialModel) {
@@ -97,6 +96,7 @@ class DHTutorialViewController: UIViewController, UISegmentedMenuDelegate {
         navigationController?.pushViewController(tutorialDetailVC, animated: true)
     }
     
+// MARK: - Life Cycle
     func initLifeCycle() {
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.black
@@ -108,40 +108,19 @@ class DHTutorialViewController: UIViewController, UISegmentedMenuDelegate {
     func setContentView() {
         menu = UISegmentedMenu(frame: CGRect(x: 0, y: 60, width: view.bounds.size.width, height: 50), contentDataSource: [""], titleDataSource: ["全部", "新手", "进阶", "技巧"], type: .fill)
         menu?.delegate = self
-        view.addSubview(menu!)
         tableView = UITableView(frame: CGRect(x: 0, y: 60 + (menu?.bounds.size.height)!, width: view.bounds.size.width, height: view.bounds.size.height - 60 - (menu?.bounds.size.height)!), style: .plain)
         tableView?.register(UINib(nibName: "DHTutorialTableViewCell", bundle: nil), forCellReuseIdentifier: kTutorialCellReuseIdentifier)
-        tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: {
-            let currentIndex = self.menu?.currentSelectedIndex()
-            if let tutorialType = TutorialCategory(rawValue: currentIndex!) {
-                switch tutorialType {
-                    case .ALL:
-                        self.dataController?.requestTutorialAllWithCallback(callback: {
-                           self.renderTableViewCell()
-                        }())
-                    break
-                    case .NEWER:
-                        self.dataController?.requestTutorialNewerWithCallback(callback: {
-                           self.renderTableViewCell()
-                        }())
-                    break
-                    case .STEP:
-                        self.dataController?.requestTutorialStepWithCallback(callback: {
-                            self.renderTableViewCell()
-                        }())
-                    break
-                    case .SKILL:
-                        self.dataController?.requestTutorialSkillWithCallback(callback: {
-                            self.renderTableViewCell()
-                        }())
-                    break
-                }
-            }
+        tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: { [unowned self] in
+            self.beginHeaderRefreshing()
+        })
+        tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { [unowned self] in
+            self.beginFooterRefreshing()
         })
         tableView?.delegate = self
         tableView?.dataSource = self
-        view.addSubview(tableView!)
         loadingView = DHLoadingView(frame: tableView!.frame)
+        view.addSubview(menu!)
+        view.addSubview(tableView!)
         view.addSubview(loadingView!)
     }
     
@@ -158,13 +137,13 @@ class DHTutorialViewController: UIViewController, UISegmentedMenuDelegate {
 // MARK: - UITableViewDelegate
 extension DHTutorialViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (dataController?.tutorialDataSource?.count)! > 0 ? (dataController?.tutorialDataSource?.count)! : 0
+        return (dataController.tutorialDataSource?.count)! > 0 ? (dataController.tutorialDataSource?.count)! : 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kTutorialCellReuseIdentifier, for: indexPath) as! DHTutorialTableViewCell
-        if (dataController?.tutorialDataSource?.count)! > 0 {
-            let tutorialModel = dataController?.tutorialDataSource?[indexPath.row] as! DHTutorialModel
+        if (dataController.tutorialDataSource?.count)! > 0 {
+            let tutorialModel = dataController.tutorialDataSource?[indexPath.row] as! DHTutorialModel
             let cellViewModel: DHTutorialCellViewModel = DHTutorialCellViewModel.init(tutorialModel: tutorialModel)
             cell.bindDataWithViewModel(viewModel: cellViewModel)
             if #available(iOS 9.0, *) {
@@ -201,5 +180,13 @@ extension DHTutorialViewController: UIViewControllerPreviewingDelegate {
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         navigationController?.pushViewController(viewControllerToCommit, animated: true)
+    }
+}
+
+// MARK: - UISegmentedMenuDelegate
+extension DHTutorialViewController: UISegmentedMenuDelegate {
+    func segmentedMenu(didSelectIndex index: NSInteger) {
+        endHeaderRefreshing()
+        tableView?.mj_header.beginRefreshing()
     }
 }
