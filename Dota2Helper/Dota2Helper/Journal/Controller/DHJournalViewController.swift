@@ -78,7 +78,7 @@ class DHJournalViewController: DHBaseViewController {
     }
     
     func setContentView() {
-        tableView = UITableView(frame: view.bounds, style: .plain)
+        tableView = UITableView.init(frame: CGRect(x: 0, y: kNavigationHeight + kStatusBarHeight, width: view.bounds.size.width, height: view.bounds.size.height), style: .plain)
         tableView?.register(UINib(nibName: "DHJournalTableViewCell", bundle: nil), forCellReuseIdentifier: kJournalCellReuseIdentifier)
         tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: { [unowned self] in
             self.beginHeaderRefreshing()
@@ -99,6 +99,7 @@ class DHJournalViewController: DHBaseViewController {
         navigationController?.navigationBar.barTintColor = UIColor.black
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
         navigationItem.title = "掌刀"
+        self.automaticallyAdjustsScrollViewInsets = false
     }
     
     override func viewDidLoad() {

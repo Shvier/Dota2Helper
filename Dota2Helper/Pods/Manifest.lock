@@ -5,19 +5,27 @@ PODS:
   - Kingfisher (3.0.1)
   - MJRefresh (3.1.12)
   - ReachabilitySwift (3)
+  - SDCycleScrollView (1.65):
+    - SDWebImage (~> 3.7)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
 
 DEPENDENCIES:
   - Bugtags
   - Kingfisher (~> 3.0.1)
   - MJRefresh (~> 3.1.12)
   - ReachabilitySwift
+  - SDCycleScrollView (~> 1.65)
 
 SPEC CHECKSUMS:
   Bugtags: 5e5eb6343e15febeb6cb4a080c914e7eb4747817
   Kingfisher: d5a491b45ea453d90a31bd2c0831d5243e73a73f
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
+  SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: 64f8ad6e3dcea8517c3b84aae43caa6c664a0cba
+PODFILE CHECKSUM: e940d1c200753c2b2ce8c087552bef71ec7d4a43
 
 COCOAPODS: 1.0.1

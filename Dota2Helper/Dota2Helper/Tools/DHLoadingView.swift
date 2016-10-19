@@ -25,6 +25,7 @@ class DHLoadingView: UIView {
         let hintLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: hint.sizeOfContent(font: UIFont(name: "Helvetica", size: 20)!).width, height: 18))
         hintLabel.text = hint
         hintLabel.textAlignment = .center
+        hintLabel.textColor = kThemeColor
         let indicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         
         hintLabel.center = CGPoint(x: frame.size.width/2 + hintLabel.frame.size.width/4 + indicator.frame.size.width/4, y: kScreenHeight/2)

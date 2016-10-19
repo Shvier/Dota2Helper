@@ -9,18 +9,20 @@
 import UIKit
 import MJRefresh
 import ReachabilitySwift
+import SDCycleScrollView
 
 class DHNewsViewController: DHBaseViewController {
 
     lazy var dataController: DHNewsDataController = {
         return DHNewsDataController()
     }()
-    lazy var headerView: DHHeaderView = {
-        return DHHeaderView(frame: CGRect(x: 0, y: kNavigationHeight, width: kBannerWidth, height: kBannerHeight))
+    lazy var headerView: SDCycleScrollView = {
+        return SDCycleScrollView(frame: CGRect(x: 0, y: 0, width: kBannerWidth, height: kBannerHeight), delegate: self, placeholderImage: UIImage(named: "placeholder.jpg"))
     }()
     var tableView: UITableView?
     var loadingView: DHLoadingView?
     var noNetworkView: DHNoNetworkView?
+    var headerViewModel: DHNewsBannerViewModel?
     
 // MARK: - Data Handler and View Renderer
     func handleNewsData() {
@@ -58,19 +60,9 @@ class DHNewsViewController: DHBaseViewController {
     func renderTableViewCell() {
         tableView?.tableHeaderView = headerView
         let banners = NSArray(array: (dataController.bannerDataSource)!)
-        let headerViewModel: DHNewsBannerViewModel = DHNewsBannerViewModel(banners: banners as! [DHNewsModel]);
-        headerView.bindDataWithViewModel(viewModel: headerViewModel)
-        let array = NSArray(array: (headerView.banners)!)
-        for banner in array as! [DHBanner] {
-            banner.callback = ({ [unowned self] in
-                self.loadToDetailVCWithNewsModel(newsModel: banner.newsModel!)
-            })
-            if #available(iOS 9.0, *) {
-                self.registerForPreviewing(with: self, sourceView: banner)
-            } else {
-                // Fallback on earlier versions
-            }
-        }
+        headerViewModel = DHNewsBannerViewModel(banners: banners as! [DHNewsModel])
+        headerView.imageURLStringsGroup = headerViewModel?.imageUrlStrings
+        headerView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated
         DispatchQueue.main.async(execute: { [unowned self] in
             self.loadingView?.isHidden = true
             self.tableView?.reloadData()
@@ -96,7 +88,7 @@ class DHNewsViewController: DHBaseViewController {
     }
     
     func setContentView() {
-        tableView = UITableView.init(frame: view.bounds, style: .plain)
+        tableView = UITableView.init(frame: CGRect(x: 0, y: kNavigationHeight + kStatusBarHeight, width: view.bounds.size.width, height: view.bounds.size.height), style: .plain)
         tableView?.delegate = self
         tableView?.dataSource = self
         tableView?.register(UINib(nibName: "DHNewsTableViewCell", bundle: nil), forCellReuseIdentifier: kNewsCellReuseIdentifier)
@@ -112,10 +104,11 @@ class DHNewsViewController: DHBaseViewController {
     }
     
     func initLifeCycle() {
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.orange
         navigationController?.navigationBar.barTintColor = UIColor.black
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
         navigationItem.title = "掌刀"
+        self.automaticallyAdjustsScrollViewInsets = false
     }
     
     override func viewDidLoad() {
@@ -178,5 +171,12 @@ extension DHNewsViewController: UIViewControllerPreviewingDelegate {
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         navigationController?.pushViewController(viewControllerToCommit, animated: true)
+    }
+}
+
+extension DHNewsViewController: SDCycleScrollViewDelegate {
+    func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didSelectItemAt index: Int) {
+        let banner: DHNewsModel = (headerViewModel?.banners![index])!
+        loadToDetailVCWithNewsModel(newsModel: banner)
     }
 }

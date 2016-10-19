@@ -62,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         tabbarVC?.viewControllers = [newsNaVC, videoNaVC, tutorialNaVC, journalNaVC, settingsNaVC]
         
-        tabbarVC?.tabBar.tintColor = UIColor.red
+        tabbarVC?.tabBar.tintColor = kTabBarItemColor
         tabbarVC?.tabBar.isTranslucent = false
         tabbarVC?.tabBar.barStyle = .black
         

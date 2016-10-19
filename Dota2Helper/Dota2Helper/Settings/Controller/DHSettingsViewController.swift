@@ -16,7 +16,7 @@ class DHSettingsViewController: UITableViewController {
     
 // MARK: - Data Handler
     func handleData() {
-        dataSource = ["", "清空缓存", "项目主页", "去评分", "关于"]
+        dataSource = ["", "清空缓存", "关注本项目源代码", "提出BUG或改进", "去评分", "关于"]
     }
     
 // MARK: - Life Cycle
@@ -118,8 +118,11 @@ extension DHSettingsViewController {
             UIApplication.shared.openURL(URL(string: "https://github.com/Shvier/Dota2Helper")!)
             break
         case 3:
+            UIApplication.shared.openURL(URL(string: "mailto:Shvier@icloud.com")!)
             break
         case 4:
+            break
+        case 5:
             UIApplication.shared.openURL(URL(string: "https://github.com/Shvier/Dota2Helper/blob/master/README.md")!)
             break
         default:
