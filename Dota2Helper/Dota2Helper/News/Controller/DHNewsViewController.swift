@@ -138,8 +138,8 @@ extension DHNewsViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 // MARK: - UIViewControllerPreviewingDelegate
+@available(iOS 9.0, *)
 extension DHNewsViewController: UIViewControllerPreviewingDelegate {
-    @available(iOS 9.0, *)
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         let newsDetailVC: DHNewsDetailViewController = DHNewsDetailViewController()
         if previewingContext.sourceRect.size.height == 80 {
@@ -152,7 +152,6 @@ extension DHNewsViewController: UIViewControllerPreviewingDelegate {
         return newsDetailVC
     }
     
-    @available(iOS 9.0, *)
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }

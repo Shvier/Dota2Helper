@@ -18,7 +18,7 @@ class DHNetworkRequestManager: NSObject {
 
     static let sharedInstance = DHNetworkRequestManager()
     
-    func requestWithUrl(type: RequestType, urlHeader: URL?, parameters: Any?, completion: @escaping (Data?, URLResponse?, Error?) -> Swift.Void) {
+    func requestWithUrl(type: RequestType, urlHeader: URL?, parameters: Any?, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
         let request: URLRequest?
         switch type {
         case .POST:

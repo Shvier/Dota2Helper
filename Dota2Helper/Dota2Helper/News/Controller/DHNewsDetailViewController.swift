@@ -16,6 +16,7 @@ class DHNewsDetailViewController: DHBaseDetailViewController, WKNavigationDelega
     var newsDetailView: DHNewsDetailView?
     var loadingView: DHLoadingView?
 
+// MARK: - 3D Touch Peek Menu
     @available(iOS 9.0, *)
     override var previewActionItems: [UIPreviewActionItem] {
         get {
@@ -35,6 +36,7 @@ class DHNewsDetailViewController: DHBaseDetailViewController, WKNavigationDelega
         }
     }
     
+// MARK: - Life Cycle
     func handleData() {
         dataController = DHNewsDetailDataController()
         let request: URLRequest = (dataController?.requestNewsDetailDataRequestWithNewsModel(newsModel: newsModel!))!
