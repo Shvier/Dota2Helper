@@ -13,12 +13,12 @@
             <rect key="frame" x="0.0" y="0.0" width="394" height="120"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="394" height="119"/>
+                <frame key="frameInset" width="394" height="119.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fs8-P9-a6b">
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="Fs8-P9-a6b" secondAttribute="height" multiplier="16:10" id="lNQ-BF-gkc"/>
+                            <constraint firstAttribute="width" secondItem="Fs8-P9-a6b" secondAttribute="height" multiplier="16:9" id="lNQ-BF-gkc"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azW-VX-HXb">
