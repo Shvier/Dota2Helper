@@ -43,7 +43,7 @@ class DHVideoDataController: NSObject {
     func requestVideoDataWithCallback(callback: @autoclosure @escaping () -> Void, videoType: String) {
         let url = URL(string: kRefreshVideos)
         let parameters: NSArray = [videoType]
-        DHNetworkRequestManager.sharedInstance.requestWithUrl(type: .DEFAULT, urlHeader: url, parameters: parameters) { (Data, URLResponse, Error) in
+        DHNetworkRequestManager.sharedInstance.requestWithUrl(type: .DEFAULT, urlHeader: url, parameters: parameters) { [unowned self] (Data, URLResponse, Error) in
             if Error == nil {
                 do {
                     let result = try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
@@ -68,7 +68,7 @@ class DHVideoDataController: NSObject {
         let url = URL(string: kLoadMoreVideos)
         let lastModel = videoDataSource![(videoDataSource?.count)! - 1] as! DHVideoModel
         let parameter: [String] = ["all", lastModel.vid!]
-        DHNetworkRequestManager.sharedInstance.requestWithUrl(type: .DEFAULT, urlHeader: url, parameters: parameter) { (Data, URLResponse, Error) in
+        DHNetworkRequestManager.sharedInstance.requestWithUrl(type: .DEFAULT, urlHeader: url, parameters: parameter) { [unowned self] (Data, URLResponse, Error) in
             if Error == nil {
                 do {
                     let result = try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary

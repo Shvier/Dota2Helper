@@ -38,7 +38,7 @@ class DHVideoViewController: UIViewController {
     }
     
     func beginHeaderRefreshing() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: { [unowned self] in
             self.endHeaderRefreshing()
         })
         let currentIndex = self.menu?.currentSelectedIndex()
@@ -91,10 +91,10 @@ class DHVideoViewController: UIViewController {
     }
     
     func beginFooterRefreshing() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [unowned self] in
             self.tableView?.mj_footer.endRefreshing()
         }
-        self.dataController.requestMoreVideo(callback: {
+        self.dataController.requestMoreVideo(callback: { [unowned self] in
             self.tableView?.mj_footer.endRefreshing()
             DispatchQueue.main.async(execute: {
                 self.tableView?.reloadData()
@@ -119,12 +119,12 @@ class DHVideoViewController: UIViewController {
         menu?.delegate = self
         tableView = UITableView(frame: CGRect(x: 0, y: kTopOffset + (menu?.bounds.size.height)!, width: view.bounds.size.width, height: view.bounds.size.height - kTopOffset - (menu?.bounds.size.height)!), style: .plain)
         tableView?.register(UINib(nibName: "DHVideoTableViewCell", bundle: nil), forCellReuseIdentifier: kVideoCellReuseIdentifier)
-        tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: { [unowned self] in
+        tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             self.beginHeaderRefreshing()
-            })
-        tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { [unowned self] in
+        })
+        tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
             self.beginFooterRefreshing()
-            })
+        })
         tableView?.delegate = self
         tableView?.dataSource = self
         loadingView = DHLoadingView(frame: tableView!.frame)

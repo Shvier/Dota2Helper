@@ -11,48 +11,57 @@ import MJRefresh
 
 class DHNewsViewController: UIViewController {
 
-    var dataController: DHNewsDataController?
-    var headerView: DHHeaderView?
+    lazy var dataController: DHNewsDataController = {
+        return DHNewsDataController()
+    }()
+    lazy var headerView: DHHeaderView = {
+        return DHHeaderView(frame: CGRect(x: 0, y: 0, width: kBannerWidth, height: kBannerHeight))
+    }()
     var tableView: UITableView?
     var loadingView: DHLoadingView?
     
 // MARK: - Data Handler and View Renderer
     func handleNewsData() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            self.tableView?.mj_header.endRefreshing()
+        tableView?.mj_header.beginRefreshing()
+    }
+    
+    func beginHeaderRefreshing() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [unowned self] in
+            self.endHeaderRefreshing()
         }
-        dataController = DHNewsDataController()
-        weak var weakSelf = self
-        dataController?.requestNewsDataWithCallback(callback: {
-            let strongSelf = weakSelf
-            strongSelf?.renderTableViewCell()
-            tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    strongSelf?.tableView?.mj_footer.endRefreshing()
-                }
-                self.dataController?.requestMoreNews(callback: {
-                    strongSelf?.tableView?.mj_footer.endRefreshing()
-                    DispatchQueue.main.async(execute: {
-                        strongSelf?.tableView?.reloadData()
-                    })
-                }())
-            })
-            strongSelf?.tableView?.mj_header.endRefreshing()
+        dataController.requestNewsDataWithCallback(callback: { [unowned self] in
+            self.tableView?.mj_header.endRefreshing()
+            self.renderTableViewCell()
         }())
     }
     
+    func beginFooterRefreshing() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [unowned self] in
+            self.tableView?.mj_footer.endRefreshing()
+        }
+        self.dataController.requestMoreNews(callback: { [unowned self] in
+            self.tableView?.mj_footer.endRefreshing()
+            DispatchQueue.main.async(execute: {
+                self.tableView?.reloadData()
+            })
+        }())
+    }
+    
+    func endHeaderRefreshing() {
+        if (tableView?.mj_header.isRefreshing())! {
+            tableView?.mj_header.endRefreshing()
+        }
+    }
+    
     func renderTableViewCell() {
-        headerView = DHHeaderView(frame: CGRect(x: 0, y: 0, width: kBannerWidth, height: kBannerHeight))
         tableView?.tableHeaderView = headerView
-        let banners = NSArray(array: (dataController?.bannerDataSource)!)
+        let banners = NSArray(array: (dataController.bannerDataSource)!)
         let headerViewModel: DHNewsBannerViewModel = DHNewsBannerViewModel(banners: banners as! [DHNewsModel]);
-        headerView?.bindDataWithViewModel(viewModel: headerViewModel)
-        let array = NSArray(array: (headerView?.banners)!)
-        weak var weakSelf = self
+        headerView.bindDataWithViewModel(viewModel: headerViewModel)
+        let array = NSArray(array: (headerView.banners)!)
         for banner in array as! [DHBanner] {
-            banner.callback = ({
-                let strongSelf = weakSelf
-                strongSelf?.loadToDetailVCWithNewsModel(newsModel: banner.newsModel!)
+            banner.callback = ({ [unowned self] in
+                self.loadToDetailVCWithNewsModel(newsModel: banner.newsModel!)
             })
             if #available(iOS 9.0, *) {
                 self.registerForPreviewing(with: self, sourceView: banner)
@@ -60,7 +69,7 @@ class DHNewsViewController: UIViewController {
                 // Fallback on earlier versions
             }
         }
-        DispatchQueue.main.async(execute: {
+        DispatchQueue.main.async(execute: { [unowned self] in
             self.loadingView?.isHidden = true
             self.tableView?.reloadData()
         })
@@ -72,15 +81,17 @@ class DHNewsViewController: UIViewController {
         navigationController?.pushViewController(newsDetailVC, animated: true)
     }
     
+// MARK: - Life Cycle
     func setContentView() {
         tableView = UITableView.init(frame: view.bounds, style: .plain)
         tableView?.delegate = self
         tableView?.dataSource = self
         tableView?.register(UINib(nibName: "DHNewsTableViewCell", bundle: nil), forCellReuseIdentifier: kNewsCellReuseIdentifier)
-        weak var weakSelf = self
-        tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: {
-            let strongSelf = weakSelf
-            strongSelf?.handleNewsData()
+        tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: { [unowned self] in
+            self.beginHeaderRefreshing()
+        })
+        self.tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { [unowned self] in
+            self.beginFooterRefreshing()
         })
         view.addSubview(tableView!)
         loadingView = addLoadingViewForViewController(self)
@@ -106,7 +117,7 @@ class DHNewsViewController: UIViewController {
 // MARK: - UITableViewDelegate
 extension DHNewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (dataController?.newsDataSource?.count)! > 0 ? (dataController?.newsDataSource?.count)! : 0
+        return (dataController.newsDataSource?.count)! > 0 ? (dataController.newsDataSource?.count)! : 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -115,8 +126,8 @@ extension DHNewsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: DHNewsTableViewCell = tableView.dequeueReusableCell(withIdentifier: kNewsCellReuseIdentifier, for: indexPath) as! DHNewsTableViewCell
-        if (dataController?.newsDataSource?.count)! > 0 {
-            let newsModel = dataController?.newsDataSource?[indexPath.row] as! DHNewsModel
+        if (dataController.newsDataSource?.count)! > 0 {
+            let newsModel = dataController.newsDataSource?[indexPath.row] as! DHNewsModel
             let cellViewModel: DHNewsCellViewModel = DHNewsCellViewModel.init(newsModel: newsModel)
             cell.bindDataWithViewModel(viewModel: cellViewModel)
             if #available(iOS 9.0, *) {
