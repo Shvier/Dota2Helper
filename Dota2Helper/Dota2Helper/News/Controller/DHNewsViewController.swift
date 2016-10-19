@@ -8,7 +8,6 @@
 
 import UIKit
 import MJRefresh
-import SafariServices
 
 class DHNewsViewController: UIViewController {
 
@@ -71,10 +70,6 @@ class DHNewsViewController: UIViewController {
         let newsDetailVC: DHNewsDetailViewController = DHNewsDetailViewController()
         newsDetailVC.newsModel = newsModel;
         navigationController?.pushViewController(newsDetailVC, animated: true)
-    }
-    
-    func refreshStateChange(control: UIRefreshControl) {
-        control.endRefreshing()
     }
     
     func setContentView() {
