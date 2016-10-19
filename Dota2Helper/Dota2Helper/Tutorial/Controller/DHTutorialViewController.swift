@@ -106,7 +106,7 @@ class DHTutorialViewController: UIViewController {
     }
     
     func setContentView() {
-        menu = UISegmentedMenu(frame: CGRect(x: 0, y: 60, width: view.bounds.size.width, height: 50), contentDataSource: [""], titleDataSource: ["全部", "新手", "进阶", "技巧"], type: .fill)
+        menu = UISegmentedMenu(frame: CGRect(x: 0, y: 60, width: view.bounds.size.width, height: kSegmentedMenuHeight), contentDataSource: [""], titleDataSource: ["全部", "新手", "进阶", "技巧"], type: .fill)
         menu?.delegate = self
         tableView = UITableView(frame: CGRect(x: 0, y: 60 + (menu?.bounds.size.height)!, width: view.bounds.size.width, height: view.bounds.size.height - 60 - (menu?.bounds.size.height)!), style: .plain)
         tableView?.register(UINib(nibName: "DHTutorialTableViewCell", bundle: nil), forCellReuseIdentifier: kTutorialCellReuseIdentifier)
@@ -118,10 +118,9 @@ class DHTutorialViewController: UIViewController {
         })
         tableView?.delegate = self
         tableView?.dataSource = self
-        loadingView = DHLoadingView(frame: tableView!.frame)
         view.addSubview(menu!)
         view.addSubview(tableView!)
-        view.addSubview(loadingView!)
+        loadingView = addLoadingViewForViewController(self)
     }
     
     override func viewDidLoad() {

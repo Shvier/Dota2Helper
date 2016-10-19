@@ -19,6 +19,7 @@ class DHNewsViewController: UIViewController {
     }()
     var tableView: UITableView?
     var loadingView: DHLoadingView?
+    var noNetworkView: DHNoNetworkView?
     
 // MARK: - Data Handler and View Renderer
     func handleNewsData() {
@@ -95,6 +96,7 @@ class DHNewsViewController: UIViewController {
         })
         view.addSubview(tableView!)
         loadingView = addLoadingViewForViewController(self)
+        noNetworkView = addNoNetworkViewForViewController(self)
     }
     
     func initLifeCycle() {

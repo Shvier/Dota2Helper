@@ -11,6 +11,8 @@
 		C0004BA01D992804007EF3EE /* DHJournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0004B9F1D992804007EF3EE /* DHJournalModel.swift */; };
 		C0122E3F1D97FD880000D249 /* DHJournalDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0122E3E1D97FD880000D249 /* DHJournalDataController.swift */; };
 		C018F7871DB385CE006DC0B6 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C018F7861DB385CE006DC0B6 /* libYouTuMediaPlayerEngineYouku.a */; };
+		C01981B41DB74C81009AE757 /* DHNoNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01981B31DB74C81009AE757 /* DHNoNetworkView.swift */; };
+		C01981B61DB7518E009AE757 /* DHHintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01981B51DB7518E009AE757 /* DHHintManager.swift */; };
 		C01E405D1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E405B1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift */; };
 		C01E405E1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C01E405C1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib */; };
 		C01E40601D9E3C42006C6CD3 /* DHTutorialCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E405F1D9E3C42006C6CD3 /* DHTutorialCellViewModel.swift */; };
@@ -125,6 +127,8 @@
 		C0004B9F1D992804007EF3EE /* DHJournalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalModel.swift; sourceTree = "<group>"; };
 		C0122E3E1D97FD880000D249 /* DHJournalDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDataController.swift; sourceTree = "<group>"; };
 		C018F7861DB385CE006DC0B6 /* libYouTuMediaPlayerEngineYouku.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouTuMediaPlayerEngineYouku.a; sourceTree = "<group>"; };
+		C01981B31DB74C81009AE757 /* DHNoNetworkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNoNetworkView.swift; sourceTree = "<group>"; };
+		C01981B51DB7518E009AE757 /* DHHintManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHHintManager.swift; sourceTree = "<group>"; };
 		C01E405B1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialTableViewCell.swift; sourceTree = "<group>"; };
 		C01E405C1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHTutorialTableViewCell.xib; sourceTree = "<group>"; };
 		C01E405F1D9E3C42006C6CD3 /* DHTutorialCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialCellViewModel.swift; sourceTree = "<group>"; };
@@ -594,6 +598,8 @@
 				E75E4B5B1DA8D7AC00612599 /* DHLoadingView.swift */,
 				C0E38C501DADB6DA00E1D27A /* Youku-Bridge-Header.h */,
 				C05179A21DB111BA00C5ECAC /* DHToastMessage.swift */,
+				C01981B31DB74C81009AE757 /* DHNoNetworkView.swift */,
+				C01981B51DB7518E009AE757 /* DHHintManager.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -860,6 +866,7 @@
 				C0F6307B1D9D5B8F00AF039F /* DHTutorialViewModel.swift in Sources */,
 				C0122E3F1D97FD880000D249 /* DHJournalDataController.swift in Sources */,
 				C0287D411D9957D9009D878E /* DHJournalDetailViewController.swift in Sources */,
+				C01981B41DB74C81009AE757 /* DHNoNetworkView.swift in Sources */,
 				C0E6BF931D9434D400872006 /* DHNewsDetailViewModel.swift in Sources */,
 				C0EC17521D9026C80002AAF4 /* DHNewsTableViewCell.swift in Sources */,
 				C0D4D00A1D5DC2E6008F824A /* DHJournalViewController.swift in Sources */,
@@ -893,6 +900,7 @@
 				C0EB19EF1D94165D0053970A /* DHNewsDetailDataController.swift in Sources */,
 				C0EC174F1D9025720002AAF4 /* DHNewsCellViewModel.swift in Sources */,
 				C0287D3E1D99578F009D878E /* DHJournalDetailDataController.swift in Sources */,
+				C01981B61DB7518E009AE757 /* DHHintManager.swift in Sources */,
 				C0EC174D1D901D4D0002AAF4 /* DHNewsDataController.swift in Sources */,
 				C088DA4F1D95652700F1329D /* DHBannerViewModel.swift in Sources */,
 				C0D4D0121D5DC319008F824A /* DHVideoViewController.swift in Sources */,

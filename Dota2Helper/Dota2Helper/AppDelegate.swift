@@ -84,7 +84,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 launchImage.alpha = 0
             })
         }
-        
+                
         DHLog("Application Launching")
         
         Fabric.with([Crashlytics.self])

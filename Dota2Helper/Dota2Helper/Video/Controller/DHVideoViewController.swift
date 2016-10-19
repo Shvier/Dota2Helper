@@ -115,7 +115,7 @@ class DHVideoViewController: UIViewController {
     }
     
     func setContentView() {
-        menu = UISegmentedMenu(frame: CGRect(x: 0, y: kTopOffset, width: view.bounds.size.width, height: 50), contentDataSource: [""], titleDataSource: ["全部", "解说", "比赛", "明星", "趣味", "新手", "进阶"], type: .fill)
+        menu = UISegmentedMenu(frame: CGRect(x: 0, y: kTopOffset, width: view.bounds.size.width, height: kSegmentedMenuHeight), contentDataSource: [""], titleDataSource: ["全部", "解说", "比赛", "明星", "趣味", "新手", "进阶"], type: .fill)
         menu?.delegate = self
         tableView = UITableView(frame: CGRect(x: 0, y: kTopOffset + (menu?.bounds.size.height)!, width: view.bounds.size.width, height: view.bounds.size.height - kTopOffset - (menu?.bounds.size.height)!), style: .plain)
         tableView?.register(UINib(nibName: "DHVideoTableViewCell", bundle: nil), forCellReuseIdentifier: kVideoCellReuseIdentifier)
@@ -127,10 +127,9 @@ class DHVideoViewController: UIViewController {
         })
         tableView?.delegate = self
         tableView?.dataSource = self
-        loadingView = DHLoadingView(frame: tableView!.frame)
         view.addSubview(menu!)
         view.addSubview(tableView!)
-        view.addSubview(loadingView!)
+        loadingView = addLoadingViewForViewController(self)
     }
     
     func initLifeCycle() {

@@ -13,10 +13,12 @@ let kTimeOut: UInt64 = 10
 let kThemeColor = UIColor(red:0.71, green:0.51, blue:0.39, alpha:1.00)
 
 let kScreenWidth = UIScreen.main.bounds.size.width
+let kScreenHeight = UIScreen.main.bounds.size.height
 
 let kYoukuClientId: String = "2f9d050663c87f13"
 let kYoukuClientSecret: String = "bc01abf455c8c702f11eb7217344ce78"
 
+let kSegmentedMenuHeight: CGFloat = 50
 let kNavigationHeight: CGFloat = 44
 let kNewsCellReuseIdentifier: String = "NewsTableViewCell"
 let kJournalCellReuseIdentifier: String = "JournalTableViewCell"
