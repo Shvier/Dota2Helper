@@ -11,31 +11,43 @@ import MJRefresh
 
 class DHJournalViewController: UIViewController {
 
-    var dataController: DHJournalDataController?
+    lazy var dataController: DHJournalDataController = {
+        return DHJournalDataController()
+    }()
     var tableView: UITableView?
     var loadingView: DHLoadingView?
     
 // MARK: - Data Handler and View Renderer
     func handleJournalData() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [unowned self] in
-            self.tableView?.mj_header.endRefreshing()
+        tableView?.mj_header.beginRefreshing()
+    }
+    
+    func beginHeaderRefreshing() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [unowned self] in
+            self.endHeaderRefreshing()
         }
-        dataController = DHJournalDataController()
-        dataController?.requestJournalDataWithCallback(callback: { [unowned self] in
-            self.renderTableViewCell()
-            self.tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                    self.tableView?.mj_footer.endRefreshing()
-                }
-                self.dataController?.requestMoreJournal(callback: {
-                    self.tableView?.mj_footer.endRefreshing()
-                    DispatchQueue.main.async(execute: {
-                        self.tableView?.reloadData()
-                    })
-                }())
-            })
+        dataController.requestJournalDataWithCallback(callback: { [unowned self] in
             self.tableView?.mj_header.endRefreshing()
+            self.renderTableViewCell()
         }())
+    }
+    
+    func beginFooterRefreshing() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [unowned self] in
+            self.tableView?.mj_footer.endRefreshing()
+        }
+        self.dataController.requestMoreJournal(callback: { [unowned self] in
+            self.tableView?.mj_footer.endRefreshing()
+            DispatchQueue.main.async(execute: { [unowned self] in
+                self.tableView?.reloadData()
+            })
+        }())
+    }
+    
+    func endHeaderRefreshing() {
+        if (tableView?.mj_header.isRefreshing())! {
+            tableView?.mj_header.endRefreshing()
+        }
     }
     
     func renderTableViewCell() {
@@ -51,16 +63,20 @@ class DHJournalViewController: UIViewController {
         navigationController?.pushViewController(journalDetailVC, animated: true)
     }
     
+// MARK: - Life Cycle
     func setContentView() {
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView?.register(UINib(nibName: "DHJournalTableViewCell", bundle: nil), forCellReuseIdentifier: kJournalCellReuseIdentifier)
         tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: { [unowned self] in
-            self.handleJournalData()
+            self.beginHeaderRefreshing()
+        })
+        self.tableView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { [unowned self] in
+            self.beginFooterRefreshing()
         })
         tableView?.delegate = self
         tableView?.dataSource = self
-        view.addSubview(tableView!)
         loadingView = DHLoadingView(frame: view.bounds)
+        view.addSubview(tableView!)
         view.addSubview(loadingView!)
     }
     
@@ -84,7 +100,7 @@ class DHJournalViewController: UIViewController {
 // MARK: - UITableViewDelegate
 extension DHJournalViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (dataController?.journalDataSource?.count)! > 0 ? (dataController?.journalDataSource?.count)! : 0
+        return (dataController.journalDataSource?.count)! > 0 ? (dataController.journalDataSource?.count)! : 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -93,8 +109,8 @@ extension DHJournalViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: DHJournalTableViewCell = tableView.dequeueReusableCell(withIdentifier: kJournalCellReuseIdentifier, for: indexPath) as! DHJournalTableViewCell
-        if (dataController?.journalDataSource?.count)! > 0 {
-            let journalModel = dataController?.journalDataSource?[indexPath.row] as! DHJournalModel
+        if (dataController.journalDataSource?.count)! > 0 {
+            let journalModel = dataController.journalDataSource?[indexPath.row] as! DHJournalModel
             let cellViewModel: DHJournalViewModel = DHJournalViewModel(journal: journalModel)
             cell.bindDataWithViewModel(viewModel: cellViewModel)
             if #available(iOS 9.0, *) {
@@ -110,7 +126,7 @@ extension DHJournalViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if (dataController?.journalDataSource?.count)! > 0 {
+        if (dataController.journalDataSource?.count)! > 0 {
             let cell: DHJournalTableViewCell = tableView.cellForRow(at: indexPath) as! DHJournalTableViewCell
             loadToDetailVCWithJournalModel(journalModel: cell.journalModel!)
         }

@@ -18,7 +18,7 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Mv-N5-Mul">
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="4Mv-N5-Mul" secondAttribute="height" multiplier="16:9" id="K45-D2-fUO"/>
+                            <constraint firstAttribute="width" secondItem="4Mv-N5-Mul" secondAttribute="height" multiplier="16:10" id="K45-D2-fUO"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5n-vX-zLJ">
