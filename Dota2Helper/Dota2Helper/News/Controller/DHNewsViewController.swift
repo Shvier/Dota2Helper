@@ -8,8 +8,9 @@
 
 import UIKit
 import MJRefresh
+import ReachabilitySwift
 
-class DHNewsViewController: UIViewController {
+class DHNewsViewController: DHBaseViewController {
 
     lazy var dataController: DHNewsDataController = {
         return DHNewsDataController()
@@ -83,6 +84,17 @@ class DHNewsViewController: UIViewController {
     }
     
 // MARK: - Life Cycle
+    override func reachabilityChanged(note: NSNotification) {
+        let reachability = note.object as! Reachability
+        if reachability.isReachable {
+            noNetworkView?.hide()
+            handleNewsData()
+        } else {
+            DHLog("Network not reachable")
+            noNetworkView?.show()
+        }
+    }
+    
     func setContentView() {
         tableView = UITableView.init(frame: view.bounds, style: .plain)
         tableView?.delegate = self
@@ -111,7 +123,6 @@ class DHNewsViewController: UIViewController {
         
         initLifeCycle()
         setContentView()
-        handleNewsData()
     }
     
 }

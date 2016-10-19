@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 
 let kBannerWidth: CGFloat = UIScreen.main.bounds.size.width
-let kBannerHeight: CGFloat = 200.0
+let kBannerHeight: CGFloat = 220.0
 
 class DHNewsBannerViewModel: NSObject {
 

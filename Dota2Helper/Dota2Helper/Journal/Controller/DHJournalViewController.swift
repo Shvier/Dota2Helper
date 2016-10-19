@@ -8,14 +8,16 @@
 
 import UIKit
 import MJRefresh
+import ReachabilitySwift
 
-class DHJournalViewController: UIViewController {
+class DHJournalViewController: DHBaseViewController {
 
     lazy var dataController: DHJournalDataController = {
         return DHJournalDataController()
     }()
     var tableView: UITableView?
     var loadingView: DHLoadingView?
+    var noNetworkView: DHNoNetworkView?
     
 // MARK: - Data Handler and View Renderer
     func handleJournalData() {
@@ -64,6 +66,17 @@ class DHJournalViewController: UIViewController {
     }
     
 // MARK: - Life Cycle
+    override func reachabilityChanged(note: NSNotification) {
+        let reachability = note.object as! Reachability
+        if reachability.isReachable {
+            noNetworkView?.hide()
+            handleJournalData()
+        } else {
+            DHLog("Network not reachable")
+            noNetworkView?.show()
+        }
+    }
+    
     func setContentView() {
         tableView = UITableView(frame: view.bounds, style: .plain)
         tableView?.register(UINib(nibName: "DHJournalTableViewCell", bundle: nil), forCellReuseIdentifier: kJournalCellReuseIdentifier)
@@ -78,6 +91,7 @@ class DHJournalViewController: UIViewController {
         loadingView = DHLoadingView(frame: view.bounds)
         view.addSubview(tableView!)
         view.addSubview(loadingView!)
+        noNetworkView = addNoNetworkViewForViewController(self)
     }
     
     func initLifeCycle() {

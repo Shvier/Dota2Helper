@@ -19,6 +19,7 @@
 		C01981C11DB7628F009AE757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01981BD1DB7628F009AE757 /* AppDelegate.swift */; };
 		C01981C21DB7628F009AE757 /* divider_line_image.png in Resources */ = {isa = PBXBuildFile; fileRef = C01981BE1DB7628F009AE757 /* divider_line_image.png */; };
 		C01981C51DB762B8009AE757 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C01981C41DB762B8009AE757 /* Info.plist */; };
+		C01981CA1DB76C3F009AE757 /* DHBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01981C91DB76C3F009AE757 /* DHBaseViewController.swift */; };
 		C01E405D1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E405B1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift */; };
 		C01E405E1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C01E405C1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib */; };
 		C01E40601D9E3C42006C6CD3 /* DHTutorialCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E405F1D9E3C42006C6CD3 /* DHTutorialCellViewModel.swift */; };
@@ -136,6 +137,7 @@
 		C01981BD1DB7628F009AE757 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C01981BE1DB7628F009AE757 /* divider_line_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = divider_line_image.png; sourceTree = "<group>"; };
 		C01981C41DB762B8009AE757 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C01981C91DB76C3F009AE757 /* DHBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseViewController.swift; sourceTree = "<group>"; };
 		C01E405B1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialTableViewCell.swift; sourceTree = "<group>"; };
 		C01E405C1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHTutorialTableViewCell.xib; sourceTree = "<group>"; };
 		C01E405F1D9E3C42006C6CD3 /* DHTutorialCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialCellViewModel.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 			children = (
 				C05179A01DB10D8800C5ECAC /* DHBaseDetailViewController.swift */,
 				C0EFB0EC1DB61E5C009001C1 /* DHBaseDetailDataController.swift */,
+				C01981C91DB76C3F009AE757 /* DHBaseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -886,6 +889,7 @@
 				C0EBB08C1DAB025400D5C179 /* DHVideoPlayDataController.swift in Sources */,
 				C0A690771DB3C21600DC0FA0 /* DHTutorialDetailView.swift in Sources */,
 				C0D3E07E1DA44A2D009AFDB0 /* DHVideoTableViewCell.swift in Sources */,
+				C01981CA1DB76C3F009AE757 /* DHBaseViewController.swift in Sources */,
 				C0287D461D995AFE009D878E /* DHJournalDetailViewModel.swift in Sources */,
 				C0A690791DB3C24600DC0FA0 /* DHTutorialDetailViewModel.swift in Sources */,
 				C0287D3A1D994D66009D878E /* DHJournalViewModel.swift in Sources */,

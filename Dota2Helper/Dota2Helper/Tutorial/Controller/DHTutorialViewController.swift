@@ -8,8 +8,9 @@
 
 import UIKit
 import MJRefresh
+import ReachabilitySwift
 
-class DHTutorialViewController: UIViewController {
+class DHTutorialViewController: DHBaseViewController {
     
     enum TutorialCategory: NSInteger {
         case ALL = 0,
@@ -24,6 +25,7 @@ class DHTutorialViewController: UIViewController {
     var tableView: UITableView?
     var loadingView: DHLoadingView?
     var menu: UISegmentedMenu?
+    var noNetworkView: DHNoNetworkView?
     
 // MARK: - Data Handler and View Renderer
     func handleTutorialData() {
@@ -97,6 +99,17 @@ class DHTutorialViewController: UIViewController {
     }
     
 // MARK: - Life Cycle
+    override func reachabilityChanged(note: NSNotification) {
+        let reachability = note.object as! Reachability
+        if reachability.isReachable {
+            noNetworkView?.hide()
+            handleTutorialData()
+        } else {
+            DHLog("Network not reachable")
+            noNetworkView?.show()
+        }
+    }
+    
     func initLifeCycle() {
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.black
@@ -121,6 +134,7 @@ class DHTutorialViewController: UIViewController {
         view.addSubview(menu!)
         view.addSubview(tableView!)
         loadingView = addLoadingViewForViewController(self)
+        noNetworkView = addNoNetworkViewForViewController(self)
     }
     
     override func viewDidLoad() {

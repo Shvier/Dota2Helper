@@ -8,8 +8,9 @@
 
 import UIKit
 import MJRefresh
+import ReachabilitySwift
 
-class DHVideoViewController: UIViewController {
+class DHVideoViewController: DHBaseViewController {
     
     let kTopOffset: CGFloat = 60
     
@@ -18,6 +19,7 @@ class DHVideoViewController: UIViewController {
     }()
     var tableView: UITableView?
     var loadingView: DHLoadingView?
+    var noNetworkView: DHNoNetworkView?
     var menu: UISegmentedMenu?
     
     enum VideoType: NSInteger {
@@ -110,6 +112,17 @@ class DHVideoViewController: UIViewController {
     }
     
 // MARK: - Lift Cycle
+    override func reachabilityChanged(note: NSNotification) {
+        let reachability = note.object as! Reachability
+        if reachability.isReachable {
+            noNetworkView?.hide()
+            handleVideoData()
+        } else {
+            DHLog("Network not reachable")
+            noNetworkView?.show()
+        }
+    }
+    
     func handleVideoData() {
         tableView?.mj_header.beginRefreshing()
     }
@@ -130,6 +143,7 @@ class DHVideoViewController: UIViewController {
         view.addSubview(menu!)
         view.addSubview(tableView!)
         loadingView = addLoadingViewForViewController(self)
+        noNetworkView = addNoNetworkViewForViewController(self)
     }
     
     func initLifeCycle() {

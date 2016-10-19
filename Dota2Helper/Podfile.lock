@@ -1,18 +1,23 @@
 PODS:
-  - Bugtags (1.3.1)
+  - Bugtags (2.0.0):
+    - Bugtags/Core (= 2.0.0)
+  - Bugtags/Core (2.0.0)
   - Kingfisher (3.0.1)
   - MJRefresh (3.1.12)
+  - ReachabilitySwift (3)
 
 DEPENDENCIES:
   - Bugtags
   - Kingfisher (~> 3.0.1)
   - MJRefresh (~> 3.1.12)
+  - ReachabilitySwift
 
 SPEC CHECKSUMS:
-  Bugtags: a2f1671df9dacfdfd53fa59d3e6ffe7575bb2212
+  Bugtags: 5e5eb6343e15febeb6cb4a080c914e7eb4747817
   Kingfisher: d5a491b45ea453d90a31bd2c0831d5243e73a73f
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
+  ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
 
-PODFILE CHECKSUM: c4305f35e54d2d02d515a7d7ad71fab05103e9fb
+PODFILE CHECKSUM: 64f8ad6e3dcea8517c3b84aae43caa6c664a0cba
 
 COCOAPODS: 1.0.1
