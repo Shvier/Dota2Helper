@@ -16,7 +16,7 @@ class DHNewsViewController: DHBaseViewController {
         return DHNewsDataController()
     }()
     lazy var headerView: DHHeaderView = {
-        return DHHeaderView(frame: CGRect(x: 0, y: 0, width: kBannerWidth, height: kBannerHeight))
+        return DHHeaderView(frame: CGRect(x: 0, y: kNavigationHeight, width: kBannerWidth, height: kBannerHeight))
     }()
     var tableView: UITableView?
     var loadingView: DHLoadingView?

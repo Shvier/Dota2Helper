@@ -26,12 +26,12 @@ class DHHeaderView: UIView, UIScrollViewDelegate {
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         let offset: CGPoint = scrollView.contentOffset
-        if offset.x > kBannerWidth*CGFloat(bannerCount!-1) {
-            scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
-        }
-        if offset.x < kBannerWidth {
-            scrollView.setContentOffset(CGPoint(x: kBannerWidth*CGFloat(bannerCount!), y: 0), animated: false)
-        }
+//        if offset.x > kBannerWidth*CGFloat(bannerCount!) {
+//            scrollView.setContentOffset(CGPoint(x: kBannerWidth, y: 0), animated: false)
+//        }
+//        if offset.x < kBannerWidth {
+//            scrollView.setContentOffset(CGPoint(x: kBannerWidth*CGFloat(bannerCount!-1), y: 0), animated: false)
+//        }
     }
     
     func bindDataWithViewModel(viewModel: DHNewsBannerViewModel) {
