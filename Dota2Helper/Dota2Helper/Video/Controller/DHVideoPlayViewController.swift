@@ -11,8 +11,6 @@ import WebKit
 
 class DHVideoPlayViewController: DHBaseDetailViewController {
     
-    var player: YYMediaPlayer?
-    var playerManager: YTEngineOpenViewManager?
     var ykvid: String?
     var dataController: DHVideoPlayDataController?
     var loadingView: DHLoadingView?
@@ -60,31 +58,5 @@ class DHVideoPlayViewController: DHBaseDetailViewController {
 extension DHVideoPlayViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         loadingView?.isHidden = true
-    }
-}
-
-// MARK: - F**king Youku SDK.PS: Needs tests
-extension DHVideoPlayViewController: YYMediaPlayerEvents {
-    func initPlayer() {
-        player = YYMediaPlayer()
-        player?.controller = self
-        player?.view().frame = view.frame
-        player?.view().clipsToBounds = true
-        player?.isFullscreen = false
-        player?.platform = "youku"
-        view.addSubview((player?.view())!)
-        player?.addEventsObserver(self)
-        player?.clientId = kYoukuClientId
-        player?.clientSecret = kYoukuClientId
-    }
-    
-    func initPlayerManager() {
-        playerManager = YTEngineOpenViewManager(player: player)
-        playerManager?.controllerFrame = view.bounds
-        player?.addEventsObserver(playerManager)
-    }
-    
-    func playVideo(vid: String) {
-        player?.playVid(vid, quality: kYYVideoQualityHD2, password: nil, from: 0)
     }
 }

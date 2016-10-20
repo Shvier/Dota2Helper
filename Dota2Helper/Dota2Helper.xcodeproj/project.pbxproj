@@ -10,7 +10,6 @@
 		5E921422300F58B90D59EC8E /* Pods_Dota2Helper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 558B5B80FEC5A194BAC83F8D /* Pods_Dota2Helper.framework */; };
 		C0004BA01D992804007EF3EE /* DHJournalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0004B9F1D992804007EF3EE /* DHJournalModel.swift */; };
 		C0122E3F1D97FD880000D249 /* DHJournalDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0122E3E1D97FD880000D249 /* DHJournalDataController.swift */; };
-		C018F7871DB385CE006DC0B6 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C018F7861DB385CE006DC0B6 /* libYouTuMediaPlayerEngineYouku.a */; };
 		C01981B41DB74C81009AE757 /* DHNoNetworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01981B31DB74C81009AE757 /* DHNoNetworkView.swift */; };
 		C01981B61DB7518E009AE757 /* DHHintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01981B51DB7518E009AE757 /* DHHintManager.swift */; };
 		C01981BA1DB76282009AE757 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01981B81DB76282009AE757 /* String+Category.swift */; };
@@ -130,7 +129,6 @@
 		5AE8FF62A93E6F949F8DB6AF /* Pods-Dota2Helper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dota2Helper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Dota2Helper/Pods-Dota2Helper.debug.xcconfig"; sourceTree = "<group>"; };
 		C0004B9F1D992804007EF3EE /* DHJournalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalModel.swift; sourceTree = "<group>"; };
 		C0122E3E1D97FD880000D249 /* DHJournalDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDataController.swift; sourceTree = "<group>"; };
-		C018F7861DB385CE006DC0B6 /* libYouTuMediaPlayerEngineYouku.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouTuMediaPlayerEngineYouku.a; sourceTree = "<group>"; };
 		C01981B31DB74C81009AE757 /* DHNoNetworkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNoNetworkView.swift; sourceTree = "<group>"; };
 		C01981B51DB7518E009AE757 /* DHHintManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHHintManager.swift; sourceTree = "<group>"; };
 		C01981B81DB76282009AE757 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
@@ -281,7 +279,6 @@
 				C09648CB1DAEECE400D75D21 /* CoreMotion.framework in Frameworks */,
 				C09648C91DAEECDF00D75D21 /* libsqlite3.tbd in Frameworks */,
 				C09648C71DAEECD900D75D21 /* ModelIO.framework in Frameworks */,
-				C018F7871DB385CE006DC0B6 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */,
 				C09648C51DAEB9E600D75D21 /* libbz2.tbd in Frameworks */,
 				C09648C31DAEB95B00D75D21 /* libresolv.9.tbd in Frameworks */,
 				C09648BF1DAEB94600D75D21 /* libiconv.2.tbd in Frameworks */,
@@ -685,7 +682,6 @@
 		C0E38C511DADB71B00E1D27A /* YouTuEngineMediaPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				C018F7861DB385CE006DC0B6 /* libYouTuMediaPlayerEngineYouku.a */,
 				C05468451DAEB43E00A4AC13 /* sdk.bundle */,
 				C05468461DAEB43E00A4AC13 /* YTEngine.bundle */,
 				C0E38C521DADB73500E1D27A /* YouTuMediaPlayerEngineYoukuHeaders */,
