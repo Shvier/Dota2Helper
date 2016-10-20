@@ -40,6 +40,9 @@
 		C06E66441D917781007B1210 /* DHNewsBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06E66431D917781007B1210 /* DHNewsBannerViewModel.swift */; };
 		C088DA4D1D9564D400F1329D /* DHBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C088DA4C1D9564D400F1329D /* DHBanner.swift */; };
 		C088DA4F1D95652700F1329D /* DHBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C088DA4E1D95652700F1329D /* DHBannerViewModel.swift */; };
+		C08FD5621DB89A36007D615A /* DHSDKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08FD5611DB89A36007D615A /* DHSDKViewController.swift */; };
+		C08FD5651DB8A374007D615A /* DHSDKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08FD5631DB8A374007D615A /* DHSDKTableViewCell.swift */; };
+		C08FD5661DB8A374007D615A /* DHSDKTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08FD5641DB8A374007D615A /* DHSDKTableViewCell.xib */; };
 		C09648BB1DAEB92900D75D21 /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648BA1DAEB92900D75D21 /* libz.1.tbd */; };
 		C09648BD1DAEB93300D75D21 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648BC1DAEB93300D75D21 /* libxml2.2.tbd */; };
 		C09648BF1DAEB94600D75D21 /* libiconv.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648BE1DAEB94600D75D21 /* libiconv.2.tbd */; };
@@ -158,6 +161,9 @@
 		C06E66431D917781007B1210 /* DHNewsBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsBannerViewModel.swift; sourceTree = "<group>"; };
 		C088DA4C1D9564D400F1329D /* DHBanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBanner.swift; sourceTree = "<group>"; };
 		C088DA4E1D95652700F1329D /* DHBannerViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBannerViewModel.swift; sourceTree = "<group>"; };
+		C08FD5611DB89A36007D615A /* DHSDKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHSDKViewController.swift; sourceTree = "<group>"; };
+		C08FD5631DB8A374007D615A /* DHSDKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHSDKTableViewCell.swift; sourceTree = "<group>"; };
+		C08FD5641DB8A374007D615A /* DHSDKTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHSDKTableViewCell.xib; sourceTree = "<group>"; };
 		C09648BA1DAEB92900D75D21 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
 		C09648BC1DAEB93300D75D21 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		C09648BE1DAEB94600D75D21 /* libiconv.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.tbd; path = usr/lib/libiconv.2.tbd; sourceTree = SDKROOT; };
@@ -434,6 +440,8 @@
 		C0B7A4B81D8ECC2C008D10A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C08FD5631DB8A374007D615A /* DHSDKTableViewCell.swift */,
+				C08FD5641DB8A374007D615A /* DHSDKTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -598,6 +606,7 @@
 			isa = PBXGroup;
 			children = (
 				C0D4D00D1D5DC2FD008F824A /* DHSettingsViewController.swift */,
+				C08FD5611DB89A36007D615A /* DHSDKViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -789,6 +798,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C08FD5661DB8A374007D615A /* DHSDKTableViewCell.xib in Resources */,
 				C01981C21DB7628F009AE757 /* divider_line_image.png in Resources */,
 				C01981C01DB7628F009AE757 /* AaGothic.ttf in Resources */,
 				C05468471DAEB43E00A4AC13 /* sdk.bundle in Resources */,
@@ -874,6 +884,7 @@
 				C0A6906E1DB3B5C500DC0FA0 /* DHTutorialDetailDataController.swift in Sources */,
 				C051BE361DB0232000A2479C /* DHVideoPlayViewModel.swift in Sources */,
 				C0D3E0771DA449AE009AFDB0 /* DHVideoDataController.swift in Sources */,
+				C08FD5651DB8A374007D615A /* DHSDKTableViewCell.swift in Sources */,
 				C0F6307B1D9D5B8F00AF039F /* DHTutorialViewModel.swift in Sources */,
 				C0122E3F1D97FD880000D249 /* DHJournalDataController.swift in Sources */,
 				C0287D411D9957D9009D878E /* DHJournalDetailViewController.swift in Sources */,
@@ -910,6 +921,7 @@
 				C0A690731DB3B96600DC0FA0 /* DHBaseDetailView.swift in Sources */,
 				C0D4D00C1D5DC2F1008F824A /* DHNewsViewController.swift in Sources */,
 				C0EB19EF1D94165D0053970A /* DHNewsDetailDataController.swift in Sources */,
+				C08FD5621DB89A36007D615A /* DHSDKViewController.swift in Sources */,
 				C0EC174F1D9025720002AAF4 /* DHNewsCellViewModel.swift in Sources */,
 				C0287D3E1D99578F009D878E /* DHJournalDetailDataController.swift in Sources */,
 				C01981B61DB7518E009AE757 /* DHHintManager.swift in Sources */,

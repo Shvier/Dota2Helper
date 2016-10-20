@@ -10,13 +10,13 @@ import UIKit
 
 class DHSettingsViewController: UITableViewController {
 
-    lazy var dataSource: [String]? = {[]} ()
+    lazy var dataSource: [NSArray]? = {[]} ()
     lazy var cacheArray: [String]? = {[]} ()
     let kBackgroundViewHeight: CGFloat = 170
     
 // MARK: - Data Handler
     func handleData() {
-        dataSource = ["", "清空缓存", "关注本项目源代码", "提出BUG或改进", "去评分", "关于"]
+        dataSource = [["", "清空缓存"], ["提出BUG或改进", "去评分"], ["关注本项目源代码", "使用的库", "版本号"], ["关于"]]
     }
     
 // MARK: - Life Cycle
@@ -69,6 +69,11 @@ class DHSettingsViewController: UITableViewController {
         }
     }
     
+    func getStringFromDataSource(indexPath: IndexPath) -> String {
+        let array: NSArray = dataSource![indexPath.section]
+        return array[indexPath.row] as! String
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -81,12 +86,24 @@ class DHSettingsViewController: UITableViewController {
 
 // MARK: - UITableViewDelegate
 extension DHSettingsViewController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return (dataSource?.count)!
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0
+        } else {
+            return 20
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource![section].count
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
+        if indexPath.section == 0 && indexPath.row == 0 {
             return kBackgroundViewHeight
         } else {
             return 50
@@ -95,62 +112,106 @@ extension DHSettingsViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        switch indexPath.row {
-        case 0:
-            break
-        case 1:
-            let cell = tableView.cellForRow(at: indexPath)
-            let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-            indicator.startAnimating()
-            cell?.isUserInteractionEnabled = false
-            cell?.accessoryView = indicator
-            if getCacheSize() == "0.0MB" {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                    indicator.stopAnimating()
-                    self.updateCacheCell()
-                })
-            }
-            DispatchQueue.global().async(execute: {
-                self.removeCache()
-            })
-            break
-        case 2:
-            UIApplication.shared.openURL(URL(string: "https://github.com/Shvier/Dota2Helper")!)
-            break
-        case 3:
-            UIApplication.shared.openURL(URL(string: "mailto:Shvier@icloud.com")!)
-            break
-        case 4:
-            break
-        case 5:
-            UIApplication.shared.openURL(URL(string: "https://github.com/Shvier/Dota2Helper/blob/master/README.md")!)
-            break
-        default:
-            break
+        switch indexPath.section {
+            case 0:
+                if indexPath.row == 1 {
+                    let cell = tableView.cellForRow(at: indexPath)
+                    let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+                    indicator.startAnimating()
+                    cell?.isUserInteractionEnabled = false
+                    cell?.accessoryView = indicator
+                    if getCacheSize() == "0.0MB" {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                            indicator.stopAnimating()
+                            self.updateCacheCell()
+                        })
+                    }
+                    DispatchQueue.global().async(execute: {
+                        self.removeCache()
+                    })
+                }
+                break
+            case 1:
+                switch indexPath.row {
+                    case 0:
+                        UIApplication.shared.openURL(URL(string: "mailto:Shvier@icloud.com")!)
+                        break
+                    case 1:
+                        // To AppStore
+                        break
+                    default:
+                        break
+                    }
+                break
+            case 2:
+                switch indexPath.row {
+                    case 0:
+                        UIApplication.shared.openURL(URL(string: "https://github.com/Shvier/Dota2Helper")!)
+                        break
+                    case 1:
+                        let sdkVC = DHSDKViewController()
+                        navigationController?.pushViewController(sdkVC, animated: true)
+                        break
+                    default:
+                        break
+                }
+            case 3:
+                break
+            default:
+                break
         }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kSettingCellReuseIdentifier, for: indexPath)
-        if indexPath.row == 0 {
-            let imageView: UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kBackgroundViewHeight))
-            imageView.image = UIImage(named: "setting_background")
-            cell.isUserInteractionEnabled = false
-            cell.backgroundView = imageView
-        } else if indexPath.row == 1 {
-            cell.textLabel?.text = dataSource?[indexPath.row]
-            cell.isUserInteractionEnabled = true
-            let cacheLabel: UILabel = UILabel(frame: CGRect.zero)
-            cacheLabel.textAlignment = .right
-            let cache = getCacheSize()
-            let cacheLabelWidth = cache.sizeOfContent(font: UIFont(name: "Helvetica", size: 20)!).width
-            cacheLabel.frame = CGRect(x: kScreenWidth - cacheLabelWidth, y: 0, width: cacheLabelWidth, height: cell.bounds.size.height)
-            cacheLabel.text = cache
-            cell.accessoryView = cacheLabel
-        } else {
-            cell.textLabel?.text = dataSource?[indexPath.row]
-            cell.accessoryType = .disclosureIndicator
+        switch indexPath.section {
+            case 0:
+                if indexPath.row == 0 {
+                    let imageView: UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: kBackgroundViewHeight))
+                    imageView.image = UIImage(named: "setting_background")
+                    cell.isUserInteractionEnabled = false
+                    cell.backgroundView = imageView
+                } else if indexPath.row == 1 {
+                    cell.textLabel?.text = getStringFromDataSource(indexPath: indexPath)
+                    cell.isUserInteractionEnabled = true
+                    let cacheLabel: UILabel = UILabel(frame: CGRect.zero)
+                    cacheLabel.textAlignment = .right
+                    let cache = getCacheSize()
+                    let cacheLabelWidth = cache.sizeOfContent(font: UIFont(name: "Helvetica", size: 20)!).width
+                    cacheLabel.frame = CGRect(x: kScreenWidth - cacheLabelWidth, y: 0, width: cacheLabelWidth, height: cell.bounds.size.height)
+                    cacheLabel.text = cache
+                    cell.accessoryView = cacheLabel
+                }
+                return cell
+            case 2:
+                cell.textLabel?.text = getStringFromDataSource(indexPath: indexPath)
+                if indexPath.row == 0 {
+                    let languageLabel: UILabel = UILabel(frame: CGRect.zero)
+                    languageLabel.textAlignment = .right
+                    let language = "Swift 3.0"
+                    let languageLabelWidth = language.sizeOfContent(font: UIFont(name: "Helvetica", size: 20)!).width
+                    languageLabel.frame = CGRect(x: kScreenWidth - languageLabelWidth, y: 0, width: languageLabelWidth, height: cell.bounds.size.height)
+                    languageLabel.text = language
+                    cell.accessoryView = languageLabel
+                } else if indexPath.row == 2 {
+                    let bundleLabel: UILabel = UILabel(frame: CGRect.zero)
+                    bundleLabel.textAlignment = .right
+                    let info: [String: Any] = Bundle.main.infoDictionary!
+                    let version: String = info["CFBundleShortVersionString"] as! String
+                    let build: String = info["CFBundleVersion"] as! String
+                    let bundleInfo = "v " + version + " (" + "Build " + build + ")"
+                    let bundleLabelWidth = bundleInfo.sizeOfContent(font: UIFont(name: "Helvetica", size: 20)!).width
+                    bundleLabel.frame = CGRect(x: kScreenWidth - bundleLabelWidth, y: 0, width: bundleLabelWidth, height: cell.bounds.size.height)
+                    bundleLabel.text = bundleInfo
+                    cell.accessoryView = bundleLabel
+                } else {
+                    cell.accessoryType = .disclosureIndicator
+                }
+                return cell
+            default:
+                cell.textLabel?.text = getStringFromDataSource(indexPath: indexPath)
+                cell.accessoryType = .disclosureIndicator
+                return cell
         }
-        return cell
     }
 }

@@ -28,11 +28,12 @@ class DHBaseDetailViewController: UIViewController, UIGestureRecognizerDelegate 
 
     func initLifeCycle() {
         view.backgroundColor = UIColor.white
+        navigationController?.navigationBar.tintColor = kThemeColor
         navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
-        let leftBarItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "left_bar_item")?.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(self.handleNavigationBack))
-        leftBarItem.tintColor = kThemeColor
-        navigationItem.leftBarButtonItem = leftBarItem
+//        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
+//        let leftBarItem: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "left_bar_item")?.withRenderingMode(.alwaysTemplate), style: .plain, target: self, action: #selector(self.handleNavigationBack))
+//        leftBarItem.tintColor = kThemeColor
+//        navigationItem.leftBarButtonItem = leftBarItem
         navigationItem.title = "详情"
     }
     
@@ -45,7 +46,7 @@ class DHBaseDetailViewController: UIViewController, UIGestureRecognizerDelegate 
         super.viewDidLoad()
 
         initLifeCycle()
-        addPanGesture()
+//        addPanGesture()
     }
 
     override func didReceiveMemoryWarning() {
