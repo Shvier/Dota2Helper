@@ -119,6 +119,16 @@ class DHVideoViewController: DHBaseViewController {
             handleVideoData()
         } else {
             DHLog("Network not reachable")
+            let alertController: UIAlertController = UIAlertController(title: "无法连接网络", message: nil, preferredStyle: .alert)
+            let openNetAction: UIAlertAction = UIAlertAction(title: "设置", style: .default, handler: { (UIAlertAction) in
+                UIApplication.shared.openURL(URL(string: UIApplicationOpenSettingsURLString)!)
+            })
+            let cancelAction: UIAlertAction = UIAlertAction(title: "好", style: .default, handler: { (UIAlertAction) in
+                alertController.dismiss(animated: true, completion: nil)
+            })
+            alertController.addAction(openNetAction)
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true, completion: nil)
             noNetworkView?.show()
         }
     }

@@ -156,6 +156,7 @@ extension DHSettingsViewController {
                         break
                 }
             case 3:
+                UIApplication.shared.openURL(URL(string: "https://github.com/Shvier/Dota2Helper/blob/master/README.md")!)
                 break
             default:
                 break
