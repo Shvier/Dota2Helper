@@ -18,13 +18,15 @@ class DHNewsBannerViewModel: NSObject {
     var bannerCount: Int?
     lazy var banners: [DHNewsModel]? = {[]} ()
     lazy var imageUrlStrings: [String]? = {[]} ()
+    lazy var titleStrings: [String]? = {[]} ()
     
     init(banners: [DHNewsModel]) {
         super.init()
-        
+
         self.banners = banners
         for banner in banners {
             imageUrlStrings?.append(banner.background!)
+            titleStrings?.append(banner.title!)
         }
     }
     

@@ -89,7 +89,7 @@ extension DHSettingsViewController {
         if indexPath.row == 0 {
             return kBackgroundViewHeight
         } else {
-            return 40
+            return 50
         }
     }
     

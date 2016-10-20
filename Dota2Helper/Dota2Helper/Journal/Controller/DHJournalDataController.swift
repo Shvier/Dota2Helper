@@ -19,6 +19,7 @@ class DHJournalDataController: NSObject {
                 do {
                     let result = try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                     let journalArray = result["news"]
+                    self.journalDataSource?.removeAllObjects()
                     for journalDict in journalArray as! [NSDictionary] {
                         let updates: DHJournalModel = DHJournalModel()
                         updates.setValuesForKeys(journalDict as! [String : Any])

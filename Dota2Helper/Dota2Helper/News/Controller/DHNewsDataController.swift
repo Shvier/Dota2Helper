@@ -21,6 +21,8 @@ class DHNewsDataController: NSObject {
                     let result = try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                     let bannerArray = result["banner"]
                     let newsArray = result["news"]
+                    self.newsDataSource?.removeAllObjects()
+                    self.bannerDataSource?.removeAllObjects()
                     for bannerDict in bannerArray as! [NSDictionary] {
                         let banner: DHNewsModel = DHNewsModel()
                         banner.setValuesForKeys(bannerDict as! [String : Any])

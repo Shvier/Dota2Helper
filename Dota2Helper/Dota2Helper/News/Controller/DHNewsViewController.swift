@@ -58,15 +58,21 @@ class DHNewsViewController: DHBaseViewController {
     }
     
     func renderTableViewCell() {
-        tableView?.tableHeaderView = headerView
         let banners = NSArray(array: (dataController.bannerDataSource)!)
         headerViewModel = DHNewsBannerViewModel(banners: banners as! [DHNewsModel])
-        headerView.imageURLStringsGroup = headerViewModel?.imageUrlStrings
-        headerView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated
         DispatchQueue.main.async(execute: { [unowned self] in
+            self.tableView?.tableHeaderView = self.headerView
+            self.updateCycleView()
             self.loadingView?.isHidden = true
             self.tableView?.reloadData()
         })
+    }
+    
+    func updateCycleView() {
+        self.headerView.imageURLStringsGroup = self.headerViewModel?.imageUrlStrings
+        self.headerView.titlesGroup = self.headerViewModel?.titleStrings
+        self.headerView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated
+        self.headerView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight
     }
     
     func loadToDetailVCWithNewsModel(newsModel: DHNewsModel) {
