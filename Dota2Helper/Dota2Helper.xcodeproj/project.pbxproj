@@ -18,7 +18,6 @@
 		C01981C01DB7628F009AE757 /* AaGothic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C01981BC1DB7628F009AE757 /* AaGothic.ttf */; };
 		C01981C11DB7628F009AE757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01981BD1DB7628F009AE757 /* AppDelegate.swift */; };
 		C01981C21DB7628F009AE757 /* divider_line_image.png in Resources */ = {isa = PBXBuildFile; fileRef = C01981BE1DB7628F009AE757 /* divider_line_image.png */; };
-		C01981C51DB762B8009AE757 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C01981C41DB762B8009AE757 /* Info.plist */; };
 		C01981CA1DB76C3F009AE757 /* DHBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01981C91DB76C3F009AE757 /* DHBaseViewController.swift */; };
 		C01E405D1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01E405B1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift */; };
 		C01E405E1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C01E405C1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib */; };
@@ -798,7 +797,6 @@
 				C0EBB08A1DAB021600D5C179 /* DHVideoPlayViewController.xib in Resources */,
 				C0D4CFE01D5DBEF1008F824A /* Assets.xcassets in Resources */,
 				C05468481DAEB43E00A4AC13 /* YTEngine.bundle in Resources */,
-				C01981C51DB762B8009AE757 /* Info.plist in Resources */,
 				C0D4CFE31D5DBEF1008F824A /* LaunchScreen.storyboard in Resources */,
 				C01E405E1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.xib in Resources */,
 				C0D3E07F1DA44A2D009AFDB0 /* DHVideoTableViewCell.xib in Resources */,

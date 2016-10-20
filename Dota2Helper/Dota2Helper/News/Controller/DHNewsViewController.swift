@@ -88,7 +88,7 @@ class DHNewsViewController: DHBaseViewController {
     }
     
     func setContentView() {
-        tableView = UITableView.init(frame: CGRect(x: 0, y: kNavigationHeight + kStatusBarHeight, width: view.bounds.size.width, height: view.bounds.size.height), style: .plain)
+        tableView = UITableView.init(frame: CGRect(x: 0, y: kNavigationHeight + kStatusBarHeight, width: view.bounds.size.width, height: view.bounds.size.height - kNavigationHeight - kStatusBarHeight), style: .plain)
         tableView?.delegate = self
         tableView?.dataSource = self
         tableView?.register(UINib(nibName: "DHNewsTableViewCell", bundle: nil), forCellReuseIdentifier: kNewsCellReuseIdentifier)

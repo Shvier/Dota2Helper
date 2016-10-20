@@ -22,6 +22,7 @@ let kYoukuClientSecret: String = "bc01abf455c8c702f11eb7217344ce78"
 let kSegmentedMenuHeight: CGFloat = 50
 let kNavigationHeight: CGFloat = 44
 let kStatusBarHeight: CGFloat = 20
+let kTabBarHeight: CGFloat = 49
 let kNewsCellReuseIdentifier: String = "NewsTableViewCell"
 let kJournalCellReuseIdentifier: String = "JournalTableViewCell"
 let kTutorialCellReuseIdentifier: String = "TutorialTableViewCell"
