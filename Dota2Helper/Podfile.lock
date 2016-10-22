@@ -1,7 +1,7 @@
 PODS:
-  - Bugtags (2.0.0):
-    - Bugtags/Core (= 2.0.0)
-  - Bugtags/Core (2.0.0)
+  - Bugtags (2.0.1):
+    - Bugtags/Core (= 2.0.1)
+  - Bugtags/Core (2.0.1)
   - Kingfisher (3.0.1)
   - MJRefresh (3.1.12)
   - ReachabilitySwift (3)
@@ -19,7 +19,7 @@ DEPENDENCIES:
   - SDCycleScrollView (~> 1.65)
 
 SPEC CHECKSUMS:
-  Bugtags: 5e5eb6343e15febeb6cb4a080c914e7eb4747817
+  Bugtags: 621f4c58462d38f874f9a811ed35e5f005300a3d
   Kingfisher: d5a491b45ea453d90a31bd2c0831d5243e73a73f
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
@@ -28,4 +28,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: e940d1c200753c2b2ce8c087552bef71ec7d4a43
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.1.1
