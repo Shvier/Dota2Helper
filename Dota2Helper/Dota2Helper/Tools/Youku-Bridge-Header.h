@@ -9,11 +9,6 @@
 #ifndef Youku_Bridge_Header_h
 #define Youku_Bridge_Header_h
 
-#import "YYMediaPlayer.h"
-#import "YTEngineOpenViewManager.h"
-#import "YYMediaPlayerEvents.h"
-#import "YoukuMediaPlayer.h"
-#import "YYMediaPlayerItem.h"
-#import "YTSequence.h"
+#import "DHVideoDetailViewController.h"
 
 #endif /* Youku_Bridge_Header_h */

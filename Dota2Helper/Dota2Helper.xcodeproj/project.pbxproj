@@ -75,6 +75,8 @@
 		C0A690751DB3C0FD00DC0FA0 /* DHTutorialDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A690741DB3C0FD00DC0FA0 /* DHTutorialDetailViewController.swift */; };
 		C0A690771DB3C21600DC0FA0 /* DHTutorialDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A690761DB3C21600DC0FA0 /* DHTutorialDetailView.swift */; };
 		C0A690791DB3C24600DC0FA0 /* DHTutorialDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A690781DB3C24600DC0FA0 /* DHTutorialDetailViewModel.swift */; };
+		C0B4E1FD1DBDA57A00295FFF /* DHVideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B4E1FC1DBDA57A00295FFF /* DHVideoDetailViewController.m */; };
+		C0B4E1FF1DBDA68300295FFF /* libYouTuMediaPlayerEngineYouku.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B4E1FE1DBDA68300295FFF /* libYouTuMediaPlayerEngineYouku.a */; };
 		C0B7A4C11D8ECC4E008D10A0 /* DHNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B7A4C01D8ECC4E008D10A0 /* DHNewsModel.swift */; };
 		C0D3E0771DA449AE009AFDB0 /* DHVideoDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D3E0761DA449AE009AFDB0 /* DHVideoDataController.swift */; };
 		C0D3E0791DA44A06009AFDB0 /* DHVideoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D3E0781DA44A06009AFDB0 /* DHVideoCellViewModel.swift */; };
@@ -196,6 +198,9 @@
 		C0A690741DB3C0FD00DC0FA0 /* DHTutorialDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialDetailViewController.swift; sourceTree = "<group>"; };
 		C0A690761DB3C21600DC0FA0 /* DHTutorialDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialDetailView.swift; sourceTree = "<group>"; };
 		C0A690781DB3C24600DC0FA0 /* DHTutorialDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialDetailViewModel.swift; sourceTree = "<group>"; };
+		C0B4E1FB1DBDA57A00295FFF /* DHVideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHVideoDetailViewController.h; sourceTree = "<group>"; };
+		C0B4E1FC1DBDA57A00295FFF /* DHVideoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHVideoDetailViewController.m; sourceTree = "<group>"; };
+		C0B4E1FE1DBDA68300295FFF /* libYouTuMediaPlayerEngineYouku.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouTuMediaPlayerEngineYouku.a; sourceTree = "<group>"; };
 		C0B7A4C01D8ECC4E008D10A0 /* DHNewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsModel.swift; sourceTree = "<group>"; };
 		C0D3E0761DA449AE009AFDB0 /* DHVideoDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoDataController.swift; sourceTree = "<group>"; };
 		C0D3E0781DA44A06009AFDB0 /* DHVideoCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoCellViewModel.swift; sourceTree = "<group>"; };
@@ -264,6 +269,7 @@
 				C09648E51DAEED5200D75D21 /* QuartzCore.framework in Frameworks */,
 				C09648E31DAEED4C00D75D21 /* OpenGLES.framework in Frameworks */,
 				C09648E11DAEED4600D75D21 /* CoreText.framework in Frameworks */,
+				C0B4E1FF1DBDA68300295FFF /* libYouTuMediaPlayerEngineYouku.a in Frameworks */,
 				C09648DF1DAEED4100D75D21 /* AdSupport.framework in Frameworks */,
 				C09648DD1DAEED3C00D75D21 /* SystemConfiguration.framework in Frameworks */,
 				C09648DB1DAEED3700D75D21 /* MediaPlayer.framework in Frameworks */,
@@ -665,6 +671,8 @@
 				C0D3E0761DA449AE009AFDB0 /* DHVideoDataController.swift */,
 				C0EBB0871DAB021600D5C179 /* DHVideoPlayViewController.swift */,
 				C0EBB0881DAB021600D5C179 /* DHVideoPlayViewController.xib */,
+				C0B4E1FB1DBDA57A00295FFF /* DHVideoDetailViewController.h */,
+				C0B4E1FC1DBDA57A00295FFF /* DHVideoDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -682,6 +690,7 @@
 		C0E38C511DADB71B00E1D27A /* YouTuEngineMediaPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				C0B4E1FE1DBDA68300295FFF /* libYouTuMediaPlayerEngineYouku.a */,
 				C05468451DAEB43E00A4AC13 /* sdk.bundle */,
 				C05468461DAEB43E00A4AC13 /* YTEngine.bundle */,
 				C0E38C521DADB73500E1D27A /* YouTuMediaPlayerEngineYoukuHeaders */,
@@ -930,6 +939,7 @@
 				C0D3E07B1DA44A13009AFDB0 /* DHVideoModel.swift in Sources */,
 				E75E4B5C1DA8D7AC00612599 /* DHLoadingView.swift in Sources */,
 				C051BE341DB022E600A2479C /* DHVideoPlayView.swift in Sources */,
+				C0B4E1FD1DBDA57A00295FFF /* DHVideoDetailViewController.m in Sources */,
 				C01E40621D9E3C9B006C6CD3 /* DHTutorialModel.swift in Sources */,
 				C0D3E0791DA44A06009AFDB0 /* DHVideoCellViewModel.swift in Sources */,
 				C0B7A4C11D8ECC4E008D10A0 /* DHNewsModel.swift in Sources */,

@@ -88,7 +88,7 @@ class DHJournalViewController: DHBaseViewController {
     }
     
     func setContentView() {
-        tableView = UITableView.init(frame: CGRect(x: 0, y: kNavigationHeight + kStatusBarHeight, width: view.bounds.size.width, height: view.bounds.size.height - kNavigationHeight - kStatusBarHeight), style: .plain)
+        tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height), style: .plain)
         tableView?.register(UINib(nibName: "DHJournalTableViewCell", bundle: nil), forCellReuseIdentifier: kJournalCellReuseIdentifier)
         tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: { [unowned self] in
             self.beginHeaderRefreshing()
@@ -115,7 +115,7 @@ class DHJournalViewController: DHBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
      
-        initLifeCycle()
+//        initLifeCycle()
         setContentView()
         handleJournalData()
     }
@@ -151,9 +151,26 @@ extension DHJournalViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        setNaviAndTabStatus(isHidden: false)
         if (dataController.journalDataSource?.count)! > 0 {
             let cell: DHJournalTableViewCell = tableView.cellForRow(at: indexPath) as! DHJournalTableViewCell
             loadToDetailVCWithJournalModel(journalModel: cell.journalModel!)
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y + (tableView?.contentInset.top)!
+        let panTranslationY = scrollView.panGestureRecognizer.translation(in: tableView).y
+        if offsetY > 64 {
+            if panTranslationY > 0 {
+                setNaviAndTabStatus(isHidden: false)
+
+            } else {
+                setNaviAndTabStatus(isHidden: true)
+
+            }
+        } else {
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
         }
     }
 }

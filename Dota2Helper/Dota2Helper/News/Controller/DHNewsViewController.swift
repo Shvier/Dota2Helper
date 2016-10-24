@@ -23,6 +23,7 @@ class DHNewsViewController: DHBaseViewController {
     var loadingView: DHLoadingView?
     var noNetworkView: DHNoNetworkView?
     var headerViewModel: DHNewsBannerViewModel?
+    var lastScrollOffetY: CGFloat?
     
 // MARK: - Data Handler and View Renderer
     func handleNewsData() {
@@ -104,7 +105,7 @@ class DHNewsViewController: DHBaseViewController {
     }
     
     func setContentView() {
-        tableView = UITableView.init(frame: CGRect(x: 0, y: kNavigationHeight + kStatusBarHeight, width: view.bounds.size.width, height: view.bounds.size.height - kNavigationHeight - kStatusBarHeight), style: .plain)
+        tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height), style: .plain)
         tableView?.delegate = self
         tableView?.dataSource = self
         tableView?.register(UINib(nibName: "DHNewsTableViewCell", bundle: nil), forCellReuseIdentifier: kNewsCellReuseIdentifier)
@@ -119,18 +120,10 @@ class DHNewsViewController: DHBaseViewController {
         noNetworkView = addNoNetworkViewForViewController(self)
     }
     
-    func initLifeCycle() {
-        view.backgroundColor = UIColor.orange
-        navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
-        navigationItem.title = "掌刀"
-        self.automaticallyAdjustsScrollViewInsets = false
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initLifeCycle()
+        lastScrollOffetY = 0
         setContentView()
     }
     
@@ -165,9 +158,25 @@ extension DHNewsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        setNaviAndTabStatus(isHidden: false)
         let cell: DHNewsTableViewCell = tableView.cellForRow(at: indexPath) as! DHNewsTableViewCell
         loadToDetailVCWithNewsModel(newsModel: cell.newsModel!)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y + (tableView?.contentInset.top)!
+        let panTranslationY = scrollView.panGestureRecognizer.translation(in: tableView).y
+        if offsetY > 64 {
+            if panTranslationY > 0 {
+                setNaviAndTabStatus(isHidden: false)
+            } else {
+                setNaviAndTabStatus(isHidden: true)
+            }
+        } else {
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+        }
+    }
+    
 }
 
 // MARK: - UIViewControllerPreviewingDelegate

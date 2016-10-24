@@ -18,9 +18,26 @@ class DHBaseViewController: UIViewController {
     func reachabilityChanged(note: NSNotification) {
 
     }
+    
+    func setNaviAndTabStatus(isHidden: Bool) {
+        self.navigationController?.setNavigationBarHidden(isHidden, animated: true)
+        self.hidesBottomBarWhenPushed = isHidden
+        self.tabBarController?.tabBar.isHidden = isHidden
+    }
+    
+    func setView() {
+        view.backgroundColor = UIColor.white
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.tabBarController?.tabBar.isTranslucent = false
+        navigationController?.navigationBar.barTintColor = UIColor.black
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
+        navigationItem.title = "掌刀"
+        self.automaticallyAdjustsScrollViewInsets = false
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setView()
     }
     
     override func viewWillAppear(_ animated: Bool) {

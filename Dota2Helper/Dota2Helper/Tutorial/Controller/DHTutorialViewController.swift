@@ -120,18 +120,10 @@ class DHTutorialViewController: DHBaseViewController {
         }
     }
     
-    func initLifeCycle() {
-        view.backgroundColor = UIColor.white
-        navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
-        navigationItem.title = "掌刀"
-        self.automaticallyAdjustsScrollViewInsets = false
-    }
-    
     func setContentView() {
-        menu = UISegmentedMenu(frame: CGRect(x: 0, y: 60, width: view.bounds.size.width, height: kSegmentedMenuHeight), contentDataSource: [""], titleDataSource: ["全部", "新手", "进阶", "技巧"], type: .fill)
+        menu = UISegmentedMenu(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: kSegmentedMenuHeight), contentDataSource: [""], titleDataSource: ["全部", "新手", "进阶", "技巧"], type: .fill)
         menu?.delegate = self
-        tableView = UITableView(frame: CGRect(x: 0, y: 60 + (menu?.bounds.size.height)!, width: view.bounds.size.width, height: view.bounds.size.height - 60 - (menu?.bounds.size.height)!), style: .plain)
+        tableView = UITableView(frame: CGRect(x: 0, y: 0 + (menu?.bounds.size.height)!, width: view.bounds.size.width, height: view.bounds.size.height - (menu?.bounds.size.height)!), style: .plain)
         tableView?.register(UINib(nibName: "DHTutorialTableViewCell", bundle: nil), forCellReuseIdentifier: kTutorialCellReuseIdentifier)
         tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: { [unowned self] in
             self.beginHeaderRefreshing()
@@ -150,7 +142,6 @@ class DHTutorialViewController: DHBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initLifeCycle()
         setContentView()
         handleTutorialData()
     }
@@ -186,8 +177,23 @@ extension DHTutorialViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        setNaviAndTabStatus(isHidden: false)
         let cell: DHTutorialTableViewCell = tableView.cellForRow(at: indexPath) as! DHTutorialTableViewCell
         loadToDetailVCWithTutorialModel(tutorialModel: cell.tutorialModel!)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y + (tableView?.contentInset.top)!
+        let panTranslationY = scrollView.panGestureRecognizer.translation(in: tableView).y
+        if offsetY > 64 {
+            if panTranslationY > 0 {
+                setNaviAndTabStatus(isHidden: false)
+            } else {
+                setNaviAndTabStatus(isHidden: true)
+            }
+        } else {
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+        }
     }
 }
 

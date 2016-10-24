@@ -14,7 +14,7 @@
 
 @protocol YYMediaPlayerEvents <NSObject>
 
-@property (nonatomic, assign) YYMediaPlayer *player;
+//@property (nonatomic, assign) YYMediaPlayer *player;
 
 @optional
 - (YYMediaPlayerHistory *)playHistory:(NSString *)vid;             // 指定vid视频的播放历史信息

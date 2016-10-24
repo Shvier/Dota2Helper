@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class DHBaseDetailViewController: UIViewController, UIGestureRecognizerDelegate {
+@objc class DHBaseDetailViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func handleNavigationBack() {
         let _ = navigationController?.popViewController(animated: true)

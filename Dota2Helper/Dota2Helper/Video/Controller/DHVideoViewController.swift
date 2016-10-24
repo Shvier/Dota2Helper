@@ -138,9 +138,9 @@ class DHVideoViewController: DHBaseViewController {
     }
     
     func setContentView() {
-        menu = UISegmentedMenu(frame: CGRect(x: 0, y: kTopOffset, width: view.bounds.size.width, height: kSegmentedMenuHeight), contentDataSource: [""], titleDataSource: ["全部", "解说", "比赛", "明星", "趣味", "新手", "进阶"], type: .fill)
+        menu = UISegmentedMenu(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: kSegmentedMenuHeight), contentDataSource: [""], titleDataSource: ["全部", "解说", "比赛", "明星", "趣味", "新手", "进阶"], type: .fill)
         menu?.delegate = self
-        tableView = UITableView(frame: CGRect(x: 0, y: kTopOffset + (menu?.bounds.size.height)!, width: view.bounds.size.width, height: view.bounds.size.height - kTopOffset - (menu?.bounds.size.height)!), style: .plain)
+        tableView = UITableView(frame: CGRect(x: 0, y: (menu?.bounds.size.height)!, width: view.bounds.size.width, height: view.bounds.size.height - (menu?.bounds.size.height)!), style: .plain)
         tableView?.register(UINib(nibName: "DHVideoTableViewCell", bundle: nil), forCellReuseIdentifier: kVideoCellReuseIdentifier)
         tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             self.beginHeaderRefreshing()
@@ -196,11 +196,27 @@ extension DHVideoViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        setNaviAndTabStatus(isHidden: false)
         let cell: DHVideoTableViewCell = tableView.cellForRow(at: indexPath) as! DHVideoTableViewCell
-        let playerVC = DHVideoPlayViewController()
-        playerVC.ykvid = cell.ykvid
+        let playerVC = DHVideoDetailViewController()
+        playerVC.ykvid = cell.ykvid;
         navigationController?.pushViewController(playerVC, animated: true)
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y + (tableView?.contentInset.top)!
+        let panTranslationY = scrollView.panGestureRecognizer.translation(in: tableView).y
+        if offsetY > 64 {
+            if panTranslationY > 0 {
+                setNaviAndTabStatus(isHidden: false)
+            } else {
+                setNaviAndTabStatus(isHidden: true)
+            }
+        } else {
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+        }
+    }
+    
 }
 
 // MARK: - UISegmentedMenuDelegate
