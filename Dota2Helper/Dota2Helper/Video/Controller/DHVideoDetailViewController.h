@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "YYMediaPlayerEvents.h"
 
-@interface DHVideoDetailViewController : UIViewController <YYMediaPlayerEvents>
+@interface DHVideoDetailViewController : UIViewController
 
 @property (nonatomic, strong) NSString *ykvid;
 
