@@ -37,7 +37,9 @@
         self.videolength = duration;
     }
     {
-        self.publishin = [model.published substringWithRange:NSMakeRange(5, 5)];
+        NSString *date = [model.published substringWithRange:NSMakeRange(5, 5)];
+        date = [date stringByReplacingOccurrencesOfString:@"-" withString:@"/"];
+        self.publishin = [NSString stringWithFormat:@"发布时间：%@", date];
     }
     self.backgroundImage = model.bigThumbnail;
     return self;
