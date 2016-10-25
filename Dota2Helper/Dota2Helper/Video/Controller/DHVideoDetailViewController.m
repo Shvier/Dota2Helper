@@ -95,6 +95,7 @@
     [self.view addSubview:self.tableView];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.tableFooterView = [[UIView alloc] init];
     [self.tableView registerNib:[UINib nibWithNibName:@"DHVideoDetailTableViewCell" bundle:nil] forCellReuseIdentifier:kVideoDetailCellReuseIdentifier];
 }
 
