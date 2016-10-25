@@ -28,6 +28,11 @@ class DHSDKViewController: UITableViewController {
         
         tableView.reloadData()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        let _ = navigationController?.popViewController(animated: true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

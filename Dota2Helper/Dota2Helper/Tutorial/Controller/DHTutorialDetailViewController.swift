@@ -42,7 +42,7 @@ class DHTutorialDetailViewController: DHBaseDetailViewController, WKNavigationDe
         dataController = DHTutorialDetailDataController()
         let request: URLRequest = (dataController?.requestTutorialDetailDataUrlWithTutorialModel(tutorialModel: tutorialModel!))!
         let viewModel: DHNewsDetailViewModel = DHNewsDetailViewModel(request: request)
-        tutorialDetailView = DHNewsDetailView(frame: CGRect(x: 0, y: 20, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight))
+        tutorialDetailView = DHNewsDetailView(frame: CGRect(x: 0, y: 0, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight - kTabBarHeight))
         tutorialDetailView?.bindDataWithViewModel(viewModel: viewModel)
     }
     

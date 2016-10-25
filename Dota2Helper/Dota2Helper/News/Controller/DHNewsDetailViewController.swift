@@ -41,7 +41,7 @@ class DHNewsDetailViewController: DHBaseDetailViewController, WKNavigationDelega
         dataController = DHNewsDetailDataController()
         let request: URLRequest = (dataController?.requestNewsDetailDataRequestWithNewsModel(newsModel: newsModel!))!
         let viewModel: DHNewsDetailViewModel = DHNewsDetailViewModel(request: request)
-        newsDetailView = DHNewsDetailView(frame: CGRect(x: 0, y: 20, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight))
+        newsDetailView = DHNewsDetailView(frame: CGRect(x: 0, y: 0, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight - kTabBarHeight))
         newsDetailView?.bindDataWithViewModel(viewModel: viewModel)
     }
     

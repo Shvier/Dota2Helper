@@ -41,7 +41,7 @@ class DHJournalDetailViewController: DHBaseDetailViewController, WKNavigationDel
         dataController = DHJournalDetailDataController()
         let request: URLRequest = (dataController?.requestJournalDetailDataWithJournalModel(journalModel: journalModel!))!
         let viewModel: DHNewsDetailViewModel = DHNewsDetailViewModel(request: request)
-        journalDetailView = DHJournalDetailView(frame: CGRect(x: 0, y: 20, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight))
+        journalDetailView = DHJournalDetailView(frame: CGRect(x: 0, y: 0, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight - kTabBarHeight))
         journalDetailView?.bindDataWithViewModel(viewModel: viewModel)
     }
     
