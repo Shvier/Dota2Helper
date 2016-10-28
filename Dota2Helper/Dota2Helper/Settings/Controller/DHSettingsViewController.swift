@@ -138,6 +138,8 @@ extension DHSettingsViewController {
                         break
                     case 1:
                         // To AppStore
+                        let urlString: String = "http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=1167003427&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8"
+                        UIApplication.shared.openURL(URL(string: urlString)!)
                         break
                     default:
                         break

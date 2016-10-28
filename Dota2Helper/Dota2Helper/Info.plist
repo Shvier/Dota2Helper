@@ -51,7 +51,7 @@
 	<array>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
-			<string></string>
+			<string>icon_open_news</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
 			<string>最新资讯一手掌握</string>
 			<key>UIApplicationShortcutItemTitle</key>
@@ -61,7 +61,7 @@
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
-			<string></string>
+			<string>icon_open_video</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
 			<string>精彩视频不容错过</string>
 			<key>UIApplicationShortcutItemTitle</key>
@@ -71,7 +71,7 @@
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
-			<string></string>
+			<string>icon_open_tutorial</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
 			<string>最全的技巧助你奋战天梯</string>
 			<key>UIApplicationShortcutItemTitle</key>
@@ -81,7 +81,7 @@
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
-			<string></string>
+			<string>icon_open_journal</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
 			<string>实时更新最新游戏内容</string>
 			<key>UIApplicationShortcutItemTitle</key>

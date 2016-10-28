@@ -16,7 +16,8 @@ class DHSDKViewController: UITableViewController {
         ["name": "Kingfisher", "author": "@onevcat", "url": "https://github.com/onevcat/Kingfisher"],
         ["name": "MJRefresh", "author": "@CoderMJLee", "url": "https://github.com/CoderMJLee/MJRefresh"],
         ["name": "Reachability.Swift", "author": "@ashleymills", "url": "https://github.com/ashleymills/Reachability.swift"],
-        ["name": "SDCycleScrollView", "author":"@gsdios", "url": "https://github.com/gsdios/SDCycleScrollView"]
+        ["name": "SDCycleScrollView", "author": "@gsdios", "url": "https://github.com/gsdios/SDCycleScrollView"],
+        ["name": "Youku SDK", "author": "Youku Tudou Inc.", "url": "http://cloud.youku.com/"]
     ]
     
     override func viewDidLoad() {
