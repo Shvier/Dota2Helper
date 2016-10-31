@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-let kNewsTableViewCellHeight: CGFloat = 80
+let kNewsTableViewCellHeight: CGFloat = 110
 
 class DHNewsTableViewCell: UITableViewCell {
 
@@ -19,6 +19,21 @@ class DHNewsTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     
     var newsModel: DHNewsModel?
+    
+    override var frame: CGRect {
+        get {
+            return super.frame
+        }
+        set (newFrame) {
+            let inset: CGFloat = 15
+            var frame = newFrame
+            frame.origin.x += inset
+            frame.origin.y += inset
+            frame.size.width -= 2 * inset
+            frame.size.height -= 2 * inset
+            super.frame = frame
+        }
+    }
     
     func bindDataWithViewModel(viewModel: DHNewsCellViewModel) {
         self.newsModel = viewModel.newsModel!
@@ -32,6 +47,8 @@ class DHNewsTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = 8.0
     }
     
     required init?(coder aDecoder: NSCoder) {
