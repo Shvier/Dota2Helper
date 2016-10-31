@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-let kNewsTableViewCellHeight: CGFloat = 110
+let kNewsTableViewCellHeight: CGFloat = 90
 
 class DHNewsTableViewCell: UITableViewCell {
 
@@ -25,7 +25,7 @@ class DHNewsTableViewCell: UITableViewCell {
             return super.frame
         }
         set (newFrame) {
-            let inset: CGFloat = 15
+            let inset: CGFloat = 5
             var frame = newFrame
             frame.origin.x += inset
             frame.origin.y += inset
@@ -47,8 +47,6 @@ class DHNewsTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.layer.masksToBounds = true
-        self.layer.cornerRadius = 8.0
     }
     
     required init?(coder aDecoder: NSCoder) {
