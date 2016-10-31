@@ -27,9 +27,9 @@ class DHNewsTableViewCell: UITableViewCell {
         set (newFrame) {
             let inset: CGFloat = 5
             var frame = newFrame
-            frame.origin.x += inset
+            frame.origin.x += 2 * inset
             frame.origin.y += inset
-            frame.size.width -= 2 * inset
+            frame.size.width -= 4 * inset
             frame.size.height -= 2 * inset
             super.frame = frame
         }

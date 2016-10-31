@@ -784,7 +784,7 @@
 			attributes = {
 				CLASSPREFIX = DH;
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Shvier;
 				TargetAttributes = {
 					C0D4CFD91D5DBEF1008F824A = {
@@ -1071,6 +1071,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5AE8FF62A93E6F949F8DB6AF /* Pods-Dota2Helper.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Dota2Helper/Dota2Helper.entitlements;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1102,6 +1103,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 46FADE68FCE278AF742B319D /* Pods-Dota2Helper.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Dota2Helper/Dota2Helper.entitlements;
 				DEVELOPMENT_TEAM = PGNG7584J8;
