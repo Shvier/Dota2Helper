@@ -70,6 +70,7 @@ class DHNewsViewController: DHBaseViewController {
     }
     
     func updateCycleView() {
+        self.headerView.pageControlDotSize = CGSize(width: 7, height: 7)
         self.headerView.imageURLStringsGroup = self.headerViewModel?.imageUrlStrings
         self.headerView.titlesGroup = self.headerViewModel?.titleStrings
         self.headerView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated
