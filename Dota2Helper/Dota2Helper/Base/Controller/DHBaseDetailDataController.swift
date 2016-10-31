@@ -11,7 +11,7 @@ import UIKit
 class DHBaseDetailDataController: NSObject {
 
     func requestDetailDataUrlWithNewsModel(newsModel: DHNewsModel) -> URLRequest {
-        let parameter: NSArray = NSArray(array: [newsModel.date, newsModel.nid])
+        let parameter: NSArray = NSArray(array: [(newsModel.date)!, (newsModel.nid)!])
         let url: URL = URL(string: kGetNewsDetailUrl)!
         let request: URLRequest = DHNetworkRequestManager().convertUrlToDEFAULTRequset(urlHeader: url, parameters: parameter)
         return request
