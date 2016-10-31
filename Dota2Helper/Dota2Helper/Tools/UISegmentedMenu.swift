@@ -21,12 +21,15 @@ public enum UISegmentedMenuType: Int {
     case fill
 }
 
+let defaultFontSize: CGFloat = 16
+let highlightFontSize: CGFloat = 18
+let kTag: NSInteger = 1000
+
 public class UISegmentedMenu: UIView {
     
     public var titleDataSource: NSArray?
     public var contentDataSource: NSArray?
-    
-    let kTag: NSInteger = 1000
+
     let min = { (float1: CGFloat, float2: CGFloat) -> CGFloat in
         return float1 > float2 ? float2 : float1
     }
@@ -71,6 +74,7 @@ public class UISegmentedMenu: UIView {
             button.setTitleColor(.red, for: .selected)
             button.setTitle(title, for: .normal)
             button.addTarget(self, action: #selector(self.clickSegmentedButton(button:)), for: .touchUpInside)
+            button.titleLabel?.font = font
             self.contentView?.addSubview(button)
             totalWidth += buttonWidth
             
@@ -86,6 +90,7 @@ public class UISegmentedMenu: UIView {
         self.totalWidth = totalWidth
         self.contentView?.contentSize = CGSize(width: totalWidth, height: 0)
         self.divideLineView?.frame = CGRect(x: 0, y: (self.contentView?.bounds.size.height)! - 2, width: totalWidth, height: 2)
+        self.didSelectIndex(index: selectedIndex)
     }
     
     public func currentSelectedIndex() -> NSInteger {
@@ -99,6 +104,7 @@ public class UISegmentedMenu: UIView {
     func clickSegmentedButton(button: UIButton) {
         let lastSelectedButton: UIButton = self.contentView?.viewWithTag(selectedIndex! + kTag) as! UIButton
         lastSelectedButton.isSelected = false
+        lastSelectedButton.titleLabel?.font = UIFont.systemFont(ofSize: defaultFontSize)
         
         selectedIndex = button.tag - kTag
         button.isSelected = true
@@ -125,6 +131,7 @@ public class UISegmentedMenu: UIView {
         delegate?.segmentedMenu(didSelectIndex: selectedIndex!)
         UIView.animate(withDuration: 0.1) {
             self.divideView?.frame = CGRect(x: totalWidth - offsetX, y: (self.divideView?.frame.origin.y)!, width: selectedWidth, height: (self.divideView?.frame.size.height)!)
+            button.titleLabel?.font = UIFont.systemFont(ofSize: highlightFontSize)
         }
     }
     
@@ -136,7 +143,7 @@ public class UISegmentedMenu: UIView {
     public init(frame: CGRect, contentDataSource: NSArray, titleDataSource: NSArray, type: UISegmentedMenuType) {
         super.init(frame: frame)
         
-        font = UIFont(name: "Helvetica", size: 16)
+        font = UIFont(name: "Helvetica", size: defaultFontSize)
         self.type = type
         
         contentView = UIScrollView(frame: CGRect(x: 0, y: 0, width: bounds.size.width, height: bounds.size.height - 0.5))
