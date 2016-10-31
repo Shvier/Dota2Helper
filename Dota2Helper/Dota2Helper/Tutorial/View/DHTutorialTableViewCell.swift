@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-let kTutorialTableViewCellHeight: CGFloat = 80
+let kTutorialTableViewCellHeight: CGFloat = 90
 
 class DHTutorialTableViewCell: UITableViewCell {
 
@@ -18,6 +18,21 @@ class DHTutorialTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     var tutorialModel: DHTutorialModel?
+    
+    override var frame: CGRect {
+        get {
+            return super.frame
+        }
+        set (newFrame) {
+            let inset: CGFloat = 5
+            var frame = newFrame
+            frame.origin.x += 2 * inset
+            frame.origin.y += inset
+            frame.size.width -= 4 * inset
+            frame.size.height -= 2 * inset
+            super.frame = frame
+        }
+    }
     
     func bindDataWithViewModel(viewModel: DHTutorialCellViewModel) {
         self.tutorialModel = viewModel.tutorialModel

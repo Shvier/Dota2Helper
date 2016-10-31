@@ -107,7 +107,7 @@ class DHNewsViewController: DHBaseViewController {
     
     func setContentView() {
         tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height), style: .plain)
-        tableView?.backgroundColor = UIColor(red:0.87, green:0.87, blue:0.87, alpha:1.00)
+        tableView?.backgroundColor = kTableViewBackgroundColor
         tableView?.delegate = self
         tableView?.dataSource = self
         tableView?.register(UINib(nibName: "DHNewsTableViewCell", bundle: nil), forCellReuseIdentifier: kNewsCellReuseIdentifier)

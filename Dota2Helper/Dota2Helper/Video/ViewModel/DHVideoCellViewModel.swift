@@ -8,8 +8,6 @@
 
 import UIKit
 
-let kVideoTableViewCellHeight: CGFloat = 80
-
 class DHVideoCellViewModel: NSObject {
 
     var ykvid: String?

@@ -9,6 +9,8 @@
 import UIKit
 import Kingfisher
 
+let kJournalTableViewCellHeight: CGFloat = 90
+
 class DHJournalTableViewCell: UITableViewCell {
 
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -17,6 +19,21 @@ class DHJournalTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     
     var journalModel: DHJournalModel?
+    
+    override var frame: CGRect {
+        get {
+            return super.frame
+        }
+        set (newFrame) {
+            let inset: CGFloat = 5
+            var frame = newFrame
+            frame.origin.x += 2 * inset
+            frame.origin.y += inset
+            frame.size.width -= 4 * inset
+            frame.size.height -= 2 * inset
+            super.frame = frame
+        }
+    }
     
     func bindDataWithViewModel(viewModel: DHJournalViewModel) {
         self.journalModel = viewModel.journalModel

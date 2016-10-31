@@ -8,8 +8,6 @@
 
 import UIKit
 
-let kJournalTableViewCellHeight: CGFloat = 80
-
 class DHJournalViewModel: NSObject {
 
     var journalDescription: String?
