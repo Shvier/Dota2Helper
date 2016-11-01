@@ -24,6 +24,7 @@ public enum UISegmentedMenuType: Int {
 let defaultFontSize: CGFloat = 16
 let highlightFontSize: CGFloat = 18
 let kTag: NSInteger = 1000
+let kDivideViewHeight: CGFloat = 4
 
 public class UISegmentedMenu: UIView {
     
@@ -80,7 +81,7 @@ public class UISegmentedMenu: UIView {
             
             if index == selectedIndex {
                 button.isSelected = true
-                divideView?.frame = CGRect(x: 0, y: (contentView?.bounds.size.height)! - 2, width: buttonWidth, height: 2)
+                divideView?.frame = CGRect(x: 0, y: (contentView?.bounds.size.height)! - kDivideViewHeight, width: buttonWidth, height: kDivideViewHeight)
                 self.selectedIndex = selectedIndex
             }
             index += 1
@@ -89,7 +90,7 @@ public class UISegmentedMenu: UIView {
         self.widthArray = NSArray(array: widthArray)
         self.totalWidth = totalWidth
         self.contentView?.contentSize = CGSize(width: totalWidth, height: 0)
-        self.divideLineView?.frame = CGRect(x: 0, y: (self.contentView?.bounds.size.height)! - 2, width: totalWidth, height: 2)
+        self.divideLineView?.frame = CGRect(x: 0, y: (self.contentView?.bounds.size.height)! - kDivideViewHeight, width: totalWidth, height: kDivideViewHeight)
         self.didSelectIndex(index: selectedIndex)
     }
     

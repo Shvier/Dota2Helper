@@ -11,7 +11,8 @@ import UIKit
 let kTimeOut: UInt64 = 10
 
 let kThemeColor = UIColor(red:0.71, green:0.51, blue:0.39, alpha:1.00)
-let kTabBarItemColor = UIColor(red:0.74, green:0.20, blue:0.10, alpha:1.00)
+//let kThemeColor = UIColor(red:1.00, green:0.91, blue:0.85, alpha:1.00)
+let kTabBarItemColor = UIColor(red:1.00, green:0.00, blue:0.00, alpha:1.00)
 let kTableViewBackgroundColor = UIColor(red:0.87, green:0.87, blue:0.87, alpha:1.00)
 
 let kScreenWidth = UIScreen.main.bounds.size.width

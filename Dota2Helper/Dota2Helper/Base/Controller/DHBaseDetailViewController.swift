@@ -17,7 +17,7 @@ import WebKit
 
     func initLifeCycle() {
         view.backgroundColor = UIColor.white
-        navigationController?.navigationBar.tintColor = kThemeColor
+        navigationController?.navigationBar.tintColor = kTabBarItemColor
         navigationController?.navigationBar.barTintColor = UIColor.black
         navigationItem.title = "详情"
     }

@@ -62,9 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         tabbarVC?.viewControllers = [newsNaVC, videoNaVC, tutorialNaVC, journalNaVC, settingsNaVC]
         
-        tabbarVC?.tabBar.tintColor = kTabBarItemColor
         tabbarVC?.tabBar.isTranslucent = false
         tabbarVC?.tabBar.barStyle = .black
+        tabbarVC?.tabBar.tintColor = kTabBarItemColor
         
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: kThemeColor], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red:0.80, green:0.00, blue:0.00, alpha:1.00)], for: .selected)

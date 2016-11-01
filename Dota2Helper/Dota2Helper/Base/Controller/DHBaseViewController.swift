@@ -30,7 +30,7 @@ class DHBaseViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         self.tabBarController?.tabBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kTabBarItemColor]
         navigationItem.title = "掌刀"
         self.automaticallyAdjustsScrollViewInsets = false
     }

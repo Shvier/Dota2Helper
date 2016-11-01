@@ -160,7 +160,7 @@ class DHVideoViewController: DHBaseViewController {
     func initLifeCycle() {
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kTabBarItemColor]
         navigationItem.title = "掌刀"
         self.automaticallyAdjustsScrollViewInsets = false
     }
