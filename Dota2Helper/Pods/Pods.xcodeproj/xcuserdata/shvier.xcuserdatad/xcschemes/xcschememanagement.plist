@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -34,35 +39,50 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SnapKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>06826CCBA719F3BD8C8F92390C0EA886</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>29DD99664D189A7CA206368F493B1E0B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>35AD16D030B8E30AE1C79A2971024279</key>
+		<key>759F662D46A748114134776BB986C414</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6C7A253705B7A1DCCC9EB21AFE0A0433</key>
+		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6EC22DF47D08F70354E236E69CC3A853</key>
+		<key>833A7012EB975DD4B82B567216850742</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>890756CD82BD05B8BF566C5CB53D0276</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>BDAF27BE15DBEE3F66D84079233BDDFA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DB7B88C8B14E7F6EE30C6E3147D51176</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E3B381EB7CCB7937B153A2CF4B8F3E59</key>
 		<dict>
 			<key>primary</key>
 			<true/>
