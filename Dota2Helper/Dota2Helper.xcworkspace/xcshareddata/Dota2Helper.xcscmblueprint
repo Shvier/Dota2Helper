@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A3976A388D3EB12DB7D9A0C376B670574DCA0278",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "290E3AD0255301AB2DA9625441D0BB4FF1BB4E52" : 9223372036854775807,
+    "A3976A388D3EB12DB7D9A0C376B670574DCA0278" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "88A1D447-FC14-48E6-9873-4CB5A2B3B3E0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "290E3AD0255301AB2DA9625441D0BB4FF1BB4E52" : "",
+    "A3976A388D3EB12DB7D9A0C376B670574DCA0278" : "Dota2Helper\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Dota2Helper",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Dota2Helper\/Dota2Helper.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Shvier\/shvier.github.com.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "290E3AD0255301AB2DA9625441D0BB4FF1BB4E52"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Shvier\/Dota2Helper.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A3976A388D3EB12DB7D9A0C376B670574DCA0278"
+    }
+  ]
+}
