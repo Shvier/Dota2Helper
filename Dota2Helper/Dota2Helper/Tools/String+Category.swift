@@ -6,8 +6,6 @@
 //  Copyright © 2016 Shvier. All rights reserved.
 //
 
-import UIKit
-
 extension String {
     
     func sizeOfContent(font: UIFont) -> CGSize {

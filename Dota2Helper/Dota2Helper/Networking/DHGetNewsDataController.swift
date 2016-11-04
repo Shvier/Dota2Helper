@@ -6,15 +6,10 @@
 //  Copyright © 2016 Shvier. All rights reserved.
 //
 
-import UIKit
-import Alamofire
-
-class DHGetNewsDataController: NSObject {
-
-    static let sharedInstance = DHGetNewsDataController()
+class DHGetNewsDataController {
     
-    func requestNewsData(success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
-    
+    class func requestNewsData(success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        DHBaseNetworkController.request(url: kRefreshNewsUrl, parameters: nil, success: success, failure: failure)
     }
     
 }

@@ -31,6 +31,15 @@
 		C0287D461D995AFE009D878E /* DHJournalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D451D995AFE009D878E /* DHJournalDetailViewModel.swift */; };
 		C029AB631DCC322300063171 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C029AB621DCC322300063171 /* libYouTuMediaPlayerEngineYouku.a */; };
 		C029AB661DCC383800063171 /* DHGetNewsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C029AB651DCC383800063171 /* DHGetNewsDataController.swift */; };
+		C029AB691DCC575C00063171 /* UrlHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C029AB681DCC575C00063171 /* UrlHeaders.swift */; };
+		C029AB6F1DCC6EFF00063171 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C029AB6B1DCC6EFF00063171 /* LICENSE */; };
+		C029AB711DCC6EFF00063171 /* README.mdown in Sources */ = {isa = PBXBuildFile; fileRef = C029AB6E1DCC6EFF00063171 /* README.mdown */; };
+		C029AB741DCC6F1600063171 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C029AB731DCC6F1600063171 /* MBProgressHUD.m */; };
+		C029AB761DCC779F00063171 /* DHProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = C029AB751DCC779F00063171 /* DHProgressHUD.swift */; };
+		C029AB781DCC895C00063171 /* DHBaseNetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C029AB771DCC895C00063171 /* DHBaseNetworkController.swift */; };
+		C029AB7B1DCCAA9200063171 /* DHGetUpdatesDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C029AB7A1DCCAA9200063171 /* DHGetUpdatesDataController.swift */; };
+		C029AB7D1DCCB19B00063171 /* DHGetVideoDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C029AB7C1DCCB19B00063171 /* DHGetVideoDataController.swift */; };
+		C029AB7F1DCCB45700063171 /* DHGetStrategiesDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C029AB7E1DCCB45700063171 /* DHGetStrategiesDataController.swift */; };
 		C05179A11DB10D8800C5ECAC /* DHBaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05179A01DB10D8800C5ECAC /* DHBaseDetailViewController.swift */; };
 		C05179A31DB111BA00C5ECAC /* DHToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05179A21DB111BA00C5ECAC /* DHToastMessage.swift */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		C051BE341DB022E600A2479C /* DHVideoPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051BE331DB022E600A2479C /* DHVideoPlayView.swift */; };
@@ -156,6 +165,16 @@
 		C0287D451D995AFE009D878E /* DHJournalDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDetailViewModel.swift; sourceTree = "<group>"; };
 		C029AB621DCC322300063171 /* libYouTuMediaPlayerEngineYouku.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouTuMediaPlayerEngineYouku.a; sourceTree = "<group>"; };
 		C029AB651DCC383800063171 /* DHGetNewsDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHGetNewsDataController.swift; sourceTree = "<group>"; };
+		C029AB681DCC575C00063171 /* UrlHeaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlHeaders.swift; sourceTree = "<group>"; };
+		C029AB6B1DCC6EFF00063171 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		C029AB6E1DCC6EFF00063171 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.mdown; sourceTree = "<group>"; };
+		C029AB721DCC6F1600063171 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		C029AB731DCC6F1600063171 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		C029AB751DCC779F00063171 /* DHProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHProgressHUD.swift; sourceTree = "<group>"; };
+		C029AB771DCC895C00063171 /* DHBaseNetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseNetworkController.swift; sourceTree = "<group>"; };
+		C029AB7A1DCCAA9200063171 /* DHGetUpdatesDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHGetUpdatesDataController.swift; sourceTree = "<group>"; };
+		C029AB7C1DCCB19B00063171 /* DHGetVideoDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHGetVideoDataController.swift; sourceTree = "<group>"; };
+		C029AB7E1DCCB45700063171 /* DHGetStrategiesDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHGetStrategiesDataController.swift; sourceTree = "<group>"; };
 		C05179A01DB10D8800C5ECAC /* DHBaseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseDetailViewController.swift; sourceTree = "<group>"; };
 		C05179A21DB111BA00C5ECAC /* DHToastMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHToastMessage.swift; sourceTree = "<group>"; };
 		C051BE331DB022E600A2479C /* DHVideoPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoPlayView.swift; sourceTree = "<group>"; };
@@ -360,8 +379,24 @@
 			isa = PBXGroup;
 			children = (
 				C029AB651DCC383800063171 /* DHGetNewsDataController.swift */,
+				C029AB771DCC895C00063171 /* DHBaseNetworkController.swift */,
+				C029AB7A1DCCAA9200063171 /* DHGetUpdatesDataController.swift */,
+				C029AB7C1DCCB19B00063171 /* DHGetVideoDataController.swift */,
+				C029AB7E1DCCB45700063171 /* DHGetStrategiesDataController.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		C029AB6A1DCC6EFF00063171 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				C029AB721DCC6F1600063171 /* MBProgressHUD.h */,
+				C029AB731DCC6F1600063171 /* MBProgressHUD.m */,
+				C029AB6B1DCC6EFF00063171 /* LICENSE */,
+				C029AB6E1DCC6EFF00063171 /* README.mdown */,
+			);
+			name = MBProgressHUD;
+			path = Dota2Helper/MBProgressHUD;
 			sourceTree = "<group>";
 		};
 		C051799E1DB10D7600C5ECAC /* Base */ = {
@@ -540,6 +575,7 @@
 		C0D4CFD11D5DBEF1008F824A = {
 			isa = PBXGroup;
 			children = (
+				C029AB6A1DCC6EFF00063171 /* MBProgressHUD */,
 				C0E38C511DADB71B00E1D27A /* YouTuEngineMediaPlayer */,
 				C0EC967D1D8FCA8100E1557E /* Fabric.framework */,
 				C0EC967E1D8FCA8100E1557E /* Crashlytics.framework */,
@@ -645,6 +681,7 @@
 			children = (
 				C01981B81DB76282009AE757 /* String+Category.swift */,
 				C0A1AC3F1D616188005B92A5 /* Constrants.swift */,
+				C029AB681DCC575C00063171 /* UrlHeaders.swift */,
 				C0EC174A1D9010930002AAF4 /* DHNetworkRequestManager.swift */,
 				C01981B91DB76282009AE757 /* UISegmentedMenu.swift */,
 				E75E4B5B1DA8D7AC00612599 /* DHLoadingView.swift */,
@@ -652,6 +689,7 @@
 				C05179A21DB111BA00C5ECAC /* DHToastMessage.swift */,
 				C01981B31DB74C81009AE757 /* DHNoNetworkView.swift */,
 				C01981B51DB7518E009AE757 /* DHHintManager.swift */,
+				C029AB751DCC779F00063171 /* DHProgressHUD.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -830,6 +868,7 @@
 			files = (
 				C08FD5661DB8A374007D615A /* DHSDKTableViewCell.xib in Resources */,
 				C01981C21DB7628F009AE757 /* divider_line_image.png in Resources */,
+				C029AB6F1DCC6EFF00063171 /* LICENSE in Resources */,
 				C0B4E2091DBE07C300295FFF /* DHVideoDetailTableViewCell.xib in Resources */,
 				C01981C01DB7628F009AE757 /* AaGothic.ttf in Resources */,
 				C05468471DAEB43E00A4AC13 /* sdk.bundle in Resources */,
@@ -926,6 +965,7 @@
 				C0EC174B1D9010930002AAF4 /* DHNetworkRequestManager.swift in Sources */,
 				C06E66441D917781007B1210 /* DHNewsBannerViewModel.swift in Sources */,
 				C01E40601D9E3C42006C6CD3 /* DHTutorialCellViewModel.swift in Sources */,
+				C029AB761DCC779F00063171 /* DHProgressHUD.swift in Sources */,
 				C0A690771DB3C21600DC0FA0 /* DHTutorialDetailView.swift in Sources */,
 				C0D3E07E1DA44A2D009AFDB0 /* DHVideoTableViewCell.swift in Sources */,
 				C01981CA1DB76C3F009AE757 /* DHBaseViewController.swift in Sources */,
@@ -938,7 +978,9 @@
 				C0E6BF911D94342900872006 /* DHNewsDetailView.swift in Sources */,
 				C0D4D0101D5DC30D008F824A /* DHTutorialViewController.swift in Sources */,
 				C0A690751DB3C0FD00DC0FA0 /* DHTutorialDetailViewController.swift in Sources */,
+				C029AB7D1DCCB19B00063171 /* DHGetVideoDataController.swift in Sources */,
 				C0287D351D994D2C009D878E /* DHJournalTableViewCell.swift in Sources */,
+				C029AB781DCC895C00063171 /* DHBaseNetworkController.swift in Sources */,
 				C0F630791D9D5B7800AF039F /* DHTutorialView.swift in Sources */,
 				C0EFB0EB1DB613C7009001C1 /* DHBaseViewModel.swift in Sources */,
 				C088DA4D1D9564D400F1329D /* DHBanner.swift in Sources */,
@@ -946,9 +988,12 @@
 				C06E66421D917640007B1210 /* DHHeaderView.swift in Sources */,
 				C05179A31DB111BA00C5ECAC /* DHToastMessage.swift in Sources */,
 				C01981C11DB7628F009AE757 /* AppDelegate.swift in Sources */,
+				C029AB7F1DCCB45700063171 /* DHGetStrategiesDataController.swift in Sources */,
 				C0EFB0ED1DB61E5C009001C1 /* DHBaseDetailDataController.swift in Sources */,
 				C0004BA01D992804007EF3EE /* DHJournalModel.swift in Sources */,
+				C029AB741DCC6F1600063171 /* MBProgressHUD.m in Sources */,
 				C0A690731DB3B96600DC0FA0 /* DHBaseDetailView.swift in Sources */,
+				C029AB691DCC575C00063171 /* UrlHeaders.swift in Sources */,
 				C0D4D00C1D5DC2F1008F824A /* DHNewsViewController.swift in Sources */,
 				C0EB19EF1D94165D0053970A /* DHNewsDetailDataController.swift in Sources */,
 				C08FD5621DB89A36007D615A /* DHSDKViewController.swift in Sources */,
@@ -960,6 +1005,8 @@
 				C01981BA1DB76282009AE757 /* String+Category.swift in Sources */,
 				C0B4E20C1DBE24AB00295FFF /* DHRelatedVideoModel.m in Sources */,
 				C0D4D0121D5DC319008F824A /* DHVideoViewController.swift in Sources */,
+				C029AB711DCC6EFF00063171 /* README.mdown in Sources */,
+				C029AB7B1DCCAA9200063171 /* DHGetUpdatesDataController.swift in Sources */,
 				C01E405D1D9E3BBE006C6CD3 /* DHTutorialTableViewCell.swift in Sources */,
 				C0B4E2061DBE078200295FFF /* DHVideoDetailTableViewCell.m in Sources */,
 				C05179A11DB10D8800C5ECAC /* DHBaseDetailViewController.swift in Sources */,

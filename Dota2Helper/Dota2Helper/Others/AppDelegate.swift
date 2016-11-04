@@ -70,9 +70,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red:0.80, green:0.00, blue:0.00, alpha:1.00)], for: .selected)
         
         self.window?.rootViewController = tabbarVC
-                
-        self.window?.makeKeyAndVisible()
         
+        self.window?.makeKeyAndVisible()
         application.setStatusBarHidden(false, with: .fade)
         let launchImage: UIImageView = UIImageView(frame: (window?.bounds)!)
         launchImage.image = UIImage(named: "launch_image")
@@ -84,9 +83,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 launchImage.alpha = 0
             })
         }
-                
+        
         DHLog("Application Launching")
         
+        Bugtags.start(withAppKey: "2dd6496749c90f7cd480df72d142f918", invocationEvent: BTGInvocationEventNone)
         Fabric.with([Crashlytics.self])
         
         return true

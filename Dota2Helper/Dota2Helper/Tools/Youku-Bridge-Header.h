@@ -10,5 +10,7 @@
 #define Youku_Bridge_Header_h
 
 #import "DHVideoDetailViewController.h"
+#import "MBProgressHUD.h"
+#import <Bugtags/Bugtags.h>
 
 #endif /* Youku_Bridge_Header_h */
