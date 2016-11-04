@@ -29,6 +29,8 @@
 		C0287D411D9957D9009D878E /* DHJournalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D3F1D9957D9009D878E /* DHJournalDetailViewController.swift */; };
 		C0287D441D9958D6009D878E /* DHJournalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D431D9958D6009D878E /* DHJournalDetailView.swift */; };
 		C0287D461D995AFE009D878E /* DHJournalDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0287D451D995AFE009D878E /* DHJournalDetailViewModel.swift */; };
+		C029AB631DCC322300063171 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C029AB621DCC322300063171 /* libYouTuMediaPlayerEngineYouku.a */; };
+		C029AB661DCC383800063171 /* DHGetNewsDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C029AB651DCC383800063171 /* DHGetNewsDataController.swift */; };
 		C05179A11DB10D8800C5ECAC /* DHBaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05179A01DB10D8800C5ECAC /* DHBaseDetailViewController.swift */; };
 		C05179A31DB111BA00C5ECAC /* DHToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05179A21DB111BA00C5ECAC /* DHToastMessage.swift */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		C051BE341DB022E600A2479C /* DHVideoPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051BE331DB022E600A2479C /* DHVideoPlayView.swift */; };
@@ -76,7 +78,6 @@
 		C0A690771DB3C21600DC0FA0 /* DHTutorialDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A690761DB3C21600DC0FA0 /* DHTutorialDetailView.swift */; };
 		C0A690791DB3C24600DC0FA0 /* DHTutorialDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A690781DB3C24600DC0FA0 /* DHTutorialDetailViewModel.swift */; };
 		C0B4E1FD1DBDA57A00295FFF /* DHVideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B4E1FC1DBDA57A00295FFF /* DHVideoDetailViewController.m */; };
-		C0B4E1FF1DBDA68300295FFF /* libYouTuMediaPlayerEngineYouku.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B4E1FE1DBDA68300295FFF /* libYouTuMediaPlayerEngineYouku.a */; };
 		C0B4E2061DBE078200295FFF /* DHVideoDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B4E2041DBE078200295FFF /* DHVideoDetailTableViewCell.m */; };
 		C0B4E2091DBE07C300295FFF /* DHVideoDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0B4E2081DBE07C300295FFF /* DHVideoDetailTableViewCell.xib */; };
 		C0B4E20C1DBE24AB00295FFF /* DHRelatedVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B4E20B1DBE24AB00295FFF /* DHRelatedVideoModel.m */; };
@@ -153,6 +154,8 @@
 		C0287D3F1D9957D9009D878E /* DHJournalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDetailViewController.swift; sourceTree = "<group>"; };
 		C0287D431D9958D6009D878E /* DHJournalDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDetailView.swift; sourceTree = "<group>"; };
 		C0287D451D995AFE009D878E /* DHJournalDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalDetailViewModel.swift; sourceTree = "<group>"; };
+		C029AB621DCC322300063171 /* libYouTuMediaPlayerEngineYouku.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouTuMediaPlayerEngineYouku.a; sourceTree = "<group>"; };
+		C029AB651DCC383800063171 /* DHGetNewsDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHGetNewsDataController.swift; sourceTree = "<group>"; };
 		C05179A01DB10D8800C5ECAC /* DHBaseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseDetailViewController.swift; sourceTree = "<group>"; };
 		C05179A21DB111BA00C5ECAC /* DHToastMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHToastMessage.swift; sourceTree = "<group>"; };
 		C051BE331DB022E600A2479C /* DHVideoPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoPlayView.swift; sourceTree = "<group>"; };
@@ -202,7 +205,6 @@
 		C0A690781DB3C24600DC0FA0 /* DHTutorialDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialDetailViewModel.swift; sourceTree = "<group>"; };
 		C0B4E1FB1DBDA57A00295FFF /* DHVideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHVideoDetailViewController.h; sourceTree = "<group>"; };
 		C0B4E1FC1DBDA57A00295FFF /* DHVideoDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHVideoDetailViewController.m; sourceTree = "<group>"; };
-		C0B4E1FE1DBDA68300295FFF /* libYouTuMediaPlayerEngineYouku.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouTuMediaPlayerEngineYouku.a; sourceTree = "<group>"; };
 		C0B4E2031DBE078200295FFF /* DHVideoDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHVideoDetailTableViewCell.h; sourceTree = "<group>"; };
 		C0B4E2041DBE078200295FFF /* DHVideoDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DHVideoDetailTableViewCell.m; sourceTree = "<group>"; };
 		C0B4E2081DBE07C300295FFF /* DHVideoDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHVideoDetailTableViewCell.xib; sourceTree = "<group>"; };
@@ -277,7 +279,7 @@
 				C09648E51DAEED5200D75D21 /* QuartzCore.framework in Frameworks */,
 				C09648E31DAEED4C00D75D21 /* OpenGLES.framework in Frameworks */,
 				C09648E11DAEED4600D75D21 /* CoreText.framework in Frameworks */,
-				C0B4E1FF1DBDA68300295FFF /* libYouTuMediaPlayerEngineYouku.a in Frameworks */,
+				C029AB631DCC322300063171 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */,
 				C09648DF1DAEED4100D75D21 /* AdSupport.framework in Frameworks */,
 				C09648DD1DAEED3C00D75D21 /* SystemConfiguration.framework in Frameworks */,
 				C09648DB1DAEED3700D75D21 /* MediaPlayer.framework in Frameworks */,
@@ -352,6 +354,14 @@
 				C01981BE1DB7628F009AE757 /* divider_line_image.png */,
 			);
 			path = Others;
+			sourceTree = "<group>";
+		};
+		C029AB641DCC37F600063171 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C029AB651DCC383800063171 /* DHGetNewsDataController.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		C051799E1DB10D7600C5ECAC /* Base */ = {
@@ -551,6 +561,7 @@
 		C0D4CFDC1D5DBEF1008F824A /* Dota2Helper */ = {
 			isa = PBXGroup;
 			children = (
+				C029AB641DCC37F600063171 /* Networking */,
 				C01981B71DB76218009AE757 /* Others */,
 				C09AF37F1DB505ED00604D89 /* Dota2Helper.entitlements */,
 				C051799E1DB10D7600C5ECAC /* Base */,
@@ -704,7 +715,7 @@
 		C0E38C511DADB71B00E1D27A /* YouTuEngineMediaPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				C0B4E1FE1DBDA68300295FFF /* libYouTuMediaPlayerEngineYouku.a */,
+				C029AB621DCC322300063171 /* libYouTuMediaPlayerEngineYouku.a */,
 				C05468451DAEB43E00A4AC13 /* sdk.bundle */,
 				C05468461DAEB43E00A4AC13 /* YTEngine.bundle */,
 				C0E38C521DADB73500E1D27A /* YouTuMediaPlayerEngineYoukuHeaders */,
@@ -954,6 +965,7 @@
 				C05179A11DB10D8800C5ECAC /* DHBaseDetailViewController.swift in Sources */,
 				C0D3E07B1DA44A13009AFDB0 /* DHVideoModel.swift in Sources */,
 				E75E4B5C1DA8D7AC00612599 /* DHLoadingView.swift in Sources */,
+				C029AB661DCC383800063171 /* DHGetNewsDataController.swift in Sources */,
 				C051BE341DB022E600A2479C /* DHVideoPlayView.swift in Sources */,
 				C0B4E1FD1DBDA57A00295FFF /* DHVideoDetailViewController.m in Sources */,
 				C01E40621D9E3C9B006C6CD3 /* DHTutorialModel.swift in Sources */,
@@ -1085,7 +1097,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = Dota2Helper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1117,7 +1129,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = Dota2Helper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
