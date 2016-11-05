@@ -38,6 +38,22 @@ class DHNewsCellViewModel: NSObject {
     
     func bindData() {
         dataController.getNews(success: { (response) in
+            do {
+                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                let bannerArray = result["banner"]
+                let newsArray = result["news"]
+                for bannerDict in bannerArray as! [NSDictionary] {
+                    let banner: DHNewsModel = DHNewsModel()
+                    banner.setValuesForKeys(bannerDict as! [String : Any])
+                }
+                for newsDict in newsArray as! [NSDictionary] {
+                    let news: DHNewsModel = DHNewsModel()
+                    news.setValuesForKeys(newsDict as! [String : Any])
+                }
+                DHLog(result)
+            } catch {
+                
+            }
         }, failure: {} ())
     }
     
