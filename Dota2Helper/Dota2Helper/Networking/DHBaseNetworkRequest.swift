@@ -1,5 +1,5 @@
 //
-//  DHBaseNetworkController.swift
+//  DHBaseNetworkRequest.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 04/11/2016.
@@ -8,7 +8,7 @@
 
 import Alamofire
 
-class DHBaseNetworkController {
+class DHBaseNetworkRequest {
     
     class func request(url: String, parameters: Parameters? = nil, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (dataResponse) in
