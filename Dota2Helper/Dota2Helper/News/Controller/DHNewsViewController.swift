@@ -146,6 +146,7 @@ extension DHNewsViewController: UITableViewDelegate, UITableViewDataSource {
         if (dataController.newsDataSource?.count)! > 0 {
             let newsModel = dataController.newsDataSource?[indexPath.row] as! DHNewsModel
             let cellViewModel: DHNewsCellViewModel = DHNewsCellViewModel.init(newsModel: newsModel)
+            cellViewModel.bindData()
             cell.bindDataWithViewModel(viewModel: cellViewModel)
             if #available(iOS 9.0, *) {
                 if traitCollection.forceTouchCapability == .available {

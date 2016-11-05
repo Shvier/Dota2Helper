@@ -20,6 +20,8 @@ class DHNewsCellViewModel: NSObject {
     var newsDescription: String?
     var time: String?
     
+    var dataController: DHNewsCellDataController = DHNewsCellDataController.sharedInstance
+    
     init(newsModel: DHNewsModel?) {
         super.init()
         
@@ -32,6 +34,11 @@ class DHNewsCellViewModel: NSObject {
         title = newsModel?.title
         newsDescription = newsModel?.newsDescription
         time = newsModel?.time
+    }
+    
+    func bindData() {
+        dataController.getNews(success: { (response) in
+        }, failure: {} ())
     }
     
 }

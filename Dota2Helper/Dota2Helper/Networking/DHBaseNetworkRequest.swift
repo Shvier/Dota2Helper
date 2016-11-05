@@ -10,7 +10,7 @@ import Alamofire
 
 class DHBaseNetworkRequest {
     
-    class func request(url: String, parameters: Parameters? = nil, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+    class func request(url: String, parameters: Parameters? = nil, success: @escaping (_ response: Any) -> Void, failure: @autoclosure @escaping () -> Void) {
         Alamofire.request(url, method: .get, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (dataResponse) in
             guard let data = dataResponse.data else {
                 failure()
@@ -21,8 +21,7 @@ class DHBaseNetworkRequest {
             }
             do {
                 let result = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                DHLog(result)
-                success()
+                success(result)
             } catch {
                 
             }
