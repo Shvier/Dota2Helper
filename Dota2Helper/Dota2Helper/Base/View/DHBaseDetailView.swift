@@ -14,8 +14,8 @@ class DHBaseDetailView: UIView {
     var webView: WKWebView?
     var webViewConfig: WKWebViewConfiguration?
     
-    func bindDataWithViewModel(viewModel: DHNewsDetailViewModel) {
-        let _ = webView?.load(viewModel.request!)
+    func loadRequest(request: URLRequest) {
+        let _ = webView?.load(request)
     }
     
     override init(frame: CGRect) {

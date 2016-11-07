@@ -13,17 +13,8 @@ let kBannerWidth: CGFloat = UIScreen.main.bounds.size.width
 let kBannerHeight: CGFloat = kBannerWidth * 9.0 / 16.0
 
 class DHNewsCellViewModel: NSObject {
-
-    var newsModel: DHNewsModel?
-    var backgroundImageView: UIImageView?
-    var nid: String?
-    var date: String?
-    var background: String?
-    var title: String?
-    var newsDescription: String?
-    var time: String?
     
-    var dataController: DHNewsCellDataController = DHNewsCellDataController.sharedInstance
+    let dataController: DHNewsCellDataController = DHNewsCellDataController.sharedInstance
     lazy var newsDataSource: [DHNewsModel]? = {[]} ()
     lazy var bannerDataSource: [DHNewsModel]? = {[]} ()
     lazy var imageUrlStrings: [String]? = {[]} ()

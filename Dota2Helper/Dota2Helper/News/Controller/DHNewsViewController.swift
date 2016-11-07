@@ -13,16 +13,19 @@ import SDCycleScrollView
 
 class DHNewsViewController: DHBaseViewController {
 
+// MARK: - Lazy Var
     lazy var headerView: SDCycleScrollView = {
         return SDCycleScrollView(frame: CGRect(x: 0, y: 0, width: kBannerWidth, height: kBannerHeight), delegate: self, placeholderImage: UIImage(named: "placeholder.jpg"))
     }()
+    lazy var viewModel: DHNewsCellViewModel = {
+        return DHNewsCellViewModel()
+    }()
+    
     var tableView: UITableView?
     var loadingView: DHLoadingView?
     var noNetworkView: DHNoNetworkView?
     var lastScrollOffetY: CGFloat?
-    lazy var viewModel: DHNewsCellViewModel = {
-        return DHNewsCellViewModel()
-    }()
+    
     
 // MARK: - Data Handler and View Renderer
     func handleNewsData() {
@@ -48,7 +51,7 @@ class DHNewsViewController: DHBaseViewController {
             DispatchQueue.main.async(execute: {
                 self.tableView?.reloadData()
             })
-        } ())
+        }())
     }
     
     func endHeaderRefreshing() {
@@ -163,7 +166,7 @@ extension DHNewsViewController: UITableViewDelegate, UITableViewDataSource {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = scrollView.contentOffset.y + (tableView?.contentInset.top)!
         let panTranslationY = scrollView.panGestureRecognizer.translation(in: tableView).y
-        if offsetY > 64 {
+        if offsetY > kNavigationHeight + kStatusBarHeight {
             if panTranslationY > 0 {
                 setNaviAndTabStatus(isHidden: false)
             } else {
@@ -181,7 +184,7 @@ extension DHNewsViewController: UITableViewDelegate, UITableViewDataSource {
 extension DHNewsViewController: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         let newsDetailVC: DHNewsDetailViewController = DHNewsDetailViewController()
-        if previewingContext.sourceRect.size.height == kNewsTableViewCellHeight {
+        if previewingContext.sourceRect.size.height == 80 {
             let cell = previewingContext.sourceView as! DHNewsTableViewCell
             newsDetailVC.newsModel = cell.newsModel
         }

@@ -38,11 +38,11 @@ class DHJournalDetailViewController: DHBaseDetailViewController, WKNavigationDel
     
 // MARK: - Life Cycle
     func handleData() {
-        dataController = DHJournalDetailDataController()
-        let request: URLRequest = (dataController?.requestJournalDetailDataWithJournalModel(journalModel: journalModel!))!
-        let viewModel: DHNewsDetailViewModel = DHNewsDetailViewModel(request: request)
-        journalDetailView = DHJournalDetailView(frame: CGRect(x: 0, y: 0, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight - kTabBarHeight))
-        journalDetailView?.bindDataWithViewModel(viewModel: viewModel)
+//        dataController = DHJournalDetailDataController()
+//        let request: URLRequest = (dataController?.requestJournalDetailDataWithJournalModel(journalModel: journalModel!))!
+//        let viewModel: DHNewsDetailViewModel = DHNewsDetailViewModel(request: request)
+//        journalDetailView = DHJournalDetailView(frame: CGRect(x: 0, y: 0, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight - kTabBarHeight))
+//        journalDetailView?.bindDataWithViewModel(viewModel: viewModel)
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

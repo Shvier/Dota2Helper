@@ -6,7 +6,8 @@
 //  Copyright © 2016 Shvier. All rights reserved.
 //
 
-import UIKit
+let kNewsDetailViewWidth: CGFloat = UIScreen.main.bounds.size.width
+let kNewsDetailViewHeight: CGFloat = UIScreen.main.bounds.size.height - CGFloat(kNavigationHeight)
 
 class DHNewsDetailView: DHBaseDetailView {
     

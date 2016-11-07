@@ -15,16 +15,16 @@ class DHNewsDetailViewController: DHBaseDetailViewController, WKNavigationDelega
     var dataController: DHNewsDetailDataController?
     var newsDetailView: DHNewsDetailView?
     var loadingView: DHLoadingView?
+    lazy var viewModel: DHNewsDetailViewModel = {
+        return DHNewsDetailViewModel()
+    }()
 
 // MARK: - 3D Touch Peek Menu
     @available(iOS 9.0, *)
     override var previewActionItems: [UIPreviewActionItem] {
         get {
-            weak var weakSelf = self
-            let openWithSafariAction: UIPreviewAction = UIPreviewAction(title: "使用Safari打开", style: .default, handler: { (UIPreviewAction, UIViewController) in
-                let strongSelf = weakSelf
-                let request = strongSelf?.dataController?.requestNewsDetailDataRequestWithNewsModel(newsModel: (strongSelf?.newsModel)!)
-                UIApplication.shared.openURL((request?.url)!)
+            let openWithSafariAction: UIPreviewAction = UIPreviewAction(title: "使用Safari打开", style: .default, handler: { [unowned self] (UIPreviewAction, UIViewController) in
+                UIApplication.shared.openURL(URL(string: kGetNewsDetailUrl + self.newsModel!.date! + "/" + self.newsModel!.nid!)!)
             })
             let cancelAction: UIPreviewAction = UIPreviewAction(title: "取消", style: .destructive, handler: { (UIPreviewAction, UIViewController) in
                 
@@ -38,11 +38,10 @@ class DHNewsDetailViewController: DHBaseDetailViewController, WKNavigationDelega
     
 // MARK: - Life Cycle
     func handleData() {
-        dataController = DHNewsDetailDataController()
-        let request: URLRequest = (dataController?.requestNewsDetailDataRequestWithNewsModel(newsModel: newsModel!))!
-        let viewModel: DHNewsDetailViewModel = DHNewsDetailViewModel(request: request)
         newsDetailView = DHNewsDetailView(frame: CGRect(x: 0, y: 0, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight - kTabBarHeight))
-        newsDetailView?.bindDataWithViewModel(viewModel: viewModel)
+        viewModel.getDetailNews(model: newsModel!, { [unowned self] in
+            self.newsDetailView?.loadRequest(request: self.viewModel.request!)
+        }())
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
