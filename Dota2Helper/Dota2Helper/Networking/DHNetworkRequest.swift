@@ -14,13 +14,13 @@ class DHGetNewsRequest {
 }
 
 class DHLoadMoreNewsRequest {
-    class func requestMoreNewsData(nid: String, success: @autoclosure @escaping (Data) -> Void, failure: @autoclosure @escaping() -> Void) {
+    class func requestMoreNewsData(nid: String, success: @escaping (_ response: Data) -> Void, failure: @autoclosure @escaping() -> Void) {
         DHBaseNetworkRequest.request(url: kLoadMoreNewsUrl + nid, parameters: nil, success: success, failure: failure)
     }
 }
 
 class DHGetNewsDetailRequest {
-    class func requestNewsDetailData(date: String, nid: String, success: @autoclosure @escaping (Data) -> Void, failure: @autoclosure @escaping () -> Void) {
+    class func requestNewsDetailData(date: String, nid: String, success: @escaping (_ response: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
         DHBaseNetworkRequest.request(url: kGetNewsDetailUrl + date + "/" + nid, parameters: nil, success: success, failure: failure)
     }
 }

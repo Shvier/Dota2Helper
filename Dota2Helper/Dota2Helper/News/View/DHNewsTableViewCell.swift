@@ -35,14 +35,18 @@ class DHNewsTableViewCell: UITableViewCell {
         }
     }
     
-    func bindDataWithViewModel(viewModel: DHNewsCellViewModel) {
-        self.newsModel = viewModel.newsModel!
-        if let urlString = viewModel.background {
+    func bindDataWithModel(model: DHNewsModel) {
+        self.newsModel = model
+        if let urlString = model.background {
             backgroundImageView.kf_setImage(with: URL(string: urlString))
         }
-        titleLabel.text = viewModel.title
-        newsDescriptionLabel.text = viewModel.newsDescription
-        timeLabel.text = viewModel.time
+        titleLabel.text = model.title
+        newsDescriptionLabel.text = model.newsDescription
+        timeLabel.text = model.time
+    }
+    
+    class func cell(tableView: UITableView, indexPath: IndexPath) -> DHNewsTableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: kNewsCellReuseIdentifier, for: indexPath) as! DHNewsTableViewCell
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String!) {

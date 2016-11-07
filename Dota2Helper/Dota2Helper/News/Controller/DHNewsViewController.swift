@@ -13,17 +13,16 @@ import SDCycleScrollView
 
 class DHNewsViewController: DHBaseViewController {
 
-    lazy var dataController: DHNewsDataController = {
-        return DHNewsDataController()
-    }()
     lazy var headerView: SDCycleScrollView = {
         return SDCycleScrollView(frame: CGRect(x: 0, y: 0, width: kBannerWidth, height: kBannerHeight), delegate: self, placeholderImage: UIImage(named: "placeholder.jpg"))
     }()
     var tableView: UITableView?
     var loadingView: DHLoadingView?
     var noNetworkView: DHNoNetworkView?
-    var headerViewModel: DHNewsBannerViewModel?
     var lastScrollOffetY: CGFloat?
+    lazy var viewModel: DHNewsCellViewModel = {
+        return DHNewsCellViewModel()
+    }()
     
 // MARK: - Data Handler and View Renderer
     func handleNewsData() {
@@ -34,7 +33,7 @@ class DHNewsViewController: DHBaseViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [unowned self] in
             self.endHeaderRefreshing()
         }
-        dataController.requestNewsDataWithCallback(callback: { [unowned self] in
+        viewModel.refreshNews({ [unowned self] in
             self.tableView?.mj_header.endRefreshing()
             self.renderTableViewCell()
         }())
@@ -44,12 +43,12 @@ class DHNewsViewController: DHBaseViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [unowned self] in
             self.tableView?.mj_footer.endRefreshing()
         }
-        self.dataController.requestMoreNews(callback: { [unowned self] in
+        viewModel.loadMoreNews({ [unowned self] in
             self.tableView?.mj_footer.endRefreshing()
             DispatchQueue.main.async(execute: {
                 self.tableView?.reloadData()
             })
-        }())
+        } ())
     }
     
     func endHeaderRefreshing() {
@@ -59,8 +58,6 @@ class DHNewsViewController: DHBaseViewController {
     }
     
     func renderTableViewCell() {
-        let banners = NSArray(array: (dataController.bannerDataSource)!)
-        headerViewModel = DHNewsBannerViewModel(banners: banners as! [DHNewsModel])
         DispatchQueue.main.async(execute: { [unowned self] in
             self.tableView?.tableHeaderView = self.headerView
             self.updateCycleView()
@@ -71,8 +68,8 @@ class DHNewsViewController: DHBaseViewController {
     
     func updateCycleView() {
         self.headerView.pageControlDotSize = CGSize(width: 7, height: 7)
-        self.headerView.imageURLStringsGroup = self.headerViewModel?.imageUrlStrings
-        self.headerView.titlesGroup = self.headerViewModel?.titleStrings
+        self.headerView.imageURLStringsGroup = self.viewModel.imageUrlStrings
+        self.headerView.titlesGroup = self.viewModel.titleStrings
         self.headerView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated
         self.headerView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight
     }
@@ -134,7 +131,7 @@ class DHNewsViewController: DHBaseViewController {
 // MARK: - UITableViewDelegate
 extension DHNewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (dataController.newsDataSource?.count)! > 0 ? (dataController.newsDataSource?.count)! : 0
+        return (viewModel.newsDataSource?.count)! > 0 ? (viewModel.newsDataSource?.count)! : 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -142,12 +139,9 @@ extension DHNewsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: DHNewsTableViewCell = tableView.dequeueReusableCell(withIdentifier: kNewsCellReuseIdentifier, for: indexPath) as! DHNewsTableViewCell
-        if (dataController.newsDataSource?.count)! > 0 {
-            let newsModel = dataController.newsDataSource?[indexPath.row] as! DHNewsModel
-            let cellViewModel: DHNewsCellViewModel = DHNewsCellViewModel.init(newsModel: newsModel)
-            cellViewModel.bindData()
-            cell.bindDataWithViewModel(viewModel: cellViewModel)
+        let cell: DHNewsTableViewCell = DHNewsTableViewCell.cell(tableView: tableView, indexPath: indexPath)
+        if (viewModel.newsDataSource?.count)! > 0 {
+            cell.bindDataWithModel(model: viewModel.newsDataSource![indexPath.row])
             if #available(iOS 9.0, *) {
                 if traitCollection.forceTouchCapability == .available {
                     registerForPreviewing(with: self, sourceView: cell)
@@ -187,12 +181,9 @@ extension DHNewsViewController: UITableViewDelegate, UITableViewDataSource {
 extension DHNewsViewController: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         let newsDetailVC: DHNewsDetailViewController = DHNewsDetailViewController()
-        if previewingContext.sourceRect.size.height == 80 {
+        if previewingContext.sourceRect.size.height == kNewsTableViewCellHeight {
             let cell = previewingContext.sourceView as! DHNewsTableViewCell
             newsDetailVC.newsModel = cell.newsModel
-        } else {
-            let banner = previewingContext.sourceView as! DHBanner
-            newsDetailVC.newsModel = banner.newsModel
         }
         return newsDetailVC
     }
@@ -204,7 +195,7 @@ extension DHNewsViewController: UIViewControllerPreviewingDelegate {
 
 extension DHNewsViewController: SDCycleScrollViewDelegate {
     func cycleScrollView(_ cycleScrollView: SDCycleScrollView!, didSelectItemAt index: Int) {
-        let banner: DHNewsModel = (headerViewModel?.banners![index])!
+        let banner: DHNewsModel = (viewModel.bannerDataSource![index])
         loadToDetailVCWithNewsModel(newsModel: banner)
     }
 }
