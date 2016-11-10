@@ -6,6 +6,33 @@
 //  Copyright © 2016 Shvier. All rights reserved.
 //
 
+let UrlHeader: String = "http://dota2xufserver.duapp.com/api/v1.0"
+
+let DHAPIBatchRefreshNewsPath: String = "news/refresh"
+func DHAPILoadMoreNewsPath(nid: String) -> String {
+    return "news/loadmore/\(nid)"
+}
+func DHAPIGetNewsDetailPath(date: String, nid: String) -> String {
+    return "newsdetail/\(date)/\(nid)"
+}
+let DHAPIBatchRefreshUpdatesUrl: String = "updates/refresh"
+func DHAPILoadMoreUpdatesPath(nid: String) -> String {
+    return "updates/loadmore/\(nid)"
+}
+let DHAPIBatchRefreshStrategiesPath: String = "strategy/refresh"
+func DHAPILoadMoreStrategiesPath(strategyType: String, nid: String) -> String {
+    return "strategy/loadmore/\(strategyType)/\(nid)"
+}
+let DHAPIBatchRefreshVideosPath: String = "video/refresh"
+func DHAPILoadMoreVideosPath(videoType: String, nid: String) -> String {
+    return "loadmore/\(videoType)/\(nid)"
+}
+func DHAPIGetVideoSetInfoPath(date: String, nid: String) -> String {
+    return "videoset/\(date)/\(nid)"
+}
+func DHAPIGetYoukuVidPath(date: String, nid: String) -> String {
+    return "youkuvid/\(date)/\(nid)"
+}
 // refresh news
 let kRefreshNewsUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/news/refresh"
 // load more news
@@ -27,7 +54,7 @@ let kLoadMoreStrategiesUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/s
 // refresh videos
 let kRefreshVideos: String = "http://dota2xufserver.duapp.com/api/v1.0/video/refresh/"
 // load more refresh videos
-// loadmore/{video_type}/{vid}
+// loadmore/{video_type}/{vid}0
 let kLoadMoreVideos: String = "http://dota2xufserver.duapp.com/api/v1.0/video/loadmore/"
 // load more videos
 // videoset/{date}/{vid}
