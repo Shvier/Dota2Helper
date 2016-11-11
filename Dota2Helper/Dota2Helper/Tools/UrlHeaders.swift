@@ -6,55 +6,58 @@
 //  Copyright © 2016 Shvier. All rights reserved.
 //
 
-let UrlHeader: String = "http://dota2xufserver.duapp.com/api/v1.0"
-
-let DHAPIBatchRefreshNewsPath: String = "news/refresh"
-func DHAPILoadMoreNewsPath(nid: String) -> String {
-    return "news/loadmore/\(nid)"
-}
-func DHAPIGetNewsDetailPath(date: String, nid: String) -> String {
-    return "newsdetail/\(date)/\(nid)"
-}
-let DHAPIBatchRefreshUpdatesUrl: String = "updates/refresh"
-func DHAPILoadMoreUpdatesPath(nid: String) -> String {
-    return "updates/loadmore/\(nid)"
-}
-let DHAPIBatchRefreshStrategiesPath: String = "strategy/refresh"
-func DHAPILoadMoreStrategiesPath(strategyType: String, nid: String) -> String {
-    return "strategy/loadmore/\(strategyType)/\(nid)"
-}
-let DHAPIBatchRefreshVideosPath: String = "video/refresh"
-func DHAPILoadMoreVideosPath(videoType: String, nid: String) -> String {
-    return "loadmore/\(videoType)/\(nid)"
-}
-func DHAPIGetVideoSetInfoPath(date: String, nid: String) -> String {
-    return "videoset/\(date)/\(nid)"
-}
-func DHAPIGetYoukuVidPath(date: String, nid: String) -> String {
-    return "youkuvid/\(date)/\(nid)"
-}
+let UrlHeader: String = "http://dota2xufserver.duapp.com/api/v1.0/"
 // refresh news
-let kRefreshNewsUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/news/refresh"
+let DHAPIBatchRefreshNewsUrl: String = UrlHeader + "news/refresh"
 // load more news
-// loadmore/{nid}
-let kLoadMoreNewsUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/news/loadmore/"
+func DHAPILoadMoreNewsUrl(nid: String) -> String {
+    return UrlHeader + "news/loadmore/\(nid)"
+}
 // get news detail
-// newsdetail/{date}/{nid}
-let kGetNewsDetailUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/newsdetail/"
+func DHAPIGetNewsDetailUrl(date: String, nid: String) -> String {
+    return UrlHeader + "newsdetail/\(date)/\(nid)"
+}
 // refresh updates
-let kRefreshUpdatesUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/updates/refresh"
+let DHAPIBatchRefreshUpdatesUrl: String = UrlHeader + "updates/refresh"
 // load more updates
-// loadmore/{nid}
-let kLoadMoreUpdatesUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/updates/loadmore/"
+func DHAPILoadMoreUpdatesUrl(nid: String) -> String {
+    return UrlHeader + "updates/loadmore/\(nid)"
+}
 // refresh strategies
-let kRefreshStrategiesUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/strategy/refresh/"
+func DHAPIRefreshStrategiesUrl(strategiesType: String) -> String {
+    return UrlHeader + "strategy/refresh/\(strategiesType)"
+}
 // load more strategies
-// laodmore/{strategy_type}/{nid}
-let kLoadMoreStrategiesUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/strategy/loadmore/"
+func DHAPILoadMoreStrategiesUrl(strategyType: String, nid: String) -> String {
+    return UrlHeader + "strategy/loadmore/\(strategyType)/\(nid)"
+}
 // refresh videos
+func DHAPIGetRefreshVideosUrl(videoType: String) -> String {
+    return UrlHeader + "video/refresh\(videoType)"
+}
+// load more videos
+func DHAPILoadMoreVideosUrl(videoType: String, vid: String) -> String {
+    return UrlHeader + "loadmore/\(videoType)/\(vid)"
+}
+// get video set info
+func DHAPIGetVideoSetInfoUrl(date: String, vid: String) -> String {
+    return UrlHeader + "videoset/\(date)/\(vid)"
+}
+// get youku vid
+func DHAPIGetYoukuVidUrl(date: String, vid: String) -> String {
+    return UrlHeader + "youkuvid/\(date)/\(vid)"
+}
+// get relatedVideoList
+let DHAPIGetRelatedVideoListUrl: String = "http://openapi.youku.com/v2/videos/by_related/json"
+
+let kRefreshNewsUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/news/refresh"
+let kLoadMoreNewsUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/news/loadmore/"
+let kGetNewsDetailUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/newsdetail/"
+let kRefreshUpdatesUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/updates/refresh"
+let kLoadMoreUpdatesUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/updates/loadmore/"
+let kRefreshStrategiesUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/strategy/refresh/"
+let kLoadMoreStrategiesUrl: String = "http://dota2xufserver.duapp.com/api/v1.0/strategy/loadmore/"
 let kRefreshVideos: String = "http://dota2xufserver.duapp.com/api/v1.0/video/refresh/"
-// load more refresh videos
-// loadmore/{video_type}/{vid}0
 let kLoadMoreVideos: String = "http://dota2xufserver.duapp.com/api/v1.0/video/loadmore/"
 // load more videos
 // videoset/{date}/{vid}
