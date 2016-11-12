@@ -6,8 +6,6 @@
 //  Copyright © 2016 Shvier. All rights reserved.
 //
 
-import UIKit
-
 class DHNewsCellDataController: NSObject {
 
     static let sharedInstance = DHNewsCellDataController()

@@ -6,9 +6,6 @@
 //  Copyright © 2016 Shvier. All rights reserved.
 //
 
-import UIKit
-import Kingfisher
-
 let kBannerWidth: CGFloat = UIScreen.main.bounds.size.width
 let kBannerHeight: CGFloat = kBannerWidth * 9.0 / 16.0
 
