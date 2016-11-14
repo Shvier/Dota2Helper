@@ -9,9 +9,16 @@
 class DHJournalCellViewModel: NSObject {
     
     let dataController: DHJournalCellDataController = DHJournalCellDataController.sharedInstance
+    lazy var newsDataSource: [DHJournalModel]? = {[]} ()
     
-    func refreshNews(_ callback: @autoclosure @escaping() -> Void) {
+    func refreshUpdates(_ callback: @autoclosure @escaping () -> Void) {
         dataController.getUpdates(success: { [unowned self] (response) in
+            
+        }, failure: {} ())
+    }
+    
+    func loadMoreUpdates(_ call: @autoclosure @escaping () -> Void) {
+        dataController.loadMoreUpates(nid: (newsDataSource?.last?.nid)!, success: { [unowned self] (response) in
             
         }, failure: {} ())
     }
