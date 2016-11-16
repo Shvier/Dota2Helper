@@ -38,4 +38,32 @@ class DHVideoCellDataController: NSObject {
         DHGetVideosRequest.requestAdvancedVideosData(success: success, failure: failure)
     }
     
+    func loadMoreAllVideos(vid: String, success: @escaping(_ response: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
+        DHLoadMoreVideosRequest.requestMoreAllVideosData(vid: vid, success: success, failure: failure)
+    }
+    
+    func loadMoreJieshuoVideos(vid: String, success: @escaping(_ response: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
+        DHLoadMoreVideosRequest.requestMoreJieshuoVideosData(vid: vid, success: success, failure: failure)
+    }
+    
+    func loadMoreBisaiVideos(vid: String, success: @escaping(_ response: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
+        DHLoadMoreVideosRequest.requestMoreBisaiVideosData(vid: vid, success: success, failure: failure)
+    }
+    
+    func loadMoreCelebrityVideos(vid: String, success: @escaping(_ repsonse: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
+        DHLoadMoreVideosRequest.requestMoreCelebrityVideosData(vid: vid, success: success, failure: failure)
+    }
+    
+    func loadMoreQuweiVideos(vid: String, success: @escaping(_ response: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
+        DHLoadMoreVideosRequest.requestMoreQuweiVideosData(vid: vid , success: success, failure: failure)
+    }
+    
+    func loadMoreBeginnerVideos(vid: String, success: @escaping(_ response: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
+        DHLoadMoreVideosRequest.requestMoreBeginnerVideosData(vid: vid, success: success, failure: failure)
+    }
+    
+    func loadMoreAdvancedVideos(vid: String, success: @escaping(_ response: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
+        DHLoadMoreVideosRequest.requestMoreAdvancedVideosData(vid: vid, success: success, failure: failure)
+    }
+    
 }
