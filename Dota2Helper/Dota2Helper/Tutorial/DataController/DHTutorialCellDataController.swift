@@ -26,4 +26,20 @@ class DHTutorialCellDataController: NSObject {
         DHGetStrategiesRequest.requestSkillStrategiesData(success: success, failure: failure)
     }
     
+    func loadMoreAllStrategies(nid: String, success: @escaping(_ response: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
+        DHLoadMoreStrategiesRequest.requestMoreAllStrategiesData(nid: nid, success: success, failure: failure)
+    }
+    
+    func loadMoreNewerStrategies(nid: String, success: @escaping(_ response: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
+        DHLoadMoreStrategiesRequest.requestMoreNewerStrategiesData(nid: nid, success: success, failure: failure)
+    }
+    
+    func loadMoreStepStrategies(nid: String, success: @escaping(_ response: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
+        DHLoadMoreStrategiesRequest.requestMoreStepStrategiesData(nid: nid, success: success, failure: failure)
+    }
+    
+    func loadMoreSkillStrategies(nid: String, success: @escaping(_ reponse: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
+        DHLoadMoreStrategiesRequest.requestMoreSkillStrategiesData(nid: nid, success: success, failure: failure)
+    }
+    
 }
