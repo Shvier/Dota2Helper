@@ -66,4 +66,8 @@ class DHVideoCellDataController: NSObject {
         DHLoadMoreVideosRequest.requestMoreAdvancedVideosData(vid: vid, success: success, failure: failure)
     }
     
+    func getRelatedVideos(vid: String, success: @escaping(_ response: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
+        DHGetRelatedVideosRequest.requestRelatedVideosData(vid: vid, success: success, failure: failure)
+    }
+    
 }
