@@ -17,5 +17,5 @@ class DHJournalCellDataController: NSObject {
     func loadMoreUpates(nid: String, success: @escaping (_ response: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
         DHLoadMoreUpdatesRequest.requestMoreUpdatesData(nid: nid, success: success, failure: failure)
     }
-    
+        
 }

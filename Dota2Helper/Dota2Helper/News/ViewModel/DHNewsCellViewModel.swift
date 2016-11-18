@@ -63,4 +63,8 @@ class DHNewsCellViewModel: NSObject {
         }, failure: {} ())
     }
     
+    func getUpdatesDetail(date: String, nid: String, _ callbak: @autoclosure @escaping () -> Void) {
+        
+    }
+    
 }

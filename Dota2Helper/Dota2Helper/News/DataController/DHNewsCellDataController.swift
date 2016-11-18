@@ -18,4 +18,8 @@ class DHNewsCellDataController: NSObject {
         DHLoadMoreNewsRequest.requestMoreNewsData(nid: nid, success: success, failure: failure)
     }
     
+    func getNewsDetail(date: String, nid: String, success: @escaping (_ urlString: String) -> Void, failure: @autoclosure @escaping () -> Void) {
+        DHGetNewsDetailRequest.requestNewsDetailData(date: date, nid: nid, success: success, failure: failure)
+    }
+    
 }

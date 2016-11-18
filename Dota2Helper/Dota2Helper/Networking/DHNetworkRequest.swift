@@ -20,8 +20,8 @@ class DHLoadMoreNewsRequest {
 }
 
 class DHGetNewsDetailRequest {
-    class func requestNewsDetailData(date: String, nid: String, success: @escaping (_ response: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
-        DHBaseNetworkRequest.request(url: DHAPIGetNewsDetailUrl(date: date, nid: nid), parameters: nil, success: success, failure: failure)
+    class func requestNewsDetailData(date: String, nid: String, success: @escaping (_ urlString: String) -> Void, failure: @autoclosure @escaping () -> Void) {
+        success(DHAPIGetNewsDetailUrl(date: date, nid: nid))
     }
 }
 
