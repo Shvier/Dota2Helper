@@ -42,4 +42,8 @@ class DHTutorialCellDataController: NSObject {
         DHLoadMoreStrategiesRequest.requestMoreSkillStrategiesData(nid: nid, success: success, failure: failure)
     }
     
+    func getStrategiesDetail(date: String, nid: String, success: @escaping(_ urlString: String) -> Void, failure: @autoclosure @escaping () -> Void) {
+        DHGetNewsDetailRequest.requestNewsDetailData(date: date, nid: nid, success: success, failure: failure)
+    }
+    
 }
