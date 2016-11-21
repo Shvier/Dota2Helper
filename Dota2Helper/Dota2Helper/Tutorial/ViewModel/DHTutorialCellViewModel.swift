@@ -28,4 +28,60 @@ class DHTutorialCellViewModel: NSObject {
         self.tutorialDescription = tutorialModel?.tutorialDescription
     }
     
+    let dataController: DHTutorialCellDataController = DHTutorialCellDataController.sharedInstance
+
+    func getAllStrategies(_ callback: @autoclosure @escaping () -> Void) {
+        dataController.getAllStrategies(success: { [unowned self] (response) in
+        
+            }, failure: {} ())
+    }
+    
+    func getNewerStrategies(_ callback: @autoclosure @escaping () -> Void) {
+        dataController.getNewerStrategies(success: { [unowned self] (response) in
+            
+        }, failure: {} ())
+    }
+    
+    func getStepStrategies(_ callback: @autoclosure @escaping () -> Void) {
+        dataController.getStepStrategies(success: { [unowned self] (response) in
+            
+        }, failure: {} ())
+    }
+    
+    func getSkillStrategies(s_ callback: @autoclosure @escaping () -> Void) {
+        dataController.getSkillStrategies(success: { [unowned self] (response) in
+            
+        }, failure: {} ())
+    }
+    
+    func loadMoreAllStrategies(nid: String, _ callback: @autoclosure @escaping () -> Void) {
+        dataController.loadMoreAllStrategies(nid: nid, success: { [unowned self] (response) in
+            
+        }, failure: {} ())
+    }
+    
+    func loadMoreNewerStrategies(nid: String, _ callback: @autoclosure @escaping () -> Void) {
+        dataController.loadMoreNewerStrategies(nid: nid, success: { [unowned self] (response) in
+            
+        }, failure: {} ())
+    }
+    
+    func loadMoreStepStrategies(nid: String, _ callback: @autoclosure @escaping () -> Void) {
+        dataController.loadMoreStepStrategies(nid: nid, success: { [unowned self] (response) in
+            
+        }, failure: {} ())
+    }
+    
+    func loadMoreSkillStrategies(nid: String, _ callback: @autoclosure @escaping () -> Void) {
+        dataController.loadMoreSkillStrategies(nid: nid, success: { [unowned self] (response) in
+            
+        }, failure: {} ())
+    }
+    
+    func getStrategiesDetail(date: String, nid: String, _ callback: @autoclosure @escaping () -> Void) {
+        dataController.getStrategiesDetail(date: date, nid: nid, success: { [unowned self] (response) in
+            
+        }, failure: {} ())
+    }
+    
 }
