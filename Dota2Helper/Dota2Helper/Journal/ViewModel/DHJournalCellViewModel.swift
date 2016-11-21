@@ -23,4 +23,10 @@ class DHJournalCellViewModel: NSObject {
         }, failure: {} ())
     }
     
+    func getUpdatesDetail(date: String, nid: String, _ call: @autoclosure @escaping () -> Void) {
+        dataController.getUpdatesDetail(date: date, nid: nid, success: { [unowned self] (response) in
+            
+        }, failure: {} ())
+    }
+    
 }
