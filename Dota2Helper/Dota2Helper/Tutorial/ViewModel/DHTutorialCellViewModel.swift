@@ -39,49 +39,49 @@ class DHTutorialCellViewModel: NSObject {
     func getNewerStrategies(_ callback: @autoclosure @escaping () -> Void) {
         dataController.getNewerStrategies(success: { [unowned self] (response) in
             
-        }, failure: {} ())
+            }, failure: {} ())
     }
     
     func getStepStrategies(_ callback: @autoclosure @escaping () -> Void) {
         dataController.getStepStrategies(success: { [unowned self] (response) in
             
-        }, failure: {} ())
+            }, failure: {} ())
     }
     
     func getSkillStrategies(s_ callback: @autoclosure @escaping () -> Void) {
         dataController.getSkillStrategies(success: { [unowned self] (response) in
             
-        }, failure: {} ())
+            }, failure: {} ())
     }
     
     func loadMoreAllStrategies(nid: String, _ callback: @autoclosure @escaping () -> Void) {
         dataController.loadMoreAllStrategies(nid: nid, success: { [unowned self] (response) in
             
-        }, failure: {} ())
+            }, failure: {} ())
     }
     
     func loadMoreNewerStrategies(nid: String, _ callback: @autoclosure @escaping () -> Void) {
         dataController.loadMoreNewerStrategies(nid: nid, success: { [unowned self] (response) in
             
-        }, failure: {} ())
+            }, failure: {} ())
     }
     
     func loadMoreStepStrategies(nid: String, _ callback: @autoclosure @escaping () -> Void) {
         dataController.loadMoreStepStrategies(nid: nid, success: { [unowned self] (response) in
             
-        }, failure: {} ())
+            }, failure: {} ())
     }
     
     func loadMoreSkillStrategies(nid: String, _ callback: @autoclosure @escaping () -> Void) {
         dataController.loadMoreSkillStrategies(nid: nid, success: { [unowned self] (response) in
             
-        }, failure: {} ())
+            }, failure: {} ())
     }
     
     func getStrategiesDetail(date: String, nid: String, _ callback: @autoclosure @escaping () -> Void) {
         dataController.getStrategiesDetail(date: date, nid: nid, success: { [unowned self] (response) in
             
-        }, failure: {} ())
+            }, failure: {} ())
     }
     
 }

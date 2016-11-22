@@ -19,48 +19,48 @@ class DHNewsCellViewModel: NSObject {
     
     func refreshNews(_ callback: @autoclosure @escaping () -> Void) {
         dataController.getNews(success: { [unowned self] (response) in
-            do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let bannerArray = result["banner"]
-                let newsArray = result["news"]
-                self.imageUrlStrings?.removeAll()
-                self.titleStrings?.removeAll()
-                self.bannerDataSource?.removeAll()
-                self.newsDataSource?.removeAll()
-                for bannerDict in bannerArray as! [NSDictionary] {
-                    let banner: DHNewsModel = DHNewsModel()
-                    banner.setValuesForKeys(bannerDict as! [String : Any])
-                    self.bannerDataSource?.append(banner)
-                    self.imageUrlStrings?.append(banner.background!)
-                    self.titleStrings?.append(banner.title!)
-                }
-                for newsDict in newsArray as! [NSDictionary] {
-                    let news: DHNewsModel = DHNewsModel()
-                    news.setValuesForKeys(newsDict as! [String : Any])
-                    self.newsDataSource?.append(news)
-                }
-                callback()
-            } catch {
+                do {
+                    let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                    let bannerArray = result["banner"]
+                    let newsArray = result["news"]
+                    self.imageUrlStrings?.removeAll()
+                    self.titleStrings?.removeAll()
+                    self.bannerDataSource?.removeAll()
+                    self.newsDataSource?.removeAll()
+                    for bannerDict in bannerArray as! [NSDictionary] {
+                        let banner: DHNewsModel = DHNewsModel()
+                        banner.setValuesForKeys(bannerDict as! [String : Any])
+                        self.bannerDataSource?.append(banner)
+                        self.imageUrlStrings?.append(banner.background!)
+                        self.titleStrings?.append(banner.title!)
+                    }
+                    for newsDict in newsArray as! [NSDictionary] {
+                        let news: DHNewsModel = DHNewsModel()
+                        news.setValuesForKeys(newsDict as! [String : Any])
+                        self.newsDataSource?.append(news)
+                    }
+                    callback()
+                } catch {
                 
-            }
-        }, failure: {} ())
+                }
+            }, failure: {} ())
     }
     
     func loadMoreNews(_ callback: @autoclosure @escaping () -> Void) {
         dataController.loadMoreNews(nid: (newsDataSource?.last?.nid)!, success: { [unowned self] (response) in
-            do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let newsArray = result["news"]
-                for newsDict in newsArray as! [NSDictionary] {
-                    let news: DHNewsModel = DHNewsModel()
-                    news.setValuesForKeys(newsDict as! [String : Any])
-                    self.newsDataSource?.append(news)
-                }
-                callback()
-            } catch {
+                do {
+                    let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                    let newsArray = result["news"]
+                    for newsDict in newsArray as! [NSDictionary] {
+                        let news: DHNewsModel = DHNewsModel()
+                        news.setValuesForKeys(newsDict as! [String : Any])
+                        self.newsDataSource?.append(news)
+                    }
+                    callback()
+                } catch {
 
-            }
-        }, failure: {} ())
+                }
+            }, failure: {} ())
     }
     
     func getUpdatesDetail(date: String, nid: String, _ callbak: @autoclosure @escaping () -> Void) {

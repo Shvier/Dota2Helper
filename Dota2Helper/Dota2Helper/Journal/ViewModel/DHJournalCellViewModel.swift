@@ -14,19 +14,19 @@ class DHJournalCellViewModel: NSObject {
     func refreshUpdates(_ callback: @autoclosure @escaping () -> Void) {
         dataController.getUpdates(success: { [unowned self] (response) in
             
-        }, failure: {} ())
+            }, failure: {} ())
     }
     
     func loadMoreUpdates(_ call: @autoclosure @escaping () -> Void) {
         dataController.loadMoreUpates(nid: (newsDataSource?.last?.nid)!, success: { [unowned self] (response) in
             
-        }, failure: {} ())
+            }, failure: {} ())
     }
     
     func getUpdatesDetail(date: String, nid: String, _ call: @autoclosure @escaping () -> Void) {
         dataController.getUpdatesDetail(date: date, nid: nid, success: { [unowned self] (response) in
             
-        }, failure: {} ())
+            }, failure: {} ())
     }
     
 }
