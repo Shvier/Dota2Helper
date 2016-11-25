@@ -39,9 +39,9 @@ class DHNewsDetailViewController: DHBaseDetailViewController, WKNavigationDelega
 // MARK: - Life Cycle
     func handleData() {
         newsDetailView = DHNewsDetailView(frame: CGRect(x: 0, y: 0, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight - kTabBarHeight))
-        viewModel.getDetailNews(model: newsModel!, { [unowned self] in
-            self.newsDetailView?.loadRequest(request: self.viewModel.request!)
-        }())
+        viewModel.getDetailNews(model: newsModel!, { (urlString) in
+            self.newsDetailView?.loadRequest(request: URLRequest(url: URL(string: urlString)!))
+        }, failure: {} ())
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

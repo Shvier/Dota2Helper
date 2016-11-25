@@ -9,14 +9,11 @@
 class DHNewsDetailViewModel: NSObject {
 
     let dataController: DHNewsDetailDataController = DHNewsDetailDataController.sharedInstance
-    var htmlContent: String?
-    var request: URLRequest?
     
-    func getDetailNews(model: DHNewsModel, _ callback: @autoclosure @escaping () -> Void) {
-        dataController.getNewsDetail(date: model.date!, nid: model.nid!, success: { [unowned self] (response) in
-            self.request = URLRequest(url: URL(string: response)!)
-            callback()
-        }, failure: {} ())
+    func getDetailNews(model: DHNewsModel, _ success: @escaping (_ urlString: String) -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getNewsDetail(date: model.date!, nid: model.nid!, success: { (urlString) in
+            success(urlString)
+        }, failure: failure)
     }
 
 }

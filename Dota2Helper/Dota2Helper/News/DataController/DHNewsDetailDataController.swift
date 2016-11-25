@@ -12,11 +12,8 @@ class DHNewsDetailDataController: NSObject {
 
     static let sharedInstance = DHNewsDetailDataController()
     
-    var request: URLRequest?
-    
     func getNewsDetail(date: String, nid: String, success: @escaping (_ urlString: String) -> Void, failure: @autoclosure @escaping () -> Void) {
-        request = URLRequest(url: URL(string: kGetNewsDetailUrl + date + "/" + nid)!)
-        DHGetNewsDetailRequest.requestNewsDetailData(date: date, nid: nid, success: success, failure: failure)
+        success(kGetNewsDetailUrl + date + "/" + nid)
     }
     
 }
