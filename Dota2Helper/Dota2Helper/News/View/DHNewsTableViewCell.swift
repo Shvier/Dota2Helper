@@ -10,6 +10,7 @@ import UIKit
 import Kingfisher
 
 let kNewsTableViewCellHeight: CGFloat = 90
+let kContentViewCornerRadius: CGFloat = 5
 
 class DHNewsTableViewCell: UITableViewCell {
 
@@ -43,6 +44,9 @@ class DHNewsTableViewCell: UITableViewCell {
         titleLabel.text = model.title
         newsDescriptionLabel.text = model.newsDescription
         timeLabel.text = model.time
+        
+        self.layer.cornerRadius = kContentViewCornerRadius
+        self.layer.masksToBounds = true
     }
     
     class func cell(tableView: UITableView, indexPath: IndexPath) -> DHNewsTableViewCell {

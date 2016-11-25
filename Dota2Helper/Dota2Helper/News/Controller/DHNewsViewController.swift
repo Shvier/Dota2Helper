@@ -70,11 +70,12 @@ class DHNewsViewController: DHBaseViewController {
     }
     
     func updateCycleView() {
-        self.headerView.pageControlDotSize = CGSize(width: 7, height: 7)
         self.headerView.imageURLStringsGroup = self.viewModel.imageUrlStrings
         self.headerView.titlesGroup = self.viewModel.titleStrings
-        self.headerView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated
-        self.headerView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight
+        self.headerView.showPageControl = false
+//        self.headerView.pageControlDotSize = CGSize(width: 7, height: 7)
+//        self.headerView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated
+//        self.headerView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight
     }
     
     func loadToDetailVCWithNewsModel(newsModel: DHNewsModel) {
@@ -127,6 +128,7 @@ class DHNewsViewController: DHBaseViewController {
         
         lastScrollOffetY = 0
         setContentView()
+        tableView?.mj_header.beginRefreshing()
     }
     
 }
