@@ -17,54 +17,55 @@ class DHNewsCellViewModel: NSObject {
     lazy var imageUrlStrings: [String]? = {[]} ()
     lazy var titleStrings: [String]? = {[]} ()
     
-    func refreshNews(_ callback: @autoclosure @escaping () -> Void) {
-        dataController.getNews(success: { [unowned self] (response) in
+    func refreshNews(_ success: @escaping (_ newsDict: NSDictionary) -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getNews(success: { (response) in
                 do {
                     let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                     let bannerArray = result["banner"]
                     let newsArray = result["news"]
-                    self.imageUrlStrings?.removeAll()
-                    self.titleStrings?.removeAll()
-                    self.bannerDataSource?.removeAll()
-                    self.newsDataSource?.removeAll()
+                    
+                    var bannerDataSource: [DHNewsModel] = Array<DHNewsModel>()
+                    var newsDataSource: [DHNewsModel] = Array<DHNewsModel>()
+                    var imageUrlStrings: [String] = Array<String>()
+                    var titleUrlStrings: [String] = Array<String>()
+                    
                     for bannerDict in bannerArray as! [NSDictionary] {
                         let banner: DHNewsModel = DHNewsModel()
                         banner.setValuesForKeys(bannerDict as! [String : Any])
-                        self.bannerDataSource?.append(banner)
-                        self.imageUrlStrings?.append(banner.background!)
-                        self.titleStrings?.append(banner.title!)
+                        bannerDataSource.append(banner)
+                        imageUrlStrings.append(banner.background!)
+                        titleUrlStrings.append(banner.title!)
                     }
                     for newsDict in newsArray as! [NSDictionary] {
                         let news: DHNewsModel = DHNewsModel()
                         news.setValuesForKeys(newsDict as! [String : Any])
-                        self.newsDataSource?.append(news)
+                        newsDataSource.append(news)
                     }
-                    callback()
+                    success(["banner": bannerDataSource, "news": newsDataSource, "imageUrl": imageUrlStrings, "titleUrl": titleUrlStrings])
                 } catch {
                 
                 }
-            }, failure: {} ())
+            }, failure: failure)
     }
     
-    func loadMoreNews(_ callback: @autoclosure @escaping () -> Void) {
-        dataController.loadMoreNews(nid: (newsDataSource?.last?.nid)!, success: { [unowned self] (response) in
+    func loadMoreNews(nid: String, success: @escaping (_ newsArray: [DHNewsModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.loadMoreNews(nid: nid, success: { (response) in
                 do {
                     let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                     let newsArray = result["news"]
+                    
+                    var newsDataSource: [DHNewsModel] = Array<DHNewsModel>()
+                    
                     for newsDict in newsArray as! [NSDictionary] {
                         let news: DHNewsModel = DHNewsModel()
                         news.setValuesForKeys(newsDict as! [String : Any])
-                        self.newsDataSource?.append(news)
+                        newsDataSource.append(news)
                     }
-                    callback()
+                    success(newsDataSource)
                 } catch {
 
                 }
-            }, failure: {} ())
-    }
-    
-    func getUpdatesDetail(date: String, nid: String, _ callbak: @autoclosure @escaping () -> Void) {
-        
+            }, failure: failure)
     }
     
 }
