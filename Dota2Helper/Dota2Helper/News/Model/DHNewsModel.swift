@@ -23,4 +23,8 @@ class DHNewsModel: NSObject {
         }
     }
     
+    init(dictionary: NSDictionary) {
+        super.init()
+        self.setValuesForKeys(dictionary as! [String : Any])
+    }
 }

@@ -12,10 +12,6 @@ let kBannerHeight: CGFloat = kBannerWidth * 9.0 / 16.0
 class DHNewsCellViewModel: NSObject {
     
     let dataController: DHNewsCellDataController = DHNewsCellDataController.sharedInstance
-    lazy var newsDataSource: [DHNewsModel]? = {[]} ()
-    lazy var bannerDataSource: [DHNewsModel]? = {[]} ()
-    lazy var imageUrlStrings: [String]? = {[]} ()
-    lazy var titleStrings: [String]? = {[]} ()
     
     func refreshNews(_ success: @escaping (_ newsDict: NSDictionary) -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getNews(success: { (response) in
@@ -30,15 +26,13 @@ class DHNewsCellViewModel: NSObject {
                     var titleUrlStrings: [String] = Array<String>()
                     
                     for bannerDict in bannerArray as! [NSDictionary] {
-                        let banner: DHNewsModel = DHNewsModel()
-                        banner.setValuesForKeys(bannerDict as! [String : Any])
+                        let banner: DHNewsModel = DHNewsModel(dictionary: bannerDict)
                         bannerDataSource.append(banner)
                         imageUrlStrings.append(banner.background!)
                         titleUrlStrings.append(banner.title!)
                     }
                     for newsDict in newsArray as! [NSDictionary] {
-                        let news: DHNewsModel = DHNewsModel()
-                        news.setValuesForKeys(newsDict as! [String : Any])
+                        let news: DHNewsModel = DHNewsModel(dictionary: newsDict)
                         newsDataSource.append(news)
                     }
                     success(["banner": bannerDataSource, "news": newsDataSource, "imageUrl": imageUrlStrings, "titleUrl": titleUrlStrings])
@@ -57,7 +51,7 @@ class DHNewsCellViewModel: NSObject {
                     var newsDataSource: [DHNewsModel] = Array<DHNewsModel>()
                     
                     for newsDict in newsArray as! [NSDictionary] {
-                        let news: DHNewsModel = DHNewsModel()
+                        let news: DHNewsModel = DHNewsModel(dictionary: newsDict)
                         news.setValuesForKeys(newsDict as! [String : Any])
                         newsDataSource.append(news)
                     }

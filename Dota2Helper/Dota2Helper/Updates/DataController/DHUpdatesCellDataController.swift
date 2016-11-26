@@ -1,14 +1,14 @@
 //
-//  DHJournalCellDataController.swift
+//  DHUpdatesCellDataController.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 12/11/2016.
 //  Copyright © 2016 Shvier. All rights reserved.
 //
 
-class DHJournalCellDataController: NSObject {
+class DHUpdatesCellDataController: NSObject {
 
-    static let sharedInstance = DHJournalCellDataController()
+    static let sharedInstance = DHUpdatesCellDataController()
     
     func getUpdates(success: @escaping(_ response: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
         DHGetUpdatesRequest.requestUpdatesData(success: success, failure: failure)

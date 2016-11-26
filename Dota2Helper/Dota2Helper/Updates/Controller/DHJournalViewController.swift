@@ -15,6 +15,10 @@ class DHJournalViewController: DHBaseViewController {
     lazy var dataController: DHJournalDataController = {
         return DHJournalDataController()
     }()
+    lazy var viewModel: DHJournalCellViewModel = {
+        return DHJournalCellViewModel()
+    }()
+    
     var tableView: UITableView?
     var loadingView: DHLoadingView?
     var noNetworkView: DHNoNetworkView?
@@ -28,6 +32,7 @@ class DHJournalViewController: DHBaseViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [unowned self] in
             self.endHeaderRefreshing()
         }
+        
         dataController.requestJournalDataWithCallback(callback: { [unowned self] in
             self.tableView?.mj_header.endRefreshing()
             self.renderTableViewCell()

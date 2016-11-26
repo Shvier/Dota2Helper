@@ -1,5 +1,5 @@
 //
-//  DHJournalCellDetailDataController.swift
+//  DHUpdatesDetailDataController.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 26/11/2016.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DHJournalCellDetailDataController: NSObject {
+class DHUpdatesDetailDataController: NSObject {
 
-    static let sharedInstance = DHJournalCellDetailDataController()
+    static let sharedInstance = DHUpdatesDetailDataController()
     
     func getUpdatesDetail(date: String, nid: String, success: @escaping (_ urlString: String) -> Void, failure: @autoclosure @escaping () -> Void) {
         success(kGetNewsDetailUrl + date + "/" + nid)

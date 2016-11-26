@@ -1,5 +1,5 @@
 //
-//  DHJournalModel.swift
+//  DHUpdateModel.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 9/26/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DHJournalModel: NSObject {
+class DHUpdateModel: NSObject {
 
     var journalDescription: String?
     var title: String?
@@ -21,6 +21,11 @@ class DHJournalModel: NSObject {
         if key == "description" {
             setValue(value, forKey: "journalDescription")
         }
+    }
+    
+    init(dictionary: NSDictionary) {
+        super.init()
+        self.setValuesForKeys(dictionary as! [String : Any])
     }
     
 }
