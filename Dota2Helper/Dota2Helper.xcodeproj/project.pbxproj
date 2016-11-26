@@ -47,6 +47,7 @@
 		C051BE361DB0232000A2479C /* DHVideoPlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051BE351DB0232000A2479C /* DHVideoPlayViewModel.swift */; };
 		C05468471DAEB43E00A4AC13 /* sdk.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C05468451DAEB43E00A4AC13 /* sdk.bundle */; };
 		C05468481DAEB43E00A4AC13 /* YTEngine.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C05468461DAEB43E00A4AC13 /* YTEngine.bundle */; };
+		C08E0C0B1DE9720600249810 /* DHJournalCellDetailDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08E0C0A1DE9720600249810 /* DHJournalCellDetailDataController.swift */; };
 		C08FD5621DB89A36007D615A /* DHSDKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08FD5611DB89A36007D615A /* DHSDKViewController.swift */; };
 		C08FD5651DB8A374007D615A /* DHSDKTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08FD5631DB8A374007D615A /* DHSDKTableViewCell.swift */; };
 		C08FD5661DB8A374007D615A /* DHSDKTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08FD5641DB8A374007D615A /* DHSDKTableViewCell.xib */; };
@@ -179,6 +180,7 @@
 		C051BE351DB0232000A2479C /* DHVideoPlayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoPlayViewModel.swift; sourceTree = "<group>"; };
 		C05468451DAEB43E00A4AC13 /* sdk.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = sdk.bundle; sourceTree = "<group>"; };
 		C05468461DAEB43E00A4AC13 /* YTEngine.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YTEngine.bundle; sourceTree = "<group>"; };
+		C08E0C0A1DE9720600249810 /* DHJournalCellDetailDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHJournalCellDetailDataController.swift; sourceTree = "<group>"; };
 		C08FD5611DB89A36007D615A /* DHSDKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHSDKViewController.swift; sourceTree = "<group>"; };
 		C08FD5631DB8A374007D615A /* DHSDKTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHSDKTableViewCell.swift; sourceTree = "<group>"; };
 		C08FD5641DB8A374007D615A /* DHSDKTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHSDKTableViewCell.xib; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				C017713D1DD6E828008D2421 /* DHJournalCellDataController.swift */,
+				C08E0C0A1DE9720600249810 /* DHJournalCellDetailDataController.swift */,
 			);
 			path = DataController;
 			sourceTree = "<group>";
@@ -976,6 +979,7 @@
 				C0A6906E1DB3B5C500DC0FA0 /* DHTutorialDetailDataController.swift in Sources */,
 				C051BE361DB0232000A2479C /* DHVideoPlayViewModel.swift in Sources */,
 				C0D3E0771DA449AE009AFDB0 /* DHVideoDataController.swift in Sources */,
+				C08E0C0B1DE9720600249810 /* DHJournalCellDetailDataController.swift in Sources */,
 				C08FD5651DB8A374007D615A /* DHSDKTableViewCell.swift in Sources */,
 				C0B4E2121DBE2EAA00295FFF /* DHRelatedVideoViewModel.m in Sources */,
 				C0F6307B1D9D5B8F00AF039F /* DHTutorialViewModel.swift in Sources */,
