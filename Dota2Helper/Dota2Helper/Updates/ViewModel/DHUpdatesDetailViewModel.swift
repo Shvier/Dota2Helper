@@ -6,13 +6,13 @@
 //  Copyright © 2016 Shvier. All rights reserved.
 //
 
-import UIKit
-
 class DHJournalCellDetailViewModel: NSObject {
 
-    static let sharedInstance = DHJournalCellDetailViewModel()
+    let dataController: DHUpdatesDetailDataController = DHUpdatesDetailDataController.sharedInstance
     
     func getDetailUpdates(model: DHNewsModel, _ success: @escaping (_ urlString: String) -> Void, failure: @autoclosure @escaping () -> Void) {
-    
+        dataController.getUpdatesDetail(date: model.date!, nid: model.nid!, success: { (urlString) in
+            success(urlString)
+        }, failure: failure)
     }
 }
