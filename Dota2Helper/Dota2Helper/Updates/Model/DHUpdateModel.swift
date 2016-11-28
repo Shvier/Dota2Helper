@@ -10,7 +10,7 @@ import UIKit
 
 class DHUpdateModel: NSObject {
 
-    var journalDescription: String?
+    var updateDescription: String?
     var title: String?
     var nid: String?
     var background: String?
@@ -19,7 +19,7 @@ class DHUpdateModel: NSObject {
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         if key == "description" {
-            setValue(value, forKey: "journalDescription")
+            setValue(value, forKey: "updateDescription")
         }
     }
     

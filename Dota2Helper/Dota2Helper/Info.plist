@@ -81,13 +81,13 @@
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
-			<string>icon_open_journal</string>
+			<string>icon_open_update</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
 			<string>实时更新最新游戏内容</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>更新</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>OpenJournal</string>
+			<string>OpenUpdate</string>
 		</dict>
 	</array>
 	<key>UILaunchStoryboardName</key>

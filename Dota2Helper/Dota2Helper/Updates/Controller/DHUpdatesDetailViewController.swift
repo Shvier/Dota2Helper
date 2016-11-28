@@ -1,30 +1,30 @@
 //
-//  DHNewsDetailViewController.swift
+//  DHUpdatesDetailViewController.swift
 //  Dota2Helper
 //
-//  Created by Shvier on 9/22/16.
+//  Created by Shvier on 9/26/16.
 //  Copyright © 2016 Shvier. All rights reserved.
 //
 
 import UIKit
 import WebKit
 
-class DHNewsDetailViewController: DHBaseDetailViewController, WKNavigationDelegate {
+class DHUpdatesDetailViewController: DHBaseDetailViewController, WKNavigationDelegate {
 
-    var newsModel: DHNewsModel?
-    var dataController: DHNewsDetailDataController?
-    var newsDetailView: DHNewsDetailView?
-    var loadingView: DHLoadingView?
-    lazy var viewModel: DHNewsDetailViewModel = {
-        return DHNewsDetailViewModel()
+    lazy var viewModel: DHUpdatesDetailViewModel = {
+        return DHUpdatesDetailViewModel()
     }()
-
+    
+    var updateModel: DHUpdateModel?
+    var updateDetailView: DHUpdateDetailView?
+    var loadingView: DHLoadingView?
+    
 // MARK: - 3D Touch Peek Menu
     @available(iOS 9.0, *)
     override var previewActionItems: [UIPreviewActionItem] {
         get {
             let openWithSafariAction: UIPreviewAction = UIPreviewAction(title: "使用Safari打开", style: .default, handler: { [unowned self] (UIPreviewAction, UIViewController) in
-                self.viewModel.getDetailNews(model: self.newsModel!, { (urlString) in
+                self.viewModel.getDetailUpdates(model: self.updateModel!, { (urlString) in
                     UIApplication.shared.openURL(URL(string: urlString)!)
                 }, failure: {} ())
             })
@@ -40,9 +40,9 @@ class DHNewsDetailViewController: DHBaseDetailViewController, WKNavigationDelega
     
 // MARK: - Life Cycle
     func handleData() {
-        newsDetailView = DHNewsDetailView(frame: CGRect(x: 0, y: 0, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight - kTabBarHeight))
-        viewModel.getDetailNews(model: newsModel!, { (urlString) in
-            self.newsDetailView?.loadRequest(request: URLRequest(url: URL(string: urlString)!))
+        updateDetailView = DHUpdateDetailView(frame: CGRect(x: 0, y: 0, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight - kTabBarHeight))
+        viewModel.getDetailUpdates(model: self.updateModel!, { [unowned self] (urlString) in
+            self.updateDetailView?.loadRequest(request: URLRequest(url: URL(string: urlString)!))
         }, failure: {} ())
     }
     
@@ -51,14 +51,14 @@ class DHNewsDetailViewController: DHBaseDetailViewController, WKNavigationDelega
     }
     
     func setContentView() {
-        newsDetailView?.webView?.navigationDelegate = self
-        view.addSubview(newsDetailView!)
+        updateDetailView?.webView?.navigationDelegate = self
+        view.addSubview(updateDetailView!)
         loadingView = addLoadingViewForViewController(self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         handleData()
         setContentView()
     }
@@ -66,5 +66,4 @@ class DHNewsDetailViewController: DHBaseDetailViewController, WKNavigationDelega
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
 }

@@ -1,5 +1,5 @@
 //
-//  DHJournalDetailView.swift
+//  DHUpdateDetailView.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 9/26/16.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class DHJournalDetailView: DHBaseDetailView {
+class DHUpdateDetailView: DHBaseDetailView {
         
 }

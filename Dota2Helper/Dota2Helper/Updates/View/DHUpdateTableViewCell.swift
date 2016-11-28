@@ -1,5 +1,5 @@
 //
-//  DHJournalTableViewCell.swift
+//  DHUpdateTableViewCell.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 9/26/16.
@@ -9,16 +9,16 @@
 import UIKit
 import Kingfisher
 
-let kJournalTableViewCellHeight: CGFloat = 90
+let kUpdateTableViewCellHeight: CGFloat = 90
 
-class DHJournalTableViewCell: UITableViewCell {
+class DHUpdateTableViewCell: UITableViewCell {
 
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var journalDescriptionLabel: UILabel!
+    @IBOutlet weak var updateDescriptionLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
-    var journalModel: DHJournalModel?
+    var updateModel: DHUpdateModel?
     
     override var frame: CGRect {
         get {
@@ -35,14 +35,14 @@ class DHJournalTableViewCell: UITableViewCell {
         }
     }
     
-    func bindDataWithViewModel(viewModel: DHJournalViewModel) {
-        self.journalModel = viewModel.journalModel
-        if let urlString = viewModel.background {
+    func bindDataWithModel(model: DHUpdateModel) {
+        self.updateModel = model
+        if let urlString = model.background {
             backgroundImageView.kf_setImage(with: URL(string: urlString))
         }
-        titleLabel.text = viewModel.title
-        journalDescriptionLabel.text = viewModel.journalDescription
-        timeLabel.text = viewModel.time
+        titleLabel.text = model.title
+        updateDescriptionLabel.text = model.updateDescription
+        timeLabel.text = model.time
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {

@@ -1,5 +1,5 @@
 //
-//  DHJournalViewController.swift
+//  DHUpdatesViewController.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 16/8/12.
@@ -10,21 +10,20 @@ import UIKit
 import MJRefresh
 import ReachabilitySwift
 
-class DHJournalViewController: DHBaseViewController {
+class DHUpdatesViewController: DHBaseViewController {
 
-    lazy var dataController: DHJournalDataController = {
-        return DHJournalDataController()
-    }()
-    lazy var viewModel: DHJournalCellViewModel = {
-        return DHJournalCellViewModel()
+    lazy var viewModel: DHUpdatesCellViewModel = {
+        return DHUpdatesCellViewModel()
     }()
     
+    lazy var updatesDataSource: [DHUpdateModel]? = {[]} ()
+
     var tableView: UITableView?
     var loadingView: DHLoadingView?
     var noNetworkView: DHNoNetworkView?
     
 // MARK: - Data Handler and View Renderer
-    func handleJournalData() {
+    func handleUpdateData() {
         tableView?.mj_header.beginRefreshing()
     }
     
@@ -32,23 +31,18 @@ class DHJournalViewController: DHBaseViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [unowned self] in
             self.endHeaderRefreshing()
         }
-        
-        dataController.requestJournalDataWithCallback(callback: { [unowned self] in
+
+        viewModel.refreshUpdates({ [unowned self] (updatesArray) in
+            self.updatesDataSource = updatesArray
             self.tableView?.mj_header.endRefreshing()
             self.renderTableViewCell()
-        }())
+        }, failure: {} ())
     }
     
     func beginFooterRefreshing() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [unowned self] in
             self.tableView?.mj_footer.endRefreshing()
         }
-        self.dataController.requestMoreJournal(callback: { [unowned self] in
-            self.tableView?.mj_footer.endRefreshing()
-            DispatchQueue.main.async(execute: { [unowned self] in
-                self.tableView?.reloadData()
-            })
-        }())
     }
     
     func endHeaderRefreshing() {
@@ -64,10 +58,10 @@ class DHJournalViewController: DHBaseViewController {
         })
     }
     
-    func loadToDetailVCWithJournalModel(journalModel: DHJournalModel) {
-        let journalDetailVC: DHJournalDetailViewController = DHJournalDetailViewController()
-        journalDetailVC.journalModel = journalModel
-        navigationController?.pushViewController(journalDetailVC, animated: true)
+    func loadToDetailVCWithUpdateModel(updateModel: DHUpdateModel) {
+        let updatesDetailVC: DHUpdatesDetailViewController = DHUpdatesDetailViewController()
+        updatesDetailVC.updateModel = updateModel
+        navigationController?.pushViewController(updatesDetailVC, animated: true)
     }
     
 // MARK: - Life Cycle
@@ -75,7 +69,7 @@ class DHJournalViewController: DHBaseViewController {
         let reachability = note.object as! Reachability
         if reachability.isReachable {
             noNetworkView?.hide()
-            handleJournalData()
+            handleUpdateData()
         } else {
             DHLog("Network not reachable")
             let alertController: UIAlertController = UIAlertController(title: "无法连接网络", message: nil, preferredStyle: .alert)
@@ -95,7 +89,7 @@ class DHJournalViewController: DHBaseViewController {
     func setContentView() {
         tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height), style: .plain)
         tableView?.backgroundColor = kTableViewBackgroundColor
-        tableView?.register(UINib(nibName: "DHJournalTableViewCell", bundle: nil), forCellReuseIdentifier: kJournalCellReuseIdentifier)
+        tableView?.register(UINib(nibName: "DHUpdateTableViewCell", bundle: nil), forCellReuseIdentifier: kUpdateCellReuseIdentifier)
         tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: { [unowned self] in
             self.beginHeaderRefreshing()
         })
@@ -123,34 +117,30 @@ class DHJournalViewController: DHBaseViewController {
      
 //        initLifeCycle()
         setContentView()
-        handleJournalData()
+        handleUpdateData()
     }
     
 }
 
 // MARK: - UITableViewDelegate
-extension DHJournalViewController: UITableViewDelegate, UITableViewDataSource {
+extension DHUpdatesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (dataController.journalDataSource?.count)! > 0 ? (dataController.journalDataSource?.count)! : 0
+        return (updatesDataSource?.count)!
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return kJournalTableViewCellHeight
+        return kUpdateTableViewCellHeight
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: DHJournalTableViewCell = tableView.dequeueReusableCell(withIdentifier: kJournalCellReuseIdentifier, for: indexPath) as! DHJournalTableViewCell
-        if (dataController.journalDataSource?.count)! > 0 {
-            let journalModel = dataController.journalDataSource?[indexPath.row] as! DHJournalModel
-            let cellViewModel: DHJournalViewModel = DHJournalViewModel(journal: journalModel)
-            cell.bindDataWithViewModel(viewModel: cellViewModel)
-            if #available(iOS 9.0, *) {
-                if traitCollection.forceTouchCapability == .available {
-                    registerForPreviewing(with: self, sourceView: cell)
-                }
-            } else {
-                // Fallback on earlier versions
+        let cell: DHUpdateTableViewCell = tableView.dequeueReusableCell(withIdentifier: kUpdateCellReuseIdentifier, for: indexPath) as! DHUpdateTableViewCell
+        cell.bindDataWithModel(model: (updatesDataSource?[indexPath.row])!)
+        if #available(iOS 9.0, *) {
+            if traitCollection.forceTouchCapability == .available {
+                registerForPreviewing(with: self, sourceView: cell)
             }
+        } else {
+            // Fallback on earlier versions
         }
         return cell
     }
@@ -158,10 +148,8 @@ extension DHJournalViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         setNaviAndTabStatus(isHidden: false)
-        if (dataController.journalDataSource?.count)! > 0 {
-            let cell: DHJournalTableViewCell = tableView.cellForRow(at: indexPath) as! DHJournalTableViewCell
-            loadToDetailVCWithJournalModel(journalModel: cell.journalModel!)
-        }
+        let cell: DHUpdateTableViewCell = tableView.cellForRow(at: indexPath) as! DHUpdateTableViewCell
+        loadToDetailVCWithUpdateModel(updateModel: cell.updateModel!)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -183,15 +171,15 @@ extension DHJournalViewController: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: UIViewControllerPreviewingDelegate
 @available(iOS 9.0, *)
-extension DHJournalViewController: UIViewControllerPreviewingDelegate {
+extension DHUpdatesViewController: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        let journalDetailVC: DHJournalDetailViewController = DHJournalDetailViewController()
-        let cell = previewingContext.sourceView as! DHJournalTableViewCell
-        journalDetailVC.journalModel = cell.journalModel
-        return journalDetailVC
+        let updatesDetailVC: DHUpdatesDetailViewController = DHUpdatesDetailViewController()
+        let cell = previewingContext.sourceView as! DHUpdateTableViewCell
+        updatesDetailVC.updateModel = cell.updateModel
+        return updatesDetailVC
     }
 }

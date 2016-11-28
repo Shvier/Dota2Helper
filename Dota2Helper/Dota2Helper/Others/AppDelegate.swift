@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             case "OpenTutorial":
                 tabbarVC?.selectedViewController = tabbarVC?.viewControllers?[2]
             break
-            case "OpenJournal":
+            case "OpenUpdate":
                 tabbarVC?.selectedViewController = tabbarVC?.viewControllers?[3]
             break
             default:
@@ -52,15 +52,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tutorialNaVC: UINavigationController = UINavigationController(rootViewController: tutorialVC)
         tutorialVC.tabBarItem = UITabBarItem(title: "攻略", image: UIImage(named: "tabbar_icon_tutorial")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "tabbar_icon_tutorial_h")?.withRenderingMode(.alwaysOriginal))
         
-        let journalVC: DHJournalViewController = DHJournalViewController()
-        let journalNaVC: UINavigationController = UINavigationController(rootViewController: journalVC)
-        journalVC.tabBarItem = UITabBarItem(title: "更新", image: UIImage(named: "tabbar_icon_journal")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "tabbar_icon_journal_h")?.withRenderingMode(.alwaysOriginal))
+        let updatesVC: DHUpdatesViewController = DHUpdatesViewController()
+        let updatesNaVC: UINavigationController = UINavigationController(rootViewController: updatesVC)
+        updatesVC.tabBarItem = UITabBarItem(title: "更新", image: UIImage(named: "tabbar_icon_update")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "tabbar_icon_update_h")?.withRenderingMode(.alwaysOriginal))
         
         let settingsVC: DHSettingsViewController = DHSettingsViewController()
         let settingsNaVC: UINavigationController = UINavigationController(rootViewController: settingsVC)
         settingsNaVC.tabBarItem = UITabBarItem(title: "其它", image: UIImage(named: "tabbar_icon_settings")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "tabbar_icon_settings_h")?.withRenderingMode(.alwaysOriginal))
         
-        tabbarVC?.viewControllers = [newsNaVC, videoNaVC, tutorialNaVC, journalNaVC, settingsNaVC]
+        tabbarVC?.viewControllers = [newsNaVC, videoNaVC, tutorialNaVC, updatesNaVC, settingsNaVC]
         
         tabbarVC?.tabBar.isTranslucent = false
         tabbarVC?.tabBar.barStyle = .black
