@@ -100,7 +100,7 @@
 		C0D4CFE31D5DBEF1008F824A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D4CFE11D5DBEF1008F824A /* LaunchScreen.storyboard */; };
 		C0D4D00C1D5DC2F1008F824A /* DHNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D00B1D5DC2F1008F824A /* DHNewsViewController.swift */; };
 		C0D4D00E1D5DC2FD008F824A /* DHSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D00D1D5DC2FD008F824A /* DHSettingsViewController.swift */; };
-		C0D4D0101D5DC30D008F824A /* DHTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D00F1D5DC30D008F824A /* DHTutorialViewController.swift */; };
+		C0D4D0101D5DC30D008F824A /* DHStrategyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D00F1D5DC30D008F824A /* DHStrategyViewController.swift */; };
 		C0D4D0121D5DC319008F824A /* DHVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D4D0111D5DC319008F824A /* DHVideoViewController.swift */; };
 		C0E6BF911D94342900872006 /* DHNewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6BF901D94342900872006 /* DHNewsDetailView.swift */; };
 		C0E6BF931D9434D400872006 /* DHNewsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E6BF921D9434D400872006 /* DHNewsDetailViewModel.swift */; };
@@ -237,7 +237,7 @@
 		C0D4CFE21D5DBEF1008F824A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0D4D00B1D5DC2F1008F824A /* DHNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsViewController.swift; sourceTree = "<group>"; };
 		C0D4D00D1D5DC2FD008F824A /* DHSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHSettingsViewController.swift; sourceTree = "<group>"; };
-		C0D4D00F1D5DC30D008F824A /* DHTutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialViewController.swift; sourceTree = "<group>"; };
+		C0D4D00F1D5DC30D008F824A /* DHStrategyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHStrategyViewController.swift; sourceTree = "<group>"; };
 		C0D4D0111D5DC319008F824A /* DHVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoViewController.swift; sourceTree = "<group>"; };
 		C0E38C501DADB6DA00E1D27A /* Youku-Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Youku-Bridge-Header.h"; sourceTree = "<group>"; };
 		C0E38C531DADB73500E1D27A /* YoukuMediaPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoukuMediaPlayer.h; sourceTree = "<group>"; };
@@ -725,7 +725,7 @@
 			isa = PBXGroup;
 			children = (
 				C0F6307C1D9D5CB700AF039F /* DHTutorialDataController.swift */,
-				C0D4D00F1D5DC30D008F824A /* DHTutorialViewController.swift */,
+				C0D4D00F1D5DC30D008F824A /* DHStrategyViewController.swift */,
 				C0A6906D1DB3B5C500DC0FA0 /* DHTutorialDetailDataController.swift */,
 				C0A690741DB3C0FD00DC0FA0 /* DHTutorialDetailViewController.swift */,
 			);
@@ -994,7 +994,7 @@
 				C0EB19ED1D94138D0053970A /* DHNewsDetailViewController.swift in Sources */,
 				C01771261DCDD158008D2421 /* DHNewsCellDataController.swift in Sources */,
 				C0E6BF911D94342900872006 /* DHNewsDetailView.swift in Sources */,
-				C0D4D0101D5DC30D008F824A /* DHTutorialViewController.swift in Sources */,
+				C0D4D0101D5DC30D008F824A /* DHStrategyViewController.swift in Sources */,
 				C0A690751DB3C0FD00DC0FA0 /* DHTutorialDetailViewController.swift in Sources */,
 				C029AB781DCC895C00063171 /* DHBaseNetworkRequest.swift in Sources */,
 				C01771231DCDA061008D2421 /* DHNetworkRequest.swift in Sources */,

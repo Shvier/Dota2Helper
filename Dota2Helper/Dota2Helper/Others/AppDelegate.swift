@@ -48,9 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let videoNaVC: UINavigationController = UINavigationController(rootViewController: videoVC)
         videoVC.tabBarItem = UITabBarItem(title: "视频", image: UIImage(named: "tabbar_icon_video")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "tabbar_icon_video_h")?.withRenderingMode(.alwaysOriginal))
         
-        let tutorialVC: DHTutorialViewController = DHTutorialViewController()
-        let tutorialNaVC: UINavigationController = UINavigationController(rootViewController: tutorialVC)
-        tutorialVC.tabBarItem = UITabBarItem(title: "攻略", image: UIImage(named: "tabbar_icon_tutorial")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "tabbar_icon_tutorial_h")?.withRenderingMode(.alwaysOriginal))
+        let strategyVC: DHStrategyViewController = DHStrategyViewController()
+        let strategyNaVC: UINavigationController = UINavigationController(rootViewController: strategyVC)
+        strategyVC.tabBarItem = UITabBarItem(title: "攻略", image: UIImage(named: "tabbar_icon_tutorial")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "tabbar_icon_tutorial_h")?.withRenderingMode(.alwaysOriginal))
         
         let updatesVC: DHUpdatesViewController = DHUpdatesViewController()
         let updatesNaVC: UINavigationController = UINavigationController(rootViewController: updatesVC)
@@ -60,7 +60,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let settingsNaVC: UINavigationController = UINavigationController(rootViewController: settingsVC)
         settingsNaVC.tabBarItem = UITabBarItem(title: "其它", image: UIImage(named: "tabbar_icon_settings")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "tabbar_icon_settings_h")?.withRenderingMode(.alwaysOriginal))
         
-        tabbarVC?.viewControllers = [newsNaVC, videoNaVC, tutorialNaVC, updatesNaVC, settingsNaVC]
+        tabbarVC?.viewControllers = [newsNaVC, videoNaVC, strategyNaVC, updatesNaVC, settingsNaVC]
         
         tabbarVC?.tabBar.isTranslucent = false
         tabbarVC?.tabBar.barStyle = .black

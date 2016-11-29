@@ -1,5 +1,5 @@
 //
-//  DHTutorialViewController.swift
+//  DHStrategyViewController.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 16/8/12.
@@ -10,7 +10,7 @@ import UIKit
 import MJRefresh
 import ReachabilitySwift
 
-class DHTutorialViewController: DHBaseViewController {
+class DHStrategyViewController: DHBaseViewController {
     
     enum TutorialCategory: NSInteger {
         case ALL = 0,
@@ -150,7 +150,7 @@ class DHTutorialViewController: DHBaseViewController {
 }
 
 // MARK: - UITableViewDelegate
-extension DHTutorialViewController: UITableViewDataSource, UITableViewDelegate {
+extension DHStrategyViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (dataController.tutorialDataSource?.count)! > 0 ? (dataController.tutorialDataSource?.count)! : 0
     }
@@ -200,7 +200,7 @@ extension DHTutorialViewController: UITableViewDataSource, UITableViewDelegate {
 
 // MARK: - UIViewControllerPreviewingDelegate
 @available(iOS 9.0, *)
-extension DHTutorialViewController: UIViewControllerPreviewingDelegate {
+extension DHStrategyViewController: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         let tutorialDetailVC: DHTutorialDetailViewController = DHTutorialDetailViewController()
         let cell: DHTutorialTableViewCell = previewingContext.sourceView as! DHTutorialTableViewCell
@@ -214,7 +214,7 @@ extension DHTutorialViewController: UIViewControllerPreviewingDelegate {
 }
 
 // MARK: - UISegmentedMenuDelegate
-extension DHTutorialViewController: UISegmentedMenuDelegate {
+extension DHStrategyViewController: UISegmentedMenuDelegate {
     func segmentedMenu(didSelectIndex index: NSInteger) {
         endHeaderRefreshing()
         tableView?.mj_header.beginRefreshing()
