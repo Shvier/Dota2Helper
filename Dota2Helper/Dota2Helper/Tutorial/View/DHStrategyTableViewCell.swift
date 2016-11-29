@@ -1,5 +1,5 @@
 //
-//  DHTutorialTableViewCell.swift
+//  DHStrategyTableViewCell.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 9/30/16.
@@ -9,15 +9,15 @@
 import UIKit
 import Kingfisher
 
-let kTutorialTableViewCellHeight: CGFloat = 90
+let kStrategyTableViewCellHeight: CGFloat = 90
 
-class DHTutorialTableViewCell: UITableViewCell {
+class DHStrategyTableViewCell: UITableViewCell {
 
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    var tutorialModel: DHTutorialModel?
+    var strategyModel: DHStrategyModel?
     
     override var frame: CGRect {
         get {
@@ -34,13 +34,12 @@ class DHTutorialTableViewCell: UITableViewCell {
         }
     }
     
-    func bindDataWithViewModel(viewModel: DHTutorialCellViewModel) {
-        self.tutorialModel = viewModel.tutorialModel
+    func bindDataWithViewModel(viewModel: DHStrategyCellViewModel) {
         if let urlString = viewModel.background {
             backgroundImageView.kf_setImage(with: URL(string: urlString))
         }
         titleLabel.text = viewModel.title
-        descriptionLabel.text = viewModel.tutorialDescription
+        descriptionLabel.text = viewModel.strategyDescription
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {

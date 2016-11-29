@@ -1,14 +1,14 @@
 //
-//  DHTutorialDataController.swift
+//  DHStrategyCellDataController.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 15/11/2016.
 //  Copyright © 2016 Shvier. All rights reserved.
 //
 
-class DHTutorialCellDataController: NSObject {
+class DHStrategyCellDataController: NSObject {
 
-    static let sharedInstance = DHTutorialCellDataController()
+    static let sharedInstance = DHStrategyCellDataController()
     
     func getAllStrategies(success: @escaping(_ response: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
         DHGetStrategiesRequest.requestAllStrategiesData(success: success, failure: failure)

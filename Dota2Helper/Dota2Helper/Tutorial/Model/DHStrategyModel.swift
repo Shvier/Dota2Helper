@@ -1,5 +1,5 @@
 //
-//  DHTutorialModel.swift
+//  DHStrategyModel.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 9/30/16.
@@ -8,17 +8,17 @@
 
 import UIKit
 
-class DHTutorialModel: NSObject {
+class DHStrategyModel: NSObject {
 
     var date: String?
     var title: String?
     var background: String?
     var nid: String?
-    var tutorialDescription: String?
+    var strategyDescription: String?
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         if key == "description" {
-            setValue(value, forKey: "tutorialDescription")
+            setValue(value, forKey: "strategyDescription")
         }
     }
     

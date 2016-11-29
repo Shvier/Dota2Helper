@@ -1,5 +1,5 @@
 //
-//  DHTutorialCellViewModel.swift
+//  DHStrategyCellViewModel.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 9/30/16.
@@ -8,27 +8,27 @@
 
 import UIKit
 
-class DHTutorialCellViewModel: NSObject {
+class DHStrategyCellViewModel: NSObject {
 
-    var tutorialModel: DHTutorialModel?
+    var strategyModel: DHStrategyModel?
     var date: String?
     var title: String?
     var background: String?
     var nid: String?
-    var tutorialDescription: String?
+    var strategyDescription: String?
     
-    init(tutorialModel: DHTutorialModel?) {
+    init(strategyModel: DHStrategyModel?) {
         super.init()
         
-        self.tutorialModel = tutorialModel
-        self.date = tutorialModel?.date
-        self.title = tutorialModel?.title
-        self.background = tutorialModel?.background
-        self.nid = tutorialModel?.nid
-        self.tutorialDescription = tutorialModel?.tutorialDescription
+        self.strategyModel = strategyModel
+        self.date = strategyModel?.date
+        self.title = strategyModel?.title
+        self.background = strategyModel?.background
+        self.nid = strategyModel?.nid
+        self.strategyDescription = strategyModel?.strategyDescription
     }
     
-    let dataController: DHTutorialCellDataController = DHTutorialCellDataController.sharedInstance
+    let dataController: DHStrategyCellDataController = DHStrategyCellDataController.sharedInstance
 
     func getAllStrategies(_ callback: @autoclosure @escaping () -> Void) {
         dataController.getAllStrategies(success: { [unowned self] (response) in

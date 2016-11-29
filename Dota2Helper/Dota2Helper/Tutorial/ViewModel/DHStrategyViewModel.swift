@@ -1,5 +1,5 @@
 //
-//  DHTutorialViewModel.swift
+//  DHStrategyViewModel.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 9/29/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DHTutorialViewModel: NSObject {
+class DHStrategyViewModel: NSObject {
 
     lazy var tutorials: NSArray? = {[]} ()
 

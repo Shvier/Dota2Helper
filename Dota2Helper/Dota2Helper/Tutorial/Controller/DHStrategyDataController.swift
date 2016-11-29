@@ -38,7 +38,7 @@ class DHTutorialDataController: NSObject {
                     let tutorialArray = result["strategies"]
                     self.tutorialDataSource?.removeAllObjects()
                     for tutorialDict in tutorialArray as! [NSDictionary] {
-                        let tutorial: DHTutorialModel = DHTutorialModel()
+                        let tutorial: DHStrategyModel = DHStrategyModel()
                         tutorial.setValuesForKeys(tutorialDict as! [String : Any])
                         self.tutorialDataSource?.add(tutorial)
                     }
@@ -54,7 +54,7 @@ class DHTutorialDataController: NSObject {
     
     func requestMoreTutorial( callback: @autoclosure @escaping () -> Void) {
         let url = URL(string: kLoadMoreStrategiesUrl)
-        let lastModel = tutorialDataSource![(tutorialDataSource?.count)! - 1] as! DHTutorialModel
+        let lastModel = tutorialDataSource![(tutorialDataSource?.count)! - 1] as! DHStrategyModel
         let parameter: [String] = ["all", lastModel.nid!]
         DHNetworkRequestManager.sharedInstance.requestWithUrl(type: .DEFAULT, urlHeader: url, parameters: parameter) { (Data, URLResponse, Error) in
             if Error == nil {
@@ -62,7 +62,7 @@ class DHTutorialDataController: NSObject {
                     let result = try JSONSerialization.jsonObject(with: Data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                     let tutorialArray = result["strategies"]
                     for tutorialDict in tutorialArray as! [NSDictionary] {
-                        let tutorial: DHTutorialModel = DHTutorialModel()
+                        let tutorial: DHStrategyModel = DHStrategyModel()
                         tutorial.setValuesForKeys(tutorialDict as! [String : Any])
                         self.tutorialDataSource?.add(tutorial)
                     }

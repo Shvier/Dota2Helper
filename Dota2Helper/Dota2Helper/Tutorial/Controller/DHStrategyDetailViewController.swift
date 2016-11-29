@@ -9,9 +9,9 @@
 import UIKit
 import WebKit
 
-class DHTutorialDetailViewController: DHBaseDetailViewController, WKNavigationDelegate {
+class DHStrategyDetailViewController: DHBaseDetailViewController, WKNavigationDelegate {
 
-    var tutorialModel: DHTutorialModel?
+    var strategyModel: DHStrategyModel?
     var dataController: DHTutorialDetailDataController?
     var tutorialDetailView: DHNewsDetailView?
     var loadingView: DHLoadingView?
@@ -23,7 +23,7 @@ class DHTutorialDetailViewController: DHBaseDetailViewController, WKNavigationDe
             weak var weakSelf = self
             let openWithSafariAction: UIPreviewAction = UIPreviewAction(title: "使用Safari打开", style: .default, handler: { (UIPreviewAction, UIViewController) in
                 if let strongSelf = weakSelf {
-                    let request = strongSelf.dataController?.requestTutorialDetailDataUrlWithTutorialModel(tutorialModel: strongSelf.tutorialModel!)
+                    let request = strongSelf.dataController?.requestTutorialDetailDataUrlWithTutorialModel(strategyModel: strongSelf.strategyModel!)
                     UIApplication.shared.openURL((request?.url)!)
                 }
             })

@@ -92,10 +92,10 @@ class DHStrategyViewController: DHBaseViewController {
         })
     }
     
-    func loadToDetailVCWithTutorialModel(tutorialModel: DHTutorialModel) {
-        let tutorialDetailVC: DHTutorialDetailViewController = DHTutorialDetailViewController()
-        tutorialDetailVC.tutorialModel = tutorialModel;
-        navigationController?.pushViewController(tutorialDetailVC, animated: true)
+    func loadToDetailVCWithTutorialModel(strategyModel: DHStrategyModel) {
+        let strategyDetailVC: DHStrategyDetailViewController = DHStrategyDetailViewController()
+        strategyDetailVC.strategyModel = strategyModel;
+        navigationController?.pushViewController(strategyDetailVC, animated: true)
     }
     
 // MARK: - Life Cycle
@@ -156,10 +156,10 @@ extension DHStrategyViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kTutorialCellReuseIdentifier, for: indexPath) as! DHTutorialTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: kTutorialCellReuseIdentifier, for: indexPath) as! DHStrategyTableViewCell
         if (dataController.tutorialDataSource?.count)! > 0 {
-            let tutorialModel = dataController.tutorialDataSource?[indexPath.row] as! DHTutorialModel
-            let cellViewModel: DHTutorialCellViewModel = DHTutorialCellViewModel.init(tutorialModel: tutorialModel)
+            let tutorialModel = dataController.tutorialDataSource?[indexPath.row] as! DHStrategyModel
+            let cellViewModel: DHStrategyCellViewModel = DHStrategyCellViewModel.init(strategyModel: tutorialModel)
             cell.bindDataWithViewModel(viewModel: cellViewModel)
             if #available(iOS 9.0, *) {
                 if traitCollection.forceTouchCapability == .available {
@@ -173,14 +173,14 @@ extension DHStrategyViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return kTutorialTableViewCellHeight
+        return kStrategyTableViewCellHeight
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         setNaviAndTabStatus(isHidden: false)
-        let cell: DHTutorialTableViewCell = tableView.cellForRow(at: indexPath) as! DHTutorialTableViewCell
-        loadToDetailVCWithTutorialModel(tutorialModel: cell.tutorialModel!)
+        let cell: DHStrategyTableViewCell = tableView.cellForRow(at: indexPath) as! DHStrategyTableViewCell
+        loadToDetailVCWithTutorialModel(strategyModel: cell.strategyModel!)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -202,10 +202,10 @@ extension DHStrategyViewController: UITableViewDataSource, UITableViewDelegate {
 @available(iOS 9.0, *)
 extension DHStrategyViewController: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        let tutorialDetailVC: DHTutorialDetailViewController = DHTutorialDetailViewController()
-        let cell: DHTutorialTableViewCell = previewingContext.sourceView as! DHTutorialTableViewCell
-        tutorialDetailVC.tutorialModel = cell.tutorialModel
-        return tutorialDetailVC
+        let strategyDetailVC: DHStrategyDetailViewController = DHStrategyDetailViewController()
+        let cell: DHStrategyTableViewCell = previewingContext.sourceView as! DHStrategyTableViewCell
+        strategyDetailVC.strategyModel = cell.strategyModel
+        return strategyDetailVC
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {

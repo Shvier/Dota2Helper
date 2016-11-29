@@ -10,8 +10,8 @@ import UIKit
 
 class DHTutorialDetailDataController: NSObject {
 
-    func requestTutorialDetailDataUrlWithTutorialModel(tutorialModel: DHTutorialModel) -> URLRequest {
-        let parameter: NSArray = NSArray(array: [(tutorialModel.date)!, (tutorialModel.nid)!])
+    func requestTutorialDetailDataUrlWithTutorialModel(strategyModel: DHStrategyModel) -> URLRequest {
+        let parameter: NSArray = NSArray(array: [(strategyModel.date)!, (strategyModel.nid)!])
         let url: URL = URL(string: kGetNewsDetailUrl)!
         let request: URLRequest = DHNetworkRequestManager().convertUrlToDEFAULTRequset(urlHeader: url, parameters: parameter)
         return request

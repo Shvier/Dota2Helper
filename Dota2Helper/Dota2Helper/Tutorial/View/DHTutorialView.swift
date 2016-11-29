@@ -14,8 +14,8 @@ class DHTutorialView: UIView {
     var toolMenuView: UIScrollView?
     var tableView: UITableView?
     
-    func bindDataWithViewModel(viewModel: DHTutorialViewModel) {
-        self.tutorials = viewModel.tutorials
+    func bindDataWithViewModel(viewModel: DHStrategyModel) {
+    
     }
     
     override init(frame: CGRect) {
