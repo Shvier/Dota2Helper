@@ -34,12 +34,13 @@ class DHStrategyTableViewCell: UITableViewCell {
         }
     }
     
-    func bindDataWithViewModel(viewModel: DHStrategyCellViewModel) {
-        if let urlString = viewModel.background {
+    func bindDataWithModel(model: DHStrategyModel) {
+        self.strategyModel = model
+        if let urlString = model.background {
             backgroundImageView.kf_setImage(with: URL(string: urlString))
         }
-        titleLabel.text = viewModel.title
-        descriptionLabel.text = viewModel.strategyDescription
+        titleLabel.text = model.title
+        descriptionLabel.text = model.strategyDescription
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {

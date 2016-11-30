@@ -12,23 +12,26 @@ import ReachabilitySwift
 
 class DHStrategyViewController: DHBaseViewController {
     
-    enum TutorialCategory: NSInteger {
+    enum StrategyCategory: NSInteger {
         case ALL = 0,
         NEWER,
         STEP,
         SKILL
     }
     
-    lazy var dataController: DHTutorialDataController = {
-        return DHTutorialDataController()
+    lazy var viewModel: DHStrategyCellViewModel = {
+        return DHStrategyCellViewModel()
     }()
+    
+    lazy var strategiesDataSource: [DHStrategyModel]? = {[]} ()
+
     var tableView: UITableView?
     var loadingView: DHLoadingView?
     var menu: UISegmentedMenu?
     var noNetworkView: DHNoNetworkView?
     
 // MARK: - Data Handler and View Renderer
-    func handleTutorialData() {
+    func handleStrategyData() {
         tableView?.mj_header.beginRefreshing()
     }
     
@@ -37,31 +40,35 @@ class DHStrategyViewController: DHBaseViewController {
             self.endHeaderRefreshing()
         }
         let currentIndex = self.menu?.currentSelectedIndex()
-        if let tutorialType = TutorialCategory(rawValue: currentIndex!) {
-            switch tutorialType {
+        if let strategyType = StrategyCategory(rawValue: currentIndex!) {
+            switch strategyType {
             case .ALL:
-                self.dataController.requestTutorialAllWithCallback(callback: { [unowned self] in
+                self.viewModel.getAllStrategies({ (strategiesDataSource) in
+                    self.strategiesDataSource = strategiesDataSource
                     self.endHeaderRefreshing()
                     self.renderTableViewCell()
-                }())
+                }, failure: {} ())
                 break
             case .NEWER:
-                self.dataController.requestTutorialNewerWithCallback(callback: { [unowned self] in
+                self.viewModel.getNewerStrategies({ (strategiesDataSource) in
+                    self.strategiesDataSource = strategiesDataSource
                     self.endHeaderRefreshing()
                     self.renderTableViewCell()
-                }())
+                }, failure: {} ())
                 break
             case .STEP:
-                self.dataController.requestTutorialStepWithCallback(callback: { [unowned self] in
+                self.viewModel.getStepStrategies({ (strategiesDataSource) in
+                    self.strategiesDataSource = strategiesDataSource
                     self.endHeaderRefreshing()
                     self.renderTableViewCell()
-                }())
+                }, failure: {} ())
                 break
             case .SKILL:
-                self.dataController.requestTutorialSkillWithCallback(callback: { [unowned self] in
+                self.viewModel.getSkillStrategies({ (strategiesDataSource) in
+                    self.strategiesDataSource = strategiesDataSource
                     self.endHeaderRefreshing()
                     self.renderTableViewCell()
-                }())
+                }, failure: {} ())
                 break
             }
         }
@@ -71,12 +78,47 @@ class DHStrategyViewController: DHBaseViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [unowned self] in
             self.tableView?.mj_footer.endRefreshing()
         }
-        self.dataController.requestMoreTutorial(callback: { [unowned self] in
-            self.tableView?.mj_footer.endRefreshing()
-            DispatchQueue.main.async(execute: { [unowned self] in
-                self.tableView?.reloadData()
-            })
-        }())
+        let currentIndex = self.menu?.currentSelectedIndex()
+        if let strategyType = StrategyCategory(rawValue: currentIndex!) {
+            switch strategyType {
+            case .ALL:
+                viewModel.loadMoreAllStrategies(nid: (strategiesDataSource?.last?.nid)!, success: { [unowned self] (strategiesDataSource) in
+                    self.strategiesDataSource?.append(contentsOf: strategiesDataSource)
+                    self.tableView?.mj_footer.endRefreshing()
+                    DispatchQueue.main.async(execute: { [unowned self] in
+                        self.tableView?.reloadData()
+                    })
+                }, failure: {} ())
+                break
+            case .NEWER:
+                viewModel.loadMoreNewerStrategies(nid: (strategiesDataSource?.last?.nid)!, success: { [unowned self] (strategiesDataSource) in
+                    self.strategiesDataSource?.append(contentsOf: strategiesDataSource)
+                    self.tableView?.mj_footer.endRefreshing()
+                    DispatchQueue.main.async(execute: { [unowned self] in
+                        self.tableView?.reloadData()
+                    })
+                }, failure: {} ())
+                break
+            case .STEP:
+                viewModel.loadMoreStepStrategies(nid: (strategiesDataSource?.last?.nid)!, success: { [unowned self] (strategiesDataSource) in
+                    self.strategiesDataSource?.append(contentsOf: strategiesDataSource)
+                    self.tableView?.mj_footer.endRefreshing()
+                    DispatchQueue.main.async(execute: { [unowned self] in
+                        self.tableView?.reloadData()
+                    })
+                }, failure: {} ())
+                break
+            case .SKILL:
+                viewModel.loadMoreSkillStrategies(nid: (strategiesDataSource?.last?.nid)!, success: { [unowned self] (strategiesDataSource) in
+                    self.strategiesDataSource?.append(contentsOf: strategiesDataSource)
+                    self.tableView?.mj_footer.endRefreshing()
+                    DispatchQueue.main.async(execute: { [unowned self] in
+                        self.tableView?.reloadData()
+                    })
+                }, failure: {} ())
+                break
+            }
+        }
     }
     
     func endHeaderRefreshing() {
@@ -92,7 +134,7 @@ class DHStrategyViewController: DHBaseViewController {
         })
     }
     
-    func loadToDetailVCWithTutorialModel(strategyModel: DHStrategyModel) {
+    func loadToDetailVCWithStrategyModel(strategyModel: DHStrategyModel) {
         let strategyDetailVC: DHStrategyDetailViewController = DHStrategyDetailViewController()
         strategyDetailVC.strategyModel = strategyModel;
         navigationController?.pushViewController(strategyDetailVC, animated: true)
@@ -103,7 +145,7 @@ class DHStrategyViewController: DHBaseViewController {
         let reachability = note.object as! Reachability
         if reachability.isReachable {
             noNetworkView?.hide()
-            handleTutorialData()
+            handleStrategyData()
         } else {
             DHLog("Network not reachable")
             let alertController: UIAlertController = UIAlertController(title: "无法连接网络", message: nil, preferredStyle: .alert)
@@ -125,7 +167,7 @@ class DHStrategyViewController: DHBaseViewController {
         menu?.delegate = self
         tableView = UITableView(frame: CGRect(x: 0, y: 0 + (menu?.bounds.size.height)!, width: view.bounds.size.width, height: view.bounds.size.height - (menu?.bounds.size.height)!), style: .plain)
         tableView?.backgroundColor = kTableViewBackgroundColor
-        tableView?.register(UINib(nibName: "DHTutorialTableViewCell", bundle: nil), forCellReuseIdentifier: kTutorialCellReuseIdentifier)
+        tableView?.register(UINib(nibName: "DHStrategyTableViewCell", bundle: nil), forCellReuseIdentifier: kStrategyCellReuseIdentifier)
         tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: { [unowned self] in
             self.beginHeaderRefreshing()
         })
@@ -144,7 +186,7 @@ class DHStrategyViewController: DHBaseViewController {
         super.viewDidLoad()
         
         setContentView()
-        handleTutorialData()
+        handleStrategyData()
     }
     
 }
@@ -152,22 +194,18 @@ class DHStrategyViewController: DHBaseViewController {
 // MARK: - UITableViewDelegate
 extension DHStrategyViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (dataController.tutorialDataSource?.count)! > 0 ? (dataController.tutorialDataSource?.count)! : 0
+        return (strategiesDataSource?.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: kTutorialCellReuseIdentifier, for: indexPath) as! DHStrategyTableViewCell
-        if (dataController.tutorialDataSource?.count)! > 0 {
-            let tutorialModel = dataController.tutorialDataSource?[indexPath.row] as! DHStrategyModel
-            let cellViewModel: DHStrategyCellViewModel = DHStrategyCellViewModel.init(strategyModel: tutorialModel)
-            cell.bindDataWithViewModel(viewModel: cellViewModel)
-            if #available(iOS 9.0, *) {
-                if traitCollection.forceTouchCapability == .available {
-                    registerForPreviewing(with: self, sourceView: cell)
-                }
-            } else {
-                // Fallback on earlier versions
+        let cell = tableView.dequeueReusableCell(withIdentifier: kStrategyCellReuseIdentifier, for: indexPath) as! DHStrategyTableViewCell
+        cell.bindDataWithModel(model: (strategiesDataSource?[indexPath.row])!)
+        if #available(iOS 9.0, *) {
+            if traitCollection.forceTouchCapability == .available {
+                registerForPreviewing(with: self, sourceView: cell)
             }
+        } else {
+            // Fallback on earlier versions
         }
         return cell
     }
@@ -180,7 +218,7 @@ extension DHStrategyViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         setNaviAndTabStatus(isHidden: false)
         let cell: DHStrategyTableViewCell = tableView.cellForRow(at: indexPath) as! DHStrategyTableViewCell
-        loadToDetailVCWithTutorialModel(strategyModel: cell.strategyModel!)
+        loadToDetailVCWithStrategyModel(strategyModel: cell.strategyModel!)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
