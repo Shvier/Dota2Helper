@@ -115,7 +115,6 @@
 		C0EFB0ED1DB61E5C009001C1 /* DHBaseDetailDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EFB0EC1DB61E5C009001C1 /* DHBaseDetailDataController.swift */; };
 		C0F630791D9D5B7800AF039F /* DHTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F630781D9D5B7800AF039F /* DHTutorialView.swift */; };
 		C0F6307B1D9D5B8F00AF039F /* DHStrategyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F6307A1D9D5B8F00AF039F /* DHStrategyViewModel.swift */; };
-		C0F6307D1D9D5CB700AF039F /* DHStrategyDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F6307C1D9D5CB700AF039F /* DHStrategyDataController.swift */; };
 		E75E4B5C1DA8D7AC00612599 /* DHLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75E4B5B1DA8D7AC00612599 /* DHLoadingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -271,7 +270,6 @@
 		C0EFB0EC1DB61E5C009001C1 /* DHBaseDetailDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseDetailDataController.swift; sourceTree = "<group>"; };
 		C0F630781D9D5B7800AF039F /* DHTutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialView.swift; sourceTree = "<group>"; };
 		C0F6307A1D9D5B8F00AF039F /* DHStrategyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHStrategyViewModel.swift; sourceTree = "<group>"; };
-		C0F6307C1D9D5CB700AF039F /* DHStrategyDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHStrategyDataController.swift; sourceTree = "<group>"; };
 		E75E4B5B1DA8D7AC00612599 /* DHLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHLoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -724,7 +722,6 @@
 		C0D4CFFB1D5DC168008F824A /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C0F6307C1D9D5CB700AF039F /* DHStrategyDataController.swift */,
 				C0D4D00F1D5DC30D008F824A /* DHStrategyViewController.swift */,
 				C0A6906D1DB3B5C500DC0FA0 /* DHTutorialDetailDataController.swift */,
 				C0A690741DB3C0FD00DC0FA0 /* DHStrategyDetailViewController.swift */,
@@ -1032,7 +1029,6 @@
 				C0D3E0791DA44A06009AFDB0 /* DHVideoCellViewModel.swift in Sources */,
 				C0B7A4C11D8ECC4E008D10A0 /* DHNewsModel.swift in Sources */,
 				C01981BB1DB76282009AE757 /* UISegmentedMenu.swift in Sources */,
-				C0F6307D1D9D5CB700AF039F /* DHStrategyDataController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
