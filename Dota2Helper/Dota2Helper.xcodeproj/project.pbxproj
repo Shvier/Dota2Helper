@@ -38,16 +38,13 @@
 		C06DF8C51DEEF75700EDD9AA /* DHSDKTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C06DF89F1DEEF75700EDD9AA /* DHSDKTableViewCell.xib */; };
 		C06DF8C61DEEF75700EDD9AA /* DHStrategyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DF8A21DEEF75700EDD9AA /* DHStrategyDetailViewController.swift */; };
 		C06DF8C71DEEF75700EDD9AA /* DHStrategyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DF8A31DEEF75700EDD9AA /* DHStrategyViewController.swift */; };
-		C06DF8C81DEEF75700EDD9AA /* DHTutorialDetailDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DF8A41DEEF75700EDD9AA /* DHTutorialDetailDataController.swift */; };
 		C06DF8C91DEEF75700EDD9AA /* DHStrategyCellDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DF8A61DEEF75700EDD9AA /* DHStrategyCellDataController.swift */; };
 		C06DF8CA1DEEF75700EDD9AA /* DHStrategyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DF8A81DEEF75700EDD9AA /* DHStrategyModel.swift */; };
 		C06DF8CB1DEEF75700EDD9AA /* DHStrategyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DF8AA1DEEF75700EDD9AA /* DHStrategyDetailView.swift */; };
 		C06DF8CC1DEEF75700EDD9AA /* DHStrategyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DF8AB1DEEF75700EDD9AA /* DHStrategyTableViewCell.swift */; };
 		C06DF8CD1DEEF75700EDD9AA /* DHStrategyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C06DF8AC1DEEF75700EDD9AA /* DHStrategyTableViewCell.xib */; };
-		C06DF8CE1DEEF75700EDD9AA /* DHTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DF8AD1DEEF75700EDD9AA /* DHTutorialView.swift */; };
 		C06DF8CF1DEEF75700EDD9AA /* DHStrategyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DF8AF1DEEF75700EDD9AA /* DHStrategyCellViewModel.swift */; };
 		C06DF8D01DEEF75700EDD9AA /* DHStrategyDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DF8B01DEEF75700EDD9AA /* DHStrategyDetailViewModel.swift */; };
-		C06DF8D11DEEF75700EDD9AA /* DHStrategyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DF8B11DEEF75700EDD9AA /* DHStrategyViewModel.swift */; };
 		C06DF8D21DEEF75700EDD9AA /* DHUpdatesDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DF8B41DEEF75700EDD9AA /* DHUpdatesDetailViewController.swift */; };
 		C06DF8D31DEEF75700EDD9AA /* DHUpdatesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DF8B51DEEF75700EDD9AA /* DHUpdatesViewController.swift */; };
 		C06DF8D41DEEF75700EDD9AA /* DHUpdatesCellDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DF8B71DEEF75700EDD9AA /* DHUpdatesCellDataController.swift */; };
@@ -58,6 +55,7 @@
 		C06DF8D91DEEF75700EDD9AA /* DHUpdateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C06DF8BE1DEEF75700EDD9AA /* DHUpdateTableViewCell.xib */; };
 		C06DF8DA1DEEF75700EDD9AA /* DHUpdatesCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DF8C01DEEF75700EDD9AA /* DHUpdatesCellViewModel.swift */; };
 		C06DF8DB1DEEF75700EDD9AA /* DHUpdatesDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DF8C11DEEF75700EDD9AA /* DHUpdatesDetailViewModel.swift */; };
+		C06DF8DD1DEEFCD800EDD9AA /* DHStrategyDetailDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DF8DC1DEEFCD800EDD9AA /* DHStrategyDetailDataController.swift */; };
 		C09648BB1DAEB92900D75D21 /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648BA1DAEB92900D75D21 /* libz.1.tbd */; };
 		C09648BD1DAEB93300D75D21 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648BC1DAEB93300D75D21 /* libxml2.2.tbd */; };
 		C09648BF1DAEB94600D75D21 /* libiconv.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648BE1DAEB94600D75D21 /* libiconv.2.tbd */; };
@@ -167,16 +165,13 @@
 		C06DF89F1DEEF75700EDD9AA /* DHSDKTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHSDKTableViewCell.xib; sourceTree = "<group>"; };
 		C06DF8A21DEEF75700EDD9AA /* DHStrategyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHStrategyDetailViewController.swift; sourceTree = "<group>"; };
 		C06DF8A31DEEF75700EDD9AA /* DHStrategyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHStrategyViewController.swift; sourceTree = "<group>"; };
-		C06DF8A41DEEF75700EDD9AA /* DHTutorialDetailDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialDetailDataController.swift; sourceTree = "<group>"; };
 		C06DF8A61DEEF75700EDD9AA /* DHStrategyCellDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHStrategyCellDataController.swift; sourceTree = "<group>"; };
 		C06DF8A81DEEF75700EDD9AA /* DHStrategyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHStrategyModel.swift; sourceTree = "<group>"; };
 		C06DF8AA1DEEF75700EDD9AA /* DHStrategyDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHStrategyDetailView.swift; sourceTree = "<group>"; };
 		C06DF8AB1DEEF75700EDD9AA /* DHStrategyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHStrategyTableViewCell.swift; sourceTree = "<group>"; };
 		C06DF8AC1DEEF75700EDD9AA /* DHStrategyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHStrategyTableViewCell.xib; sourceTree = "<group>"; };
-		C06DF8AD1DEEF75700EDD9AA /* DHTutorialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHTutorialView.swift; sourceTree = "<group>"; };
 		C06DF8AF1DEEF75700EDD9AA /* DHStrategyCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHStrategyCellViewModel.swift; sourceTree = "<group>"; };
 		C06DF8B01DEEF75700EDD9AA /* DHStrategyDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHStrategyDetailViewModel.swift; sourceTree = "<group>"; };
-		C06DF8B11DEEF75700EDD9AA /* DHStrategyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHStrategyViewModel.swift; sourceTree = "<group>"; };
 		C06DF8B41DEEF75700EDD9AA /* DHUpdatesDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHUpdatesDetailViewController.swift; sourceTree = "<group>"; };
 		C06DF8B51DEEF75700EDD9AA /* DHUpdatesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHUpdatesViewController.swift; sourceTree = "<group>"; };
 		C06DF8B71DEEF75700EDD9AA /* DHUpdatesCellDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHUpdatesCellDataController.swift; sourceTree = "<group>"; };
@@ -187,6 +182,7 @@
 		C06DF8BE1DEEF75700EDD9AA /* DHUpdateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHUpdateTableViewCell.xib; sourceTree = "<group>"; };
 		C06DF8C01DEEF75700EDD9AA /* DHUpdatesCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHUpdatesCellViewModel.swift; sourceTree = "<group>"; };
 		C06DF8C11DEEF75700EDD9AA /* DHUpdatesDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHUpdatesDetailViewModel.swift; sourceTree = "<group>"; };
+		C06DF8DC1DEEFCD800EDD9AA /* DHStrategyDetailDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHStrategyDetailDataController.swift; sourceTree = "<group>"; };
 		C09648BA1DAEB92900D75D21 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
 		C09648BC1DAEB93300D75D21 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		C09648BE1DAEB94600D75D21 /* libiconv.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.tbd; path = usr/lib/libiconv.2.tbd; sourceTree = SDKROOT; };
@@ -457,7 +453,6 @@
 			children = (
 				C06DF8A21DEEF75700EDD9AA /* DHStrategyDetailViewController.swift */,
 				C06DF8A31DEEF75700EDD9AA /* DHStrategyViewController.swift */,
-				C06DF8A41DEEF75700EDD9AA /* DHTutorialDetailDataController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -465,6 +460,7 @@
 		C06DF8A51DEEF75700EDD9AA /* DataController */ = {
 			isa = PBXGroup;
 			children = (
+				C06DF8DC1DEEFCD800EDD9AA /* DHStrategyDetailDataController.swift */,
 				C06DF8A61DEEF75700EDD9AA /* DHStrategyCellDataController.swift */,
 			);
 			path = DataController;
@@ -484,7 +480,6 @@
 				C06DF8AA1DEEF75700EDD9AA /* DHStrategyDetailView.swift */,
 				C06DF8AB1DEEF75700EDD9AA /* DHStrategyTableViewCell.swift */,
 				C06DF8AC1DEEF75700EDD9AA /* DHStrategyTableViewCell.xib */,
-				C06DF8AD1DEEF75700EDD9AA /* DHTutorialView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -494,7 +489,6 @@
 			children = (
 				C06DF8AF1DEEF75700EDD9AA /* DHStrategyCellViewModel.swift */,
 				C06DF8B01DEEF75700EDD9AA /* DHStrategyDetailViewModel.swift */,
-				C06DF8B11DEEF75700EDD9AA /* DHStrategyViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -948,7 +942,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C06DF8C81DEEF75700EDD9AA /* DHTutorialDetailDataController.swift in Sources */,
 				C051BE361DB0232000A2479C /* DHVideoPlayViewModel.swift in Sources */,
 				C06DF8C31DEEF75700EDD9AA /* DHSettingsViewController.swift in Sources */,
 				C0D3E0771DA449AE009AFDB0 /* DHVideoDataController.swift in Sources */,
@@ -957,8 +950,8 @@
 				C0E6BF931D9434D400872006 /* DHNewsDetailViewModel.swift in Sources */,
 				C0EC17521D9026C80002AAF4 /* DHNewsTableViewCell.swift in Sources */,
 				C0CC26121DDB5F8C00A0C9AE /* DHVideoCellDataController.swift in Sources */,
+				C06DF8DD1DEEFCD800EDD9AA /* DHStrategyDetailDataController.swift in Sources */,
 				C06DF8CF1DEEF75700EDD9AA /* DHStrategyCellViewModel.swift in Sources */,
-				C06DF8CE1DEEF75700EDD9AA /* DHTutorialView.swift in Sources */,
 				C06DF8DB1DEEF75700EDD9AA /* DHUpdatesDetailViewModel.swift in Sources */,
 				C0EC174B1D9010930002AAF4 /* DHNetworkRequestManager.swift in Sources */,
 				C06DF8D71DEEF75700EDD9AA /* DHUpdateDetailView.swift in Sources */,
@@ -985,7 +978,6 @@
 				C06DF8CA1DEEF75700EDD9AA /* DHStrategyModel.swift in Sources */,
 				C029AB741DCC6F1600063171 /* MBProgressHUD.m in Sources */,
 				C0A690731DB3B96600DC0FA0 /* DHBaseDetailView.swift in Sources */,
-				C06DF8D11DEEF75700EDD9AA /* DHStrategyViewModel.swift in Sources */,
 				C06DF8DA1DEEF75700EDD9AA /* DHUpdatesCellViewModel.swift in Sources */,
 				C029AB691DCC575C00063171 /* UrlHeaders.swift in Sources */,
 				C0D4D00C1D5DC2F1008F824A /* DHNewsViewController.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DHTutorialDetailDataController: NSObject {
+class DHStrategyDetailDataController: NSObject {
 
     func requestTutorialDetailDataUrlWithTutorialModel(strategyModel: DHStrategyModel) -> URLRequest {
         let parameter: NSArray = NSArray(array: [(strategyModel.date)!, (strategyModel.nid)!])

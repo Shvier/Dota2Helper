@@ -12,7 +12,7 @@ import WebKit
 class DHStrategyDetailViewController: DHBaseDetailViewController, WKNavigationDelegate {
 
     var strategyModel: DHStrategyModel?
-    var dataController: DHTutorialDetailDataController?
+    var dataController: DHStrategyDetailDataController?
     var tutorialDetailView: DHNewsDetailView?
     var loadingView: DHLoadingView?
     
