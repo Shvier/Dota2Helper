@@ -9,79 +9,159 @@
 import UIKit
 
 class DHStrategyCellViewModel: NSObject {
-
-    var strategyModel: DHStrategyModel?
-    var date: String?
-    var title: String?
-    var background: String?
-    var nid: String?
-    var strategyDescription: String?
-    
-    init(strategyModel: DHStrategyModel?) {
-        super.init()
-        
-        self.strategyModel = strategyModel
-        self.date = strategyModel?.date
-        self.title = strategyModel?.title
-        self.background = strategyModel?.background
-        self.nid = strategyModel?.nid
-        self.strategyDescription = strategyModel?.strategyDescription
-    }
     
     let dataController: DHStrategyCellDataController = DHStrategyCellDataController.sharedInstance
 
-    func getAllStrategies(_ callback: @autoclosure @escaping () -> Void) {
-        dataController.getAllStrategies(success: { [unowned self] (response) in
-        
-            }, failure: {} ())
+    func getAllStrategies(_ success: @escaping (_ strategiesDataSource: [DHStrategyModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getAllStrategies(success: { (response) in
+            do {
+                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                let strategiesDicts = result["strategies"]
+                
+                var strategiesDataSource: [DHStrategyModel] = Array<DHStrategyModel>()
+                
+                for strategyDict in strategiesDicts as! [NSDictionary] {
+                    let strategy: DHStrategyModel = DHStrategyModel(dictionary: strategyDict)
+                    strategiesDataSource.append(strategy)
+                }
+                success(strategiesDataSource)
+            } catch {
+                
+            }
+        }, failure: failure)
     }
     
-    func getNewerStrategies(_ callback: @autoclosure @escaping () -> Void) {
-        dataController.getNewerStrategies(success: { [unowned self] (response) in
-            
-            }, failure: {} ())
+    func getNewerStrategies(_ success: @escaping (_ strategiesDataSource: [DHStrategyModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getNewerStrategies(success: { (response) in
+            do {
+                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                let strategiesDicts = result["strategies"]
+                
+                var strategiesDataSource: [DHStrategyModel] = Array<DHStrategyModel>()
+                
+                for strategyDict in strategiesDicts as! [NSDictionary] {
+                    let strategy: DHStrategyModel = DHStrategyModel(dictionary: strategyDict)
+                    strategiesDataSource.append(strategy)
+                }
+                success(strategiesDataSource)
+            } catch {
+                
+            }
+        }, failure: failure)
     }
     
-    func getStepStrategies(_ callback: @autoclosure @escaping () -> Void) {
-        dataController.getStepStrategies(success: { [unowned self] (response) in
-            
-            }, failure: {} ())
+    func getStepStrategies(_ success: @escaping (_ strategiesDataSource: [DHStrategyModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getStepStrategies(success: { (response) in
+            do {
+                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                let strategiesDicts = result["strategies"]
+                
+                var strategiesDataSource: [DHStrategyModel] = Array<DHStrategyModel>()
+                
+                for strategyDict in strategiesDicts as! [NSDictionary] {
+                    let strategy: DHStrategyModel = DHStrategyModel(dictionary: strategyDict)
+                    strategiesDataSource.append(strategy)
+                }
+                success(strategiesDataSource)
+            } catch {
+                
+            }
+        }, failure: failure)
     }
     
-    func getSkillStrategies(s_ callback: @autoclosure @escaping () -> Void) {
-        dataController.getSkillStrategies(success: { [unowned self] (response) in
-            
-            }, failure: {} ())
+    func getSkillStrategies(_ success: @escaping (_ strategiesDataSource: [DHStrategyModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getSkillStrategies(success: { (response) in
+            do {
+                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                let strategiesDicts = result["strategies"]
+                
+                var strategiesDataSource: [DHStrategyModel] = Array<DHStrategyModel>()
+                
+                for strategyDict in strategiesDicts as! [NSDictionary] {
+                    let strategy: DHStrategyModel = DHStrategyModel(dictionary: strategyDict)
+                    strategiesDataSource.append(strategy)
+                }
+                success(strategiesDataSource)
+            } catch {
+                
+            }
+        }, failure: failure)
     }
     
-    func loadMoreAllStrategies(nid: String, _ callback: @autoclosure @escaping () -> Void) {
-        dataController.loadMoreAllStrategies(nid: nid, success: { [unowned self] (response) in
-            
-            }, failure: {} ())
+    func loadMoreAllStrategies(nid: String, success: @escaping (_ strategiesDataSource: [DHStrategyModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.loadMoreAllStrategies(nid: nid, success: { (response) in
+            do {
+                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                let strategiesDicts = result["strategies"]
+                
+                var strategiesDataSource: [DHStrategyModel] = Array<DHStrategyModel>()
+                
+                for strategyDict in strategiesDicts as! [NSDictionary] {
+                    let strategy: DHStrategyModel = DHStrategyModel(dictionary: strategyDict)
+                    strategiesDataSource.append(strategy)
+                }
+                success(strategiesDataSource)
+            } catch {
+                
+            }
+        }, failure: failure)
     }
     
-    func loadMoreNewerStrategies(nid: String, _ callback: @autoclosure @escaping () -> Void) {
-        dataController.loadMoreNewerStrategies(nid: nid, success: { [unowned self] (response) in
-            
-            }, failure: {} ())
+    func loadMoreNewerStrategies(nid: String, success: @escaping (_ strategiesDataSource: [DHStrategyModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.loadMoreNewerStrategies(nid: nid, success: { (response) in
+            do {
+                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                let strategiesDicts = result["strategies"]
+                
+                var strategiesDataSource: [DHStrategyModel] = Array<DHStrategyModel>()
+                
+                for strategyDict in strategiesDicts as! [NSDictionary] {
+                    let strategy: DHStrategyModel = DHStrategyModel(dictionary: strategyDict)
+                    strategiesDataSource.append(strategy)
+                }
+                success(strategiesDataSource)
+            } catch {
+                
+            }
+        }, failure: failure)
     }
     
-    func loadMoreStepStrategies(nid: String, _ callback: @autoclosure @escaping () -> Void) {
-        dataController.loadMoreStepStrategies(nid: nid, success: { [unowned self] (response) in
-            
-            }, failure: {} ())
+    func loadMoreStepStrategies(nid: String, success: @escaping (_ strategiesDataSource: [DHStrategyModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.loadMoreStepStrategies(nid: nid, success: { (response) in
+            do {
+                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                let strategiesDicts = result["strategies"]
+                
+                var strategiesDataSource: [DHStrategyModel] = Array<DHStrategyModel>()
+                
+                for strategyDict in strategiesDicts as! [NSDictionary] {
+                    let strategy: DHStrategyModel = DHStrategyModel(dictionary: strategyDict)
+                    strategiesDataSource.append(strategy)
+                }
+                success(strategiesDataSource)
+            } catch {
+                
+            }
+        }, failure: failure)
     }
     
-    func loadMoreSkillStrategies(nid: String, _ callback: @autoclosure @escaping () -> Void) {
-        dataController.loadMoreSkillStrategies(nid: nid, success: { [unowned self] (response) in
-            
-            }, failure: {} ())
-    }
-    
-    func getStrategiesDetail(date: String, nid: String, _ callback: @autoclosure @escaping () -> Void) {
-        dataController.getStrategiesDetail(date: date, nid: nid, success: { [unowned self] (response) in
-            
-            }, failure: {} ())
+    func loadMoreSkillStrategies(nid: String, success: @escaping (_ strategiesDataSource: [DHStrategyModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.loadMoreSkillStrategies(nid: nid, success: { (response) in
+            do {
+                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+                let strategiesDicts = result["strategies"]
+                
+                var strategiesDataSource: [DHStrategyModel] = Array<DHStrategyModel>()
+                
+                for strategyDict in strategiesDicts as! [NSDictionary] {
+                    let strategy: DHStrategyModel = DHStrategyModel(dictionary: strategyDict)
+                    strategiesDataSource.append(strategy)
+                }
+                success(strategiesDataSource)
+            } catch {
+                
+            }
+        }, failure: failure)
     }
     
 }
