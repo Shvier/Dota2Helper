@@ -11,21 +11,22 @@ import WebKit
 
 class DHStrategyDetailViewController: DHBaseDetailViewController, WKNavigationDelegate {
 
+    lazy var viewModel: DHStrategyDetailViewModel = {
+        return DHStrategyDetailViewModel()
+    }()
+    
     var strategyModel: DHStrategyModel?
-    var dataController: DHStrategyDetailDataController?
-    var strategyDetailView: DHNewsDetailView?
+    var strategyDetailView: DHStrategyDetailView?
     var loadingView: DHLoadingView?
     
 // MARK: - 3D Touch Peek Menu
     @available(iOS 9.0, *)
     override var previewActionItems: [UIPreviewActionItem] {
         get {
-            weak var weakSelf = self
-            let openWithSafariAction: UIPreviewAction = UIPreviewAction(title: "使用Safari打开", style: .default, handler: { (UIPreviewAction, UIViewController) in
-                if let strongSelf = weakSelf {
-                    let request = strongSelf.dataController?.requestStrategyDetailDataUrlWithStrategyModel(strategyModel: strongSelf.strategyModel!)
-                    UIApplication.shared.openURL((request?.url)!)
-                }
+            let openWithSafariAction: UIPreviewAction = UIPreviewAction(title: "使用Safari打开", style: .default, handler: { [unowned self] (UIPreviewAction, UIViewController) in
+                self.viewModel.getDetailStrategy(model: self.strategyModel!, { (urlString) in
+                    UIApplication.shared.openURL(URL(string: urlString)!)
+                }, failure: {} ())
             })
             let cancelAction: UIPreviewAction = UIPreviewAction(title: "取消", style: .destructive, handler: { (UIPreviewAction, UIViewController) in
                 
@@ -39,11 +40,10 @@ class DHStrategyDetailViewController: DHBaseDetailViewController, WKNavigationDe
     
 // MARK: - Life Cycle
     func handleData() {
-//        dataController = DHStrategyDetailDataController()
-//        let request: URLRequest = (dataController?.requestStrategyDetailDataUrlWithStrategyModel(strategyModel: strategyModel!))!
-//        let viewModel: DHNewsDetailViewModel = DHNewsDetailViewModel(request: request)
-//        tutorialDetailView = DHNewsDetailView(frame: CGRect(x: 0, y: 0, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight - kTabBarHeight))
-//        tutorialDetailView?.bindDataWithViewModel(viewModel: viewModel)
+        strategyDetailView = DHStrategyDetailView(frame: CGRect(x: 0, y: 0, width: kStrategyDetailViewWidth, height: kStrategyDetailViewHeight))
+        viewModel.getDetailStrategy(model: strategyModel!, { (urlString) in
+            self.strategyDetailView?.loadRequest(request: URLRequest(url: URL(string: urlString)!))
+        }, failure: {} ())
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {

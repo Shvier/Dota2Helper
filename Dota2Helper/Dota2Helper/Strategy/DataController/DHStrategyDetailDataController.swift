@@ -9,12 +9,11 @@
 import UIKit
 
 class DHStrategyDetailDataController: NSObject {
-
-    func requestStrategyDetailDataUrlWithStrategyModel(strategyModel: DHStrategyModel) -> URLRequest {
-        let parameter: NSArray = NSArray(array: [(strategyModel.date)!, (strategyModel.nid)!])
-        let url: URL = URL(string: kGetNewsDetailUrl)!
-        let request: URLRequest = DHNetworkRequestManager().convertUrlToDEFAULTRequset(urlHeader: url, parameters: parameter)
-        return request
-    }
     
+    static let sharedInstance = DHStrategyDetailDataController()
+    
+    func getStrategyDetail(date: String, nid: String, success: @escaping (_ urlString: String) -> Void, failure: @autoclosure @escaping () -> Void) {
+        success(kGetNewsDetailUrl + date + "/" + nid)
+    }
+
 }
