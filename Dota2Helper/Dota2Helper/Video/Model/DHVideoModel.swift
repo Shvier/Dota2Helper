@@ -22,4 +22,9 @@ class DHVideoModel: NSObject {
         
     }
     
+    init(dictionary: NSDictionary) {
+        super.init()
+        setValuesForKeys(dictionary as! [String : Any])
+    }
+    
 }
