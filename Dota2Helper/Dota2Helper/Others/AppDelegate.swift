@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             case "OpenVideo":
                 tabbarVC?.selectedViewController = tabbarVC?.viewControllers?[1]
             break
-            case "OpenTutorial":
+            case "OpenStrategy":
                 tabbarVC?.selectedViewController = tabbarVC?.viewControllers?[2]
             break
             case "OpenUpdate":
@@ -50,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let strategyVC: DHStrategyViewController = DHStrategyViewController()
         let strategyNaVC: UINavigationController = UINavigationController(rootViewController: strategyVC)
-        strategyVC.tabBarItem = UITabBarItem(title: "攻略", image: UIImage(named: "tabbar_icon_tutorial")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "tabbar_icon_tutorial_h")?.withRenderingMode(.alwaysOriginal))
+        strategyVC.tabBarItem = UITabBarItem(title: "攻略", image: UIImage(named: "tabbar_icon_strategy")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "tabbar_icon_strategy_h")?.withRenderingMode(.alwaysOriginal))
         
         let updatesVC: DHUpdatesViewController = DHUpdatesViewController()
         let updatesNaVC: UINavigationController = UINavigationController(rootViewController: updatesVC)

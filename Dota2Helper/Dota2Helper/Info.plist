@@ -71,13 +71,13 @@
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
-			<string>icon_open_tutorial</string>
+			<string>icon_open_strategy</string>
 			<key>UIApplicationShortcutItemSubtitle</key>
 			<string>最全的技巧助你奋战天梯</string>
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>攻略</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>OpenTutorial</string>
+			<string>OpenStrategy</string>
 		</dict>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>

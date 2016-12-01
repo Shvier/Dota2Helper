@@ -1,5 +1,5 @@
 //
-//  DHTutorialDetailViewController.swift
+//  DHStrategyDetailViewController.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 16/10/2016.
@@ -13,7 +13,7 @@ class DHStrategyDetailViewController: DHBaseDetailViewController, WKNavigationDe
 
     var strategyModel: DHStrategyModel?
     var dataController: DHStrategyDetailDataController?
-    var tutorialDetailView: DHNewsDetailView?
+    var strategyDetailView: DHNewsDetailView?
     var loadingView: DHLoadingView?
     
 // MARK: - 3D Touch Peek Menu
@@ -23,7 +23,7 @@ class DHStrategyDetailViewController: DHBaseDetailViewController, WKNavigationDe
             weak var weakSelf = self
             let openWithSafariAction: UIPreviewAction = UIPreviewAction(title: "使用Safari打开", style: .default, handler: { (UIPreviewAction, UIViewController) in
                 if let strongSelf = weakSelf {
-                    let request = strongSelf.dataController?.requestTutorialDetailDataUrlWithTutorialModel(strategyModel: strongSelf.strategyModel!)
+                    let request = strongSelf.dataController?.requestStrategyDetailDataUrlWithStrategyModel(strategyModel: strongSelf.strategyModel!)
                     UIApplication.shared.openURL((request?.url)!)
                 }
             })
@@ -39,8 +39,8 @@ class DHStrategyDetailViewController: DHBaseDetailViewController, WKNavigationDe
     
 // MARK: - Life Cycle
     func handleData() {
-//        dataController = DHTutorialDetailDataController()
-//        let request: URLRequest = (dataController?.requestTutorialDetailDataUrlWithTutorialModel(tutorialModel: tutorialModel!))!
+//        dataController = DHStrategyDetailDataController()
+//        let request: URLRequest = (dataController?.requestStrategyDetailDataUrlWithStrategyModel(strategyModel: strategyModel!))!
 //        let viewModel: DHNewsDetailViewModel = DHNewsDetailViewModel(request: request)
 //        tutorialDetailView = DHNewsDetailView(frame: CGRect(x: 0, y: 0, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight - kTabBarHeight))
 //        tutorialDetailView?.bindDataWithViewModel(viewModel: viewModel)
@@ -51,8 +51,8 @@ class DHStrategyDetailViewController: DHBaseDetailViewController, WKNavigationDe
     }
     
     func setContentView() {
-        tutorialDetailView?.webView?.navigationDelegate = self
-        view.addSubview(tutorialDetailView!)
+        strategyDetailView?.webView?.navigationDelegate = self
+        view.addSubview(strategyDetailView!)
         loadingView = addLoadingViewForViewController(self)
     }
     
