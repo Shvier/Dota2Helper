@@ -12,11 +12,12 @@ import ReachabilitySwift
 
 class DHVideoViewController: DHBaseViewController {
     
+    lazy var cellViewModel: DHVideoCellViewModel = {
+        return DHVideoCellViewModel()
+    }()
+    
     let kTopOffset: CGFloat = 60
     
-    lazy var dataController: DHVideoDataController = {
-        return DHVideoDataController()
-    }()
     var tableView: UITableView?
     var loadingView: DHLoadingView?
     var noNetworkView: DHNoNetworkView?
@@ -47,46 +48,46 @@ class DHVideoViewController: DHBaseViewController {
         if let videoType = VideoType(rawValue: currentIndex!) {
             switch videoType {
             case .ALL:
-                self.dataController.requestVideoAllWithCallback(callback: {
+                self.cellViewModel.getAllVideos(success: {
                     self.endHeaderRefreshing()
                     self.renderTableViewCell()
-                }())
+                }(), failure: {} ())
                 break
             case .JIESHUO:
-                self.dataController.requestVideoJieshuoWithCallback(callback: {
+                self.cellViewModel.getJieshuoVideos(success: {
                     self.endHeaderRefreshing()
                     self.renderTableViewCell()
-                }())
+                }(), failure: {} ())
                 break
             case .BISAI:
-                self.dataController.requestVideoBisaiWithCallback(callback: {
+                self.cellViewModel.getBisaiVideos(success: {
                     self.endHeaderRefreshing()
                     self.renderTableViewCell()
-                }())
+                }(), failure: {} ())
                 break
             case .CELEBRITY:
-                self.dataController.requestVideoCelebrityWithCallback(callback: {
+                self.cellViewModel.getCelebrityVideos(success: {
                     self.endHeaderRefreshing()
                     self.renderTableViewCell()
-                }())
+                }(), failure: {} ())
                 break
             case .QUWEI:
-                self.dataController.requestVideoQuweiWithCallback(callback: {
+                self.cellViewModel.getQuweiVideos(success: {
                     self.endHeaderRefreshing()
                     self.renderTableViewCell()
-                }())
+                }(), failure: {} ())
                 break
             case .BEGINNER:
-                self.dataController.requestVideoBeginnerWithCallback(callback: {
+                self.cellViewModel.getBeginnerVideos(success: {
                     self.endHeaderRefreshing()
                     self.renderTableViewCell()
-                }())
+                }(), failure: {} ())
                 break
             case .ADVANCED:
-                self.dataController.requestVideoAdvancedWithCallback(callback: {
+                self.cellViewModel.getAdvancedVideos(success: {
                     self.endHeaderRefreshing()
                     self.renderTableViewCell()
-                }())
+                }(), failure: {} ())
                 break
             }
         }
@@ -96,12 +97,53 @@ class DHVideoViewController: DHBaseViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [unowned self] in
             self.tableView?.mj_footer.endRefreshing()
         }
-        self.dataController.requestMoreVideo(callback: { [unowned self] in
-            self.tableView?.mj_footer.endRefreshing()
-            DispatchQueue.main.async(execute: {
-                self.tableView?.reloadData()
-            })
-        }())
+        let currentIndex = self.menu?.currentSelectedIndex()
+        if let videoType = VideoType(rawValue: currentIndex!) {
+            switch videoType {
+            case .ALL:
+                self.cellViewModel.loadMoreAllVideos(vid: (self.cellViewModel.videoDataSource.last?.vid)!, success: {
+                    self.endHeaderRefreshing()
+                    self.renderTableViewCell()
+                }(), failure: {} ())
+                break
+            case .JIESHUO:
+                self.cellViewModel.loadMoreJieshuoVideos(vid: (self.cellViewModel.videoDataSource.last?.vid)!, success: {
+                    self.endHeaderRefreshing()
+                    self.renderTableViewCell()
+                }(), failure: {} ())
+                break
+            case .BISAI:
+                self.cellViewModel.loadMoreBisaiVideos(vid: (self.cellViewModel.videoDataSource.last?.vid)!, success: {
+                    self.endHeaderRefreshing()
+                    self.renderTableViewCell()
+                }(), failure: {} ())
+                break
+            case .CELEBRITY:
+                self.cellViewModel.loadMoreCelebrityVideos(vid: (self.cellViewModel.videoDataSource.last?.vid)!, success: {
+                    self.endHeaderRefreshing()
+                    self.renderTableViewCell()
+                }(), failure: {} ())
+                break
+            case .QUWEI:
+                self.cellViewModel.loadMoreQuweiVideos(vid: (self.cellViewModel.videoDataSource.last?.vid)!, success: {
+                    self.endHeaderRefreshing()
+                    self.renderTableViewCell()
+                }(), failure: {} ())
+                break
+            case .BEGINNER:
+                self.cellViewModel.loadMoreBeginnerVideos(vid: (self.cellViewModel.videoDataSource.last?.vid)!, success: {
+                    self.endHeaderRefreshing()
+                    self.renderTableViewCell()
+                }(), failure: {} ())
+                break
+            case .ADVANCED:
+                self.cellViewModel.loadMoreAdvancedVideos(vid: (self.cellViewModel.videoDataSource.last?.vid)!, success: {
+                    self.endHeaderRefreshing()
+                    self.renderTableViewCell()
+                }(), failure: {} ())
+                break
+            }
+        }
     }
     
     func renderTableViewCell() {
@@ -178,16 +220,12 @@ class DHVideoViewController: DHBaseViewController {
 // MARK: - UITableViewDelegate
 extension DHVideoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (dataController.videoDataSource?.count)! > 0 ? (dataController.videoDataSource?.count)! : 0
+        return cellViewModel.videoDataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kVideoCellReuseIdentifier, for: indexPath) as! DHVideoTableViewCell
-        if (dataController.videoDataSource?.count)! > 0 {
-            let videoModel = dataController.videoDataSource?[indexPath.row] as! DHVideoModel
-            let cellViewModel: DHVideoCellViewModel = DHVideoCellViewModel.init(videoModel: videoModel)
-            cell.bindDataWithViewModel(viewModel: cellViewModel)
-        }
+        cell.bindDataWithModel(model: cellViewModel.videoDataSource[indexPath.row])
         return cell
     }
     

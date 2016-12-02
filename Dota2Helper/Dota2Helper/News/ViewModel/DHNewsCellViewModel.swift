@@ -11,10 +11,28 @@ let kBannerHeight: CGFloat = kBannerWidth * 9.0 / 16.0
 
 class DHNewsCellViewModel: NSObject {
     
-    let dataController: DHNewsCellDataController = DHNewsCellDataController.sharedInstance
+    lazy var dataController: DHNewsCellDataController = {
+        return DHNewsCellDataController()
+    }()
+    
+    lazy var bannerDataSource: [DHNewsModel] = {
+        return Array<DHNewsModel>()
+    }()
+    
+    lazy var newsDataSource: [DHNewsModel] = {
+        return Array<DHNewsModel>()
+    }()
+    
+    lazy var imageUrlDataSource: [String] = {
+        return Array<String>()
+    }()
+
+    lazy var titleUrlDataSource: [String] = {
+        return Array<String>()
+    }()
     
     func refreshNews(_ success: @escaping (_ newsDict: NSDictionary) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.getNews(success: { (response) in
+        dataController.getNews(success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                 let bannerArray = result["banner"]
@@ -22,20 +40,25 @@ class DHNewsCellViewModel: NSObject {
                     
                 var bannerDataSource: [DHNewsModel] = Array<DHNewsModel>()
                 var newsDataSource: [DHNewsModel] = Array<DHNewsModel>()
-                var imageUrlStrings: [String] = Array<String>()
-                var titleUrlStrings: [String] = Array<String>()
+                var imageUrlDataSource: [String] = Array<String>()
+                var titleUrlDataSource: [String] = Array<String>()
                     
                 for bannerDict in bannerArray as! [NSDictionary] {
                     let banner: DHNewsModel = DHNewsModel(dictionary: bannerDict)
                     bannerDataSource.append(banner)
-                    imageUrlStrings.append(banner.background!)
-                    titleUrlStrings.append(banner.title!)
+                    imageUrlDataSource.append(banner.background!)
+                    titleUrlDataSource.append(banner.title!)
                 }
                 for newsDict in newsArray as! [NSDictionary] {
                     let news: DHNewsModel = DHNewsModel(dictionary: newsDict)
                     newsDataSource.append(news)
                 }
-                success(["banner": bannerDataSource, "news": newsDataSource, "imageUrl": imageUrlStrings, "titleUrl": titleUrlStrings])
+                
+                self.bannerDataSource = bannerDataSource
+                self.newsDataSource = newsDataSource
+                self.imageUrlDataSource = imageUrlDataSource
+                self.titleUrlDataSource = titleUrlDataSource
+                success(["banner": bannerDataSource, "news": newsDataSource, "imageUrl": imageUrlDataSource, "titleUrl": titleUrlDataSource])
             } catch {
                 
             }
@@ -55,6 +78,7 @@ class DHNewsCellViewModel: NSObject {
                     news.setValuesForKeys(newsDict as! [String : Any])
                     newsDataSource.append(news)
                 }
+                self.newsDataSource.append(contentsOf: newsDataSource)
                 success(newsDataSource)
             } catch {
 

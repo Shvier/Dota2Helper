@@ -33,7 +33,7 @@ func DHAPILoadMoreStrategiesUrl(strategyType: String, nid: String) -> String {
 }
 // refresh videos
 func DHAPIGetRefreshVideosUrl(videoType: String) -> String {
-    return UrlHeader + "video/refresh\(videoType)"
+    return UrlHeader + "video/refresh/\(videoType)"
 }
 // load more videos
 func DHAPILoadMoreVideosUrl(videoType: String, vid: String) -> String {

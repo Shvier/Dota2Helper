@@ -19,6 +19,7 @@ class DHVideoTableViewCell: UITableViewCell {
     @IBOutlet weak var publishinLabel: UILabel!
     
     var ykvid: String?
+    var videoModel: DHVideoModel?
     
     override var frame: CGRect {
         get {
@@ -35,14 +36,15 @@ class DHVideoTableViewCell: UITableViewCell {
         }
     }
     
-    func bindDataWithViewModel(viewModel: DHVideoCellViewModel) {
-        if let urlString = viewModel.background {
+    func bindDataWithModel(model: DHVideoModel) {
+        self.videoModel = model
+        if let urlString = model.background {
             backgroundImageView.kf_setImage(with: URL(string: urlString))
         }
-        titleLabel.text = viewModel.title
-        videoLengthLabel.text = viewModel.videolength
-        publishinLabel.text = viewModel.publishin
-        ykvid = viewModel.ykvid
+        titleLabel.text = model.title
+        videoLengthLabel.text = model.videolength
+        publishinLabel.text = model.publishin
+        ykvid = model.ykvid
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {

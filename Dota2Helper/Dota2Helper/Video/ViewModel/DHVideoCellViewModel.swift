@@ -9,312 +9,313 @@
 import UIKit
 
 class DHVideoCellViewModel: NSObject {
-
-    var ykvid: String?
-    var videolength: String?
-    var vid: String?
-    var title: String?
-    var publishin: String?
-    var background: String?
-    var date: String?
     
-    init(videoModel: DHVideoModel?) {
-        super.init()
-        
-        self.ykvid = videoModel?.ykvid
-        self.videolength = videoModel?.videolength
-        self.vid = videoModel?.vid
-        self.title = videoModel?.title
-        self.publishin = videoModel?.publishin
-        self.background = videoModel?.background
-        self.date = videoModel?.date
-    }
+    lazy var dataController: DHVideoCellDataController = {
+        return DHVideoCellDataController()
+    }()
     
-    let dataController: DHVideoCellDataController = DHVideoCellDataController.sharedInstance
+    lazy var videoDataSource: [DHVideoModel] = {
+        return Array<DHVideoModel>()
+    }()
     
-    func getAllVideos(success: @escaping(_ videosDataSource: [DHVideoModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.getAllVideos(success: { (response) in
+    func getAllVideos(success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getAllVideos(success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videosDicts = result["videos"]
+                let videoDicts = result["videos"]
                 
-                var videosDataSource: [DHVideoModel] = Array<DHVideoModel>()
+                var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
-                for videosDict in videosDicts as! [NSDictionary] {
-                    let video: DHVideoModel = DHVideoModel(dictionary: videosDict)
-                    videosDataSource.append(video)
+                for videoDict in videoDicts as! [NSDictionary] {
+                    let video: DHVideoModel = DHVideoModel(dictionary: videoDict)
+                    videoDataSource.append(video)
                 }
-                success(videosDataSource)
+                self.videoDataSource = videoDataSource
+                success()
             } catch {
                 
             }
-        }, failure: {} ())
+        }, failure: failure)
     }
     
-    func getJieshuoVideos(success: @escaping(_ videosDataSource: [DHVideoModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.getJieshuoVideos(success: { (response) in
+    func getJieshuoVideos(success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getJieshuoVideos(success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videosDicts = result["videos"]
+                let videoDicts = result["videos"]
                 
-                var videosDataSource: [DHVideoModel] = Array<DHVideoModel>()
+                var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
-                for videosDict in videosDicts as! [NSDictionary] {
+                for videosDict in videoDicts as! [NSDictionary] {
                     let video: DHVideoModel = DHVideoModel(dictionary: videosDict)
-                    videosDataSource.append(video)
+                    videoDataSource.append(video)
                 }
-                success(videosDataSource)
+                self.videoDataSource = videoDataSource
+                success()
             } catch {
                 
             }
-        }, failure: {} ())
+        }, failure: failure)
     }
     
-    func getBisaiVideos(success: @escaping(_ videosDataSource: [DHVideoModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.getBisaiVideos(success: { (response) in
+    func getBisaiVideos(success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getBisaiVideos(success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videosDicts = result["videos"]
+                let videoDicts = result["videos"]
                 
-                var videosDataSource: [DHVideoModel] = Array<DHVideoModel>()
+                var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
-                for videosDict in videosDicts as! [NSDictionary] {
+                for videosDict in videoDicts as! [NSDictionary] {
                     let video: DHVideoModel = DHVideoModel(dictionary: videosDict)
-                    videosDataSource.append(video)
+                    videoDataSource.append(video)
                 }
-                success(videosDataSource)
+                self.videoDataSource = videoDataSource
+                success()
             } catch {
                 
             }
-        }, failure: {} ())
+        }, failure: failure)
     }
     
-    func getCelebrityVideos(success: @escaping(_ videosDataSource: [DHVideoModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.getCelebrityVideos(success: { (response) in
+    func getCelebrityVideos(success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getCelebrityVideos(success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videosDicts = result["videos"]
+                let videoDicts = result["videos"]
                 
-                var videosDataSource: [DHVideoModel] = Array<DHVideoModel>()
+                var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
-                for videosDict in videosDicts as! [NSDictionary] {
+                for videosDict in videoDicts as! [NSDictionary] {
                     let video: DHVideoModel = DHVideoModel(dictionary: videosDict)
-                    videosDataSource.append(video)
+                    videoDataSource.append(video)
                 }
-                success(videosDataSource)
+                self.videoDataSource = videoDataSource
+                success()
             } catch {
                 
             }
-        }, failure: {} ())
+        }, failure: failure)
     }
     
-    func getQuweiVideos(success: @escaping(_ videosDataSource: [DHVideoModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.getQuweiVideos(success: { (response) in
+    func getQuweiVideos(success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getQuweiVideos(success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videosDicts = result["videos"]
+                let videoDicts = result["videos"]
                 
-                var videosDataSource: [DHVideoModel] = Array<DHVideoModel>()
+                var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
-                for videosDict in videosDicts as! [NSDictionary] {
+                for videosDict in videoDicts as! [NSDictionary] {
                     let video: DHVideoModel = DHVideoModel(dictionary: videosDict)
-                    videosDataSource.append(video)
+                    videoDataSource.append(video)
                 }
-                success(videosDataSource)
+                self.videoDataSource = videoDataSource
+                success()
             } catch {
                 
             }
-        }, failure: {} ())
+        }, failure: failure)
     }
     
-    func getBeginnerVideos(success: @escaping(_ videosDataSource: [DHVideoModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.getBeginnerVideos(success: { (response) in
+    func getBeginnerVideos(success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getBeginnerVideos(success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videosDicts = result["videos"]
+                let videoDicts = result["videos"]
                 
-                var videosDataSource: [DHVideoModel] = Array<DHVideoModel>()
+                var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
-                for videosDict in videosDicts as! [NSDictionary] {
+                for videosDict in videoDicts as! [NSDictionary] {
                     let video: DHVideoModel = DHVideoModel(dictionary: videosDict)
-                    videosDataSource.append(video)
+                    videoDataSource.append(video)
                 }
-                success(videosDataSource)
+                self.videoDataSource = videoDataSource
+                success()
             } catch {
                 
             }
-        }, failure: {} ())
+        }, failure: failure)
     }
     
-    func getAdvancedVideos(success: @escaping(_ videosDataSource: [DHVideoModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.getAdvancedVideos(success: { (response) in
+    func getAdvancedVideos(success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getAdvancedVideos(success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videosDicts = result["videos"]
+                let videoDicts = result["videos"]
                 
-                var videosDataSource: [DHVideoModel] = Array<DHVideoModel>()
+                var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
-                for videosDict in videosDicts as! [NSDictionary] {
+                for videosDict in videoDicts as! [NSDictionary] {
                     let video: DHVideoModel = DHVideoModel(dictionary: videosDict)
-                    videosDataSource.append(video)
+                    videoDataSource.append(video)
                 }
-                success(videosDataSource)
+                self.videoDataSource = videoDataSource
+                success()
             } catch {
                 
             }
-        }, failure: {} ())
+        }, failure: failure)
     }
     
-    func loadMoreAllVideos(vid: String, success: @escaping(_ videosDataSource: [DHVideoModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.loadMoreAllVideos(vid: vid, success: { (response) in
+    func loadMoreAllVideos(vid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.loadMoreAllVideos(vid: vid, success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videosDicts = result["videos"]
+                let videoDicts = result["videos"]
                 
-                var videosDataSource: [DHVideoModel] = Array<DHVideoModel>()
+                var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
-                for videosDict in videosDicts as! [NSDictionary] {
+                for videosDict in videoDicts as! [NSDictionary] {
                     let video: DHVideoModel = DHVideoModel(dictionary: videosDict)
-                    videosDataSource.append(video)
+                    videoDataSource.append(video)
                 }
-                success(videosDataSource)
+                self.videoDataSource.append(contentsOf: videoDataSource)
+                success()
             } catch {
                 
             }
-        }, failure: {} ())
+        }, failure: failure)
     }
     
-    func loadMoreJieshuoVideos(vid: String, success: @escaping(_ videosDataSource: [DHVideoModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.loadMoreJieshuoVideos(vid: vid, success: { (response) in
+    func loadMoreJieshuoVideos(vid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.loadMoreJieshuoVideos(vid: vid, success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videosDicts = result["videos"]
+                let videoDicts = result["videos"]
                 
-                var videosDataSource: [DHVideoModel] = Array<DHVideoModel>()
+                var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
-                for videosDict in videosDicts as! [NSDictionary] {
+                for videosDict in videoDicts as! [NSDictionary] {
                     let video: DHVideoModel = DHVideoModel(dictionary: videosDict)
-                    videosDataSource.append(video)
+                    videoDataSource.append(video)
                 }
-                success(videosDataSource)
+                self.videoDataSource.append(contentsOf: videoDataSource)
+                success()
             } catch {
                 
             }
-        }, failure: {} ())
+        }, failure: failure)
     }
     
-    func loadMoreBisaiVideos(vid: String, success: @escaping(_ videosDataSource: [DHVideoModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.loadMoreBisaiVideos(vid: vid, success: { (response) in
+    func loadMoreBisaiVideos(vid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.loadMoreBisaiVideos(vid: vid, success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videosDicts = result["videos"]
+                let videoDicts = result["videos"]
                 
-                var videosDataSource: [DHVideoModel] = Array<DHVideoModel>()
+                var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
-                for videosDict in videosDicts as! [NSDictionary] {
+                for videosDict in videoDicts as! [NSDictionary] {
                     let video: DHVideoModel = DHVideoModel(dictionary: videosDict)
-                    videosDataSource.append(video)
+                    videoDataSource.append(video)
                 }
-                success(videosDataSource)
+                self.videoDataSource.append(contentsOf: videoDataSource)
+                success()
             } catch {
                 
             }
-        }, failure: {} ())
+        }, failure: failure)
     }
     
-    func loadMoreCelebrityVideos(vid: String, success: @escaping(_ repsonse: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.loadMoreCelebrityVideos(vid: vid, success: { (response) in
+    func loadMoreCelebrityVideos(vid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.loadMoreCelebrityVideos(vid: vid, success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videosDicts = result["videos"]
+                let videoDicts = result["videos"]
                 
-                var videosDataSource: [DHVideoModel] = Array<DHVideoModel>()
+                var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
-                for videosDict in videosDicts as! [NSDictionary] {
+                for videosDict in videoDicts as! [NSDictionary] {
                     let video: DHVideoModel = DHVideoModel(dictionary: videosDict)
-                    videosDataSource.append(video)
+                    videoDataSource.append(video)
                 }
-                success(videosDataSource)
+                self.videoDataSource.append(contentsOf: videoDataSource)
+                success()
             } catch {
                 
             }
-        }, failure: {} ())
+        }, failure: failure)
     }
     
-    func loadMoreQuweiVideos(vid: String, success: @escaping(_ videosDataSource: [DHVideoModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.loadMoreQuweiVideos(vid: vid, success: { (response) in
+    func loadMoreQuweiVideos(vid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.loadMoreQuweiVideos(vid: vid, success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videosDicts = result["videos"]
+                let videoDicts = result["videos"]
                 
-                var videosDataSource: [DHVideoModel] = Array<DHVideoModel>()
+                var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
-                for videosDict in videosDicts as! [NSDictionary] {
+                for videosDict in videoDicts as! [NSDictionary] {
                     let video: DHVideoModel = DHVideoModel(dictionary: videosDict)
-                    videosDataSource.append(video)
+                    videoDataSource.append(video)
                 }
-                success(videosDataSource)
+                self.videoDataSource.append(contentsOf: videoDataSource)
+                success()
             } catch {
                 
             }
-        }, failure: {} ())
+        }, failure: failure)
     }
     
-    func loadMoreBeginnerVideos(vid: String, success: @escaping(_ videosDataSource: [DHVideoModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.loadMoreBeginnerVideos(vid: vid, success: { (response) in
+    func loadMoreBeginnerVideos(vid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.loadMoreBeginnerVideos(vid: vid, success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videosDicts = result["videos"]
+                let videoDicts = result["videos"]
                 
-                var videosDataSource: [DHVideoModel] = Array<DHVideoModel>()
+                var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
-                for videosDict in videosDicts as! [NSDictionary] {
+                for videosDict in videoDicts as! [NSDictionary] {
                     let video: DHVideoModel = DHVideoModel(dictionary: videosDict)
-                    videosDataSource.append(video)
+                    videoDataSource.append(video)
                 }
-                success(videosDataSource)
+                self.videoDataSource.append(contentsOf: videoDataSource)
+                success()
             } catch {
                 
             }
-        }, failure: {} ())
+        }, failure: failure)
     }
     
-    func loadMoreAdvancedVideos(vid: String, success: @escaping(_ videosDataSource: [DHVideoModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.loadMoreAdvancedVideos(vid: vid, success: { (response) in
+    func loadMoreAdvancedVideos(vid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.loadMoreAdvancedVideos(vid: vid, success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videosDicts = result["videos"]
+                let videoDicts = result["videos"]
                 
-                var videosDataSource: [DHVideoModel] = Array<DHVideoModel>()
+                var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
-                for videosDict in videosDicts as! [NSDictionary] {
+                for videosDict in videoDicts as! [NSDictionary] {
                     let video: DHVideoModel = DHVideoModel(dictionary: videosDict)
-                    videosDataSource.append(video)
+                    videoDataSource.append(video)
                 }
-                success(videosDataSource)
+                self.videoDataSource.append(contentsOf: videoDataSource)
+                success()
             } catch {
                 
             }
-        }, failure: {} ())
+        }, failure: failure)
     }
     
-    func getRelatedVideos(vid: String, success: @escaping(_ videosDataSource: [DHVideoModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.getRelatedVideos(vid: vid, success: { (response) in
+    func getRelatedVideos(vid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getRelatedVideos(vid: vid, success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videosDicts = result["videos"]
+                let videoDicts = result["videos"]
                 
-                var videosDataSource: [DHVideoModel] = Array<DHVideoModel>()
+                var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
-                for videosDict in videosDicts as! [NSDictionary] {
+                for videosDict in videoDicts as! [NSDictionary] {
                     let video: DHVideoModel = DHVideoModel(dictionary: videosDict)
-                    videosDataSource.append(video)
+                    videoDataSource.append(video)
                 }
-                success(videosDataSource)
+                self.videoDataSource.append(contentsOf: videoDataSource)
+                success()
             } catch {
                 
             }
-        }, failure: {} ())
+        }, failure: failure)
     }
     
 }
