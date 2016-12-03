@@ -8,7 +8,9 @@
 
 class DHUpdatesDetailViewModel: NSObject {
 
-    let dataController: DHUpdatesDetailDataController = DHUpdatesDetailDataController.sharedInstance
+    lazy var dataController: DHUpdatesDetailDataController = {
+        return DHUpdatesDetailDataController()
+    }()
     
     func getDetailUpdates(model: DHUpdateModel, _ success: @escaping (_ urlString: String) -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getUpdatesDetail(date: model.date!, nid: model.nid!, success: { (urlString) in

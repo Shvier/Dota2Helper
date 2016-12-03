@@ -7,8 +7,6 @@
 //
 
 class DHUpdatesCellDataController: NSObject {
-
-    static let sharedInstance = DHUpdatesCellDataController()
     
     func getUpdates(success: @escaping(_ response: Data) -> Void, failure: @autoclosure @escaping () -> Void) {
         DHGetUpdatesRequest.requestUpdatesData(success: success, failure: failure)

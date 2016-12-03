@@ -16,8 +16,6 @@ class DHUpdatesViewController: DHBaseViewController {
         return DHUpdatesCellViewModel()
     }()
     
-    lazy var updatesDataSource: [DHUpdateModel]? = {[]} ()
-
     var tableView: UITableView?
     var loadingView: DHLoadingView?
     var noNetworkView: DHNoNetworkView?
@@ -32,17 +30,21 @@ class DHUpdatesViewController: DHBaseViewController {
             self.endHeaderRefreshing()
         }
 
-        viewModel.refreshUpdates({ [unowned self] (updatesArray) in
-            self.updatesDataSource = updatesArray
+        viewModel.refreshUpdates({ [unowned self] in
             self.tableView?.mj_header.endRefreshing()
             self.renderTableViewCell()
-        }, failure: {} ())
+        }(), failure: {} ())
     }
     
     func beginFooterRefreshing() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [unowned self] in
             self.tableView?.mj_footer.endRefreshing()
         }
+        viewModel.loadMoreUpdates(nid: (viewModel.updatesDataSource.last?.nid)!, success: {
+            DispatchQueue.main.async(execute: {
+                self.tableView?.reloadData()
+            })
+        }(), failure: {} ())
     }
     
     func endHeaderRefreshing() {
@@ -104,18 +106,9 @@ class DHUpdatesViewController: DHBaseViewController {
         noNetworkView = addNoNetworkViewForViewController(self)
     }
     
-    func initLifeCycle() {
-        view.backgroundColor = UIColor.white
-        navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kThemeColor]
-        navigationItem.title = "掌刀"
-        self.automaticallyAdjustsScrollViewInsets = false
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
      
-//        initLifeCycle()
         setContentView()
         handleUpdateData()
     }
@@ -125,7 +118,7 @@ class DHUpdatesViewController: DHBaseViewController {
 // MARK: - UITableViewDelegate
 extension DHUpdatesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (updatesDataSource?.count)!
+        return viewModel.updatesDataSource.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -134,7 +127,7 @@ extension DHUpdatesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: DHUpdateTableViewCell = tableView.dequeueReusableCell(withIdentifier: kUpdateCellReuseIdentifier, for: indexPath) as! DHUpdateTableViewCell
-        cell.bindDataWithModel(model: (updatesDataSource?[indexPath.row])!)
+        cell.bindDataWithModel(model: viewModel.updatesDataSource[indexPath.row])
         if #available(iOS 9.0, *) {
             if traitCollection.forceTouchCapability == .available {
                 registerForPreviewing(with: self, sourceView: cell)

@@ -31,7 +31,7 @@ class DHNewsCellViewModel: NSObject {
         return Array<String>()
     }()
     
-    func refreshNews(_ success: @escaping (_ newsDict: NSDictionary) -> Void, failure: @autoclosure @escaping () -> Void) {
+    func refreshNews(_ success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getNews(success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
@@ -58,14 +58,14 @@ class DHNewsCellViewModel: NSObject {
                 self.newsDataSource = newsDataSource
                 self.imageUrlDataSource = imageUrlDataSource
                 self.titleUrlDataSource = titleUrlDataSource
-                success(["banner": bannerDataSource, "news": newsDataSource, "imageUrl": imageUrlDataSource, "titleUrl": titleUrlDataSource])
+                success()
             } catch {
                 
             }
         }, failure: failure)
     }
     
-    func loadMoreNews(nid: String, success: @escaping (_ newsArray: [DHNewsModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
+    func loadMoreNews(nid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.loadMoreNews(nid: nid, success: { (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
@@ -79,7 +79,7 @@ class DHNewsCellViewModel: NSObject {
                     newsDataSource.append(news)
                 }
                 self.newsDataSource.append(contentsOf: newsDataSource)
-                success(newsDataSource)
+                success()
             } catch {
 
             }

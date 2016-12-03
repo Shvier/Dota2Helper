@@ -102,44 +102,51 @@ class DHVideoViewController: DHBaseViewController {
             switch videoType {
             case .ALL:
                 self.cellViewModel.loadMoreAllVideos(vid: (self.cellViewModel.videoDataSource.last?.vid)!, success: {
-                    self.endHeaderRefreshing()
-                    self.renderTableViewCell()
+                    DispatchQueue.main.async(execute: {
+                        self.tableView?.reloadData()
+                    })
                 }(), failure: {} ())
                 break
             case .JIESHUO:
                 self.cellViewModel.loadMoreJieshuoVideos(vid: (self.cellViewModel.videoDataSource.last?.vid)!, success: {
-                    self.endHeaderRefreshing()
-                    self.renderTableViewCell()
+                    DispatchQueue.main.async(execute: {
+                        self.tableView?.reloadData()
+                    })
                 }(), failure: {} ())
                 break
             case .BISAI:
                 self.cellViewModel.loadMoreBisaiVideos(vid: (self.cellViewModel.videoDataSource.last?.vid)!, success: {
-                    self.endHeaderRefreshing()
-                    self.renderTableViewCell()
+                    DispatchQueue.main.async(execute: {
+                        self.tableView?.reloadData()
+                    })
                 }(), failure: {} ())
                 break
             case .CELEBRITY:
                 self.cellViewModel.loadMoreCelebrityVideos(vid: (self.cellViewModel.videoDataSource.last?.vid)!, success: {
-                    self.endHeaderRefreshing()
-                    self.renderTableViewCell()
+                    DispatchQueue.main.async(execute: {
+                        self.tableView?.reloadData()
+                    })
                 }(), failure: {} ())
                 break
             case .QUWEI:
                 self.cellViewModel.loadMoreQuweiVideos(vid: (self.cellViewModel.videoDataSource.last?.vid)!, success: {
-                    self.endHeaderRefreshing()
-                    self.renderTableViewCell()
+                    DispatchQueue.main.async(execute: {
+                        self.tableView?.reloadData()
+                    })
                 }(), failure: {} ())
                 break
             case .BEGINNER:
                 self.cellViewModel.loadMoreBeginnerVideos(vid: (self.cellViewModel.videoDataSource.last?.vid)!, success: {
-                    self.endHeaderRefreshing()
-                    self.renderTableViewCell()
+                    DispatchQueue.main.async(execute: {
+                        self.tableView?.reloadData()
+                    })
                 }(), failure: {} ())
                 break
             case .ADVANCED:
                 self.cellViewModel.loadMoreAdvancedVideos(vid: (self.cellViewModel.videoDataSource.last?.vid)!, success: {
-                    self.endHeaderRefreshing()
-                    self.renderTableViewCell()
+                    DispatchQueue.main.async(execute: {
+                        self.tableView?.reloadData()
+                    })
                 }(), failure: {} ())
                 break
             }

@@ -9,8 +9,6 @@
 import UIKit
 
 class DHUpdatesDetailDataController: NSObject {
-
-    static let sharedInstance = DHUpdatesDetailDataController()
     
     func getUpdatesDetail(date: String, nid: String, success: @escaping (_ urlString: String) -> Void, failure: @autoclosure @escaping () -> Void) {
         success(kGetNewsDetailUrl + date + "/" + nid)

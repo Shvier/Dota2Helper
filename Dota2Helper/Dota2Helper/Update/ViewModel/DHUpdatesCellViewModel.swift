@@ -8,10 +8,16 @@
 
 class DHUpdatesCellViewModel: NSObject {
     
-    let dataController: DHUpdatesCellDataController = DHUpdatesCellDataController.sharedInstance
+    lazy var dataController: DHUpdatesCellDataController = {
+        return DHUpdatesCellDataController()
+    }()
     
-    func refreshUpdates(_ success: @escaping (_ updatesArray: [DHUpdateModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.getUpdates(success: { (response) in
+    lazy var updatesDataSource: [DHUpdateModel] = {
+        return Array<DHUpdateModel>()
+    }()
+    
+    func refreshUpdates(_ success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getUpdates(success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                 let updatesArray = result["news"]
@@ -22,15 +28,16 @@ class DHUpdatesCellViewModel: NSObject {
                     let update: DHUpdateModel = DHUpdateModel(dictionary: updateDict)
                     updatesDataSource.append(update)
                 }
-                success(updatesDataSource)
+                self.updatesDataSource = updatesDataSource
+                success()
             } catch {
                 
             }
         }, failure: failure)
     }
     
-    func loadMoreUpdates(nid: String, success: @escaping (_ updatesArray: [DHUpdateModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.loadMoreUpates(nid: nid, success: { (response) in
+    func loadMoreUpdates(nid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.loadMoreUpates(nid: nid, success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                 let updatesArray = result["news"]
@@ -41,7 +48,8 @@ class DHUpdatesCellViewModel: NSObject {
                     let update: DHUpdateModel = DHUpdateModel(dictionary: updateDict)
                     updatesDataSource.append(update)
                 }
-                success(updatesDataSource)
+                self.updatesDataSource.append(contentsOf: updatesDataSource)
+                success()
             } catch {
                 
             }

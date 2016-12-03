@@ -12,7 +12,6 @@ import WebKit
 class DHNewsDetailViewController: DHBaseDetailViewController, WKNavigationDelegate {
 
     var newsModel: DHNewsModel?
-    var dataController: DHNewsDetailDataController?
     var newsDetailView: DHNewsDetailView?
     var loadingView: DHLoadingView?
     lazy var viewModel: DHNewsDetailViewModel = {
