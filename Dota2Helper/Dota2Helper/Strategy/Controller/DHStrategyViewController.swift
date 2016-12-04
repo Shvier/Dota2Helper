@@ -41,32 +41,28 @@ class DHStrategyViewController: DHBaseViewController {
         if let strategyType = StrategyCategory(rawValue: currentIndex!) {
             switch strategyType {
             case .ALL:
-                self.viewModel.getAllStrategies({ (strategiesDataSource) in
-                    self.strategiesDataSource = strategiesDataSource
+                self.viewModel.getAllStrategies({ [unowned self] in
                     self.endHeaderRefreshing()
                     self.renderTableViewCell()
-                }, failure: {} ())
+                }(), failure: {} ())
                 break
             case .NEWER:
-                self.viewModel.getNewerStrategies({ (strategiesDataSource) in
-                    self.strategiesDataSource = strategiesDataSource
+                self.viewModel.getNewerStrategies({ [unowned self] in
                     self.endHeaderRefreshing()
                     self.renderTableViewCell()
-                }, failure: {} ())
+                }(), failure: {} ())
                 break
             case .STEP:
-                self.viewModel.getStepStrategies({ (strategiesDataSource) in
-                    self.strategiesDataSource = strategiesDataSource
+                self.viewModel.getStepStrategies({ [unowned self] in
                     self.endHeaderRefreshing()
                     self.renderTableViewCell()
-                }, failure: {} ())
+                }(), failure: {} ())
                 break
             case .SKILL:
-                self.viewModel.getSkillStrategies({ (strategiesDataSource) in
-                    self.strategiesDataSource = strategiesDataSource
+                self.viewModel.getSkillStrategies({ [unowned self] in
                     self.endHeaderRefreshing()
                     self.renderTableViewCell()
-                }, failure: {} ())
+                }(), failure: {} ())
                 break
             }
         }
@@ -80,40 +76,36 @@ class DHStrategyViewController: DHBaseViewController {
         if let strategyType = StrategyCategory(rawValue: currentIndex!) {
             switch strategyType {
             case .ALL:
-                viewModel.loadMoreAllStrategies(nid: (strategiesDataSource?.last?.nid)!, success: { [unowned self] (strategiesDataSource) in
-                    self.strategiesDataSource?.append(contentsOf: strategiesDataSource)
+                viewModel.loadMoreAllStrategies(nid: (viewModel.strategiesDataSource.last?.nid)!, success: { [unowned self] in
                     self.tableView?.mj_footer.endRefreshing()
                     DispatchQueue.main.async(execute: { [unowned self] in
                         self.tableView?.reloadData()
                     })
-                }, failure: {} ())
+                }(), failure: {} ())
                 break
             case .NEWER:
-                viewModel.loadMoreNewerStrategies(nid: (strategiesDataSource?.last?.nid)!, success: { [unowned self] (strategiesDataSource) in
-                    self.strategiesDataSource?.append(contentsOf: strategiesDataSource)
+                viewModel.loadMoreNewerStrategies(nid: (viewModel.strategiesDataSource.last?.nid)!, success: { [unowned self] in
                     self.tableView?.mj_footer.endRefreshing()
                     DispatchQueue.main.async(execute: { [unowned self] in
                         self.tableView?.reloadData()
                     })
-                }, failure: {} ())
+                }(), failure: {} ())
                 break
             case .STEP:
-                viewModel.loadMoreStepStrategies(nid: (strategiesDataSource?.last?.nid)!, success: { [unowned self] (strategiesDataSource) in
-                    self.strategiesDataSource?.append(contentsOf: strategiesDataSource)
+                viewModel.loadMoreStepStrategies(nid: (viewModel.strategiesDataSource.last?.nid)!, success: { [unowned self] in
                     self.tableView?.mj_footer.endRefreshing()
                     DispatchQueue.main.async(execute: { [unowned self] in
                         self.tableView?.reloadData()
                     })
-                }, failure: {} ())
+                }(), failure: {} ())
                 break
             case .SKILL:
-                viewModel.loadMoreSkillStrategies(nid: (strategiesDataSource?.last?.nid)!, success: { [unowned self] (strategiesDataSource) in
-                    self.strategiesDataSource?.append(contentsOf: strategiesDataSource)
+                viewModel.loadMoreSkillStrategies(nid: (viewModel.strategiesDataSource.last?.nid)!, success: { [unowned self] in
                     self.tableView?.mj_footer.endRefreshing()
                     DispatchQueue.main.async(execute: { [unowned self] in
                         self.tableView?.reloadData()
                     })
-                }, failure: {} ())
+                }(), failure: {} ())
                 break
             }
         }
@@ -192,12 +184,12 @@ class DHStrategyViewController: DHBaseViewController {
 // MARK: - UITableViewDelegate
 extension DHStrategyViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (strategiesDataSource?.count)!
+        return viewModel.strategiesDataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kStrategyCellReuseIdentifier, for: indexPath) as! DHStrategyTableViewCell
-        cell.bindDataWithModel(model: (strategiesDataSource?[indexPath.row])!)
+        cell.bindDataWithModel(model: viewModel.strategiesDataSource[indexPath.row])
         if #available(iOS 9.0, *) {
             if traitCollection.forceTouchCapability == .available {
                 registerForPreviewing(with: self, sourceView: cell)

@@ -13,7 +13,9 @@ let kStrategyDetailViewHeight: CGFloat = UIScreen.main.bounds.size.height - CGFl
 
 class DHStrategyDetailViewModel: NSObject {
 
-    let dataController: DHStrategyDetailDataController = DHStrategyDetailDataController.sharedInstance
+    lazy var dataController: DHStrategyDetailDataController = {
+        return DHStrategyDetailDataController()
+    }()
     
     func getDetailStrategy(model: DHStrategyModel, _ success: @escaping (_ urlString: String) -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getStrategyDetail(date: model.date!, nid: model.nid!, success: { (urlString) in
