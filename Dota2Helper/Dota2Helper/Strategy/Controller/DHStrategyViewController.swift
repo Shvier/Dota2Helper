@@ -22,8 +22,6 @@ class DHStrategyViewController: DHBaseViewController {
     lazy var viewModel: DHStrategyCellViewModel = {
         return DHStrategyCellViewModel()
     }()
-    
-    lazy var strategiesDataSource: [DHStrategyModel]? = {[]} ()
 
     var tableView: UITableView?
     var loadingView: DHLoadingView?

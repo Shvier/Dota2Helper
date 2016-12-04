@@ -10,10 +10,16 @@ import UIKit
 
 class DHStrategyCellViewModel: NSObject {
     
-    let dataController: DHStrategyCellDataController = DHStrategyCellDataController.sharedInstance
-
-    func getAllStrategies(_ success: @escaping (_ strategiesDataSource: [DHStrategyModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.getAllStrategies(success: { (response) in
+    lazy var dataController: DHStrategyCellDataController = {
+        return DHStrategyCellDataController()
+    }()
+    
+    lazy var strategiesDataSource: [DHStrategyModel] = {
+        return Array<DHStrategyModel>()
+    }()
+    
+    func getAllStrategies(_ success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getAllStrategies(success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                 let strategiesDicts = result["strategies"]
@@ -24,15 +30,16 @@ class DHStrategyCellViewModel: NSObject {
                     let strategy: DHStrategyModel = DHStrategyModel(dictionary: strategyDict)
                     strategiesDataSource.append(strategy)
                 }
-                success(strategiesDataSource)
+                self.strategiesDataSource = strategiesDataSource
+                success()
             } catch {
                 
             }
         }, failure: failure)
     }
     
-    func getNewerStrategies(_ success: @escaping (_ strategiesDataSource: [DHStrategyModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.getNewerStrategies(success: { (response) in
+    func getNewerStrategies(_ success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getNewerStrategies(success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                 let strategiesDicts = result["strategies"]
@@ -43,15 +50,16 @@ class DHStrategyCellViewModel: NSObject {
                     let strategy: DHStrategyModel = DHStrategyModel(dictionary: strategyDict)
                     strategiesDataSource.append(strategy)
                 }
-                success(strategiesDataSource)
+                self.strategiesDataSource = strategiesDataSource
+                success()
             } catch {
                 
             }
         }, failure: failure)
     }
     
-    func getStepStrategies(_ success: @escaping (_ strategiesDataSource: [DHStrategyModel]) -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.getStepStrategies(success: { (response) in
+    func getStepStrategies(_ success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getStepStrategies(success: { [unowned self] (response) in
             do {
                 let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
                 let strategiesDicts = result["strategies"]
@@ -62,7 +70,8 @@ class DHStrategyCellViewModel: NSObject {
                     let strategy: DHStrategyModel = DHStrategyModel(dictionary: strategyDict)
                     strategiesDataSource.append(strategy)
                 }
-                success(strategiesDataSource)
+                self.strategiesDataSource = strategiesDataSource
+                success()
             } catch {
                 
             }
@@ -81,7 +90,8 @@ class DHStrategyCellViewModel: NSObject {
                     let strategy: DHStrategyModel = DHStrategyModel(dictionary: strategyDict)
                     strategiesDataSource.append(strategy)
                 }
-                success(strategiesDataSource)
+                self.strategiesDataSource = strategiesDataSource
+                success()
             } catch {
                 
             }
