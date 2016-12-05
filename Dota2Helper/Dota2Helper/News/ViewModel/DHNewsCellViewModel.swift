@@ -34,22 +34,28 @@ class DHNewsCellViewModel: NSObject {
     func refreshNews(_ success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getNews(success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let bannerArray = result["banner"]
-                let newsArray = result["news"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let bannerArray = result?["banner"] as? Array<NSDictionary> else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
+                guard let newsArray = result?["news"] as? Array<NSDictionary> else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                     
                 var bannerDataSource: [DHNewsModel] = Array<DHNewsModel>()
                 var newsDataSource: [DHNewsModel] = Array<DHNewsModel>()
                 var imageUrlDataSource: [String] = Array<String>()
                 var titleUrlDataSource: [String] = Array<String>()
                     
-                for bannerDict in bannerArray as! [NSDictionary] {
+                for bannerDict in bannerArray {
                     let banner: DHNewsModel = DHNewsModel(dictionary: bannerDict)
                     bannerDataSource.append(banner)
                     imageUrlDataSource.append(banner.background!)
                     titleUrlDataSource.append(banner.title!)
                 }
-                for newsDict in newsArray as! [NSDictionary] {
+                for newsDict in newsArray {
                     let news: DHNewsModel = DHNewsModel(dictionary: newsDict)
                     newsDataSource.append(news)
                 }
@@ -59,8 +65,12 @@ class DHNewsCellViewModel: NSObject {
                 self.imageUrlDataSource = imageUrlDataSource
                 self.titleUrlDataSource = titleUrlDataSource
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("Refresh News failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -68,8 +78,12 @@ class DHNewsCellViewModel: NSObject {
     func loadMoreNews(nid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.loadMoreNews(nid: nid, success: { (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let newsArray = result["news"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let newsArray = result?["news"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                     
                 var newsDataSource: [DHNewsModel] = Array<DHNewsModel>()
                     
@@ -80,8 +94,12 @@ class DHNewsCellViewModel: NSObject {
                 }
                 self.newsDataSource.append(contentsOf: newsDataSource)
                 success()
-            } catch {
-
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("Load More News failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
