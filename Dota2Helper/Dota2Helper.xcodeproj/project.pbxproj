@@ -33,8 +33,6 @@
 		C045C63E1DF5AC31002C74D2 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045C63D1DF5AC31002C74D2 /* String+Category.swift */; };
 		C045C6411DF5AC97002C74D2 /* DHUniformError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045C6401DF5AC97002C74D2 /* DHUniformError.swift */; };
 		C05179A11DB10D8800C5ECAC /* DHBaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05179A01DB10D8800C5ECAC /* DHBaseDetailViewController.swift */; };
-		C051BE341DB022E600A2479C /* DHVideoPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051BE331DB022E600A2479C /* DHVideoPlayView.swift */; };
-		C051BE361DB0232000A2479C /* DHVideoPlayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051BE351DB0232000A2479C /* DHVideoPlayViewModel.swift */; };
 		C05468471DAEB43E00A4AC13 /* sdk.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C05468451DAEB43E00A4AC13 /* sdk.bundle */; };
 		C05468481DAEB43E00A4AC13 /* YTEngine.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C05468461DAEB43E00A4AC13 /* YTEngine.bundle */; };
 		C06DF8C21DEEF75700EDD9AA /* DHSDKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06DF89B1DEEF75700EDD9AA /* DHSDKViewController.swift */; };
@@ -162,8 +160,6 @@
 		C045C63D1DF5AC31002C74D2 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
 		C045C6401DF5AC97002C74D2 /* DHUniformError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHUniformError.swift; sourceTree = "<group>"; };
 		C05179A01DB10D8800C5ECAC /* DHBaseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseDetailViewController.swift; sourceTree = "<group>"; };
-		C051BE331DB022E600A2479C /* DHVideoPlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoPlayView.swift; sourceTree = "<group>"; };
-		C051BE351DB0232000A2479C /* DHVideoPlayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoPlayViewModel.swift; sourceTree = "<group>"; };
 		C05468451DAEB43E00A4AC13 /* sdk.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = sdk.bundle; sourceTree = "<group>"; };
 		C05468461DAEB43E00A4AC13 /* YTEngine.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YTEngine.bundle; sourceTree = "<group>"; };
 		C06DF89B1DEEF75700EDD9AA /* DHSDKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHSDKViewController.swift; sourceTree = "<group>"; };
@@ -668,7 +664,6 @@
 				C0B4E2081DBE07C300295FFF /* DHVideoDetailTableViewCell.xib */,
 				C0D3E07C1DA44A2D009AFDB0 /* DHVideoTableViewCell.swift */,
 				C0D3E07D1DA44A2D009AFDB0 /* DHVideoTableViewCell.xib */,
-				C051BE331DB022E600A2479C /* DHVideoPlayView.swift */,
 				C0B4E2031DBE078200295FFF /* DHVideoDetailTableViewCell.h */,
 				C0B4E2041DBE078200295FFF /* DHVideoDetailTableViewCell.m */,
 			);
@@ -679,7 +674,6 @@
 			isa = PBXGroup;
 			children = (
 				C0D3E0781DA44A06009AFDB0 /* DHVideoCellViewModel.swift */,
-				C051BE351DB0232000A2479C /* DHVideoPlayViewModel.swift */,
 				C0B4E2101DBE2EAA00295FFF /* DHRelatedVideoViewModel.h */,
 				C0B4E2111DBE2EAA00295FFF /* DHRelatedVideoViewModel.m */,
 			);
@@ -991,7 +985,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C045C63B1DF5AC26002C74D2 /* UISegmentedMenu.swift in Sources */,
-				C051BE361DB0232000A2479C /* DHVideoPlayViewModel.swift in Sources */,
 				C06DF8C31DEEF75700EDD9AA /* DHSettingsViewController.swift in Sources */,
 				C0B4E2121DBE2EAA00295FFF /* DHRelatedVideoViewModel.m in Sources */,
 				C0E6BF931D9434D400872006 /* DHNewsDetailViewModel.swift in Sources */,
@@ -1046,7 +1039,6 @@
 				C06DF8D51DEEF75700EDD9AA /* DHUpdateDetailDataController.swift in Sources */,
 				C06DF8D81DEEF75700EDD9AA /* DHUpdateTableViewCell.swift in Sources */,
 				C0D3E07B1DA44A13009AFDB0 /* DHVideoModel.swift in Sources */,
-				C051BE341DB022E600A2479C /* DHVideoPlayView.swift in Sources */,
 				C06DF8C41DEEF75700EDD9AA /* DHSDKTableViewCell.swift in Sources */,
 				C0B4E1FD1DBDA57A00295FFF /* DHVideoDetailViewController.m in Sources */,
 				C0D3E0791DA44A06009AFDB0 /* DHVideoCellViewModel.swift in Sources */,
