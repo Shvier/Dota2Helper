@@ -21,8 +21,12 @@ class DHVideoCellViewModel: NSObject {
     func getAllVideos(success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getAllVideos(success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videoDicts = result["videos"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let videoDicts = result?["videos"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
@@ -32,8 +36,12 @@ class DHVideoCellViewModel: NSObject {
                 }
                 self.videoDataSource = videoDataSource
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -41,8 +49,12 @@ class DHVideoCellViewModel: NSObject {
     func getJieshuoVideos(success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getJieshuoVideos(success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videoDicts = result["videos"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let videoDicts = result?["videos"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
@@ -52,8 +64,12 @@ class DHVideoCellViewModel: NSObject {
                 }
                 self.videoDataSource = videoDataSource
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -61,8 +77,12 @@ class DHVideoCellViewModel: NSObject {
     func getBisaiVideos(success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getBisaiVideos(success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videoDicts = result["videos"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let videoDicts = result?["videos"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
@@ -72,8 +92,12 @@ class DHVideoCellViewModel: NSObject {
                 }
                 self.videoDataSource = videoDataSource
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -81,8 +105,12 @@ class DHVideoCellViewModel: NSObject {
     func getCelebrityVideos(success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getCelebrityVideos(success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videoDicts = result["videos"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let videoDicts = result?["videos"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
@@ -92,8 +120,12 @@ class DHVideoCellViewModel: NSObject {
                 }
                 self.videoDataSource = videoDataSource
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -101,8 +133,12 @@ class DHVideoCellViewModel: NSObject {
     func getQuweiVideos(success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getQuweiVideos(success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videoDicts = result["videos"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let videoDicts = result?["videos"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
@@ -112,8 +148,12 @@ class DHVideoCellViewModel: NSObject {
                 }
                 self.videoDataSource = videoDataSource
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -121,8 +161,12 @@ class DHVideoCellViewModel: NSObject {
     func getBeginnerVideos(success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getBeginnerVideos(success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videoDicts = result["videos"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let videoDicts = result?["videos"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
@@ -132,8 +176,12 @@ class DHVideoCellViewModel: NSObject {
                 }
                 self.videoDataSource = videoDataSource
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -141,8 +189,12 @@ class DHVideoCellViewModel: NSObject {
     func getAdvancedVideos(success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getAdvancedVideos(success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videoDicts = result["videos"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let videoDicts = result?["videos"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
@@ -152,8 +204,12 @@ class DHVideoCellViewModel: NSObject {
                 }
                 self.videoDataSource = videoDataSource
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -161,8 +217,12 @@ class DHVideoCellViewModel: NSObject {
     func loadMoreAllVideos(vid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.loadMoreAllVideos(vid: vid, success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videoDicts = result["videos"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let videoDicts = result?["videos"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
@@ -172,8 +232,12 @@ class DHVideoCellViewModel: NSObject {
                 }
                 self.videoDataSource.append(contentsOf: videoDataSource)
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -181,8 +245,12 @@ class DHVideoCellViewModel: NSObject {
     func loadMoreJieshuoVideos(vid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.loadMoreJieshuoVideos(vid: vid, success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videoDicts = result["videos"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let videoDicts = result?["videos"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
@@ -192,8 +260,12 @@ class DHVideoCellViewModel: NSObject {
                 }
                 self.videoDataSource.append(contentsOf: videoDataSource)
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -201,8 +273,12 @@ class DHVideoCellViewModel: NSObject {
     func loadMoreBisaiVideos(vid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.loadMoreBisaiVideos(vid: vid, success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videoDicts = result["videos"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let videoDicts = result?["videos"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
@@ -212,8 +288,12 @@ class DHVideoCellViewModel: NSObject {
                 }
                 self.videoDataSource.append(contentsOf: videoDataSource)
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -221,8 +301,12 @@ class DHVideoCellViewModel: NSObject {
     func loadMoreCelebrityVideos(vid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.loadMoreCelebrityVideos(vid: vid, success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videoDicts = result["videos"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let videoDicts = result?["videos"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
@@ -232,8 +316,12 @@ class DHVideoCellViewModel: NSObject {
                 }
                 self.videoDataSource.append(contentsOf: videoDataSource)
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -241,8 +329,12 @@ class DHVideoCellViewModel: NSObject {
     func loadMoreQuweiVideos(vid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.loadMoreQuweiVideos(vid: vid, success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videoDicts = result["videos"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let videoDicts = result?["videos"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
@@ -252,8 +344,12 @@ class DHVideoCellViewModel: NSObject {
                 }
                 self.videoDataSource.append(contentsOf: videoDataSource)
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -261,8 +357,12 @@ class DHVideoCellViewModel: NSObject {
     func loadMoreBeginnerVideos(vid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.loadMoreBeginnerVideos(vid: vid, success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videoDicts = result["videos"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let videoDicts = result?["videos"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
@@ -272,8 +372,12 @@ class DHVideoCellViewModel: NSObject {
                 }
                 self.videoDataSource.append(contentsOf: videoDataSource)
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -281,8 +385,12 @@ class DHVideoCellViewModel: NSObject {
     func loadMoreAdvancedVideos(vid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.loadMoreAdvancedVideos(vid: vid, success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videoDicts = result["videos"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let videoDicts = result?["videos"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
@@ -292,8 +400,12 @@ class DHVideoCellViewModel: NSObject {
                 }
                 self.videoDataSource.append(contentsOf: videoDataSource)
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -301,8 +413,12 @@ class DHVideoCellViewModel: NSObject {
     func getRelatedVideos(vid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getRelatedVideos(vid: vid, success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let videoDicts = result["videos"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let videoDicts = result?["videos"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var videoDataSource: [DHVideoModel] = Array<DHVideoModel>()
                 
@@ -312,8 +428,12 @@ class DHVideoCellViewModel: NSObject {
                 }
                 self.videoDataSource.append(contentsOf: videoDataSource)
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
