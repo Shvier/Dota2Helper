@@ -37,7 +37,7 @@ func DHAPIGetRefreshVideosUrl(videoType: String) -> String {
 }
 // load more videos
 func DHAPILoadMoreVideosUrl(videoType: String, vid: String) -> String {
-    return UrlHeader + "loadmore/\(videoType)/\(vid)"
+    return UrlHeader + "video/loadmore/\(videoType)/\(vid)"
 }
 // get video set info
 func DHAPIGetVideoSetInfoUrl(date: String, vid: String) -> String {
