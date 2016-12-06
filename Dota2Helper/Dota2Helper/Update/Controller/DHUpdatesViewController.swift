@@ -68,7 +68,9 @@ class DHUpdatesViewController: DHBaseViewController {
     
 // MARK: - Life Cycle
     override func reachabilityChanged(note: NSNotification) {
-        let reachability = note.object as! Reachability
+        guard let reachability = note.object as? Reachability else {
+            return
+        }
         if reachability.isReachable {
             noNetworkView?.hide()
             handleUpdateData()
