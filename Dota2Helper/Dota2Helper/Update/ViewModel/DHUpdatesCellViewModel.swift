@@ -19,8 +19,12 @@ class DHUpdatesCellViewModel: NSObject {
     func refreshUpdates(_ success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getUpdates(success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let updatesArray = result["news"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let updatesArray = result?["news"] else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
                 
                 var updatesDataSource: [DHUpdateModel] = Array<DHUpdateModel>()
                 
@@ -30,8 +34,12 @@ class DHUpdatesCellViewModel: NSObject {
                 }
                 self.updatesDataSource = updatesDataSource
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -39,8 +47,12 @@ class DHUpdatesCellViewModel: NSObject {
     func loadMoreUpdates(nid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.loadMoreUpates(nid: nid, success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let updatesArray = result["news"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let updatesArray = result?["news"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var updatesDataSource: [DHUpdateModel] = Array<DHUpdateModel>()
                 
@@ -50,8 +62,12 @@ class DHUpdatesCellViewModel: NSObject {
                 }
                 self.updatesDataSource.append(contentsOf: updatesDataSource)
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
