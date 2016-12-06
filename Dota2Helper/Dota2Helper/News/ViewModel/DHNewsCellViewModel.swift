@@ -66,7 +66,7 @@ class DHNewsCellViewModel: NSObject {
                 self.titleUrlDataSource = titleUrlDataSource
                 success()
             } catch DHUniformJSONError.DHJSONErrorParseFailed {
-                DHLog("Refresh News failed")
+                DHLog("JSON Parsing failed")
             } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
                 DHLog("Key not found in Dictionary")
             } catch let error {
@@ -95,7 +95,7 @@ class DHNewsCellViewModel: NSObject {
                 self.newsDataSource.append(contentsOf: newsDataSource)
                 success()
             } catch DHUniformJSONError.DHJSONErrorParseFailed {
-                DHLog("Load More News failed")
+                DHLog("JSON Parsing failed")
             } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
                 DHLog("Key not found in Dictionary")
             } catch let error {

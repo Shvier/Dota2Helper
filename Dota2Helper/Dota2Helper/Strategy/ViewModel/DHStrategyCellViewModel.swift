@@ -21,8 +21,12 @@ class DHStrategyCellViewModel: NSObject {
     func getAllStrategies(_ success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getAllStrategies(success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let strategiesDicts = result["strategies"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let strategiesDicts = result?["strategies"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var strategiesDataSource: [DHStrategyModel] = Array<DHStrategyModel>()
                 
@@ -32,8 +36,12 @@ class DHStrategyCellViewModel: NSObject {
                 }
                 self.strategiesDataSource = strategiesDataSource
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -41,8 +49,12 @@ class DHStrategyCellViewModel: NSObject {
     func getNewerStrategies(_ success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getNewerStrategies(success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let strategiesDicts = result["strategies"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let strategiesDicts = result?["strategies"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var strategiesDataSource: [DHStrategyModel] = Array<DHStrategyModel>()
                 
@@ -52,8 +64,12 @@ class DHStrategyCellViewModel: NSObject {
                 }
                 self.strategiesDataSource = strategiesDataSource
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -61,8 +77,12 @@ class DHStrategyCellViewModel: NSObject {
     func getStepStrategies(_ success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getStepStrategies(success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let strategiesDicts = result["strategies"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let strategiesDicts = result?["strategies"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var strategiesDataSource: [DHStrategyModel] = Array<DHStrategyModel>()
                 
@@ -72,8 +92,12 @@ class DHStrategyCellViewModel: NSObject {
                 }
                 self.strategiesDataSource = strategiesDataSource
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -81,8 +105,12 @@ class DHStrategyCellViewModel: NSObject {
     func getSkillStrategies(_ success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getSkillStrategies(success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let strategiesDicts = result["strategies"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let strategiesDicts = result?["strategies"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var strategiesDataSource: [DHStrategyModel] = Array<DHStrategyModel>()
                 
@@ -92,8 +120,12 @@ class DHStrategyCellViewModel: NSObject {
                 }
                 self.strategiesDataSource = strategiesDataSource
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -101,8 +133,12 @@ class DHStrategyCellViewModel: NSObject {
     func loadMoreAllStrategies(nid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.loadMoreAllStrategies(nid: nid, success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let strategiesDicts = result["strategies"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let strategiesDicts = result?["strategies"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var strategiesDataSource: [DHStrategyModel] = Array<DHStrategyModel>()
                 
@@ -112,8 +148,12 @@ class DHStrategyCellViewModel: NSObject {
                 }
                 self.strategiesDataSource.append(contentsOf: strategiesDataSource)
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -121,8 +161,12 @@ class DHStrategyCellViewModel: NSObject {
     func loadMoreNewerStrategies(nid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.loadMoreNewerStrategies(nid: nid, success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let strategiesDicts = result["strategies"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let strategiesDicts = result?["strategies"] else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
                 
                 var strategiesDataSource: [DHStrategyModel] = Array<DHStrategyModel>()
                 
@@ -132,8 +176,12 @@ class DHStrategyCellViewModel: NSObject {
                 }
                 self.strategiesDataSource.append(contentsOf: strategiesDataSource)
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -141,8 +189,12 @@ class DHStrategyCellViewModel: NSObject {
     func loadMoreStepStrategies(nid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.loadMoreStepStrategies(nid: nid, success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let strategiesDicts = result["strategies"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let strategiesDicts = result?["strategies"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var strategiesDataSource: [DHStrategyModel] = Array<DHStrategyModel>()
                 
@@ -152,8 +204,12 @@ class DHStrategyCellViewModel: NSObject {
                 }
                 self.strategiesDataSource.append(contentsOf: strategiesDataSource)
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
@@ -161,8 +217,12 @@ class DHStrategyCellViewModel: NSObject {
     func loadMoreSkillStrategies(nid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.loadMoreSkillStrategies(nid: nid, success: { [unowned self] (response) in
             do {
-                let result = try JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                let strategiesDicts = result["strategies"]
+                guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
+                    throw DHUniformJSONError.DHJSONErrorParseFailed
+                }
+                guard let strategiesDicts = result?["strategies"] else {
+                    throw DHUniformJSONError.DHJSONErrorKeyNotFound
+                }
                 
                 var strategiesDataSource: [DHStrategyModel] = Array<DHStrategyModel>()
                 
@@ -172,8 +232,12 @@ class DHStrategyCellViewModel: NSObject {
                 }
                 self.strategiesDataSource.append(contentsOf: strategiesDataSource)
                 success()
-            } catch {
-                
+            } catch DHUniformJSONError.DHJSONErrorParseFailed {
+                DHLog("JSON Parsing failed")
+            } catch DHUniformJSONError.DHJSONErrorKeyNotFound {
+                DHLog("Key not found in Dictionary")
+            } catch let error {
+                DHLog("Other Error: \(error)")
             }
         }, failure: failure)
     }
