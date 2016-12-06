@@ -1,5 +1,5 @@
 //
-//  DHUpdatesDetailViewController.swift
+//  DHUpdateDetailViewController.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 9/26/16.
@@ -9,10 +9,10 @@
 import UIKit
 import WebKit
 
-class DHUpdatesDetailViewController: DHBaseDetailViewController, WKNavigationDelegate {
+class DHUpdateDetailViewController: DHBaseDetailViewController, WKNavigationDelegate {
 
-    lazy var viewModel: DHUpdatesDetailViewModel = {
-        return DHUpdatesDetailViewModel()
+    lazy var viewModel: DHUpdateDetailViewModel = {
+        return DHUpdateDetailViewModel()
     }()
     
     var updateModel: DHUpdateModel?
@@ -24,7 +24,7 @@ class DHUpdatesDetailViewController: DHBaseDetailViewController, WKNavigationDel
     override var previewActionItems: [UIPreviewActionItem] {
         get {
             let openWithSafariAction: UIPreviewAction = UIPreviewAction(title: "使用Safari打开", style: .default, handler: { [unowned self] (UIPreviewAction, UIViewController) in
-                self.viewModel.getDetailUpdates(model: self.updateModel!, { (urlString) in
+                self.viewModel.getDetailUpdate(model: self.updateModel!, { (urlString) in
                     UIApplication.shared.openURL(URL(string: urlString)!)
                 }, failure: {} ())
             })
@@ -41,7 +41,7 @@ class DHUpdatesDetailViewController: DHBaseDetailViewController, WKNavigationDel
 // MARK: - Life Cycle
     func handleData() {
         updateDetailView = DHUpdateDetailView(frame: CGRect(x: 0, y: 0, width: kNewsDetailViewWidth, height: kNewsDetailViewHeight - kTabBarHeight))
-        viewModel.getDetailUpdates(model: self.updateModel!, { [unowned self] (urlString) in
+        viewModel.getDetailUpdate(model: self.updateModel!, { [unowned self] (urlString) in
             self.updateDetailView?.loadRequest(request: URLRequest(url: URL(string: urlString)!))
         }, failure: {} ())
     }

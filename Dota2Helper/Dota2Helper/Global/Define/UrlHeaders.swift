@@ -17,10 +17,10 @@ func DHAPILoadMoreNewsUrl(nid: String) -> String {
 func DHAPIGetNewsDetailUrl(date: String, nid: String) -> String {
     return UrlHeader + "newsdetail/\(date)/\(nid)"
 }
-// refresh updates
-let DHAPIBatchRefreshUpdatesUrl: String = UrlHeader + "updates/refresh"
+// refresh update
+let DHAPIBatchRefreshUpdateUrl: String = UrlHeader + "updates/refresh"
 // load more updates
-func DHAPILoadMoreUpdatesUrl(nid: String) -> String {
+func DHAPILoadMoreUpdateUrl(nid: String) -> String {
     return UrlHeader + "updates/loadmore/\(nid)"
 }
 // refresh strategies

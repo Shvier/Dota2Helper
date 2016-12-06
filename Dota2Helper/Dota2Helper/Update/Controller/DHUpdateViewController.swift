@@ -1,5 +1,5 @@
 //
-//  DHUpdatesViewController.swift
+//  DHUpdateViewController.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 16/8/12.
@@ -10,10 +10,10 @@ import UIKit
 import MJRefresh
 import ReachabilitySwift
 
-class DHUpdatesViewController: DHBaseViewController {
+class DHUpdateViewController: DHBaseViewController {
 
-    lazy var viewModel: DHUpdatesCellViewModel = {
-        return DHUpdatesCellViewModel()
+    lazy var viewModel: DHUpdateCellViewModel = {
+        return DHUpdateCellViewModel()
     }()
     
     var tableView: UITableView?
@@ -30,7 +30,7 @@ class DHUpdatesViewController: DHBaseViewController {
             self.endHeaderRefreshing()
         }
 
-        viewModel.refreshUpdates({ [unowned self] in
+        viewModel.refreshUpdate({ [unowned self] in
             self.tableView?.mj_header.endRefreshing()
             self.renderTableViewCell()
         }(), failure: {} ())
@@ -40,7 +40,7 @@ class DHUpdatesViewController: DHBaseViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 10) { [unowned self] in
             self.tableView?.mj_footer.endRefreshing()
         }
-        viewModel.loadMoreUpdates(nid: (viewModel.updatesDataSource.last?.nid)!, success: {
+        viewModel.loadMoreUpdate(nid: (viewModel.updateDataSource.last?.nid)!, success: {
             DispatchQueue.main.async(execute: {
                 self.tableView?.reloadData()
             })
@@ -61,9 +61,9 @@ class DHUpdatesViewController: DHBaseViewController {
     }
     
     func loadToDetailVCWithUpdateModel(updateModel: DHUpdateModel) {
-        let updatesDetailVC: DHUpdatesDetailViewController = DHUpdatesDetailViewController()
-        updatesDetailVC.updateModel = updateModel
-        navigationController?.pushViewController(updatesDetailVC, animated: true)
+        let updateDetailVC: DHUpdateDetailViewController = DHUpdateDetailViewController()
+        updateDetailVC.updateModel = updateModel
+        navigationController?.pushViewController(updateDetailVC, animated: true)
     }
     
 // MARK: - Life Cycle
@@ -118,9 +118,9 @@ class DHUpdatesViewController: DHBaseViewController {
 }
 
 // MARK: - UITableViewDelegate
-extension DHUpdatesViewController: UITableViewDelegate, UITableViewDataSource {
+extension DHUpdateViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.updatesDataSource.count
+        return viewModel.updateDataSource.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -129,7 +129,7 @@ extension DHUpdatesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: DHUpdateTableViewCell = tableView.dequeueReusableCell(withIdentifier: kUpdateCellReuseIdentifier, for: indexPath) as! DHUpdateTableViewCell
-        cell.bindDataWithModel(model: viewModel.updatesDataSource[indexPath.row])
+        cell.bindDataWithModel(model: viewModel.updateDataSource[indexPath.row])
         if #available(iOS 9.0, *) {
             if traitCollection.forceTouchCapability == .available {
                 registerForPreviewing(with: self, sourceView: cell)
@@ -166,15 +166,15 @@ extension DHUpdatesViewController: UITableViewDelegate, UITableViewDataSource {
 
 // MARK: UIViewControllerPreviewingDelegate
 @available(iOS 9.0, *)
-extension DHUpdatesViewController: UIViewControllerPreviewingDelegate {
+extension DHUpdateViewController: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        let updatesDetailVC: DHUpdatesDetailViewController = DHUpdatesDetailViewController()
+        let updateDetailVC: DHUpdateDetailViewController = DHUpdateDetailViewController()
         let cell = previewingContext.sourceView as! DHUpdateTableViewCell
-        updatesDetailVC.updateModel = cell.updateModel
-        return updatesDetailVC
+        updateDetailVC.updateModel = cell.updateModel
+        return updateDetailVC
     }
 }

@@ -25,16 +25,16 @@ class DHGetNewsDetailRequest {
     }
 }
 
-//MARK: - Updates API
-class DHGetUpdatesRequest {
-    class func requestUpdatesData(success: @escaping (Data) -> Void, failure: @autoclosure @escaping () -> Void) {
-        DHBaseNetworkRequest.request(url: DHAPIBatchRefreshUpdatesUrl, parameters: nil, success: success, failure: failure)
+//MARK: - Update API
+class DHGetUpdateRequest {
+    class func requestUpdateData(success: @escaping (Data) -> Void, failure: @autoclosure @escaping () -> Void) {
+        DHBaseNetworkRequest.request(url: DHAPIBatchRefreshUpdateUrl, parameters: nil, success: success, failure: failure)
     }
 }
 
-class DHLoadMoreUpdatesRequest {
-    class func requestMoreUpdatesData(nid: String, success: @escaping(Data) -> Void, failure: @autoclosure @escaping () -> Void) {
-        DHBaseNetworkRequest.request(url: DHAPILoadMoreUpdatesUrl(nid: nid), parameters: nil, success: success, failure: failure)
+class DHLoadMoreUpdateRequest {
+    class func requestMoreUpdateData(nid: String, success: @escaping(Data) -> Void, failure: @autoclosure @escaping () -> Void) {
+        DHBaseNetworkRequest.request(url: DHAPILoadMoreUpdateUrl(nid: nid), parameters: nil, success: success, failure: failure)
     }
 }
 

@@ -1,38 +1,38 @@
 //
-//  DHUpdatesCellViewModel.swift
+//  DHUpdateCellViewModel.swift
 //  Dota2Helper
 //
 //  Created by Shvier on 12/11/2016.
 //  Copyright © 2016 Shvier. All rights reserved.
 //
 
-class DHUpdatesCellViewModel: NSObject {
+class DHUpdateCellViewModel: NSObject {
     
-    lazy var dataController: DHUpdatesCellDataController = {
-        return DHUpdatesCellDataController()
+    lazy var dataController: DHUpdateCellDataController = {
+        return DHUpdateCellDataController()
     }()
     
-    lazy var updatesDataSource: [DHUpdateModel] = {
+    lazy var updateDataSource: [DHUpdateModel] = {
         return Array<DHUpdateModel>()
     }()
     
-    func refreshUpdates(_ success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
-        dataController.getUpdates(success: { [unowned self] (response) in
+    func refreshUpdate(_ success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+        dataController.getUpdate(success: { [unowned self] (response) in
             do {
                 guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
                     throw DHUniformJSONError.DHJSONErrorParseFailed
                 }
-                guard let updatesArray = result?["news"] else {
+                guard let updateArray = result?["news"] else {
                     throw DHUniformJSONError.DHJSONErrorParseFailed
                 }
                 
-                var updatesDataSource: [DHUpdateModel] = Array<DHUpdateModel>()
+                var updateDataSource: [DHUpdateModel] = Array<DHUpdateModel>()
                 
-                for updateDict in updatesArray as! [NSDictionary] {
+                for updateDict in updateArray as! [NSDictionary] {
                     let update: DHUpdateModel = DHUpdateModel(dictionary: updateDict)
-                    updatesDataSource.append(update)
+                    updateDataSource.append(update)
                 }
-                self.updatesDataSource = updatesDataSource
+                self.updateDataSource = updateDataSource
                 success()
             } catch DHUniformJSONError.DHJSONErrorParseFailed {
                 DHLog("JSON Parsing failed")
@@ -44,23 +44,23 @@ class DHUpdatesCellViewModel: NSObject {
         }, failure: failure)
     }
     
-    func loadMoreUpdates(nid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
+    func loadMoreUpdate(nid: String, success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.loadMoreUpates(nid: nid, success: { [unowned self] (response) in
             do {
                 guard let result = try? JSONSerialization.jsonObject(with: response, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary else {
                     throw DHUniformJSONError.DHJSONErrorParseFailed
                 }
-                guard let updatesArray = result?["news"] else {
+                guard let updateArray = result?["news"] else {
                     throw DHUniformJSONError.DHJSONErrorKeyNotFound
                 }
                 
-                var updatesDataSource: [DHUpdateModel] = Array<DHUpdateModel>()
+                var updateDataSource: [DHUpdateModel] = Array<DHUpdateModel>()
                 
-                for updateDict in updatesArray as! [NSDictionary] {
+                for updateDict in updateArray as! [NSDictionary] {
                     let update: DHUpdateModel = DHUpdateModel(dictionary: updateDict)
-                    updatesDataSource.append(update)
+                    updateDataSource.append(update)
                 }
-                self.updatesDataSource.append(contentsOf: updatesDataSource)
+                self.updateDataSource.append(contentsOf: updateDataSource)
                 success()
             } catch DHUniformJSONError.DHJSONErrorParseFailed {
                 DHLog("JSON Parsing failed")
