@@ -8,6 +8,6 @@
 
 项目还在制作中，平时会比较忙，欢迎大家的来访和支持。   
 部分截图概览：   
-![启动页](https://github.com/Shvier/PhotoLibrary/blob/master/Simulator%20Screen%20Shot%20Oct%205,%202016,%201.13.13%20AM.png?raw=true)   
-![资讯页](https://github.com/Shvier/PhotoLibrary/blob/master/Simulator%20Screen%20Shot%20Oct%205,%202016,%201.13.37%20AM.png?raw=true)   
-![攻略页](https://github.com/Shvier/PhotoLibrary/blob/master/Simulator%20Screen%20Shot%20Oct%205,%202016,%201.13.42%20AM.png?raw=true)
+![启动页](https://github.com/Shvier/PhotoLibrary/blob/master/APP/Dota2Helper/Simulator%20Screen%20Shot%20Oct%205,%202016,%201.13.13%20AM.png?raw=true)   
+![资讯页](https://github.com/Shvier/PhotoLibrary/blob/master/APP/Dota2Helper/Simulator%20Screen%20Shot%20Oct%205,%202016,%201.13.37%20AM.png?raw=true)   
+![攻略页](https://github.com/Shvier/PhotoLibrary/blob/master/APP/Dota2Helper/Simulator%20Screen%20Shot%20Oct%205,%202016,%201.13.42%20AM.png?raw=true)
