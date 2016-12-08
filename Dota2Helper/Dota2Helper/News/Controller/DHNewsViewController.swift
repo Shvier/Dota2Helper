@@ -49,7 +49,13 @@ class DHNewsViewController: DHBaseViewController {
             DispatchQueue.main.async(execute: {
                 self.tableView?.reloadData()
             })
-        }(), failure: {} ())
+        }(), failure: {
+            let hud: MBProgressHUD = MBProgressHUD.showAdded(to: self.view, animated: true)
+            hud.mode = MBProgressHUDMode.text
+            hud.mj_y = 300
+            hud.label.text = "操作太快啦~请稍后试试"
+            hud.hide(animated: true, afterDelay: 1.0)
+        }())
     }
     
     func endHeaderRefreshing() {
