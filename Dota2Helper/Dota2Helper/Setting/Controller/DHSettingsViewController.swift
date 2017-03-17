@@ -8,11 +8,13 @@
 
 import UIKit
 
+let ratio: CGFloat = 1.35
+
 class DHSettingsViewController: UITableViewController {
 
     lazy var dataSource: [NSArray]? = {[]} ()
     lazy var cacheArray: [String]? = {[]} ()
-    let kBackgroundViewHeight: CGFloat = 170
+    let kBackgroundViewHeight: CGFloat = UIScreen.main.bounds.size.width/ratio
     
 // MARK: - Data Handler
     func handleData() {
