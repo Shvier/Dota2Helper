@@ -114,7 +114,8 @@ class DHNewsViewController: DHBaseViewController {
         tableView?.backgroundColor = kTableViewBackgroundColor
         tableView?.delegate = self
         tableView?.dataSource = self
-        tableView?.register(UINib(nibName: "DHNewsTableViewCell", bundle: nil), forCellReuseIdentifier: kNewsCellReuseIdentifier)
+//        tableView?.register(UINib(nibName: "DHNewsTableViewCell", bundle: nil), forCellReuseIdentifier: kNewsCellReuseIdentifier)
+        tableView?.register(DHNewsTableViewCell.self, forCellReuseIdentifier: kNewsCellReuseIdentifier)
         tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: { [unowned self] in
             self.beginHeaderRefreshing()
         })
