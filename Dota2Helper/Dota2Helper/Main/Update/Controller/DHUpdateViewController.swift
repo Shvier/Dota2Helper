@@ -93,7 +93,7 @@ class DHUpdateViewController: DHBaseViewController {
     func setContentView() {
         tableView = UITableView.init(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height), style: .plain)
         tableView?.backgroundColor = kTableViewBackgroundColor
-        tableView?.register(UINib(nibName: "DHUpdateTableViewCell", bundle: nil), forCellReuseIdentifier: kUpdateCellReuseIdentifier)
+        tableView?.register(DHNewsTableViewCell.self, forCellReuseIdentifier: kUpdateCellReuseIdentifier)
         tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: { [unowned self] in
             self.beginHeaderRefreshing()
         })
@@ -124,12 +124,12 @@ extension DHUpdateViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return kUpdateTableViewCellHeight
+        return kNewsTableViewCellHeight
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: DHUpdateTableViewCell = tableView.dequeueReusableCell(withIdentifier: kUpdateCellReuseIdentifier, for: indexPath) as! DHUpdateTableViewCell
-        cell.bindDataWithModel(model: viewModel.updateDataSource[indexPath.row])
+        let cell: DHNewsTableViewCell = tableView.dequeueReusableCell(withIdentifier: kUpdateCellReuseIdentifier, for: indexPath) as! DHNewsTableViewCell
+//        cell.bindDataWithModel(model: viewModel.updateDataSource[indexPath.row])
         if #available(iOS 9.0, *) {
             if traitCollection.forceTouchCapability == .available {
                 registerForPreviewing(with: self, sourceView: cell)
@@ -143,8 +143,8 @@ extension DHUpdateViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         setNaviAndTabStatus(isHidden: false)
-        let cell: DHUpdateTableViewCell = tableView.cellForRow(at: indexPath) as! DHUpdateTableViewCell
-        loadToDetailVCWithUpdateModel(updateModel: cell.updateModel!)
+//        let cell: DHNewsTableViewCell = tableView.cellForRow(at: indexPath) as! DHNewsTableViewCell
+//        loadToDetailVCWithUpdateModel(updateModel: cell.updateModel!)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -173,8 +173,8 @@ extension DHUpdateViewController: UIViewControllerPreviewingDelegate {
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         let updateDetailVC: DHUpdateDetailViewController = DHUpdateDetailViewController()
-        let cell = previewingContext.sourceView as! DHUpdateTableViewCell
-        updateDetailVC.updateModel = cell.updateModel
+        let cell = previewingContext.sourceView as! DHNewsTableViewCell
+//        updateDetailVC.updateModel = cell.updateModel
         return updateDetailVC
     }
 }

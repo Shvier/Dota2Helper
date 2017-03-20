@@ -50,9 +50,6 @@ class DHNewsTableViewCell: DHBaseTableViewCell {
         titleLabel.text = model.title
         newsDescriptionLabel.text = model.newsDescription
         timeLabel.text = model.time
-        
-        self.layer.cornerRadius = kContentViewCornerRadius
-        self.layer.masksToBounds = true
     }
     
 // MARK: - Construction Method
@@ -132,6 +129,9 @@ class DHNewsTableViewCell: DHBaseTableViewCell {
             make.top.equalTo(newsDescriptionLabel.snp.bottom).offset(kTimeLabelMargin)
             make.bottom.equalTo(contentView.snp.bottom).offset(-kTimeLabelMargin)
         }
+        
+        self.layer.cornerRadius = kContentViewCornerRadius
+        self.layer.masksToBounds = true
     }
     
     required init?(coder aDecoder: NSCoder) {

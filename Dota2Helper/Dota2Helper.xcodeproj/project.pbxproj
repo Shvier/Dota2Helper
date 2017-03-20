@@ -64,7 +64,6 @@
 		C0CA42DE1E801842004DAB88 /* DHNewsDetailDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42931E801842004DAB88 /* DHNewsDetailDataController.swift */; };
 		C0CA42DF1E801842004DAB88 /* DHNewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42951E801842004DAB88 /* DHNewsModel.swift */; };
 		C0CA42E01E801842004DAB88 /* DHNewsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42971E801842004DAB88 /* DHNewsDetailView.swift */; };
-		C0CA42E11E801842004DAB88 /* DHNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42981E801842004DAB88 /* DHNewsTableViewCell.swift */; };
 		C0CA42E31E801842004DAB88 /* DHNewsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA429B1E801842004DAB88 /* DHNewsCellViewModel.swift */; };
 		C0CA42E41E801842004DAB88 /* DHNewsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA429C1E801842004DAB88 /* DHNewsDetailViewModel.swift */; };
 		C0CA42E51E801842004DAB88 /* DHSDKViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA429F1E801842004DAB88 /* DHSDKViewController.swift */; };
@@ -87,8 +86,6 @@
 		C0CA42F61E801842004DAB88 /* DHUpdateDetailDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42BA1E801842004DAB88 /* DHUpdateDetailDataController.swift */; };
 		C0CA42F71E801842004DAB88 /* DHUpdateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42BC1E801842004DAB88 /* DHUpdateModel.swift */; };
 		C0CA42F81E801842004DAB88 /* DHUpdateDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42BE1E801842004DAB88 /* DHUpdateDetailView.swift */; };
-		C0CA42F91E801842004DAB88 /* DHUpdateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42BF1E801842004DAB88 /* DHUpdateTableViewCell.swift */; };
-		C0CA42FA1E801842004DAB88 /* DHUpdateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0CA42C01E801842004DAB88 /* DHUpdateTableViewCell.xib */; };
 		C0CA42FB1E801842004DAB88 /* DHUpdateCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42C21E801842004DAB88 /* DHUpdateCellViewModel.swift */; };
 		C0CA42FC1E801842004DAB88 /* DHUpdateDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42C31E801842004DAB88 /* DHUpdateDetailViewModel.swift */; };
 		C0CA42FD1E801842004DAB88 /* DHVideoDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42C71E801842004DAB88 /* DHVideoDetailViewController.m */; };
@@ -106,6 +103,7 @@
 		C0CA430C1E80184B004DAB88 /* DHBaseNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA430A1E80184B004DAB88 /* DHBaseNetworkRequest.swift */; };
 		C0CA430D1E80184B004DAB88 /* DHNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA430B1E80184B004DAB88 /* DHNetworkRequest.swift */; };
 		C0CA43141E802B71004DAB88 /* DHBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA43131E802B71004DAB88 /* DHBaseTableViewCell.swift */; };
+		C0CA43161E802D14004DAB88 /* DHNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA43151E802D14004DAB88 /* DHNewsTableViewCell.swift */; };
 		C0D4CFE01D5DBEF1008F824A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0D4CFDF1D5DBEF1008F824A /* Assets.xcassets */; };
 		C0D4CFE31D5DBEF1008F824A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D4CFE11D5DBEF1008F824A /* LaunchScreen.storyboard */; };
 		C0EC967F1D8FCA8100E1557E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EC967D1D8FCA8100E1557E /* Fabric.framework */; };
@@ -191,7 +189,6 @@
 		C0CA42931E801842004DAB88 /* DHNewsDetailDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsDetailDataController.swift; sourceTree = "<group>"; };
 		C0CA42951E801842004DAB88 /* DHNewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsModel.swift; sourceTree = "<group>"; };
 		C0CA42971E801842004DAB88 /* DHNewsDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsDetailView.swift; sourceTree = "<group>"; };
-		C0CA42981E801842004DAB88 /* DHNewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsTableViewCell.swift; sourceTree = "<group>"; };
 		C0CA429B1E801842004DAB88 /* DHNewsCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsCellViewModel.swift; sourceTree = "<group>"; };
 		C0CA429C1E801842004DAB88 /* DHNewsDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsDetailViewModel.swift; sourceTree = "<group>"; };
 		C0CA429F1E801842004DAB88 /* DHSDKViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHSDKViewController.swift; sourceTree = "<group>"; };
@@ -214,8 +211,6 @@
 		C0CA42BA1E801842004DAB88 /* DHUpdateDetailDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHUpdateDetailDataController.swift; sourceTree = "<group>"; };
 		C0CA42BC1E801842004DAB88 /* DHUpdateModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHUpdateModel.swift; sourceTree = "<group>"; };
 		C0CA42BE1E801842004DAB88 /* DHUpdateDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHUpdateDetailView.swift; sourceTree = "<group>"; };
-		C0CA42BF1E801842004DAB88 /* DHUpdateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHUpdateTableViewCell.swift; sourceTree = "<group>"; };
-		C0CA42C01E801842004DAB88 /* DHUpdateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHUpdateTableViewCell.xib; sourceTree = "<group>"; };
 		C0CA42C21E801842004DAB88 /* DHUpdateCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHUpdateCellViewModel.swift; sourceTree = "<group>"; };
 		C0CA42C31E801842004DAB88 /* DHUpdateDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHUpdateDetailViewModel.swift; sourceTree = "<group>"; };
 		C0CA42C61E801842004DAB88 /* DHVideoDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DHVideoDetailViewController.h; sourceTree = "<group>"; };
@@ -238,6 +233,7 @@
 		C0CA430A1E80184B004DAB88 /* DHBaseNetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseNetworkRequest.swift; sourceTree = "<group>"; };
 		C0CA430B1E80184B004DAB88 /* DHNetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNetworkRequest.swift; sourceTree = "<group>"; };
 		C0CA43131E802B71004DAB88 /* DHBaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseTableViewCell.swift; sourceTree = "<group>"; };
+		C0CA43151E802D14004DAB88 /* DHNewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNewsTableViewCell.swift; sourceTree = "<group>"; };
 		C0D4CFDA1D5DBEF1008F824A /* Dota2Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dota2Helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D4CFDF1D5DBEF1008F824A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0D4CFE21D5DBEF1008F824A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -456,6 +452,7 @@
 		C0A6906F1DB3B7E400DC0FA0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C0CA43151E802D14004DAB88 /* DHNewsTableViewCell.swift */,
 				C0A690721DB3B96600DC0FA0 /* DHBaseDetailView.swift */,
 				C0CA43131E802B71004DAB88 /* DHBaseTableViewCell.swift */,
 			);
@@ -516,7 +513,6 @@
 			isa = PBXGroup;
 			children = (
 				C0CA42971E801842004DAB88 /* DHNewsDetailView.swift */,
-				C0CA42981E801842004DAB88 /* DHNewsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -656,8 +652,6 @@
 			isa = PBXGroup;
 			children = (
 				C0CA42BE1E801842004DAB88 /* DHUpdateDetailView.swift */,
-				C0CA42BF1E801842004DAB88 /* DHUpdateTableViewCell.swift */,
-				C0CA42C01E801842004DAB88 /* DHUpdateTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -909,7 +903,6 @@
 			files = (
 				C01981C21DB7628F009AE757 /* divider_line_image.png in Resources */,
 				C029AB6F1DCC6EFF00063171 /* LICENSE in Resources */,
-				C0CA42FA1E801842004DAB88 /* DHUpdateTableViewCell.xib in Resources */,
 				C01981C01DB7628F009AE757 /* AaGothic.ttf in Resources */,
 				C0CA43041E801842004DAB88 /* DHVideoDetailTableViewCell.xib in Resources */,
 				C0CA43061E801842004DAB88 /* DHVideoTableViewCell.xib in Resources */,
@@ -1009,14 +1002,13 @@
 				C0CA43021E801842004DAB88 /* DHVideoModel.swift in Sources */,
 				C045C6341DF5AC26002C74D2 /* UrlHeaders.swift in Sources */,
 				C0CA43051E801842004DAB88 /* DHVideoTableViewCell.swift in Sources */,
-				C0CA42F91E801842004DAB88 /* DHUpdateTableViewCell.swift in Sources */,
 				C0CA43011E801842004DAB88 /* DHRelatedVideoModel.m in Sources */,
 				C0CA42EB1E801842004DAB88 /* DHStrategyCellDataController.swift in Sources */,
 				C0EFB0EB1DB613C7009001C1 /* DHBaseViewModel.swift in Sources */,
 				C01981C11DB7628F009AE757 /* AppDelegate.swift in Sources */,
+				C0CA43161E802D14004DAB88 /* DHNewsTableViewCell.swift in Sources */,
 				C0CA42EF1E801842004DAB88 /* DHStrategyTableViewCell.swift in Sources */,
 				C045C6411DF5AC97002C74D2 /* DHUniformError.swift in Sources */,
-				C0CA42E11E801842004DAB88 /* DHNewsTableViewCell.swift in Sources */,
 				C0CA42E51E801842004DAB88 /* DHSDKViewController.swift in Sources */,
 				C0CA43031E801842004DAB88 /* DHVideoDetailTableViewCell.m in Sources */,
 				C0EFB0ED1DB61E5C009001C1 /* DHBaseDetailDataController.swift in Sources */,
