@@ -14,13 +14,13 @@ PODS:
   - SnapKit (3.0.2)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
+  - Alamofire
   - Bugtags
-  - Kingfisher (~> 3.0.1)
-  - MJRefresh (~> 3.1.12)
+  - Kingfisher
+  - MJRefresh
   - ReachabilitySwift
-  - SDCycleScrollView (~> 1.65)
-  - SnapKit (~> 3.0.2)
+  - SDCycleScrollView
+  - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
@@ -32,6 +32,6 @@ SPEC CHECKSUMS:
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
 
-PODFILE CHECKSUM: 7043eef7e4bfb080f76618c2b75d39218a20e1fc
+PODFILE CHECKSUM: 61f3b18c2af7f17c245922879ce9837ad36b349d
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0
