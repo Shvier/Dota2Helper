@@ -6,10 +6,6 @@
 //  Copyright © 2016 Shvier. All rights reserved.
 //
 
-import UIKit
-import Kingfisher
-import SnapKit
-
 let kNewsTableViewCellHeight: CGFloat = 90
 let kContentViewCornerRadius: CGFloat = 5
 let kTitleLabelFontSize: CGFloat = 15
@@ -22,7 +18,7 @@ let kTitleLabelMargin: CGFloat = 5
 let kDescriptionLabelMargin: CGFloat = 5
 let kTimeLabelMargin: CGFloat = 5
 
-class DHNewsTableViewCell: UITableViewCell {
+class DHNewsTableViewCell: DHBaseTableViewCell {
 
     var backgroundImageView: UIImageView!
     var titleLabel: UILabel!

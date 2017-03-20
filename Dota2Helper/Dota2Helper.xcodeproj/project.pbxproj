@@ -105,6 +105,7 @@
 		C0CA43081E801842004DAB88 /* DHVideoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42DA1E801842004DAB88 /* DHVideoCellViewModel.swift */; };
 		C0CA430C1E80184B004DAB88 /* DHBaseNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA430A1E80184B004DAB88 /* DHBaseNetworkRequest.swift */; };
 		C0CA430D1E80184B004DAB88 /* DHNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA430B1E80184B004DAB88 /* DHNetworkRequest.swift */; };
+		C0CA43141E802B71004DAB88 /* DHBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA43131E802B71004DAB88 /* DHBaseTableViewCell.swift */; };
 		C0D4CFE01D5DBEF1008F824A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0D4CFDF1D5DBEF1008F824A /* Assets.xcassets */; };
 		C0D4CFE31D5DBEF1008F824A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D4CFE11D5DBEF1008F824A /* LaunchScreen.storyboard */; };
 		C0EC967F1D8FCA8100E1557E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EC967D1D8FCA8100E1557E /* Fabric.framework */; };
@@ -236,6 +237,7 @@
 		C0CA42DA1E801842004DAB88 /* DHVideoCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHVideoCellViewModel.swift; sourceTree = "<group>"; };
 		C0CA430A1E80184B004DAB88 /* DHBaseNetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseNetworkRequest.swift; sourceTree = "<group>"; };
 		C0CA430B1E80184B004DAB88 /* DHNetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNetworkRequest.swift; sourceTree = "<group>"; };
+		C0CA43131E802B71004DAB88 /* DHBaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseTableViewCell.swift; sourceTree = "<group>"; };
 		C0D4CFDA1D5DBEF1008F824A /* Dota2Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dota2Helper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0D4CFDF1D5DBEF1008F824A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0D4CFE21D5DBEF1008F824A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				C0A690721DB3B96600DC0FA0 /* DHBaseDetailView.swift */,
+				C0CA43131E802B71004DAB88 /* DHBaseTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1030,6 +1033,7 @@
 				C0CA42EC1E801842004DAB88 /* DHStrategyDetailDataController.swift in Sources */,
 				C0CA42F81E801842004DAB88 /* DHUpdateDetailView.swift in Sources */,
 				C045C63E1DF5AC31002C74D2 /* String+Category.swift in Sources */,
+				C0CA43141E802B71004DAB88 /* DHBaseTableViewCell.swift in Sources */,
 				C045C6371DF5AC26002C74D2 /* DHLoadingView.swift in Sources */,
 				C0CA430D1E80184B004DAB88 /* DHNetworkRequest.swift in Sources */,
 				C0CA43001E801842004DAB88 /* DHVideoDetailDataController.m in Sources */,
