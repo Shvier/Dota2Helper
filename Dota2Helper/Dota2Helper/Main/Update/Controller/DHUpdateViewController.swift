@@ -60,7 +60,7 @@ class DHUpdateViewController: DHBaseViewController {
         })
     }
     
-    func loadToDetailVCWithUpdateModel(updateModel: DHUpdateModel) {
+    func loadToDetailVCWithUpdateModel(updateModel: DHNewsModel) {
         let updateDetailVC: DHUpdateDetailViewController = DHUpdateDetailViewController()
         updateDetailVC.updateModel = updateModel
         navigationController?.pushViewController(updateDetailVC, animated: true)
@@ -129,7 +129,7 @@ extension DHUpdateViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: DHNewsTableViewCell = tableView.dequeueReusableCell(withIdentifier: kUpdateCellReuseIdentifier, for: indexPath) as! DHNewsTableViewCell
-//        cell.bindDataWithModel(model: viewModel.updateDataSource[indexPath.row])
+        cell.bindDataWithModel(model: viewModel.updateDataSource[indexPath.row])
         if #available(iOS 9.0, *) {
             if traitCollection.forceTouchCapability == .available {
                 registerForPreviewing(with: self, sourceView: cell)
@@ -143,8 +143,8 @@ extension DHUpdateViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         setNaviAndTabStatus(isHidden: false)
-//        let cell: DHNewsTableViewCell = tableView.cellForRow(at: indexPath) as! DHNewsTableViewCell
-//        loadToDetailVCWithUpdateModel(updateModel: cell.updateModel!)
+        let cell: DHNewsTableViewCell = tableView.cellForRow(at: indexPath) as! DHNewsTableViewCell
+        loadToDetailVCWithUpdateModel(updateModel: cell.newsModel!)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -174,7 +174,7 @@ extension DHUpdateViewController: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         let updateDetailVC: DHUpdateDetailViewController = DHUpdateDetailViewController()
         let cell = previewingContext.sourceView as! DHNewsTableViewCell
-//        updateDetailVC.updateModel = cell.updateModel
+        updateDetailVC.updateModel = cell.newsModel
         return updateDetailVC
     }
 }

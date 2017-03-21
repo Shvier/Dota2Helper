@@ -15,7 +15,7 @@ class DHUpdateDetailViewController: DHBaseDetailViewController, WKNavigationDele
         return DHUpdateDetailViewModel()
     }()
     
-    var updateModel: DHUpdateModel?
+    var updateModel: DHNewsModel?
     var updateDetailView: DHUpdateDetailView?
     var loadingView: DHLoadingView?
     

@@ -12,8 +12,8 @@ class DHUpdateCellViewModel: NSObject {
         return DHUpdateCellDataController()
     }()
     
-    lazy var updateDataSource: [DHUpdateModel] = {
-        return Array<DHUpdateModel>()
+    lazy var updateDataSource: [DHNewsModel] = {
+        return Array<DHNewsModel>()
     }()
     
     func refreshUpdate(_ success: @autoclosure @escaping () -> Void, failure: @autoclosure @escaping () -> Void) {
@@ -26,10 +26,10 @@ class DHUpdateCellViewModel: NSObject {
                     throw DHUniformJSONError.DHJSONErrorParseFailed
                 }
                 
-                var updateDataSource: [DHUpdateModel] = Array<DHUpdateModel>()
+                var updateDataSource: [DHNewsModel] = Array<DHNewsModel>()
                 
                 for updateDict in updateArray as! [NSDictionary] {
-                    let update: DHUpdateModel = DHUpdateModel(dictionary: updateDict)
+                    let update: DHNewsModel = DHNewsModel(dictionary: updateDict)
                     updateDataSource.append(update)
                 }
                 self.updateDataSource = updateDataSource
@@ -54,10 +54,10 @@ class DHUpdateCellViewModel: NSObject {
                     throw DHUniformJSONError.DHJSONErrorKeyNotFound
                 }
                 
-                var updateDataSource: [DHUpdateModel] = Array<DHUpdateModel>()
+                var updateDataSource: [DHNewsModel] = Array<DHNewsModel>()
                 
                 for updateDict in updateArray as! [NSDictionary] {
-                    let update: DHUpdateModel = DHUpdateModel(dictionary: updateDict)
+                    let update: DHNewsModel = DHNewsModel(dictionary: updateDict)
                     updateDataSource.append(update)
                 }
                 self.updateDataSource.append(contentsOf: updateDataSource)

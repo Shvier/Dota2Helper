@@ -12,7 +12,7 @@ class DHUpdateDetailViewModel: NSObject {
         return DHUpdateDetailDataController()
     }()
     
-    func getDetailUpdate(model: DHUpdateModel, _ success: @escaping (_ urlString: String) -> Void, failure: @autoclosure @escaping () -> Void) {
+    func getDetailUpdate(model: DHNewsModel, _ success: @escaping (_ urlString: String) -> Void, failure: @autoclosure @escaping () -> Void) {
         dataController.getUpdateDetail(date: model.date!, nid: model.nid!, success: { (urlString) in
             success(urlString)
         }, failure: failure)
