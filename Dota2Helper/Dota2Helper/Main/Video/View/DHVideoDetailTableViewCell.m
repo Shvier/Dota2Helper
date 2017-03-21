@@ -7,8 +7,8 @@
 //
 
 #import "DHVideoDetailTableViewCell.h"
-#import "DHRelatedVideoViewModel.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "DHRelatedVideoViewModel.h"
 
 @implementation DHVideoDetailTableViewCell
 

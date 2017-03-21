@@ -193,7 +193,7 @@ class DHVideoViewController: DHBaseViewController {
         menu?.delegate = self
         tableView = UITableView(frame: CGRect(x: 0, y: (menu?.bounds.size.height)!, width: view.bounds.size.width, height: view.bounds.size.height - (menu?.bounds.size.height)!), style: .plain)
         tableView?.backgroundColor = kTableViewBackgroundColor
-        tableView?.register(UINib(nibName: "DHVideoTableViewCell", bundle: nil), forCellReuseIdentifier: kVideoCellReuseIdentifier)
+        tableView?.register(DHVideoTableViewCell.self, forCellReuseIdentifier: kVideoCellReuseIdentifier)
         tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: {
             self.beginHeaderRefreshing()
         })
