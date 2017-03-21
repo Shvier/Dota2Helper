@@ -159,7 +159,7 @@ class DHStrategyViewController: DHBaseViewController {
         menu?.delegate = self
         tableView = UITableView(frame: CGRect(x: 0, y: 0 + (menu?.bounds.size.height)!, width: view.bounds.size.width, height: view.bounds.size.height - (menu?.bounds.size.height)!), style: .plain)
         tableView?.backgroundColor = kTableViewBackgroundColor
-        tableView?.register(UINib(nibName: "DHStrategyTableViewCell", bundle: nil), forCellReuseIdentifier: kStrategyCellReuseIdentifier)
+        tableView?.register(DHStrategyTableViewCell.self, forCellReuseIdentifier: kStrategyCellReuseIdentifier)
         tableView?.mj_header = MJRefreshNormalHeader(refreshingBlock: { [unowned self] in
             self.beginHeaderRefreshing()
         })

@@ -77,7 +77,6 @@
 		C0CA42ED1E801842004DAB88 /* DHStrategyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42AC1E801842004DAB88 /* DHStrategyModel.swift */; };
 		C0CA42EE1E801842004DAB88 /* DHStrategyDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42AE1E801842004DAB88 /* DHStrategyDetailView.swift */; };
 		C0CA42EF1E801842004DAB88 /* DHStrategyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42AF1E801842004DAB88 /* DHStrategyTableViewCell.swift */; };
-		C0CA42F01E801842004DAB88 /* DHStrategyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0CA42B01E801842004DAB88 /* DHStrategyTableViewCell.xib */; };
 		C0CA42F11E801842004DAB88 /* DHStrategyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42B21E801842004DAB88 /* DHStrategyCellViewModel.swift */; };
 		C0CA42F21E801842004DAB88 /* DHStrategyDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42B31E801842004DAB88 /* DHStrategyDetailViewModel.swift */; };
 		C0CA42F31E801842004DAB88 /* DHUpdateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42B61E801842004DAB88 /* DHUpdateDetailViewController.swift */; };
@@ -202,7 +201,6 @@
 		C0CA42AC1E801842004DAB88 /* DHStrategyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHStrategyModel.swift; sourceTree = "<group>"; };
 		C0CA42AE1E801842004DAB88 /* DHStrategyDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHStrategyDetailView.swift; sourceTree = "<group>"; };
 		C0CA42AF1E801842004DAB88 /* DHStrategyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHStrategyTableViewCell.swift; sourceTree = "<group>"; };
-		C0CA42B01E801842004DAB88 /* DHStrategyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DHStrategyTableViewCell.xib; sourceTree = "<group>"; };
 		C0CA42B21E801842004DAB88 /* DHStrategyCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHStrategyCellViewModel.swift; sourceTree = "<group>"; };
 		C0CA42B31E801842004DAB88 /* DHStrategyDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHStrategyDetailViewModel.swift; sourceTree = "<group>"; };
 		C0CA42B61E801842004DAB88 /* DHUpdateDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHUpdateDetailViewController.swift; sourceTree = "<group>"; };
@@ -596,7 +594,6 @@
 			children = (
 				C0CA42AE1E801842004DAB88 /* DHStrategyDetailView.swift */,
 				C0CA42AF1E801842004DAB88 /* DHStrategyTableViewCell.swift */,
-				C0CA42B01E801842004DAB88 /* DHStrategyTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -908,7 +905,6 @@
 				C0CA43061E801842004DAB88 /* DHVideoTableViewCell.xib in Resources */,
 				C05468471DAEB43E00A4AC13 /* sdk.bundle in Resources */,
 				C0D4CFE01D5DBEF1008F824A /* Assets.xcassets in Resources */,
-				C0CA42F01E801842004DAB88 /* DHStrategyTableViewCell.xib in Resources */,
 				C0CA42E81E801842004DAB88 /* DHSDKTableViewCell.xib in Resources */,
 				C05468481DAEB43E00A4AC13 /* YTEngine.bundle in Resources */,
 				C0D4CFE31D5DBEF1008F824A /* LaunchScreen.storyboard in Resources */,

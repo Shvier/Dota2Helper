@@ -7,18 +7,19 @@
 //
 
 let kNewsTableViewCellHeight: CGFloat = 90
-let kContentViewCornerRadius: CGFloat = 5
-let kTitleLabelFontSize: CGFloat = 15
-let kDescriptionLabelFontSize: CGFloat = 12
-let kTimeLabelFontSize: CGFloat = 12
-
-let kBackgroundImageViewMargin: CGFloat = 5
-let kBackgroundImageViewRatio: CGFloat = 16/10
-let kTitleLabelMargin: CGFloat = 5
-let kDescriptionLabelMargin: CGFloat = 5
-let kTimeLabelMargin: CGFloat = 5
 
 class DHNewsTableViewCell: DHBaseTableViewCell {
+    
+    let kContentViewCornerRadius: CGFloat = 5
+    let kTitleLabelFontSize: CGFloat = 15
+    let kDescriptionLabelFontSize: CGFloat = 12
+    let kTimeLabelFontSize: CGFloat = 12
+    
+    let kBackgroundImageViewMargin: CGFloat = 5
+    let kBackgroundImageViewRatio: CGFloat = 16/10
+    let kTitleLabelMargin: CGFloat = 5
+    let kDescriptionLabelMargin: CGFloat = 5
+    let kTimeLabelMargin: CGFloat = 5
 
     var backgroundImageView: UIImageView!
     var titleLabel: UILabel!
