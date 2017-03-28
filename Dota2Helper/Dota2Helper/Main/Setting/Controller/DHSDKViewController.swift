@@ -24,7 +24,7 @@ class DHSDKViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationController?.navigationBar.tintColor = kThemeColor
-        tableView?.register(UINib(nibName: "DHSDKTableViewCell", bundle: nil), forCellReuseIdentifier: kSDKCellReuseIdentifier)
+        tableView?.register(DHSDKTableViewCell.self, forCellReuseIdentifier: kSDKCellReuseIdentifier)
         tableView.tableFooterView = UIView()
         
         tableView.reloadData()
