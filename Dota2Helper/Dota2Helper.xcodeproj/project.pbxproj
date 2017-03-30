@@ -103,8 +103,6 @@
 		C0CA43161E802D14004DAB88 /* DHNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA43151E802D14004DAB88 /* DHNewsTableViewCell.swift */; };
 		C0D4CFE01D5DBEF1008F824A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0D4CFDF1D5DBEF1008F824A /* Assets.xcassets */; };
 		C0D4CFE31D5DBEF1008F824A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0D4CFE11D5DBEF1008F824A /* LaunchScreen.storyboard */; };
-		C0EC967F1D8FCA8100E1557E /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EC967D1D8FCA8100E1557E /* Fabric.framework */; };
-		C0EC96801D8FCA8100E1557E /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EC967E1D8FCA8100E1557E /* Crashlytics.framework */; };
 		C0EFB0EB1DB613C7009001C1 /* DHBaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EFB0EA1DB613C7009001C1 /* DHBaseViewModel.swift */; };
 		C0EFB0ED1DB61E5C009001C1 /* DHBaseDetailDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EFB0EC1DB61E5C009001C1 /* DHBaseDetailDataController.swift */; };
 /* End PBXBuildFile section */
@@ -246,8 +244,6 @@
 		C0E38C5F1DADB73500E1D27A /* YYMediaPlayerException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYMediaPlayerException.h; sourceTree = "<group>"; };
 		C0E38C601DADB73500E1D27A /* YYMediaPlayerHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYMediaPlayerHistory.h; sourceTree = "<group>"; };
 		C0E38C611DADB73500E1D27A /* YYMediaPlayerItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYMediaPlayerItem.h; sourceTree = "<group>"; };
-		C0EC967D1D8FCA8100E1557E /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		C0EC967E1D8FCA8100E1557E /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		C0EF8C111DA0E84A00E7C27E /* SimplerSegmentMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimplerSegmentMenu.framework; path = "../../../../Library/Developer/Xcode/DerivedData/SimplerSegmentMenu-dwukdjcieaqhlmgjnknwnbzewekh/Build/Products/Debug-iphonesimulator/SimplerSegmentMenu.framework"; sourceTree = "<group>"; };
 		C0EF8C131DA0E8AB00E7C27E /* SimplerSegmentMenu.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SimplerSegmentMenu.framework; path = ../../SubModules/framework/SimplerSegmentMenu.framework; sourceTree = "<group>"; };
 		C0EF8C1B1DA0EBC400E7C27E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
@@ -288,8 +284,6 @@
 				C09648C31DAEB95B00D75D21 /* libresolv.9.tbd in Frameworks */,
 				C09648BF1DAEB94600D75D21 /* libiconv.2.tbd in Frameworks */,
 				C09648BB1DAEB92900D75D21 /* libz.1.tbd in Frameworks */,
-				C0EC96801D8FCA8100E1557E /* Crashlytics.framework in Frameworks */,
-				C0EC967F1D8FCA8100E1557E /* Fabric.framework in Frameworks */,
 				5E921422300F58B90D59EC8E /* Pods_Dota2Helper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -734,8 +728,6 @@
 			children = (
 				C029AB6A1DCC6EFF00063171 /* MBProgressHUD */,
 				C0E38C511DADB71B00E1D27A /* YouTuEngineMediaPlayer */,
-				C0EC967D1D8FCA8100E1557E /* Fabric.framework */,
-				C0EC967E1D8FCA8100E1557E /* Crashlytics.framework */,
 				C0D4CFDC1D5DBEF1008F824A /* Dota2Helper */,
 				C0D4CFDB1D5DBEF1008F824A /* Products */,
 				F3F3173041BA8E225C08FF43 /* Pods */,
@@ -947,7 +939,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 89190c0b3fd8fab7c6b4bac49a5187b0f4de4177 5fdeaee4a74d671703541c28ae5bbe3e8886cd0c7ca46abf39307322bba27a3e";
+			shellScript = "";
 		};
 		D605622341732080B0CF3F3E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;

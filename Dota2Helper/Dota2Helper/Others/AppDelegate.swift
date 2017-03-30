@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Fabric
-import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -87,7 +85,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DHLog("Application Launching")
         
         Bugtags.start(withAppKey: "2dd6496749c90f7cd480df72d142f918", invocationEvent: BTGInvocationEventNone)
-        Fabric.with([Crashlytics.self])
         
         return true
     }
