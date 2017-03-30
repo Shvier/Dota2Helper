@@ -12,5 +12,6 @@
 #import "DHVideoDetailViewController.h"
 #import "MBProgressHUD.h"
 #import <Bugtags/Bugtags.h>
+#import <tingyunApp/NBSAppAgent.h>
 
 #endif /* Youku_Bridge_Header_h */

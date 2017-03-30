@@ -84,7 +84,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         DHLog("Application Launching")
         
-        Bugtags.start(withAppKey: "2dd6496749c90f7cd480df72d142f918", invocationEvent: BTGInvocationEventNone)
+        Bugtags.start(withAppKey: BugtagsAppKey, invocationEvent: BTGInvocationEventNone)
+        NBSAppAgent.start(withAppID: TingyunAppKey)
         
         return true
     }

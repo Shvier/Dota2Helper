@@ -1,9 +1,9 @@
 PODS:
-  - Alamofire (4.0.1)
-  - Bugtags (2.0.1):
-    - Bugtags/Core (= 2.0.1)
-  - Bugtags/Core (2.0.1)
-  - Kingfisher (3.0.1)
+  - Alamofire (4.2.0)
+  - Bugtags (2.1.0):
+    - Bugtags/Core (= 2.1.0)
+  - Bugtags/Core (2.1.0)
+  - Kingfisher (3.2.4)
   - MJRefresh (3.1.12)
   - ReachabilitySwift (3)
   - SDCycleScrollView (1.65):
@@ -11,7 +11,8 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
-  - SnapKit (3.0.2)
+  - SnapKit (3.1.2)
+  - tingyunApp (2.5.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -21,17 +22,19 @@ DEPENDENCIES:
   - ReachabilitySwift
   - SDCycleScrollView
   - SnapKit
+  - tingyunApp
 
 SPEC CHECKSUMS:
-  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
-  Bugtags: 621f4c58462d38f874f9a811ed35e5f005300a3d
-  Kingfisher: d5a491b45ea453d90a31bd2c0831d5243e73a73f
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  Bugtags: 7aed0a6b41aaa3ada617eea7d48a965b41b5140c
+  Kingfisher: 8d80f39da403cd9c9ee11984e1655f4d6a566cdb
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   ReachabilitySwift: f5b9bb30a0777fac8f09ce8b067e32faeb29bb64
   SDCycleScrollView: f72904c77698a7f93a41bcbbc2d78b073bf7326c
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
-  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  SnapKit: 12b24f569cb7c143acc9c22b9d91b23e7b1c84a2
+  tingyunApp: 640ed24c0e63799a78e89b376f80fd370605c6f3
 
-PODFILE CHECKSUM: 61f3b18c2af7f17c245922879ce9837ad36b349d
+PODFILE CHECKSUM: 94a990a9ade9eeb90333749354859cec291d27e1
 
 COCOAPODS: 1.2.0

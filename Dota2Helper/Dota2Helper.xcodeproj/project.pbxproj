@@ -16,7 +16,7 @@
 		C029AB6F1DCC6EFF00063171 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C029AB6B1DCC6EFF00063171 /* LICENSE */; };
 		C029AB711DCC6EFF00063171 /* README.mdown in Sources */ = {isa = PBXBuildFile; fileRef = C029AB6E1DCC6EFF00063171 /* README.mdown */; };
 		C029AB741DCC6F1600063171 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C029AB731DCC6F1600063171 /* MBProgressHUD.m */; };
-		C045C6331DF5AC25002C74D2 /* Constrants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045C6261DF5AC25002C74D2 /* Constrants.swift */; };
+		C045C6331DF5AC25002C74D2 /* CommonMarco.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045C6261DF5AC25002C74D2 /* CommonMarco.swift */; };
 		C045C6341DF5AC26002C74D2 /* UrlHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045C6271DF5AC25002C74D2 /* UrlHeaders.swift */; };
 		C045C6351DF5AC26002C74D2 /* DHNetworkRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045C62B1DF5AC25002C74D2 /* DHNetworkRequestManager.swift */; };
 		C045C6361DF5AC26002C74D2 /* DHHintManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045C62D1DF5AC25002C74D2 /* DHHintManager.swift */; };
@@ -134,7 +134,7 @@
 		C029AB6E1DCC6EFF00063171 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.mdown; sourceTree = "<group>"; };
 		C029AB721DCC6F1600063171 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		C029AB731DCC6F1600063171 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		C045C6261DF5AC25002C74D2 /* Constrants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constrants.swift; sourceTree = "<group>"; };
+		C045C6261DF5AC25002C74D2 /* CommonMarco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonMarco.swift; sourceTree = "<group>"; };
 		C045C6271DF5AC25002C74D2 /* UrlHeaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlHeaders.swift; sourceTree = "<group>"; };
 		C045C6291DF5AC25002C74D2 /* Youku-Bridge-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Youku-Bridge-Header.h"; sourceTree = "<group>"; };
 		C045C62B1DF5AC25002C74D2 /* DHNetworkRequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHNetworkRequestManager.swift; sourceTree = "<group>"; };
@@ -355,7 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				C045C63F1DF5AC8C002C74D2 /* UniformError */,
-				C045C6251DF5AC25002C74D2 /* Define */,
+				C045C6251DF5AC25002C74D2 /* Marco */,
 				C045C6281DF5AC25002C74D2 /* Header */,
 				C045C62A1DF5AC25002C74D2 /* Network */,
 				C045C62C1DF5AC25002C74D2 /* View */,
@@ -363,12 +363,13 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
-		C045C6251DF5AC25002C74D2 /* Define */ = {
+		C045C6251DF5AC25002C74D2 /* Marco */ = {
 			isa = PBXGroup;
 			children = (
-				C045C6261DF5AC25002C74D2 /* Constrants.swift */,
+				C045C6261DF5AC25002C74D2 /* CommonMarco.swift */,
 				C045C6271DF5AC25002C74D2 /* UrlHeaders.swift */,
 			);
+			name = Marco;
 			path = Define;
 			sourceTree = "<group>";
 		};
@@ -993,7 +994,7 @@
 				C0CA43031E801842004DAB88 /* DHVideoDetailTableViewCell.m in Sources */,
 				C0EFB0ED1DB61E5C009001C1 /* DHBaseDetailDataController.swift in Sources */,
 				C0CA42DE1E801842004DAB88 /* DHNewsDetailDataController.swift in Sources */,
-				C045C6331DF5AC25002C74D2 /* Constrants.swift in Sources */,
+				C045C6331DF5AC25002C74D2 /* CommonMarco.swift in Sources */,
 				C045C63A1DF5AC26002C74D2 /* DHToastMessage.swift in Sources */,
 				C0CA42E31E801842004DAB88 /* DHNewsCellViewModel.swift in Sources */,
 				C0CA42E91E801842004DAB88 /* DHStrategyDetailViewController.swift in Sources */,

@@ -15,5 +15,6 @@ target 'Dota2Helper' do
 
    # Debug
    pod 'Bugtags'
+   pod ‘tingyunApp’
 
 end
