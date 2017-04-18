@@ -12,7 +12,6 @@
 		C01981C11DB7628F009AE757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01981BD1DB7628F009AE757 /* AppDelegate.swift */; };
 		C01981C21DB7628F009AE757 /* divider_line_image.png in Resources */ = {isa = PBXBuildFile; fileRef = C01981BE1DB7628F009AE757 /* divider_line_image.png */; };
 		C01981CA1DB76C3F009AE757 /* DHBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01981C91DB76C3F009AE757 /* DHBaseViewController.swift */; };
-		C029AB631DCC322300063171 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C029AB621DCC322300063171 /* libYouTuMediaPlayerEngineYouku.a */; };
 		C029AB6F1DCC6EFF00063171 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C029AB6B1DCC6EFF00063171 /* LICENSE */; };
 		C029AB711DCC6EFF00063171 /* README.mdown in Sources */ = {isa = PBXBuildFile; fileRef = C029AB6E1DCC6EFF00063171 /* README.mdown */; };
 		C029AB741DCC6F1600063171 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C029AB731DCC6F1600063171 /* MBProgressHUD.m */; };
@@ -27,6 +26,7 @@
 		C045C63B1DF5AC26002C74D2 /* UISegmentedMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045C6321DF5AC25002C74D2 /* UISegmentedMenu.swift */; };
 		C045C63E1DF5AC31002C74D2 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045C63D1DF5AC31002C74D2 /* String+Category.swift */; };
 		C045C6411DF5AC97002C74D2 /* DHUniformError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045C6401DF5AC97002C74D2 /* DHUniformError.swift */; };
+		C04D835B1EA62DFB002968FB /* libYouTuMediaPlayerEngineYouku.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C04D835A1EA62DFB002968FB /* libYouTuMediaPlayerEngineYouku.a */; };
 		C05179A11DB10D8800C5ECAC /* DHBaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05179A01DB10D8800C5ECAC /* DHBaseDetailViewController.swift */; };
 		C05468471DAEB43E00A4AC13 /* sdk.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C05468451DAEB43E00A4AC13 /* sdk.bundle */; };
 		C05468481DAEB43E00A4AC13 /* YTEngine.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C05468461DAEB43E00A4AC13 /* YTEngine.bundle */; };
@@ -129,7 +129,6 @@
 		C01981BE1DB7628F009AE757 /* divider_line_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = divider_line_image.png; sourceTree = "<group>"; };
 		C01981C41DB762B8009AE757 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C01981C91DB76C3F009AE757 /* DHBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseViewController.swift; sourceTree = "<group>"; };
-		C029AB621DCC322300063171 /* libYouTuMediaPlayerEngineYouku.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouTuMediaPlayerEngineYouku.a; sourceTree = "<group>"; };
 		C029AB6B1DCC6EFF00063171 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C029AB6E1DCC6EFF00063171 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.mdown; sourceTree = "<group>"; };
 		C029AB721DCC6F1600063171 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -146,6 +145,7 @@
 		C045C6321DF5AC25002C74D2 /* UISegmentedMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISegmentedMenu.swift; sourceTree = "<group>"; };
 		C045C63D1DF5AC31002C74D2 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
 		C045C6401DF5AC97002C74D2 /* DHUniformError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHUniformError.swift; sourceTree = "<group>"; };
+		C04D835A1EA62DFB002968FB /* libYouTuMediaPlayerEngineYouku.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouTuMediaPlayerEngineYouku.a; sourceTree = "<group>"; };
 		C05179A01DB10D8800C5ECAC /* DHBaseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseDetailViewController.swift; sourceTree = "<group>"; };
 		C05468451DAEB43E00A4AC13 /* sdk.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = sdk.bundle; sourceTree = "<group>"; };
 		C05468461DAEB43E00A4AC13 /* YTEngine.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YTEngine.bundle; sourceTree = "<group>"; };
@@ -264,7 +264,6 @@
 				C09648E51DAEED5200D75D21 /* QuartzCore.framework in Frameworks */,
 				C09648E31DAEED4C00D75D21 /* OpenGLES.framework in Frameworks */,
 				C09648E11DAEED4600D75D21 /* CoreText.framework in Frameworks */,
-				C029AB631DCC322300063171 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */,
 				C09648DF1DAEED4100D75D21 /* AdSupport.framework in Frameworks */,
 				C09648DD1DAEED3C00D75D21 /* SystemConfiguration.framework in Frameworks */,
 				C09648DB1DAEED3700D75D21 /* MediaPlayer.framework in Frameworks */,
@@ -282,6 +281,7 @@
 				C09648C71DAEECD900D75D21 /* ModelIO.framework in Frameworks */,
 				C09648C51DAEB9E600D75D21 /* libbz2.tbd in Frameworks */,
 				C09648C31DAEB95B00D75D21 /* libresolv.9.tbd in Frameworks */,
+				C04D835B1EA62DFB002968FB /* libYouTuMediaPlayerEngineYouku.a in Frameworks */,
 				C09648BF1DAEB94600D75D21 /* libiconv.2.tbd in Frameworks */,
 				C09648BB1DAEB92900D75D21 /* libz.1.tbd in Frameworks */,
 				5E921422300F58B90D59EC8E /* Pods_Dota2Helper.framework in Frameworks */,
@@ -772,7 +772,7 @@
 		C0E38C511DADB71B00E1D27A /* YouTuEngineMediaPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				C029AB621DCC322300063171 /* libYouTuMediaPlayerEngineYouku.a */,
+				C04D835A1EA62DFB002968FB /* libYouTuMediaPlayerEngineYouku.a */,
 				C05468451DAEB43E00A4AC13 /* sdk.bundle */,
 				C05468461DAEB43E00A4AC13 /* YTEngine.bundle */,
 				C0E38C521DADB73500E1D27A /* YouTuMediaPlayerEngineYoukuHeaders */,
