@@ -49,7 +49,7 @@ class DHVideoTableViewCell: UITableViewCell {
     func bindDataWithModel(model: DHVideoModel) {
         self.videoModel = model
         if let urlString = model.background {
-            backgroundImageView.kf_setImage(with: URL(string: urlString))
+            backgroundImageView.kf.setImage(with: URL(string: urlString))
         }
         titleLabel.text = model.title
         videoLengthLabel.text = "时长: " + model.videolength!

@@ -26,10 +26,20 @@
 		C045C63B1DF5AC26002C74D2 /* UISegmentedMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045C6321DF5AC25002C74D2 /* UISegmentedMenu.swift */; };
 		C045C63E1DF5AC31002C74D2 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045C63D1DF5AC31002C74D2 /* String+Category.swift */; };
 		C045C6411DF5AC97002C74D2 /* DHUniformError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C045C6401DF5AC97002C74D2 /* DHUniformError.swift */; };
-		C04D835B1EA62DFB002968FB /* libYouTuMediaPlayerEngineYouku.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C04D835A1EA62DFB002968FB /* libYouTuMediaPlayerEngineYouku.a */; };
 		C05179A11DB10D8800C5ECAC /* DHBaseDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05179A01DB10D8800C5ECAC /* DHBaseDetailViewController.swift */; };
 		C05468471DAEB43E00A4AC13 /* sdk.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C05468451DAEB43E00A4AC13 /* sdk.bundle */; };
 		C05468481DAEB43E00A4AC13 /* YTEngine.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C05468461DAEB43E00A4AC13 /* YTEngine.bundle */; };
+		C07A34B51EF7BD9500D53D80 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C07A34B41EF7BD9500D53D80 /* libYouTuMediaPlayerEngineYouku.a */; };
+		C07A34B61EF7BDBA00D53D80 /* libYouTuMediaPlayerEngineYouku.a in Resources */ = {isa = PBXBuildFile; fileRef = C07A34B41EF7BD9500D53D80 /* libYouTuMediaPlayerEngineYouku.a */; };
+		C07A34C91EF7BF8B00D53D80 /* UTMini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C07A34B91EF7BF8B00D53D80 /* UTMini.framework */; };
+		C07A34CA1EF7BF8B00D53D80 /* LICENCE.txt in Resources */ = {isa = PBXBuildFile; fileRef = C07A34BB1EF7BF8B00D53D80 /* LICENCE.txt */; };
+		C07A34CB1EF7BF8B00D53D80 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C07A34BD1EF7BF8B00D53D80 /* Reachability.m */; };
+		C07A34CC1EF7BF8B00D53D80 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = C07A34BE1EF7BF8B00D53D80 /* README.md */; };
+		C07A34CD1EF7BF8B00D53D80 /* SecurityGuardSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C07A34C01EF7BF8B00D53D80 /* SecurityGuardSDK.framework */; };
+		C07A34CE1EF7BF8B00D53D80 /* SGAVMP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C07A34C21EF7BF8B00D53D80 /* SGAVMP.framework */; };
+		C07A34CF1EF7BF8B00D53D80 /* SGMain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C07A34C41EF7BF8B00D53D80 /* SGMain.framework */; };
+		C07A34D01EF7BF8B00D53D80 /* SGSecurityBody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C07A34C61EF7BF8B00D53D80 /* SGSecurityBody.framework */; };
+		C07A34D11EF7BF8B00D53D80 /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C07A34C81EF7BF8B00D53D80 /* UTDID.framework */; };
 		C09648BB1DAEB92900D75D21 /* libz.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648BA1DAEB92900D75D21 /* libz.1.tbd */; };
 		C09648BD1DAEB93300D75D21 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648BC1DAEB93300D75D21 /* libxml2.2.tbd */; };
 		C09648BF1DAEB94600D75D21 /* libiconv.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648BE1DAEB94600D75D21 /* libiconv.2.tbd */; };
@@ -145,10 +155,20 @@
 		C045C6321DF5AC25002C74D2 /* UISegmentedMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISegmentedMenu.swift; sourceTree = "<group>"; };
 		C045C63D1DF5AC31002C74D2 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
 		C045C6401DF5AC97002C74D2 /* DHUniformError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHUniformError.swift; sourceTree = "<group>"; };
-		C04D835A1EA62DFB002968FB /* libYouTuMediaPlayerEngineYouku.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouTuMediaPlayerEngineYouku.a; sourceTree = "<group>"; };
 		C05179A01DB10D8800C5ECAC /* DHBaseDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DHBaseDetailViewController.swift; sourceTree = "<group>"; };
 		C05468451DAEB43E00A4AC13 /* sdk.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = sdk.bundle; sourceTree = "<group>"; };
 		C05468461DAEB43E00A4AC13 /* YTEngine.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YTEngine.bundle; sourceTree = "<group>"; };
+		C07A34B41EF7BD9500D53D80 /* libYouTuMediaPlayerEngineYouku.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouTuMediaPlayerEngineYouku.a; sourceTree = "<group>"; };
+		C07A34B91EF7BF8B00D53D80 /* UTMini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTMini.framework; sourceTree = "<group>"; };
+		C07A34BB1EF7BF8B00D53D80 /* LICENCE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENCE.txt; sourceTree = "<group>"; };
+		C07A34BC1EF7BF8B00D53D80 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		C07A34BD1EF7BF8B00D53D80 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		C07A34BE1EF7BF8B00D53D80 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C07A34C01EF7BF8B00D53D80 /* SecurityGuardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecurityGuardSDK.framework; sourceTree = "<group>"; };
+		C07A34C21EF7BF8B00D53D80 /* SGAVMP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGAVMP.framework; sourceTree = "<group>"; };
+		C07A34C41EF7BF8B00D53D80 /* SGMain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGMain.framework; sourceTree = "<group>"; };
+		C07A34C61EF7BF8B00D53D80 /* SGSecurityBody.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGSecurityBody.framework; sourceTree = "<group>"; };
+		C07A34C81EF7BF8B00D53D80 /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
 		C09648BA1DAEB92900D75D21 /* libz.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.tbd; path = usr/lib/libz.1.tbd; sourceTree = SDKROOT; };
 		C09648BC1DAEB93300D75D21 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		C09648BE1DAEB94600D75D21 /* libiconv.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.2.tbd; path = usr/lib/libiconv.2.tbd; sourceTree = SDKROOT; };
@@ -262,13 +282,17 @@
 				C09648E91DAEED5E00D75D21 /* AudioToolbox.framework in Frameworks */,
 				C09648E71DAEED5900D75D21 /* CoreMedia.framework in Frameworks */,
 				C09648E51DAEED5200D75D21 /* QuartzCore.framework in Frameworks */,
+				C07A34D01EF7BF8B00D53D80 /* SGSecurityBody.framework in Frameworks */,
 				C09648E31DAEED4C00D75D21 /* OpenGLES.framework in Frameworks */,
 				C09648E11DAEED4600D75D21 /* CoreText.framework in Frameworks */,
+				C07A34CD1EF7BF8B00D53D80 /* SecurityGuardSDK.framework in Frameworks */,
+				C07A34B51EF7BD9500D53D80 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */,
 				C09648DF1DAEED4100D75D21 /* AdSupport.framework in Frameworks */,
 				C09648DD1DAEED3C00D75D21 /* SystemConfiguration.framework in Frameworks */,
 				C09648DB1DAEED3700D75D21 /* MediaPlayer.framework in Frameworks */,
 				C09648D91DAEED3100D75D21 /* EventKit.framework in Frameworks */,
 				C09648D71DAEED1200D75D21 /* MessageUI.framework in Frameworks */,
+				C07A34C91EF7BF8B00D53D80 /* UTMini.framework in Frameworks */,
 				C09648BD1DAEB93300D75D21 /* libxml2.2.tbd in Frameworks */,
 				C09648D51DAEED0600D75D21 /* PassKit.framework in Frameworks */,
 				C09648D31DAEED0000D75D21 /* libbz2.1.0.tbd in Frameworks */,
@@ -277,13 +301,15 @@
 				C09648C11DAEB94B00D75D21 /* VideoToolbox.framework in Frameworks */,
 				C09648CD1DAEECE900D75D21 /* libc++.1.tbd in Frameworks */,
 				C09648CB1DAEECE400D75D21 /* CoreMotion.framework in Frameworks */,
+				C07A34CF1EF7BF8B00D53D80 /* SGMain.framework in Frameworks */,
 				C09648C91DAEECDF00D75D21 /* libsqlite3.tbd in Frameworks */,
 				C09648C71DAEECD900D75D21 /* ModelIO.framework in Frameworks */,
+				C07A34CE1EF7BF8B00D53D80 /* SGAVMP.framework in Frameworks */,
 				C09648C51DAEB9E600D75D21 /* libbz2.tbd in Frameworks */,
 				C09648C31DAEB95B00D75D21 /* libresolv.9.tbd in Frameworks */,
-				C04D835B1EA62DFB002968FB /* libYouTuMediaPlayerEngineYouku.a in Frameworks */,
 				C09648BF1DAEB94600D75D21 /* libiconv.2.tbd in Frameworks */,
 				C09648BB1DAEB92900D75D21 /* libz.1.tbd in Frameworks */,
+				C07A34D11EF7BF8B00D53D80 /* UTDID.framework in Frameworks */,
 				5E921422300F58B90D59EC8E /* Pods_Dota2Helper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +462,79 @@
 				C01981C91DB76C3F009AE757 /* DHBaseViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		C07A34B71EF7BF8B00D53D80 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				C07A34B81EF7BF8B00D53D80 /* BCUserTrack */,
+				C07A34BA1EF7BF8B00D53D80 /* Reachability */,
+				C07A34BF1EF7BF8B00D53D80 /* SecurityGuardSDK */,
+				C07A34C11EF7BF8B00D53D80 /* SGAVMP */,
+				C07A34C31EF7BF8B00D53D80 /* SGMain */,
+				C07A34C51EF7BF8B00D53D80 /* SGSecurityBody */,
+				C07A34C71EF7BF8B00D53D80 /* UTDID */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		C07A34B81EF7BF8B00D53D80 /* BCUserTrack */ = {
+			isa = PBXGroup;
+			children = (
+				C07A34B91EF7BF8B00D53D80 /* UTMini.framework */,
+			);
+			path = BCUserTrack;
+			sourceTree = "<group>";
+		};
+		C07A34BA1EF7BF8B00D53D80 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				C07A34BB1EF7BF8B00D53D80 /* LICENCE.txt */,
+				C07A34BC1EF7BF8B00D53D80 /* Reachability.h */,
+				C07A34BD1EF7BF8B00D53D80 /* Reachability.m */,
+				C07A34BE1EF7BF8B00D53D80 /* README.md */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		C07A34BF1EF7BF8B00D53D80 /* SecurityGuardSDK */ = {
+			isa = PBXGroup;
+			children = (
+				C07A34C01EF7BF8B00D53D80 /* SecurityGuardSDK.framework */,
+			);
+			path = SecurityGuardSDK;
+			sourceTree = "<group>";
+		};
+		C07A34C11EF7BF8B00D53D80 /* SGAVMP */ = {
+			isa = PBXGroup;
+			children = (
+				C07A34C21EF7BF8B00D53D80 /* SGAVMP.framework */,
+			);
+			path = SGAVMP;
+			sourceTree = "<group>";
+		};
+		C07A34C31EF7BF8B00D53D80 /* SGMain */ = {
+			isa = PBXGroup;
+			children = (
+				C07A34C41EF7BF8B00D53D80 /* SGMain.framework */,
+			);
+			path = SGMain;
+			sourceTree = "<group>";
+		};
+		C07A34C51EF7BF8B00D53D80 /* SGSecurityBody */ = {
+			isa = PBXGroup;
+			children = (
+				C07A34C61EF7BF8B00D53D80 /* SGSecurityBody.framework */,
+			);
+			path = SGSecurityBody;
+			sourceTree = "<group>";
+		};
+		C07A34C71EF7BF8B00D53D80 /* UTDID */ = {
+			isa = PBXGroup;
+			children = (
+				C07A34C81EF7BF8B00D53D80 /* UTDID.framework */,
+			);
+			path = UTDID;
 			sourceTree = "<group>";
 		};
 		C0A6906F1DB3B7E400DC0FA0 /* View */ = {
@@ -727,6 +826,7 @@
 		C0D4CFD11D5DBEF1008F824A = {
 			isa = PBXGroup;
 			children = (
+				C07A34B71EF7BF8B00D53D80 /* Library */,
 				C029AB6A1DCC6EFF00063171 /* MBProgressHUD */,
 				C0E38C511DADB71B00E1D27A /* YouTuEngineMediaPlayer */,
 				C0D4CFDC1D5DBEF1008F824A /* Dota2Helper */,
@@ -772,7 +872,7 @@
 		C0E38C511DADB71B00E1D27A /* YouTuEngineMediaPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				C04D835A1EA62DFB002968FB /* libYouTuMediaPlayerEngineYouku.a */,
+				C07A34B41EF7BD9500D53D80 /* libYouTuMediaPlayerEngineYouku.a */,
 				C05468451DAEB43E00A4AC13 /* sdk.bundle */,
 				C05468461DAEB43E00A4AC13 /* YTEngine.bundle */,
 				C0E38C521DADB73500E1D27A /* YouTuMediaPlayerEngineYoukuHeaders */,
@@ -857,7 +957,7 @@
 				TargetAttributes = {
 					C0D4CFD91D5DBEF1008F824A = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = PGNG7584J8;
+						DevelopmentTeam = FQVA73S8GZ;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -885,11 +985,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C07A34CA1EF7BF8B00D53D80 /* LICENCE.txt in Resources */,
 				C01981C21DB7628F009AE757 /* divider_line_image.png in Resources */,
 				C029AB6F1DCC6EFF00063171 /* LICENSE in Resources */,
 				C01981C01DB7628F009AE757 /* AaGothic.ttf in Resources */,
 				C0CA43041E801842004DAB88 /* DHVideoDetailTableViewCell.xib in Resources */,
 				C05468471DAEB43E00A4AC13 /* sdk.bundle in Resources */,
+				C07A34B61EF7BDBA00D53D80 /* libYouTuMediaPlayerEngineYouku.a in Resources */,
 				C0D4CFE01D5DBEF1008F824A /* Assets.xcassets in Resources */,
 				C05468481DAEB43E00A4AC13 /* YTEngine.bundle in Resources */,
 				C0D4CFE31D5DBEF1008F824A /* LaunchScreen.storyboard in Resources */,
@@ -988,6 +1090,7 @@
 				C0EFB0EB1DB613C7009001C1 /* DHBaseViewModel.swift in Sources */,
 				C01981C11DB7628F009AE757 /* AppDelegate.swift in Sources */,
 				C0CA43161E802D14004DAB88 /* DHNewsTableViewCell.swift in Sources */,
+				C07A34CC1EF7BF8B00D53D80 /* README.md in Sources */,
 				C0CA42EF1E801842004DAB88 /* DHStrategyTableViewCell.swift in Sources */,
 				C045C6411DF5AC97002C74D2 /* DHUniformError.swift in Sources */,
 				C0CA42E51E801842004DAB88 /* DHSDKViewController.swift in Sources */,
@@ -1006,6 +1109,7 @@
 				C0CA42EC1E801842004DAB88 /* DHStrategyDetailDataController.swift in Sources */,
 				C0CA42F81E801842004DAB88 /* DHUpdateDetailView.swift in Sources */,
 				C045C63E1DF5AC31002C74D2 /* String+Category.swift in Sources */,
+				C07A34CB1EF7BF8B00D53D80 /* Reachability.m in Sources */,
 				C0CA43141E802B71004DAB88 /* DHBaseTableViewCell.swift in Sources */,
 				C045C6371DF5AC26002C74D2 /* DHLoadingView.swift in Sources */,
 				C0CA430D1E80184B004DAB88 /* DHNetworkRequest.swift in Sources */,
@@ -1138,15 +1242,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Dota2Helper/Dota2Helper.entitlements;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = PGNG7584J8;
+				DEVELOPMENT_TEAM = FQVA73S8GZ;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/BCUserTrack",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/SecurityGuardSDK",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/SGAVMP",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/SGMain",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/SGSecurityBody",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/UTDID",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				INFOPLIST_FILE = Dota2Helper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1159,6 +1270,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Dota2Helper/Global/Header/Youku-Bridge-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
+				WARNING_CFLAGS = "";
 			};
 			name = Debug;
 		};
@@ -1170,15 +1282,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Dota2Helper/Dota2Helper.entitlements;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = PGNG7584J8;
+				DEVELOPMENT_TEAM = FQVA73S8GZ;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/BCUserTrack",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/SecurityGuardSDK",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/SGAVMP",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/SGMain",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/SGSecurityBody",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/UTDID",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				INFOPLIST_FILE = Dota2Helper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1191,6 +1310,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Dota2Helper/Global/Header/Youku-Bridge-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 				SWIFT_VERSION = 3.0;
+				WARNING_CFLAGS = "";
 			};
 			name = Release;
 		};

@@ -46,7 +46,7 @@ class DHStrategyTableViewCell: DHBaseTableViewCell {
     func bindDataWithModel(model: DHStrategyModel) {
         self.strategyModel = model
         if let urlString = model.background {
-            backgroundImageView.kf_setImage(with: URL(string: urlString))
+            backgroundImageView.kf.setImage(with: URL(string: urlString))
         }
         titleLabel.text = model.title
         descriptionLabel.text = model.strategyDescription

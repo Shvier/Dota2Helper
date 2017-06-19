@@ -46,7 +46,7 @@ class DHNewsTableViewCell: DHBaseTableViewCell {
     func bindDataWithModel(model: DHNewsModel) {
         self.newsModel = model
         if let urlString = model.background {
-            backgroundImageView.kf_setImage(with: URL(string: urlString))
+            backgroundImageView.kf.setImage(with: URL(string: urlString))
         }
         titleLabel.text = model.title
         newsDescriptionLabel.text = model.newsDescription
