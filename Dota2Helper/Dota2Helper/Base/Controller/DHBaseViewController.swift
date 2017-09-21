@@ -15,7 +15,7 @@ class DHBaseViewController: UIViewController {
         return Reachability()
     }()!
     
-    func reachabilityChanged(note: NSNotification) {
+    @objc func reachabilityChanged(note: NSNotification) {
 
     }
     
@@ -30,7 +30,7 @@ class DHBaseViewController: UIViewController {
         self.navigationController?.navigationBar.isTranslucent = false
         self.tabBarController?.tabBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kTabBarItemColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: kTabBarItemColor]
         navigationItem.title = "掌刀"
         self.automaticallyAdjustsScrollViewInsets = false
     }

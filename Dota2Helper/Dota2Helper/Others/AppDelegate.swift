@@ -64,8 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         tabbarVC?.tabBar.barStyle = .black
         tabbarVC?.tabBar.tintColor = kTabBarItemColor
         
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: kThemeColor], for: .normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: UIColor(red:0.80, green:0.00, blue:0.00, alpha:1.00)], for: .selected)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: kThemeColor], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor: UIColor(red:0.80, green:0.00, blue:0.00, alpha:1.00)], for: .selected)
         
         self.window?.rootViewController = tabbarVC
         

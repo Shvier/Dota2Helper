@@ -102,7 +102,7 @@ public class UISegmentedMenu: UIView {
         return self.contentView?.viewWithTag(selectedIndex! + kTag) as! UIButton
     }
     
-    func clickSegmentedButton(button: UIButton) {
+    @objc func clickSegmentedButton(button: UIButton) {
         let lastSelectedButton: UIButton = self.contentView?.viewWithTag(selectedIndex! + kTag) as! UIButton
         lastSelectedButton.isSelected = false
         lastSelectedButton.titleLabel?.font = UIFont.systemFont(ofSize: defaultFontSize)

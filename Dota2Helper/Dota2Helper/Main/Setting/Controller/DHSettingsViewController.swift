@@ -25,7 +25,7 @@ class DHSettingsViewController: UITableViewController {
     func initLifeCycle() {
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: kTabBarItemColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: kTabBarItemColor]
         navigationItem.title = "掌刀"
     }
     
