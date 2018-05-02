@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## Alamofire
 
-Copyright (c) 2014-2017 Alamofire Software Foundation (http://alamofire.org/)
+Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -26,7 +26,7 @@ THE SOFTWARE.
 
 ## Bugtags
 
-        Copyright (C) 2017 Bugtags.
+        Copyright (C) 2018 Bugtags.
         Permission is hereby granted to use this framework as is, modification are not allowed.
         All rights reserved.
 
@@ -43,7 +43,7 @@ THE SOFTWARE.
 
 The MIT License (MIT)
 
-Copyright (c) 2017 Wei Wang
+Copyright (c) 2018 Wei Wang
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -139,7 +139,7 @@ SOFTWARE.
 
 ## SDWebImage
 
-Copyright (c) 2016 Olivier Poitrey rs@dailymotion.com
+Copyright (c) 2009-2017 Olivier Poitrey rs@dailymotion.com
  
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
