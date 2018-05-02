@@ -8,7 +8,7 @@
 
 import UIKit
 import MJRefresh
-import ReachabilitySwift
+import Reachability
 
 class DHStrategyViewController: DHBaseViewController {
     
@@ -112,7 +112,7 @@ class DHStrategyViewController: DHBaseViewController {
     }
     
     func endHeaderRefreshing() {
-        if (tableView?.mj_header.isRefreshing())! {
+        if (tableView?.mj_header.isRefreshing)! {
             tableView?.mj_header.endRefreshing()
         }
     }

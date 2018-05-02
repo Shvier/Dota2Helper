@@ -66,6 +66,7 @@
 		C09648ED1DAEED8E00D75D21 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648EC1DAEED8E00D75D21 /* UIKit.framework */; };
 		C09648EF1DAEED9300D75D21 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09648EE1DAEED9300D75D21 /* Foundation.framework */; };
 		C0A690731DB3B96600DC0FA0 /* DHBaseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A690721DB3B96600DC0FA0 /* DHBaseDetailView.swift */; };
+		C0CA1F412099FA2D007FD241 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C004EC201F73CB72006A6CA6 /* libYouTuMediaPlayerEngineYouku.a */; };
 		C0CA42DB1E801842004DAB88 /* DHNewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA428F1E801842004DAB88 /* DHNewsDetailViewController.swift */; };
 		C0CA42DC1E801842004DAB88 /* DHNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42901E801842004DAB88 /* DHNewsViewController.swift */; };
 		C0CA42DD1E801842004DAB88 /* DHNewsCellDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CA42921E801842004DAB88 /* DHNewsCellDataController.swift */; };
@@ -274,6 +275,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0CA1F412099FA2D007FD241 /* libYouTuMediaPlayerEngineYouku.a in Frameworks */,
 				C09648EF1DAEED9300D75D21 /* Foundation.framework in Frameworks */,
 				C09648ED1DAEED8E00D75D21 /* UIKit.framework in Frameworks */,
 				C09648EB1DAEED8A00D75D21 /* CoreGraphics.framework in Frameworks */,

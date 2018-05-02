@@ -8,7 +8,7 @@
 
 import UIKit
 import MJRefresh
-import ReachabilitySwift
+import Reachability
 
 class DHVideoViewController: DHBaseViewController {
     
@@ -35,7 +35,7 @@ class DHVideoViewController: DHBaseViewController {
     
 // MARK: - Data Handler and View Renderer
     func endHeaderRefreshing() {
-        if (tableView?.mj_header.isRefreshing())! {
+        if (tableView?.mj_header.isRefreshing)! {
             tableView?.mj_header.endRefreshing()
         }
     }

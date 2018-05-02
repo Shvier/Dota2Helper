@@ -8,7 +8,7 @@
 
 import UIKit
 import MJRefresh
-import ReachabilitySwift
+import Reachability
 import SDCycleScrollView
 
 class DHNewsViewController: DHBaseViewController {
@@ -59,7 +59,7 @@ class DHNewsViewController: DHBaseViewController {
     }
     
     func endHeaderRefreshing() {
-        if (tableView?.mj_header.isRefreshing())! {
+        if (tableView?.mj_header.isRefreshing)! {
             tableView?.mj_header.endRefreshing()
         }
     }
