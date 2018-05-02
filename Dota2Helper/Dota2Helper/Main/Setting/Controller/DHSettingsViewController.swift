@@ -193,7 +193,7 @@ extension DHSettingsViewController {
                 if indexPath.row == 0 {
                     let languageLabel: UILabel = UILabel(frame: CGRect.zero)
                     languageLabel.textAlignment = .right
-                    let language = "Swift 3.0"
+                    let language = "Swift 4.1"
                     let languageLabelWidth = language.sizeOfContent(font: UIFont(name: "Helvetica", size: 20)!).width
                     languageLabel.frame = CGRect(x: kScreenWidth - languageLabelWidth, y: 0, width: languageLabelWidth, height: cell.bounds.size.height)
                     languageLabel.text = language
